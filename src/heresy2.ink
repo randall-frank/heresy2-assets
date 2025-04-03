@@ -8,6 +8,7 @@ INCLUDE workshop.ink
 # AUDIOLOOP:
 
 <h1><b>αίρεση: Of what mettle Gods?</b></h1>
+<h2>Version: STORY_VERSION</h2>
 
 /*
 Options:
@@ -27,7 +28,7 @@ Options:
 === intro ===
 Athens Greece, 450 BC N.T. - The age of Pericles
     + [Begin the adventure] -> base
-    + [Chicken out] -> outro
+    + [Quit] -> outro
 
 === outro ===
 # CLASS: end
