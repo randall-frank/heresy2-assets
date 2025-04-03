@@ -1,6 +1,7 @@
 # theme: light
 # author: Randall Frank, Andrew Florance & Marina Galvagni
 
+INCLUDE globals.ink
 INCLUDE base.ink
 INCLUDE workshop.ink
 
@@ -9,18 +10,6 @@ INCLUDE workshop.ink
 
 <h1><b>αίρεση: Of what mettle Gods?</b></h1>
 <h2>Version: STORY_VERSION</h2>
-
-/*
-Options:
-# BACKGROUND: src
-# LINK: url
-# LINKOPEN: url
-# CLASS: classname
-# CLEAR
-# RESTART
-# AUDIOLOOP: src
-# AUDIO: src
- */
 
 
 -> intro

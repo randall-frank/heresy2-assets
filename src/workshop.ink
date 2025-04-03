@@ -1,7 +1,7 @@
 === workshop ===
--> card_A
+-> wakeup
 
-= card_A
+= wakeup
 # BACKGROUND: greece.png
 # CLEAR
 # AUDIOLOOP: workshop.m4a
@@ -31,13 +31,12 @@ You take a seat and the robot springs to life.  It scans your arm... "This detai
     -> panarama
 - else:
 The slab you’re on spins and slides, coming to rest underneath a robotic arm. A laser tip hums to life. “Hold still and this won’t hurt a bit!” says Eliza from a speaker in the wall. The laser from a mobile begins to burn your right shoulder. It should hurt but the sensation is muted in this new form.
-The laser makes a few motions like a painter’s final strokes on a canvas and the machine pulls away, leaving you with a strange symbol seared into your arm: . 
+The laser makes a few motions like a painter’s final strokes on a canvas and the machine pulls away, leaving you with a strange symbol seared into your arm:
+# IMAGE: tattoo.png
 “All done!” cheers Eliza. “Please proceed to the exit and prepare to have all the pleasures this island can offer.”
-    -> tattooed
-}
-
-= tattooed
+    ~ tattooed = 1
     -> panarama
+}
 
 = door_to_oracle
 # CLEAR
@@ -48,11 +47,12 @@ A locked and bolted metal door with a digital keypad stands before you, looking 
 = desk
 # CLEAR
 An early 21st modular desk sits covered in dust, probably one of the popular GUDMUND line from that. Stacks of papers stand atop, detailing transfers of office supplies, prisoners, and other sundries to the facility. A sticky note attached to one form contains a request for a red stapler. But there’s no stapler anywhere to be seen… 
-    + { not padded_cell_key} [Rifle through the drawers] -> padded_cell_key
+    + { not padded_cell_key} [Rifle through the drawers] -> find_padded_cell_key
     + [Return to the hallway] -> panarama
     
-= padded_cell_key
+= find_padded_cell_key
 You find a digital card key.  To what?  where?
+    ~ padded_cell_key = 1
     ->panarama
 
 = computer_terminal
@@ -62,14 +62,14 @@ You find a digital card key.  To what?  where?
 - computer_terminal > 1:
 Your obvious fumblings have broken the computer terminal beyond simple repair. In your hands it has been reduced effectively to a pile of e-waste.
 - else:
-# AUDIO: computyer.m4a
 A computer terminal is built into what appears to be a marble slab. What a beauty! You run your hands over the display to admire the workmanship, and the feel of this hand-crafted design. But as your finger grazes the bezel of the display, it pops loose and you’re barely able to catch it as it falls towards the floor. The illusion of quality is gone but at least you’ll have a souvenir of your trip…
 }
-    + { not lcd_display} [Pry the LCD panel loose] -> lcd_display
+    + { not lcd_display} [Pry the LCD panel loose] -> find_lcd_display
     + [Return to the hallway] -> panarama
     
-= lcd_display
+= find_lcd_display
 The LCD panel might still be in working order in the right hands.
+    ~ lcd_display = 1
     ->panarama
 
 = padded_cell

@@ -80,6 +80,7 @@
                     this.audio.load();
                   }
                   this.audio = new Audio(splitTag.val);
+                  this.audio.volume = 0.3;
                   this.audio.play();
                 }
 
@@ -91,8 +92,9 @@
                     this.audioLoop.load();
                   }
                   this.audioLoop = new Audio(splitTag.val);
-                  this.audioLoop.play();
+                  this.audioLoop.volume = 0.1;
                   this.audioLoop.loop = true;
+                  this.audioLoop.play();
                 }
 
                 // IMAGE: src
