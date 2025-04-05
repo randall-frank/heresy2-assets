@@ -46,6 +46,10 @@ h2 {
     padding-bottom: 3em;
 }
 
+.item_selected {
+    background: #d0cece;
+}
+
 /*
   Built-in class:
     # author: Name

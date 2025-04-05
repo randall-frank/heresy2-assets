@@ -4,20 +4,46 @@ function refresh_inventory(story, elem) {
         let item_elem = document.querySelector('#item_'+name);
         let visible = story.variablesState[name];
         if (visible) {
-            item_elem.style.visibility = "visible";
+            item_elem.style.display = "block";
         } else {
-            item_elem.style.visibility = "hidden";
+            item_elem.style.display = "none";
         }
     }
+}
+
+function inventory_select(e) {
+    let selected_info = null;
+    for( const [name, value] of Object.entries(storyItems['items'])) {
+        let item_elem = document.querySelector('#item_'+name);
+        if (item_elem === e.target) {
+            item_elem.className = 'item_selected';
+            selected_info = value
+        } else {
+            item_elem.className = '';
+        }
+    }
+    let info = '';
+    if (selected_info) {
+        if (selected_info.hasOwnProperty('url')) {
+            info += '<img src="' + selected_info.url + '">';
+        }
+        info += "<p>" + selected_info.description + "</p>";
+    }
+    // set details innerHTML to info...
+    document.querySelector('#itemdetails').innerHTML = info;
 }
 
 function build_inventory(story, elem) {
     let item_list = "";
     for( const [name, value] of Object.entries(storyItems['items'])) {
-        item_list += "<li id='item_" + name + "'>" + value['name'] + "</li>";
+        item_list += "<li id='item_" + name + "'>" + value.name + "</li>";
     }
-    elem.innerHTML = "<ul>" + item_list + "</ul>";
+    elem.innerHTML = "<ul id='inventory_list'>" + item_list + "</ul>";
+    let el = document.querySelector('#inventory_list');
+    el.addEventListener('click', inventory_select);
 }
+
+
 
 (function(storyContent) {
 

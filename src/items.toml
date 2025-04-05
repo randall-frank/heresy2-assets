@@ -20,13 +20,15 @@
 
 [items.tattooed]
 name = "Tattoo"
-description = "A tattoo laser burnt into your arm."
+description = "A tattoo, laser burnt into your arm."
 url = "items/tattoo.png"
 
 [items.padded_cell_key]
 name = "Digital card key"
-decsription = "A standard magnetic card swipe key."
+description = "A standard magnetic card swipe key."
+url = "items/keycard.png"
 
 [items.lcd_display]
 name = "LCD display board"
 description = "A flat panel display module."
+url = "items/lcd_panel.png"
