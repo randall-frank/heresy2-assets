@@ -12,7 +12,7 @@ You sit up, as cold as the grave you’re in. Eliza speaks from a console to the
 A click, a whirr, and life flows through you like a river undammed. The red warmth of life tumbles through new veins and across your skin. In an instant you are yourself… again.
 
  “My, don’t you look nice! Now keep in mind appearance and ability always come with a price!” Eliza must have seen you twitch. A tinny laugh comes from the console. “But this is an all-inclusive holiday! What I meant of course was the price is POWER. You’ll need batteries to keep operating, and if you don’t have enough energy your body may enter ENERGY SAVING MODE. That means your form could freeze, while your consciousness is preserved for centuries or even millennia to come! Now one last thing before you get out there to enjoy yourself…”
-    * [...] -> tattoo
+    * [{continue}] -> tattoo
 
 = panarama
 Along the hallway to your left is a robotic tattoo machine, room 236.  Room 237 is hidden behind a security door.  An open office space on the right holds a plain desk with a computer terminal. Finally, at the end on the left is what appears to be a holding cell.
@@ -32,7 +32,7 @@ You take a seat and the robot springs to life.  It scans your arm... "This detai
 - else:
 The slab you’re on spins and slides, coming to rest underneath a robotic arm. A laser tip hums to life. “Hold still and this won’t hurt a bit!” says Eliza from a speaker in the wall. The laser from a mobile begins to burn your right shoulder. It should hurt but the sensation is muted in this new form.
 The laser makes a few motions like a painter’s final strokes on a canvas and the machine pulls away, leaving you with a strange symbol seared into your arm:
-# IMAGE: tattoo.png
+# IIMAGE: tattoo.png
 “All done!” cheers Eliza. “Please proceed to the exit and prepare to have all the pleasures this island can offer.”
     ~ tattooed = 1
     -> panarama
@@ -46,7 +46,7 @@ A locked and bolted metal door with a digital keypad stands before you, looking 
 
 = desk
 # CLEAR
-An early 21st modular desk sits covered in dust, probably one of the popular GUDMUND line from that. Stacks of papers stand atop, detailing transfers of office supplies, prisoners, and other sundries to the facility. A sticky note attached to one form contains a request for a red stapler. But there’s no stapler anywhere to be seen… 
+An early 21st century modular desk sits covered in dust, probably one of the popular GUDMUND line from that. Stacks of papers stand atop, detailing transfers of office supplies, prisoners, and other sundries to the facility. A sticky note attached to one form contains a request for a red stapler. But there’s no stapler anywhere to be seen…
     + { not padded_cell_key} [Rifle through the drawers] -> find_padded_cell_key
     + [Return to the hallway] -> panarama
     
@@ -73,6 +73,7 @@ The LCD panel might still be in working order in the right hands.
     ->panarama
 
 = padded_cell
+# CLEAR
 {
 - padded_cell_key:
 # AUDIO: door.m4a
@@ -81,7 +82,7 @@ This door is covered in dust and seems to have been sealed years if not decades 
 - else:
 A padded cell with a heavy, locked door.  It seems to be controlled by an ancient digital card reader.  Its swipe slot is caked with grime. A dimly lit red LED flickers off to one side.
 }
-    + [Meander back to the hallway] -> panarama
+    + [Return to the hallway] -> panarama
     
 
 -> outro

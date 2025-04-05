@@ -24,6 +24,6 @@ Athens Greece, 450 BC N.T. - The age of Pericles
 # AUDIOLOOP:
 Thank you for your consideration.
 
-<b>Heresy II: Copyright (C) 2025 Randall Frank, Andrew Florance & Marina Galvagni</b>
+<b>Copyright (C) STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni</b>
 
     -> END

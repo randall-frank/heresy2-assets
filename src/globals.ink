@@ -28,6 +28,12 @@
  *
  */
 
+// the "next" text
+VAR continue = "Proceed..."
+
+// The names of all of the items
+VAR item_names = "tattooed,padded_cell_key,lcd_display"
+
 // From the workshop location
 VAR tattooed = 0
 VAR padded_cell_key = 0

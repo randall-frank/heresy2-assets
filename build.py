@@ -1,4 +1,5 @@
 import argparse
+import datetime
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 import logging
 import os
@@ -42,6 +43,7 @@ def build_story_js() -> None:
     with open("version.txt", "rb") as fp:
         version = fp.read()
     print(f"Story version: {version.decode('ascii')}")
+    copyright_year = str(datetime.datetime.now().year).encode("utf8")
     # Generate the .json format of the root ink file
     inklecate_path = "inklecate"
     if platform.system().lower().startswith("windows"):
@@ -56,6 +58,7 @@ def build_story_js() -> None:
         s = fp.read()
         s = b"var storyContent = " + s
         s = s.replace(b"STORY_VERSION", version)
+        s = s.replace(b"STORY_YEAR", copyright_year)
         with open(os.path.join("build", "heresy2.js"), "wb") as output:
             output.write(s)
 

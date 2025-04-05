@@ -1,3 +1,32 @@
+
+function refresh_inventory(story, elem) {
+    let names = story.variablesState["item_names"];
+    const items = names.split(",");
+    for(let i=0;i < items.length; i++) {
+        const name = items[i];
+        let item_elem = document.querySelector('#item_'+name);
+        let visible = story.variablesState[name];
+        if (visible) {
+            item_elem.style.visibility = "visible";
+        } else {
+            item_elem.style.visibility = "hidden";
+        }
+    }
+}
+
+function build_inventory(story, elem) {
+    let item_list = "";
+    let names = story.variablesState["item_names"];
+    const items = names.split(",");
+    for(let i=0;i < items.length; i++) {
+        const tmp = items[i].replace(/_/g, " ");
+        const capitalized = tmp.charAt(0).toUpperCase() + tmp.slice(1);
+        item_list += "<li id='item_" + items[i] + "'>" + capitalized + "</li>";
+    }
+    elem.innerHTML = "<ul>" + item_list + "</ul>";
+}
+
+
 (function(storyContent) {
 
     // Create ink story from the content using inkjs
@@ -31,6 +60,9 @@
         }
     }
 
+    var imageContainer = document.querySelector('#images');
+    var sidebarContainer = document.querySelector('#sidebar');
+    var inventoryContainer = document.querySelector('#inventory');
     var storyContainer = document.querySelector('#story');
     var outerScrollContainer = document.querySelector('.outerContainer');
 
@@ -38,6 +70,7 @@
     setupTheme(globalTagTheme);
     var hasSave = loadSavePoint();
     setupButtons(hasSave);
+    build_inventory(story, inventoryContainer);
 
     // Set initial save point
     savePoint = story.state.toJson();
@@ -54,6 +87,9 @@
 
         // Don't over-scroll past new content
         var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
+
+        // Clear the image sidebar
+        imageContainer.innerHTML = '';
 
         // Generate story text - loop through available content
         while(story.canContinue) {
@@ -99,6 +135,21 @@
 
                 // IMAGE: src
                 if( splitTag && splitTag.property == "IMAGE" ) {
+                    var imageElement = document.createElement('img');
+                    imageElement.src = splitTag.val;
+                    imageContainer.appendChild(imageElement);
+
+                    imageElement.onload = () => {
+                        console.log(`scrollingto ${previousBottomEdge}`)
+                        scrollDown(previousBottomEdge)
+                    }
+
+                    showAfter(delay, imageElement);
+                    delay += 200.0;
+                }
+
+                // IIMAGE: src   (inline image)
+                if( splitTag && splitTag.property == "IIMAGE" ) {
                     var imageElement = document.createElement('img');
                     imageElement.src = splitTag.val;
                     storyContainer.appendChild(imageElement);
@@ -147,11 +198,13 @@
                     }
                 }
             }
+
+            refresh_inventory(story, inventoryContainer);
 		
-		// Check if paragraphText is empty
-		if (paragraphText.trim().length == 0) {
+            // Check if paragraphText is empty
+            if (paragraphText.trim().length == 0) {
                 continue; // Skip empty paragraphs
-		}
+		    }
 
             // Create paragraph element (initially hidden)
             var paragraphElement = document.createElement('p');
