@@ -1,0 +1,32 @@
+# This file defines the items one might find in the game.
+# It is used by 'build' to generate two files:
+#     build/item_globals.ink - contains the VAR specifications for all of the items
+#     build/item_globals.js - defines the json global variable 'storyItems'
+#
+# Items are stored in the [items] block.  The core name used for the ink variable
+# and the HTML entities is "name" from [item.{name}].  This name should be simple
+# lowercase letters (a-z) and the underscore character for compatibility with
+# TOML, JSON, Ink and HTML ids.
+#
+# Required item keys:
+# name = "Short name"   - simple item screen name for lists, etc
+# description = "Item description"  - a longer text block describing the item
+#
+# Optional item keys:
+# url = "items/tattoo.png"   - local URL to an image of the item
+#
+
+[items]
+
+[items.tattooed]
+name = "Tattoo"
+description = "A tattoo laser burnt into your arm."
+url = "items/tattoo.png"
+
+[items.padded_cell_key]
+name = "Digital card key"
+decsription = "A standard magnetic card swipe key."
+
+[items.lcd_display]
+name = "LCD display board"
+description = "A flat panel display module."

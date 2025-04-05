@@ -2,6 +2,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+heresy2*.zip
+
 # Environments
 .env
 .venv

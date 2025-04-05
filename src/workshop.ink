@@ -4,7 +4,7 @@
 = wakeup
 # BACKGROUND: greece.png
 # CLEAR
-# AUDIOLOOP: workshop.m4a
+# AUDIOLOOP: audio/workshop.m4a
 A twinge, a brief pain in the chest and you’re in another world.
 
 You sit up, as cold as the grave you’re in. Eliza speaks from a console to the side. “Welcome Agent! We hope you enjoy your vacation and your new body: a brand new ZXT Mark V all-purpose android receptacle! Adaptable to any circumstances and nearly any form, they can practically make you a GOD. Now let’s get this body adapted to YOU.”
@@ -32,7 +32,7 @@ You take a seat and the robot springs to life.  It scans your arm... "This detai
 - else:
 The slab you’re on spins and slides, coming to rest underneath a robotic arm. A laser tip hums to life. “Hold still and this won’t hurt a bit!” says Eliza from a speaker in the wall. The laser from a mobile begins to burn your right shoulder. It should hurt but the sensation is muted in this new form.
 The laser makes a few motions like a painter’s final strokes on a canvas and the machine pulls away, leaving you with a strange symbol seared into your arm:
-# IIMAGE: tattoo.png
+# IMAGE: items/tattoo.png
 “All done!” cheers Eliza. “Please proceed to the exit and prepare to have all the pleasures this island can offer.”
     ~ tattooed = 1
     -> panarama
@@ -40,7 +40,7 @@ The laser makes a few motions like a painter’s final strokes on a canvas and t
 
 = door_to_oracle
 # CLEAR
-# AUDIO: door_locked.m4a
+# AUDIO: audio/door_locked.m4a
 A locked and bolted metal door with a digital keypad stands before you, looking like something that would protect the entrance to an underworld hideout. You try the door but it won’t budge, even with your considerable strength, you will need to find the keycode. Peering through the grille high upon the door, you glimpse the bronze escutcheon of Apollo on the wall.  Listening closely you overhear hushed whispers of Pythia’s great machine..   
     -> panarama
 
@@ -57,7 +57,7 @@ You find a digital card key.  To what?  where?
 
 = computer_terminal
 # CLEAR
-# AUDIO: computer.m4a
+# AUDIO: audio/computer.m4a
 {
 - computer_terminal > 1:
 Your obvious fumblings have broken the computer terminal beyond simple repair. In your hands it has been reduced effectively to a pile of e-waste.
@@ -76,7 +76,7 @@ The LCD panel might still be in working order in the right hands.
 # CLEAR
 {
 - padded_cell_key:
-# AUDIO: door.m4a
+# AUDIO: audio/door.m4a
 You run the digital card key though the scanner.  There is a "beep" and the faded LED turns a muted shade of green.
 This door is covered in dust and seems to have been sealed years if not decades ago. With a mighty pull you twist the bar open and peer into the dark cell before you. On the floor is a woman with long hair that spills around her feet. The name on her soiled jumpsuit says “Helen”?
 - else:

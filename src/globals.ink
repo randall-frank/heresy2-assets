@@ -13,13 +13,15 @@
  *
  * Pre-defined tags:
  *  # BACKGROUND: src
+ *  # IMAGE: src     - an inline image
+ *  # SBIMAGE: src   - a sidebar image
  *  # LINK: url
  *  # LINKOPEN: url
- *  # CLASS: classname
+ *  # CLASS: classname  - text should use a specific css class
  *  # CLEAR
  *  # RESTART
- *  # AUDIOLOOP: src
- *  # AUDIO: src
+ *  # AUDIOLOOP: src  - background audio
+ *  # AUDIO: src      - one-shot audio
  *
  * see main.js for how these are handled.  However, any other
  * tags are legal as well (e.g. # HELLO: foobar) and the "step"
@@ -34,7 +36,3 @@ VAR continue = "Proceed..."
 // The names of all of the items
 VAR item_names = "tattooed,padded_cell_key,lcd_display"
 
-// From the workshop location
-VAR tattooed = 0
-VAR padded_cell_key = 0
-VAR lcd_display = 0
