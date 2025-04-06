@@ -32,3 +32,32 @@ url = "items/keycard.png"
 name = "LCD display board"
 description = "A flat panel display module."
 url = "items/lcd_panel.png"
+
+#
+# States
+#
+# States define a collection of entities that represent
+# things that are represented as integer counts.  Things
+# like "health" or "gold", etc are of this ilk.  Like
+# items, the ink variable is defined using tha name [states.{name}]
+#
+# Required state keys:
+# name = "Short name"   - simple item screen name for the value
+# default = X   - the default value used in the .ink VAR value
+# hide = Y   - specify a condition where the state is to be hidden in the GUI
+#            - 0=always show, 1=hide if value is 0
+#
+# Optional item keys:
+# hide_variable = "varname"   - if specified, this variable value is to be
+#                             - used in the evaluation of 'hide' instead of
+#                             - the state value variable.
+# percent = 1   - if present, the value is interpreted as a "percentage" for display
+#
+[states]
+
+[states.exo_power]
+name = "Exo-suit power level"
+default = 100
+hide = 1
+hide_variable = "tattooed"
+percent = 1

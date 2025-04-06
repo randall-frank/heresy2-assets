@@ -66,6 +66,9 @@ def build_story_js() -> None:
         fp.write("\n// Items:\n")
         for name, data in info["items"].items():
             fp.write(f"VAR {name} = 0\n")
+        fp.write("\n// States:\n")
+        for name, data in info["states"].items():
+            fp.write(f"VAR {name} = {data['default']}\n")
     # Generate the .json format of the root ink file
     inklecate_path = "inklecate"
     if platform.system().lower().startswith("windows"):
@@ -97,7 +100,7 @@ def clean() -> None:
     except OSError:
         pass
     zipfile = f"heresy2_v{__version__.replace('.', '_')}.zip"
-    build_files = ["tmp.json", os.path.join("src", "items_globals.ink"), zipfile]
+    build_files = ["tmp.json", os.path.join("src", "item_globals.ink"), zipfile]
     for filename in build_files:
         try:
             os.unlink(filename)
