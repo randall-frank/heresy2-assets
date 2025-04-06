@@ -1,4 +1,5 @@
 === workshop ===
+~ location_name = "Mausoleum Workshop (450 B.C.)"
 -> wakeup
 
 = wakeup
@@ -21,7 +22,7 @@ Along the hallway to your left is a robotic tattoo machine, room 236.  Room 237 
     + [Take a seat at the desk] -> desk
     + [Examine the computer terminal] -> computer_terminal
     + [Investigate the cell] -> padded_cell
-    + [Give up...] -> outro
+    + [Capitulate...] -> give_up
     
 = tattoo
 # CLEAR

@@ -1,5 +1,9 @@
 === base ===
+~ location_name = "Time Corrections Agency (2413 A.D.)"
+-> card_A
+
 = card_A
+# CLEAR
 # AUDIOLOOP: audio/base.m4a
 # SBIMAGE: locations/bob_ending.png
 It’s always disorienting to return from a mission, but this one feels more unusual than the others. Stepping from the caisson, you’re greeted by Bob. Is that Bob? Something is diff… You sway but stay on your feet. He hands you a uniform and ushers you to the locker room where you can collect yourself. You change then look at yourself in the mirror. Your new clothes seem as out of place as you are.

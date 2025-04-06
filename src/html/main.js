@@ -7,6 +7,10 @@ function refresh_inventory(story, elem) {
             item_elem.style.display = "block";
         } else {
             item_elem.style.display = "none";
+            if (item_elem.className === 'item_selected') {
+                // Clear details innerHTML
+                document.querySelector('#itemdetails').innerHTML = '';
+            }
         }
     }
 }
@@ -34,13 +38,63 @@ function inventory_select(e) {
 }
 
 function build_inventory(story, elem) {
+    // Build the inventory (item) section
     let item_list = "";
     for( const [name, value] of Object.entries(storyItems['items'])) {
         item_list += "<li id='item_" + name + "'>" + value.name + "</li>";
     }
-    elem.innerHTML = "<ul id='inventory_list'>" + item_list + "</ul>";
+    elem.innerHTML = "<ul id='inventory_list' style='padding-left: 10px;'>" + item_list + "</ul>";
     let el = document.querySelector('#inventory_list');
     el.addEventListener('click', inventory_select);
+}
+
+function build_status(story) {
+    // Take the opportunity to update the location text
+    let location = document.querySelector('#locationname');
+    let text = story.variablesState["location_name"];
+    if (text.length) {
+        location.innerText = text;
+        location.style.display = "block";
+    } else {
+        location.style.display = "none";
+    }
+
+    let statusinfo = document.querySelector('#statusinfo');
+    let visible_count = 0;
+    let inner = "";
+    for( const [name, value] of Object.entries(storyItems['states'])) {
+        // Get the state variable value
+        let count = story.variablesState[name];
+        // convert to display value
+        let disp_count = count.toString();
+        // add percent if requested
+        if (value.hasOwnProperty('percent')) {
+            if (value.percent) disp_count += "%";
+        }
+        // decide if this is visible
+        let hide = value.hide;
+        // if 2, base on the value of the count variable
+        if (hide === 2) {
+            // if hide_variable is set, use the value of that variable instead
+            if (value.hasOwnProperty('hide_variable')) {
+                count = story.variablesState[value.hide_variable];
+            }
+            // adjust hide based on count
+            hide = 0;
+            if (count === 0) hide = 1;
+        }
+        if (hide === 0) {
+            inner += "<p style='padding-left: 10px;'>" + value.name + ": <b>" + disp_count + "</b></p>";
+            visible_count += 1;
+        }
+    }
+    statusinfo.innerHTML = inner;
+    let section_div = document.querySelector('#statussection');
+    if (visible_count) {
+        section_div.style.display = "block";
+    } else {
+        section_div.style.display = "none";
+    }
 }
 
 
@@ -89,6 +143,7 @@ function build_inventory(story, elem) {
     var hasSave = loadSavePoint();
     setupButtons(hasSave);
     build_inventory(story, inventoryContainer);
+    build_status(story);
 
     // Set initial save point
     savePoint = story.state.toJson();
@@ -217,7 +272,10 @@ function build_inventory(story, elem) {
                 }
             }
 
+            // Update the inventory items
             refresh_inventory(story, inventoryContainer);
+            // Update the status
+            build_status(story);
 		
             // Check if paragraphText is empty
             if (paragraphText.trim().length == 0) {

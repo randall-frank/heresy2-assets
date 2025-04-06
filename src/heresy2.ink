@@ -9,8 +9,10 @@ INCLUDE workshop.ink
 # BACKGROUND: background.png
 # AUDIOLOOP:
 
+~ location_name = ""
+
 <h1><b>αίρεση: Of what mettle Gods?</b></h1>
-Athens Greece, 450 BC N.T. - The age of Pericles
+Athens Greece, 450 B.C. - The age of Pericles
 
 <h2>Version: STORY_VERSION</h2>
 
@@ -21,9 +23,28 @@ Athens Greece, 450 BC N.T. - The age of Pericles
     + [Begin the adventure] -> base
     + [Quit] -> outro
 
+=== give_up ===
+# CLEAR
+~ location_name = ""
+You open a compartment in the ZXT Mark V and use a metal bar to short the battery.  Sparks and smoke are emitted in the process.
+{ exo_power > 0:
+	~ exo_power = exo_power - 40
+	{exo_power < 0:
+	    ~ exo_power = 0
+	}
+}
+{ exo_power <= 0:
+# SBIMAGE: locations/quit.png
+The android shell ran out of power.  The fluidic body cools and solidifies resulting in a "marble" statue left in remembrance of your presence.  Your mind lives on, trapped in an inert vessel, entirely devoid of stimulation... for eternity.
+    -> outro
+}
+    + [Again...] -> give_up
+
+
 === outro ===
 # CLASS: end
 # AUDIOLOOP:
+~ location_name = ""
 Thank you for your consideration.
 
 <b>Copyright (C) STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni</b>

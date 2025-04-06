@@ -28,11 +28,17 @@
  * function in main.js can detect and respond to these while
  * generating the HTML blocks.
  *
+ * Useful links to the ink language:
+ *
+ * https://github.com/sawradip/ink-cheat-sheet
+ * https://docs.unfold.studio/user_guide/ink.html#part-5-advanced-state-tracking
+ * https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md
+ *
  */
 
 // the "next" text
 VAR continue = "Proceed..."
 
-// The names of all of the items
-VAR item_names = "tattooed,padded_cell_key,lcd_display"
+// The name of the current "location" (usually set in the knot)
+VAR location_name = ""
 

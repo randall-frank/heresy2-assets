@@ -45,7 +45,7 @@ url = "items/lcd_panel.png"
 # name = "Short name"   - simple item screen name for the value
 # default = X   - the default value used in the .ink VAR value
 # hide = Y   - specify a condition where the state is to be hidden in the GUI
-#            - 0=always show, 1=hide if value is 0
+#            - 0=always show, 1=hide, 2=hide if value is 0
 #
 # Optional item keys:
 # hide_variable = "varname"   - if specified, this variable value is to be
@@ -56,8 +56,8 @@ url = "items/lcd_panel.png"
 [states]
 
 [states.exo_power]
-name = "Exo-suit power level"
+name = "ZXT Mark V power"
 default = 100
-hide = 1
+hide = 2
 hide_variable = "tattooed"
 percent = 1
