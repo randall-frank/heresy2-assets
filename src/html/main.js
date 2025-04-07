@@ -127,7 +127,7 @@ function build_status(story) {
             // author: Your Name
             else if( splitTag && splitTag.property == "author" ) {
                 var byline = document.querySelector('.byline');
-                byline.innerHTML = "by "+splitTag.val;
+                byline.innerHTML = splitTag.val;
             }
         }
     }
@@ -278,7 +278,7 @@ function build_status(story) {
             build_status(story);
 		
             // Check if paragraphText is empty
-            if (paragraphText.trim().length == 0) {
+            if (paragraphText.trim().length === 0) {
                 continue; // Skip empty paragraphs
 		    }
 
@@ -318,7 +318,6 @@ function build_status(story) {
 
             }
 
-            
             var choiceParagraphElement = document.createElement('p');
             choiceParagraphElement.classList.add("choice");
 
@@ -370,6 +369,15 @@ function build_status(story) {
         if( !firstTime )
             scrollDown(previousBottomEdge);
 
+        // Check for "end game"
+        // Ran out of power...
+        /*
+        if (story.variablesState.exo_power === 0) {
+            story.ChoosePathString("end_game_power");
+            continueStory();
+        }
+        */
+        // Other async "end game" conditions...
     }
 
     function restart() {

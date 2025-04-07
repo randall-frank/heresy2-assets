@@ -33,6 +33,15 @@ name = "LCD display board"
 description = "A flat panel display module."
 url = "items/lcd_panel.png"
 
+[items.insane_laura]
+name = "Mechanical owl"
+description = "A marvel of science? There seems to be an entity inside, but one might question its sanity."
+url = "items/owl.png"
+
+[items.garden_door_key]
+name = "A large iron key"
+description = "This looks like a gate key."
+
 #
 # States
 #
