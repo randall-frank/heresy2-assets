@@ -40,4 +40,4 @@ In the black of the chamber, a light appears, rushing towards you. Videos of lus
 
 Eliza begins to speak. “Welcome vacationer! You have earned… an unspecified amount of time …on the Greek paradise of Mypos, year 450 BCE. Your mission: enjoy yourself!”
 
-    * [{continue}] -> workshop
+    * [{continue}] -> workshop.transfer

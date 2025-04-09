@@ -5,6 +5,8 @@ INCLUDE globals.ink
 INCLUDE item_globals.ink
 INCLUDE base.ink
 INCLUDE workshop.ink
+INCLUDE garden.ink
+INCLUDE temple.ink
 
 -> intro
 
