@@ -1,5 +1,6 @@
 === base ===
 ~ location_name = "Time Corrections Agency (2413 A.D.)"
+# BACKGROUND: locations/base.jpg
 -> card_A
 
 = card_A
