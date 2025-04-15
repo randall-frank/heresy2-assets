@@ -3,6 +3,7 @@
 # BACKGROUND: greece.png
 # CLEAR
 # AUDIOLOOP: audio/workshop.m4a
+-> power_change( location_change_cost ) ->
 -> panorama
 
 = transfer
@@ -119,7 +120,7 @@ At the mention of Bob the woman gasps like someone woken from a nightmare. She s
 
 … as she turns from you, a profound look of sadness ….  A item slips from her fingers to the floor, within your reach  (TODO: Item: Helen Locket??).
 
-    + { not insane_laura} [Investigate the owl] -> owl
+    + { not insane_laura} [Approach the owl] -> owl
     + [Return to the hallway] -> panorama
 
 

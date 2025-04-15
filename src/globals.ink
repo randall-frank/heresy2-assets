@@ -42,8 +42,15 @@ VAR continue = "Proceed..."
 // The name of the current "location" (usually set in the knot)
 VAR location_name = ""
 
+// The power cost of moving from one location to another
+VAR location_change_cost = -1
+
 // is non-zero if the path to the temple has been found
 VAR temple_found = 0
 
+// is non-zero if they helped the beggar at the temple
+VAR helped_beggar = 0
+
 // is non-zero if you spoke with the servant in the garden (who "vouches" for you).
 VAR spoke_with_andrew = 0
+

@@ -42,6 +42,10 @@ url = "items/owl.png"
 name = "A large iron key"
 description = "This looks like a gate key."
 
+[items.crutch]
+name = "A Crutch"
+description = "A rough and worn crutch."
+
 #
 # States
 #
@@ -65,8 +69,14 @@ description = "This looks like a gate key."
 [states]
 
 [states.exo_power]
-name = "ZXT Mark V power"
+name = "Mark V power"
 default = 100
 hide = 2
 hide_variable = "tattooed"
 percent = 1
+
+[states.cash]
+name = "Drachm"
+default = 10
+hide = 2
+hide_variable = "tattooed"
