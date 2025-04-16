@@ -11,12 +11,14 @@
 The Temple of Hephaestus towers before you, a breathing forge of industry that fires the island. Around the edges of the temple artisans and potters ply their trade, throwing clay and molding into beautiful ceramics and artistic works of metal. They honor the god, pouring themselves into their work. Carefully crafted colonnades hold the roof aloft while priests and adherents work their rites within.
 The outer temple columns serve as both workplace and home for the lost and discarded. Beggars ply their arts for alms while an individual, not of sound mind or soul, wanders by, endlessly muttering to themselves and anyone willing to lend an ear.
 One can almost make out the large statue gracing the pornaos.
-The Cella is filled with small groups of people having conversions and milling about.
+{not intervene:
+    The Cella is filled with small groups of people having conversions and milling about.
+}
 Deep in the interior of the temple is the opisthodomos flanked by wary acolytes.
 
     + [Interact with the beggar] -> beggar
     + [Enter the temple pronaos] -> pronaos
-    + [Walk the cella] -> cella
+    + {not intervene} [Walk the cella] -> cella
     + [Approach the opisthodomos] -> opisthodomos
     + [Travel to the Private Garden] -> garden
 
@@ -24,10 +26,9 @@ Deep in the interior of the temple is the opisthodomos flanked by wary acolytes.
 # CLEAR
 A beggar in rags kneels by a rough, unbaked bowl. The craftspeople avoid even looking at him as they go about their day. As you approach, he lifts his head and an all too familiar symbol appears.
 “Yeah, I worked for Bob. So what? Came all the way back to serve, to build a portal…”
-{ helped_beggar and cash > 0:
+{ helped_beggar:
     "It is you again...  See, I remember!" followed by a befouled coughing fit.
-}
-{ not helped_beggar:
+- else:
     The beggar sees the tattoo on your shoulder and barks out a laugh that turns to a phlegmy cough. “So you’re one of them, eh? It was helping your kind that got me ruined. Maybe you could take pity on me and throw some wine or silver my way?”
         + {cash} [Give him a coin] -> donate
 }
@@ -53,11 +54,29 @@ As you move into the darkness of the temple, the heat and smell of furnace fires
     + [{continue}] -> panorama
 
 = cella
+# CLEAR
+~ combat_health = 10
+~ combat_attack = 2
 A crowd of people are milling about the center of the space, their attention on two men sneering and snapping at each other like sharp-toothed dogs. A man with a lame leg and a tattoo matching yours on his shoulder spits and screams and a man with smooth, unburnt skin and cold eyes that do not belong here.
 Jeers of anticipation fill the air like smoke like fire from a forge. Nothing like a good fight to clear the air.
 The lame man screams at his opponent, “You think you can come here like some tourist? To take what you want while we toil day and night?” He shakes his fist. “You tell that bastard Bob to come here himself. You tell him to come and I’ll tell him to…” The crowd howls as the man with cold eyes throws a right hook and the dispute is lost beneath the waves of cheers.
-TODO
-    + [{continue}] -> panorama
+    + [Attempt to intervene] -> intervene
+    + [Leave] -> panorama
+
+= intervene
+You step between the men and inadvertently get pulled into the fight.  The cold eyed man pulls a short pike from a hidden pocket.  He points it at you and the injured man and "fire" leaps out to hit the two of you.
+You return the gesture with a closed fist.
+    VAR combat_result = 0
+    -> combat("a cold eyed man", combat_result) ->
+    { combat_result == 1:
+        // you win
+        The cold eyes roll upward and the "man" freezes, stone cold like a rock.  No motion, no response at all.  The tattooed man mouths a silent thank-you and gets lost in the crowd.
+            + [Leave] -> panorama
+    - else:
+        // you may run away
+        + [Continue the fight] -> intervene
+        + [Disengage and blend into the crowd] -> panorama
+    }
 
 = opisthodomos
 In an alcove, a woman stands bathed in torchlight, pointing to a piece of parchment, and talking to a group of soot-covered men. They nod their heads as a problem long in their minds, finally unknots. She runs her finger from the top to the bottom of a complex design. “If we cut the current here and reroute, the amount of cross-talk should be reduced enough that we can finally…” She sees you approach.

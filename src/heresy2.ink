@@ -51,6 +51,19 @@ Athens Greece, 450 B.C. - The age of Pericles
     }
     ->->
 
+=== function attack_power()
+    ~ return 10
+
+// do a round of combat.
+=== combat(opponent, ref success)
+    You are locked in combat with {opponent} who is {combat_health>exo_power: stronger|weaker} than you.
+    -> power_change(-combat_attack) ->
+    ~ combat_health -= attack_power()
+    { combat_health <= 0:
+        ~ success = 1
+    }
+    ->->
+
 === give_up ===
 # CLEAR
 # AUDIO: audio/shock.mp3

@@ -43,7 +43,7 @@ name = "A large iron key"
 description = "This looks like a gate key."
 
 [items.crutch]
-name = "A Crutch"
+name = "Crutch"
 description = "A rough and worn crutch."
 
 #

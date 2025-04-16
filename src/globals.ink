@@ -54,3 +54,7 @@ VAR helped_beggar = 0
 // is non-zero if you spoke with the servant in the garden (who "vouches" for you).
 VAR spoke_with_andrew = 0
 
+// variables used by combat() tunnel.  Set these first and call combat() to
+// run a round of "combat"
+VAR combat_health = 0
+VAR combat_attack = 0
