@@ -28,7 +28,7 @@ Athens Greece, 450 B.C. - The age of Pericles
 // This tunnel is used to change the current power value up (+) or down (-)
 // The value is capped [0,100] and if 0, the return will be redirected
 // to the "end_game_power" game ending.
-// Use it for combat, consuming batteries/rechange stations, etc
+// Use it for combat, consuming batteries/recharge stations, etc
 === power_change(x)
     ~ exo_power += x
     { exo_power > 100:
@@ -52,13 +52,26 @@ Athens Greece, 450 B.C. - The age of Pericles
     ->->
 
 === function attack_power()
-    ~ return 10
+TODO compute attack power (adjust based on items)
+    ~ return 10.
+
+=== function defence_power()
+TODO compute defence power (adjust based on items)
+    ~ return 50.
 
 // do a round of combat.
 === combat(opponent, ref success)
+// Compute damage as = attack*(ratio/(ratio+defence))
+// Then make 1/2 of the damage random, so = damage/2 + random(0,damage/2)
+//
     You are locked in combat with {opponent} who is {combat_health>exo_power: stronger|weaker} than you.
-    -> power_change(-combat_attack) ->
-    ~ combat_health -= attack_power()
+    ~ temp dmg_to_other = INT(FLOAT(attack_power())*FLOAT(combat_ratio)/FLOAT(combat_ratio+combat_defence))
+    ~ dmg_to_other = (dmg_to_other / 2) + RANDOM(0, dmg_to_other / 2)
+    ~ temp dmg_to_player = INT(FLOAT(combat_attack)*FLOAT(combat_ratio)/FLOAT(combat_ratio+defence_power()))
+    ~ dmg_to_player = (dmg_to_player / 2) + RANDOM(0, dmg_to_player / 2)
+    You do {dmg_to_other} damage while they do {dmg_to_player} to you.
+    -> power_change(-dmg_to_player) ->
+    ~ combat_health -= dmg_to_other
     { combat_health <= 0:
         ~ success = 1
     }
@@ -91,7 +104,7 @@ If you are not in a position to play the game, a basic overview of the key game 
 
 === spoilers ===
 # CLEAR
-TODO
+TODO Heresy I spoilers
     + [{continue}] -> background
 
 === outro ===

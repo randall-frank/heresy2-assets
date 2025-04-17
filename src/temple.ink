@@ -55,8 +55,9 @@ As you move into the darkness of the temple, the heat and smell of furnace fires
 
 = cella
 # CLEAR
-~ combat_health = 10
-~ combat_attack = 2
+~ combat_health = 10.
+~ combat_attack = 2.
+~ combat_defence = 50.
 A crowd of people are milling about the center of the space, their attention on two men sneering and snapping at each other like sharp-toothed dogs. A man with a lame leg and a tattoo matching yours on his shoulder spits and screams and a man with smooth, unburnt skin and cold eyes that do not belong here.
 Jeers of anticipation fill the air like smoke like fire from a forge. Nothing like a good fight to clear the air.
 The lame man screams at his opponent, “You think you can come here like some tourist? To take what you want while we toil day and night?” He shakes his fist. “You tell that bastard Bob to come here himself. You tell him to come and I’ll tell him to…” The crowd howls as the man with cold eyes throws a right hook and the dispute is lost beneath the waves of cheers.
@@ -66,7 +67,7 @@ The lame man screams at his opponent, “You think you can come here like some t
 = intervene
 You step between the men and inadvertently get pulled into the fight.  The cold eyed man pulls a short pike from a hidden pocket.  He points it at you and the injured man and "fire" leaps out to hit the two of you.
 You return the gesture with a closed fist.
-    VAR combat_result = 0
+    ~ temp combat_result = 0
     -> combat("a cold eyed man", combat_result) ->
     { combat_result == 1:
         // you win
@@ -81,7 +82,7 @@ You return the gesture with a closed fist.
 = opisthodomos
 In an alcove, a woman stands bathed in torchlight, pointing to a piece of parchment, and talking to a group of soot-covered men. They nod their heads as a problem long in their minds, finally unknots. She runs her finger from the top to the bottom of a complex design. “If we cut the current here and reroute, the amount of cross-talk should be reduced enough that we can finally…” She sees you approach.
 “What do you want?” she says. “We’re in the middle of something important and we’re next to meet with Melampus. If you want to cut in line you’re going to need a good reason.”
-TODO
+TODO opisthodomos
 Question why you need to talk to Melampus.  …  Effectively gating access (via pog) to card (G).
 
 Challenges:
