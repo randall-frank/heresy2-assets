@@ -72,6 +72,7 @@ You return the gesture with a closed fist.
     { combat_result == 1:
         // you win
         The cold eyes roll upward and the "man" freezes, stone cold like a rock.  No motion, no response at all.  The tattooed man mouths a silent thank-you and gets lost in the crowd.
+        ~ won_cella_fight = 1
             + [Leave] -> panorama
     - else:
         // you may run away
