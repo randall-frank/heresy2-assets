@@ -46,6 +46,14 @@ description = "This looks like a gate key."
 name = "Crutch"
 description = "A rough and worn crutch."
 
+[items.melampus_key]
+name = "Melampus door code"
+description = "The digital door code for Melampus' office."
+
+[items.melampus_list]
+name = "Melampus item list"
+description = "- Oscillator<br>- Gold wiring<br>- LCD display<br>- Simple battery"
+
 #
 # States
 #

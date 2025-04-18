@@ -14,12 +14,13 @@ One can almost make out the large statue gracing the pornaos.
 {not intervene:
     The Cella is filled with small groups of people having conversions and milling about.
 }
-Deep in the interior of the temple is the opisthodomos flanked by wary acolytes.
+Deep in the interior of the temple is the opisthodomos flanked by wary acolytes.  Next to the acolytes is a heavy metal door with a digital keypad.
 
     + [Interact with the beggar] -> beggar
     + [Enter the temple pronaos] -> pronaos
     + {not intervene} [Walk the cella] -> cella
-    + [Approach the opisthodomos] -> opisthodomos
+    + {not melampus_key} [Approach the opisthodomos] -> opisthodomos
+    + [Examine the keypad] -> keypad
     + [Travel to the Private Garden] -> garden
 
 = beggar
@@ -35,7 +36,7 @@ A beggar in rags kneels by a rough, unbaked bowl. The craftspeople avoid even lo
     + [{continue}] -> panorama
 
 = donate
-He blinks his unbelieving eyes... Thank you kind sir.  I will remember you.
+He blinks his unbelieving eyes... "Thank you kind sir, take this.  It may help you more than I. I will remember you."  He tears off a swatch of (modern) cloth from his rags.  It bears the logo of the Time Corrections Agency.
     -> cash_change(-1) ->
     ~ helped_beggar = 1
     + [{continue}] -> panorama
@@ -81,25 +82,49 @@ You return the gesture with a closed fist.
     }
 
 = opisthodomos
-In an alcove, a woman stands bathed in torchlight, pointing to a piece of parchment, and talking to a group of soot-covered men. They nod their heads as a problem long in their minds, finally unknots. She runs her finger from the top to the bottom of a complex design. “If we cut the current here and reroute, the amount of cross-talk should be reduced enough that we can finally…” She sees you approach.
+# CLEAR
+In an alcove, a woman stands bathed in torchlight, pointing to a piece of parchment, and talking to a group of soot-covered men. They nod their heads as a problem long in their minds, finally unknots. She runs her finger from the top to the bottom of a complex design. “If we cut the current here and reroute, the amount of cross-talk should be reduced enough that we can finally…” She detects your approach.
 “What do you want?” she says. “We’re in the middle of something important and we’re next to meet with Melampus. If you want to cut in line you’re going to need a good reason.”
-TODO opisthodomos
-Question why you need to talk to Melampus.  …  Effectively gating access (via pog) to card (G).
+    + {helped_beggar} [Show the cloth swatch from the beggar] -> enter_via_beggar
+    * [Point out circuit flaws] -> enter_via_intelligence
+    + [Leave] -> panorama
 
-Challenges:
-a. Pity: if you have Item: Thank-you … You hand them the beggar’s blessing. The men go quiet and the woman holds it in her hands before giving it back to you. “He was the best of us, and now…” She tenses. “Now he can barely hold his begging bowl. Go ahead. We can wait a while longer.” She passes you a piece of paper with a code, then resumes her discussions.
-Get Item: Melampus Key
-
-b. Persuaded using Persuasion or Engineering
-Succeed: You saw enough of the diagram to know her design has enormous potential. But it has its flaws too. You point out a few ways of boosting power in the relays, while ensuring the diodes don’t blow out during a surge.
-
-She blinks, unsure whether what you’re saying is useful nonsense or regular nonsense. That makes two of you. She hands you a piece of paper and tells you to go ahead. She needs time to think over what you’ve said.
-Get Item: Melampus Key
-
-Fail: “That has to be…” She starts. “No. It certainly is the dumbest thing I’ve heard in a year. Go learn something and come back when you can help.” She turns her back to you and continues talking about her design.
-
-c. Fight?
-
-	Question why you need to talk to Melampus.  …  Effectively gating access (via pog) to card (G).
+= enter_via_intelligence
+// One time option
+You saw enough of the diagram to know her design has enormous potential. But it has its flaws too. You point out a few ways of boosting power in the relays, while ensuring the diodes don’t blow out during a surge.
+{ RANDOM(0,1) == 1:
+    She blinks, unsure whether what you’re saying is useful nonsense or regular nonsense. That makes two of you. She hands you a piece of paper and tells you to go ahead. She needs time to think over what you’ve said.
+    ~ melampus_key = 1
+- else:
+    “That has to be…” She starts. “No. It certainly is the dumbest thing I’ve heard in a year. Go learn something and come back when you can help.” She turns her back to you and continues talking about her design.
+}
     + [{continue}] -> panorama
+
+= enter_via_beggar
+The men go quiet and the woman holds it in her hands before giving it back to you. “He was the best of us, and now…” She tenses. “Now he can barely hold his begging bowl. Go ahead. We can wait a while longer.” She passes you a piece of paper with a code, then resumes her discussions.
+    ~ melampus_key = 1
+    + [{continue}] -> panorama
+
+= keypad
+# CLEAR
+A steel rimmed keypad sits next to a heavy door flanked with flickering torches. On either side of the door, a pair of stone guard dogs keep an eternal watch. You can hardly hear the talk of smiths, and the shouts of the crowd nearby. The ringing of hammers on anvils and the sound of quenched fire nearly deafen you.
+    + {melampus_key} [Try the Melampus keypad number]
+        There’s too much noise from the hammering. Eager to get away from it, you enter the code on the keypad.. The door swings open noiselessly and as you step through it swings shut. In here there is only the sound of one hammer…
+        -> melampus
+    + [Leave] -> panorama
+
+= melampus
+# CLEAR
+You round a corner and find a man hunched over a bench, working with a delicate piece of circuitry. A jeweler's loupe is fastened to one eye. In the corner an automated machine hammers a piece of metal, shaping it into things yet to come. High above among the columns, mechanical planets orbit a perfect sun.
+The owl flies to the other side of his bench and whistles. The man looks up and smiles. “Laura. You’re right of course..” The owl’s head spins and its wings flap enthusiastically. He laughs. “It worked! The plan worked.”
+
+{ not melampus_list:
+He turns to you but doesn’t rise from his seat. “So you’re the one Laura chose. That’s a heavy burden, but I learned long ago not to doubt her.” He looks at the owl. “Even when I was told to imprison her.” He snorts.
+“But the time has come to set her free from this… this… what other word is there than madness?” He waves his arms around the room. “Bring me these items and we can restore her to where she belongs.” Melampus throws a scroll at you and returns to his work.
+    ~ melampus_list = 1
+- else:
+Exasperated, "You don't seem to have all of the list items yet.  I can't help Laura without all those parts."
+}
+    + [Leave] -> panorama
+
 
