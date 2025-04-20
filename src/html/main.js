@@ -4,6 +4,12 @@ function refresh_inventory(story, elem) {
         let item_elem = document.querySelector('#item_'+name);
         let visible = story.variablesState[name];
         if (visible) {
+            // if the item has a hide_variable tag, we still might hide it
+            if (value.hasOwnProperty('hide_variable')) {
+                if (story.variablesState[value.hide_variable]) visible = 0;
+            }
+        }
+        if (visible) {
             item_elem.style.display = "block";
         } else {
             item_elem.style.display = "none";

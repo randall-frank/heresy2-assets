@@ -20,7 +20,9 @@ Deep in the interior of the temple is the opisthodomos flanked by wary acolytes.
     + [Enter the temple pronaos] -> pronaos
     + {not intervene} [Walk the cella] -> cella
     + {not melampus_key} [Approach the opisthodomos] -> opisthodomos
-    + [Examine the keypad] -> keypad
+    + {not melampus} [Examine the keypad] -> keypad
+    + {melampus} [Visit Melampus via the locked door] -> melampus
+    + {melampus_list} [Travel to the Agora] -> agora
     + [Travel to the Private Garden] -> garden
 
 = beggar
@@ -92,7 +94,7 @@ In an alcove, a woman stands bathed in torchlight, pointing to a piece of parchm
 = enter_via_intelligence
 // One time option
 You saw enough of the diagram to know her design has enormous potential. But it has its flaws too. You point out a few ways of boosting power in the relays, while ensuring the diodes don’t blow out during a surge.
-{ RANDOM(0,1) == 1:
+{ RANDOM(0,2) > 0:
     She blinks, unsure whether what you’re saying is useful nonsense or regular nonsense. That makes two of you. She hands you a piece of paper and tells you to go ahead. She needs time to think over what you’ve said.
     ~ melampus_key = 1
 - else:
@@ -115,15 +117,20 @@ A steel rimmed keypad sits next to a heavy door flanked with flickering torches.
 
 = melampus
 # CLEAR
+# SBIMAGE: locations/melampus.png
 You round a corner and find a man hunched over a bench, working with a delicate piece of circuitry. A jeweler's loupe is fastened to one eye. In the corner an automated machine hammers a piece of metal, shaping it into things yet to come. High above among the columns, mechanical planets orbit a perfect sun.
-The owl flies to the other side of his bench and whistles. The man looks up and smiles. “Laura. You’re right of course..” The owl’s head spins and its wings flap enthusiastically. He laughs. “It worked! The plan worked.”
-
 { not melampus_list:
+The owl flies to the other side of his bench and whistles. The man looks up and smiles. “Laura. You’re right of course..” The owl’s head spins and its wings flap enthusiastically. He laughs. “It worked! The plan worked.”
 He turns to you but doesn’t rise from his seat. “So you’re the one Laura chose. That’s a heavy burden, but I learned long ago not to doubt her.” He looks at the owl. “Even when I was told to imprison her.” He snorts.
 “But the time has come to set her free from this… this… what other word is there than madness?” He waves his arms around the room. “Bring me these items and we can restore her to where she belongs.” Melampus throws a scroll at you and returns to his work.
     ~ melampus_list = 1
 - else:
-Exasperated, "You don't seem to have all of the list items yet.  I can't help Laura without all those parts."
+    { check_melampus_list():
+        "Excellent!  I've already started on the item you need."  He disappears behind a workbench, returning with a USB key.  "Here it is!  You need only plug this into Laura... the owl via a reasonably powerful computer.  Good luck!"
+        ~ antivirus = 1
+    - else:
+        Exasperated, "You don't seem to have all of the list items yet.  I can't help Laura without all those parts."
+    }
 }
     + [Leave] -> panorama
 

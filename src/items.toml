@@ -14,6 +14,7 @@
 #
 # Optional item keys:
 # url = "items/tattoo.png"   - local URL to an image of the item
+# hide_variable = "varname"  - name of a variable that will hide the item is the variable is non-zero
 #
 
 [items]
@@ -28,11 +29,6 @@ name = "Digital card key"
 description = "A standard magnetic card swipe key."
 url = "items/keycard.png"
 
-[items.lcd_display]
-name = "LCD display board"
-description = "A flat panel display module."
-url = "items/lcd_panel.png"
-
 [items.insane_laura]
 name = "Mechanical owl"
 description = "A marvel of science? There seems to be an entity inside, but one might question its sanity."
@@ -41,6 +37,7 @@ url = "items/owl.png"
 [items.garden_door_key]
 name = "A large iron key"
 description = "This looks like a gate key."
+hide_variable = "temple_found"
 
 [items.crutch]
 name = "Crutch"
@@ -49,10 +46,37 @@ description = "A rough and worn crutch."
 [items.melampus_key]
 name = "Melampus door code"
 description = "The digital door code for Melampus' office."
+hide_variable = "melampus_list"
 
 [items.melampus_list]
 name = "Melampus item list"
 description = "- Oscillator<br>- Gold wiring<br>- LCD display<br>- Simple battery"
+hide_variable = "antivius"
+
+[items.antivirus]
+name = "Antivirus"
+description = "Custom-developed USB key containing a the software needed to 'unlock' Laura."
+url = "items/antivirus.png"
+
+[items.oscillator]
+name = "Oscillator"
+description = "A finely tuned crystal oscillator."
+url = "items/oscillator.jpg"
+
+[items.lcd_display]
+name = "LCD display board"
+description = "A flat panel display module."
+url = "items/lcd_panel.png"
+
+[items.gold_wiring]
+name = "Gold wire"
+description = "A spool of gold wire."
+url = "items/gold_wiring.jpg"
+
+[items.simple_battery]
+name = "Battery"
+description = "A simple Li-W battery."
+url = "items/simple_battery.png"
 
 #
 # States

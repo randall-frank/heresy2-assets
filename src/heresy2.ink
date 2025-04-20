@@ -7,6 +7,7 @@ INCLUDE base.ink
 INCLUDE workshop.ink
 INCLUDE garden.ink
 INCLUDE temple.ink
+INCLUDE agora.ink
 
 -> intro
 
@@ -50,6 +51,12 @@ Athens Greece, 450 B.C. - The age of Pericles
         ~ cash = 0
     }
     ->->
+
+=== function check_melampus_list()
+    { oscillator and lcd_display and simple_battery and gold_wiring:
+        ~ return 1
+    }
+    ~ return 0
 
 === function attack_power()
 TODO compute attack power (adjust based on items)
