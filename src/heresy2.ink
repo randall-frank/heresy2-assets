@@ -14,7 +14,7 @@ INCLUDE marble_workshop.ink
 -> intro
 
 === intro ===
-# BACKGROUND: background.png
+# BACKGROUND: greece.png
 # AUDIOLOOP:
 
 ~ location_name = ""

@@ -45,7 +45,7 @@ description = "A rough and worn crutch."
 
 [items.melampus_key]
 name = "Melampus door code"
-description = "The digital door code for Melampus' office."
+description = "The digital door code for Melampus' office: 1337."
 hide_variable = "melampus_list"
 
 [items.melampus_list]
@@ -77,6 +77,19 @@ url = "items/gold_wiring.jpg"
 name = "Battery"
 description = "A simple Li-W battery."
 url = "items/simple_battery.png"
+
+[items.crypto_unit]
+name = "Quantum Cryptograph"
+description = "Capable of decoding the most complex cyphers with relative ease (and enough power)."
+
+[items.quad_shield]
+name = "Quadiken Shield"
+description = "Shield unit that protects against a Quadiken (electromagnetic) weapon."
+
+[items.fava_beans]
+name = "Fava beans"
+description = "A simple bowl of fava beans."
+url = "items/fava.png"
 
 #
 # States

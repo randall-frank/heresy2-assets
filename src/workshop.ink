@@ -1,6 +1,6 @@
 === workshop ===
 ~ location_name = "Mausoleum Workshop (450 B.C.)"
-# BACKGROUND: greece.png
+# BACKGROUND: locations/mausoleum.jpg
 # CLEAR
 # AUDIOLOOP: audio/workshop.m4a
 -> power_change( location_change_cost ) ->
@@ -8,7 +8,7 @@
 
 = transfer
 ~ location_name = "Mausoleum Workshop (450 B.C.)"
-# BACKGROUND: greece.png
+# BACKGROUND: locations/mausoleum.jpg
 # CLEAR
 # AUDIOLOOP: audio/workshop.m4a
 A twinge, a brief pain in the chest and you’re in another world.
@@ -29,7 +29,6 @@ Along the hallway to your left is a robotic tattoo machine, room 236.  Room 237 
     + [Investigate the cell] -> padded_cell
     + [Exit via the iron gates] -> to_garden
     + [Capitulate...] -> give_up
-
 
 = to_garden
 # CLEAR

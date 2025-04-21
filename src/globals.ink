@@ -57,6 +57,9 @@ VAR spoke_with_andrew = 0
 // is non-zero if you won the fight in the temple cella
 VAR won_cella_fight = 0
 
+// if non-zero, Laura has pointed out the scales
+VAR tip_scales = 0
+
 // variables used by combat() tunnel.  Set these first and call combat() to
 // run a round of "combat"
 VAR combat_health = 0.
