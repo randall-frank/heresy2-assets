@@ -8,6 +8,8 @@ INCLUDE workshop.ink
 INCLUDE garden.ink
 INCLUDE temple.ink
 INCLUDE agora.ink
+INCLUDE pnyx.ink
+INCLUDE marble_workshop.ink
 
 -> intro
 

@@ -16,6 +16,8 @@ A dark alley fills the gap between the eating establishments and an ironmongers.
     + [Approach the fancy restaurant] -> restaurant
     + [Amble down the alley] -> alley
     + [Pay a visit to the ironmongers] -> hardware
+    + [Travel to the Pnyx forum] -> pnyx
+    + [Travel to Phidias workshop] -> marble_workshop
     + [Travel to the Temple of Hephaestus] -> temple
 
 = black_market
