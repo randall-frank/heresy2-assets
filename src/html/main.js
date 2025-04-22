@@ -235,6 +235,7 @@ function combo_lock_button(story, i, direction) {
     combo_lock_update_icons(story);
 }
 
+/**********************  Story starts here *******************/
 
 (function(storyContent) {
 
@@ -281,6 +282,13 @@ function combo_lock_button(story, i, direction) {
     setupButtons(hasSave);
     build_inventory(story, inventoryContainer);
     build_status(story);
+
+    // Check for "dev" mode
+    const urlParams = new URLSearchParams(window.location.search);
+    const dev_mode = Number(urlParams.get('dev'));
+    if (!isNaN(dev_mode)) {
+        story.variablesState.debug = dev_mode;
+    }
 
     // Set initial save point
     savePoint = story.state.toJson();

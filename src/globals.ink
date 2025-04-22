@@ -75,3 +75,6 @@ VAR combat_ratio = 100.
 VAR combo_value = 0
 // If set to 1, use the set of symbols rather than numbers
 VAR combo_symbols = 0
+
+// debug can be set to any value via '?dev=x'
+VAR debug = 0
