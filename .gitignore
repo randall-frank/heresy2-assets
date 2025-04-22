@@ -16,5 +16,7 @@ venv/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 
+# avoid built files
 tmp.json
 src/item_globals.ink
+build/
