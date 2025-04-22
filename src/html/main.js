@@ -104,26 +104,25 @@ function build_status(story) {
 }
 
 function combo_lock_update_icons(story) {
+    let cnames = ["fa-solid fa-0", "fa-solid fa-1", "fa-solid fa-2",
+        "fa-solid fa-3", "fa-solid fa-4", "fa-solid fa-5", "fa-solid fa-6",
+        "fa-solid fa-7", "fa-solid fa-8", "fa-solid fa-9" ];
     let value = story.variablesState.combo_value;
     let digit = value % 10;
     value = Math.trunc(value / 10);
-    let cname = "fa-solid fa-" + digit.toString();
     let elem = document.querySelector('#digit3');
-    elem.className = cname;
+    elem.className = cnames[digit];
     digit = value % 10;
     value = Math.trunc(value / 10);
-    cname = "fa-solid fa-" + digit.toString();
     elem = document.querySelector('#digit2');
-    elem.className = cname;
+    elem.className = cnames[digit];
     digit = value % 10;
     value = Math.trunc(value / 10);
-    cname = "fa-solid fa-" + digit.toString();
     elem = document.querySelector('#digit1');
-    elem.className = cname;
+    elem.className = cnames[digit];
     digit = value % 10;
-    cname = "fa-solid fa-" + digit.toString();
     elem = document.querySelector('#digit0');
-    elem.className = cname;
+    elem.className = cnames[digit];
 }
 
 function insert_combo_lock(story, parent) {
@@ -134,52 +133,52 @@ function insert_combo_lock(story, parent) {
 <td>
 <table class="combo">
   <tr>
-    <th><button><i class="fa-solid fa-chevron-up"></i></button></th>
+    <th><button id="up0"><i class="fa-solid fa-chevron-up"></i></button></th>
   </tr>
   <tr>
     <td><i id="digit0" class="fa-solid fa-0"></i></td>
   </tr>
   <tr>
-    <th><button><i class="fa-solid fa-chevron-down"></i></button></th>
+    <th><button id="down0"><i class="fa-solid fa-chevron-down"></i></button></th>
   </tr>
 </table>
 </td>
 <td>
 <table class="combo">
   <tr>
-    <th><button><i class="fa-solid fa-chevron-up"></i></button></th>
+    <th><button id="up1"><i class="fa-solid fa-chevron-up"></i></button></th>
   </tr>
   <tr>
     <td><i id="digit1" class="fa-solid fa-crutch"></i></td>
   </tr>
   <tr>
-    <th><button><i class="fa-solid fa-chevron-down"></i></button></th>
+    <th><button id="down1"><i class="fa-solid fa-chevron-down"></i></button></th>
   </tr>
 </table>
 </td>
 <td>
 <table class="combo">
   <tr>
-    <th><button><i class="fa-solid fa-chevron-up"></i></button></th>
+    <th><button id="up2"><i class="fa-solid fa-chevron-up"></i></button></th>
   </tr>
   <tr>
     <td><i id="digit2" class="fa-solid fa-scale-balanced"></i></td>
   </tr>
   <tr>
-    <th><button><i class="fa-solid fa-chevron-down"></i></button></th>
+    <th><button id="down2"><i class="fa-solid fa-chevron-down"></i></button></th>
   </tr>
 </table>
 </td>
 <td>
 <table class="combo">
   <tr>
-    <th><button><i class="fa-solid fa-chevron-up"></i></button></th>
+    <th><button id="up3"><i class="fa-solid fa-chevron-up"></i></button></th>
   </tr>
   <tr>
     <td><i id="digit3" class="fa-solid fa-1"></i></td>
   </tr>
   <tr>
-    <th><button><i class="fa-solid fa-chevron-down"></i></button></th>
+    <th><button id="down3"><i class="fa-solid fa-chevron-down"></i></button></th>
   </tr>
 </table>
 </tr>
@@ -187,7 +186,31 @@ function insert_combo_lock(story, parent) {
     combo_div.innerHTML = s;
     parent.appendChild(combo_div);
     combo_lock_update_icons(story);
+    for (let i = 0; i < 4; i++) {
+        let elem = document.querySelector("#up" + i.toString());
+        const up_callback = combo_lock_button.bind(null, story, i, 1);
+        elem.addEventListener("click", up_callback);
+        elem = document.querySelector("#down" + i.toString());
+        const down_callback = combo_lock_button.bind(null, story, i, -1);
+        elem.addEventListener("click", down_callback);
+    }
     return combo_div;
+}
+
+function combo_lock_button(story, i, direction) {
+    let value = story.variablesState.combo_value;
+    let digits = value.toString().split("").map(Number);
+    while (digits.length < 4) digits.unshift(0);
+    digits[i] += direction;
+    if (digits[i] < 0) digits[i] += 10;
+    if (digits[i] > 9) digits[i] -= 10;
+    // rebuild the number
+    value = digits[0];
+    for(let i = 1; i<4; i++) {
+        value = value * 10 + digits[i];
+    }
+    story.variablesState.combo_value = value;
+    combo_lock_update_icons(story);
 }
 
 

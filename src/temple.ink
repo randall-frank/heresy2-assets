@@ -110,7 +110,7 @@ The men go quiet and the woman holds it in her hands before giving it back to yo
 = keypad
 # CLEAR
 A steel rimmed keypad sits next to a heavy door flanked with flickering torches. On either side of the door, a pair of stone guard dogs keep an eternal watch. You can hardly hear the talk of smiths, and the shouts of the crowd nearby. The ringing of hammers on anvils and the sound of quenched fire nearly deafen you. There’s too much noise from the hammering. Eager to get away from it, you enter the code on the keypad..
-~ combo_value = 1337
+~ combo_value = 0
 # COMBO
     + [Try the combination]
         { combo_value == 1337:
