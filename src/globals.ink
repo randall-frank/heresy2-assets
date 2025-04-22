@@ -67,3 +67,11 @@ VAR combat_attack = 0.
 VAR combat_defence = 50.
 // damage = attack*(ratio/(ratio+defence))
 VAR combat_ratio = 100.
+
+// variable used by the "combination lock" (# COMBO)
+// This variable contains the initial state and
+// the GUI sets story.variablesState.combo_value
+// to the current combination state.
+VAR combo_value = 0
+// If set to 1, use the set of symbols rather than numbers
+VAR combo_symbols = 0

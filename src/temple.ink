@@ -109,10 +109,17 @@ The men go quiet and the woman holds it in her hands before giving it back to yo
 
 = keypad
 # CLEAR
-A steel rimmed keypad sits next to a heavy door flanked with flickering torches. On either side of the door, a pair of stone guard dogs keep an eternal watch. You can hardly hear the talk of smiths, and the shouts of the crowd nearby. The ringing of hammers on anvils and the sound of quenched fire nearly deafen you.
-    + {melampus_key} [Try the Melampus keypad number]
-        There’s too much noise from the hammering. Eager to get away from it, you enter the code on the keypad.. The door swings open noiselessly and as you step through it swings shut. In here there is only the sound of one hammer…
-        -> melampus
+A steel rimmed keypad sits next to a heavy door flanked with flickering torches. On either side of the door, a pair of stone guard dogs keep an eternal watch. You can hardly hear the talk of smiths, and the shouts of the crowd nearby. The ringing of hammers on anvils and the sound of quenched fire nearly deafen you. There’s too much noise from the hammering. Eager to get away from it, you enter the code on the keypad..
+~ combo_value = 1337
+# COMBO
+    + [Try the combination]
+        { combo_value == 1337:
+            "Access granted." The door swings open noiselessly and as you step through it swings shut. In here there is only the sound of one hammer…
+            + [{continue}] -> melampus
+        - else:
+            "Bzzt! Invalid access attempt logged."
+            + [Try again] -> keypad
+        }
     + [Leave] -> panorama
 
 = melampus

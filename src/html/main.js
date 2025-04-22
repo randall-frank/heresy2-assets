@@ -103,6 +103,92 @@ function build_status(story) {
     }
 }
 
+function combo_lock_update_icons(story) {
+    let value = story.variablesState.combo_value;
+    let digit = value % 10;
+    value = Math.trunc(value / 10);
+    let cname = "fa-solid fa-" + digit.toString();
+    let elem = document.querySelector('#digit3');
+    elem.className = cname;
+    digit = value % 10;
+    value = Math.trunc(value / 10);
+    cname = "fa-solid fa-" + digit.toString();
+    elem = document.querySelector('#digit2');
+    elem.className = cname;
+    digit = value % 10;
+    value = Math.trunc(value / 10);
+    cname = "fa-solid fa-" + digit.toString();
+    elem = document.querySelector('#digit1');
+    elem.className = cname;
+    digit = value % 10;
+    cname = "fa-solid fa-" + digit.toString();
+    elem = document.querySelector('#digit0');
+    elem.className = cname;
+}
+
+function insert_combo_lock(story, parent) {
+    let combo_div = document.createElement('div');
+    combo_div.style.width = "100%";
+    let s = `<table class="combo-holder">
+<tr>
+<td>
+<table class="combo">
+  <tr>
+    <th><button><i class="fa-solid fa-chevron-up"></i></button></th>
+  </tr>
+  <tr>
+    <td><i id="digit0" class="fa-solid fa-0"></i></td>
+  </tr>
+  <tr>
+    <th><button><i class="fa-solid fa-chevron-down"></i></button></th>
+  </tr>
+</table>
+</td>
+<td>
+<table class="combo">
+  <tr>
+    <th><button><i class="fa-solid fa-chevron-up"></i></button></th>
+  </tr>
+  <tr>
+    <td><i id="digit1" class="fa-solid fa-crutch"></i></td>
+  </tr>
+  <tr>
+    <th><button><i class="fa-solid fa-chevron-down"></i></button></th>
+  </tr>
+</table>
+</td>
+<td>
+<table class="combo">
+  <tr>
+    <th><button><i class="fa-solid fa-chevron-up"></i></button></th>
+  </tr>
+  <tr>
+    <td><i id="digit2" class="fa-solid fa-scale-balanced"></i></td>
+  </tr>
+  <tr>
+    <th><button><i class="fa-solid fa-chevron-down"></i></button></th>
+  </tr>
+</table>
+</td>
+<td>
+<table class="combo">
+  <tr>
+    <th><button><i class="fa-solid fa-chevron-up"></i></button></th>
+  </tr>
+  <tr>
+    <td><i id="digit3" class="fa-solid fa-1"></i></td>
+  </tr>
+  <tr>
+    <th><button><i class="fa-solid fa-chevron-down"></i></button></th>
+  </tr>
+</table>
+</tr>
+</table>`;
+    combo_div.innerHTML = s;
+    parent.appendChild(combo_div);
+    combo_lock_update_icons(story);
+    return combo_div;
+}
 
 
 (function(storyContent) {
@@ -242,6 +328,13 @@ function build_status(story) {
                     delay += 200.0;
                 }
 
+                // COMBO  (inline combination lock)
+                else if (tag == "COMBO")  {
+                    let elem = insert_combo_lock(story, storyContainer);
+                    showAfter(delay, elem);
+                    delay += 200.0;
+                }
+
                 // LINK: url
                 else if( splitTag && splitTag.property == "LINK" ) {
                     window.location.href = splitTag.val;
@@ -267,6 +360,8 @@ function build_status(story) {
                 else if( tag == "CLEAR" || tag == "RESTART" ) {
                     removeAll("p");
                     removeAll("img");
+                    // Removes the "# COMBO" block
+                    removeAll("div");
 
                     // Comment out this line if you want to leave the header visible when clearing
                     setVisible(".header", false);

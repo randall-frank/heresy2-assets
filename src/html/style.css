@@ -332,3 +332,75 @@ body.dark {
 .dark #controls {
     background: black;
 }
+
+
+/* For the combination box table(s) */
+table.combo button {
+	background-color: DimGray;
+	width: 100%;
+	height: 100%;
+	border: none;
+	color: white;
+	padding: 0px 0px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+table.combo img {
+	background-color: DimGray;
+	border: none;
+	padding: 0px 0px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Darker background on mouse-over */
+table.combo button:hover {
+	background-color: LightGray;
+}
+table.combo-holder {
+	border-spacing: 0;
+    margin: 0 auto;
+}
+table.combo-holder td {
+	padding: 0px 1px;
+}
+table.combo {
+	color: white;
+	background-color: DimGray;
+    vertical-align: middle;
+    text-align: center;
+	border-spacing: 0;
+	border-collapse: separate;
+	border-radius: 6px;
+	border: 1px solid black;
+}
+table.combo td {
+	width: 2em;
+	height: 2em;
+}
+table.combo th {
+	width: 2em;
+	height: 1.5em;
+}
+
+/* Apply a border to the right of all but the last column */
+table.combo th:not(:last-child),
+table.combo td:not(:last-child) {
+	border-right: 1px solid black;
+}
+
+/* Apply a border to the bottom of all but the last row */
+table.combo>thead>tr:not(:last-child)>th,
+table.combo>thead>tr:not(:last-child)>td,
+table.combo>tbody>tr:not(:last-child)>th,
+table.combo>tbody>tr:not(:last-child)>td,
+table.combo>tfoot>tr:not(:last-child)>th,
+table.combo>tfoot>tr:not(:last-child)>td,
+table.combo>tr:not(:last-child)>td,
+table.combo>tr:not(:last-child)>th,
+table.combo>thead:not(:last-child),
+table.combo>tbody:not(:last-child),
+table.combo>tfoot:not(:last-child) {
+	border-bottom: 1px solid #505050;
+}
