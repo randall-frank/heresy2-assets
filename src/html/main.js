@@ -103,10 +103,32 @@ function build_status(story) {
     }
 }
 
+/* Symbol mode
+0 fa-solid fa-crutch
+1 fa-solid fa-bolt
+2 fa-solid fa-scale-balanced
+3 fa-regular fa-sun
+4 fa-solid fa-fish
+5 fa-regular fa-moon
+6 fa-regular fa-star
+7 fa-solid fa-wind
+8 fa-regular fa-user
+9 fa-regular fa-hourglass
+*/
+/* Alternatives
+fa-solid fa-fire
+fa-solid fa-tree
+*/
 function combo_lock_update_icons(story) {
     let cnames = ["fa-solid fa-0", "fa-solid fa-1", "fa-solid fa-2",
         "fa-solid fa-3", "fa-solid fa-4", "fa-solid fa-5", "fa-solid fa-6",
         "fa-solid fa-7", "fa-solid fa-8", "fa-solid fa-9" ];
+    if (story.variablesState.combo_symbols) {
+        cnames = ["fa-solid fa-crutch", "fa-solid fa-bolt", "fa-solid fa-scale-balanced",
+            "fa-regular fa-sun", "fa-solid fa-fish", "fa-regular fa-moon",
+            "fa-regular fa-star", "fa-solid fa-wind", "fa-regular fa-user",
+            "fa-regular fa-hourglass"];
+    }
     let value = story.variablesState.combo_value;
     let digit = value % 10;
     value = Math.trunc(value / 10);
