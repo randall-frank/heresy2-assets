@@ -1,5 +1,4 @@
 # theme: light
-# author: Copyright (C) STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni
 
 INCLUDE globals.ink
 INCLUDE item_globals.ink
@@ -11,26 +10,50 @@ INCLUDE agora.ink
 INCLUDE pnyx.ink
 INCLUDE marble_workshop.ink
 
-
-// Need to build a lock widget:  https://codepen.io/carsonf92/pen/OGyyGQ
-
-
 -> intro
 
 === intro ===
+~ location_name = ""
+
+# CLEAR
 # BACKGROUND: greece.png
 # AUDIOLOOP:
 
-~ location_name = ""
-
-<h1><b>αίρεση: Of what mettle Gods?</b></h1>
+<h1><b>αίρεση II: Of what mettle Gods?</b></h1>
 Athens Greece, 450 B.C. - The age of Pericles
 
+<h2>Copyright (C) STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni</h2>
 <h2>Version: STORY_VERSION</h2>
     + [Begin the adventure] -> base
-    + [Heresy background] -> background
+    + [Heresy I: background] -> background
+    + [Thanks] -> thanks_to
+    + [License] -> licence
     + [Quit] -> outro
 
+
+=== thanks_to ===
+# CLEAR
+This project draws on the inspiration and efforts of a number of folks:
+
+Testers:
+<ul>
+<li>Randy Frank</li><li>Andrew Florance</li><li>Marina Galvagni</li>
+</ul>
+
+Sounds and images used with attribution:
+<ul>
+<li>Various images generated using DALL·E</li><li>Apollo89 - taverns, street, chatter, people, ambience, athens, greece.wav by Apollo89 -- freesound.org 648208 -- License: Creative Commons 0</li><li>Textures: www.myfreetextures.com</li>
+</ul>
+    + [Back] -> intro
+
+=== licence ===
+# CLEAR
+<h2>Heresy II is released under the MIT License</h2>
+Copyright (C) STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    + [Back] -> intro
 
 // This tunnel is used to change the current power value up (+) or down (-)
 // The value is capped [0,100] and if 0, the return will be redirected

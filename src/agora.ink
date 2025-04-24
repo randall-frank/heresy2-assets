@@ -1,7 +1,7 @@
 === agora ===
 ~ location_name = "The Agora"
 # BACKGROUND: locations/agora.png
-# AUDIOLOOP: audio/temple.mp3
+# AUDIOLOOP: audio/agora.mp3
 -> power_change( location_change_cost ) ->
 -> panorama
 
