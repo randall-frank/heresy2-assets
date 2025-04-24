@@ -64,9 +64,25 @@ Athens Greece, 450 B.C. - The age of Pericles
     }
     ~ return 0
 
+// See norm.py for the derivation, but this function returns
+// a floating point number from [0,100] with an approximate
+// normal distribution.
+// e.g. numbers around 50. have the highest probability.
+// The approach was to compute the probability function
+// and then fit that function to a 5th order polynomial
+=== function rand_norm()
+    ~ temp t = FLOAT(RANDOM(0,100))
+    ~ temp f = 2.28564682
+    ~ f = f + 0.776857910*t
+    ~ f = f + 0.0590911716*t*t
+    ~ f = f - 0.00219272853*t*t*t
+    ~ f = f + 0.0000271392976*t*t*t*t
+    ~ f = f - 0.000000109325083*t*t*t*t*t
+    ~ return f
+
 === function attack_power()
 TODO compute attack power (adjust based on items)
-    ~ return 10.
+    ~ return 20.
 
 === function defence_power()
 TODO compute defence power (adjust based on items)
@@ -74,14 +90,13 @@ TODO compute defence power (adjust based on items)
 
 // do a round of combat.
 === combat(opponent, ref success)
-// Compute damage as = attack*(ratio/(ratio+defence))
-// Then make 1/2 of the damage random, so = damage/2 + random(0,damage/2)
-//
     You are locked in combat with {opponent} who is {combat_health>exo_power: stronger|weaker} than you.
+    // Compute base damage as = attack*(ratio/(ratio+defence))
+    // Then weight by a sample from a normal distribution
     ~ temp dmg_to_other = INT(FLOAT(attack_power())*FLOAT(combat_ratio)/FLOAT(combat_ratio+combat_defence))
-    ~ dmg_to_other = (dmg_to_other / 2) + RANDOM(0, dmg_to_other / 2)
+    ~ dmg_to_other = INT(FLOAT(dmg_to_other)*(rand_norm()/100.0))
     ~ temp dmg_to_player = INT(FLOAT(combat_attack)*FLOAT(combat_ratio)/FLOAT(combat_ratio+defence_power()))
-    ~ dmg_to_player = (dmg_to_player / 2) + RANDOM(0, dmg_to_player / 2)
+    ~ dmg_to_player = INT(FLOAT(dmg_to_player)*(rand_norm()/100.0))
     You do {dmg_to_other} damage while they do {dmg_to_player} to you.
     -> power_change(-dmg_to_player) ->
     ~ combat_health -= dmg_to_other

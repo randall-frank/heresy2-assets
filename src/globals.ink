@@ -77,4 +77,5 @@ VAR combo_value = 0
 VAR combo_symbols = 0
 
 // debug can be set to any value via '?dev=x'
+// This enables shortcuts {debug} that speed development
 VAR debug = 0
