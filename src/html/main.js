@@ -309,6 +309,9 @@ function combo_lock_button(story, i, direction) {
         // Clear the image sidebar
         imageContainer.innerHTML = '';
 
+        // Placeholder for in injected raw HTML
+        var HTML_text = '';
+
         // Generate story text - loop through available content
         while(story.canContinue) {
 
@@ -398,6 +401,11 @@ function combo_lock_button(story, i, direction) {
                     window.open(splitTag.val);
                 }
 
+                // HTML: text
+                else if( splitTag && splitTag.property == "HTML" ) {
+                    HTML_text = splitTag.val.replace("<ss>", "//");
+                }
+
                 // BACKGROUND: src
                 else if( splitTag && splitTag.property == "BACKGROUND" ) {
                     outerScrollContainer.style.backgroundImage = 'url('+splitTag.val+')';
@@ -438,6 +446,10 @@ function combo_lock_button(story, i, direction) {
 
             // Create paragraph element (initially hidden)
             var paragraphElement = document.createElement('p');
+            // Inject # HTML tag into the paragraph text verbatim
+            paragraphText = paragraphText.replace("HTML", HTML_text);
+            HTML_text = '';
+            // fill in the <p> text
             paragraphElement.innerHTML = paragraphText;
             storyContainer.appendChild(paragraphElement);
 
@@ -524,13 +536,6 @@ function combo_lock_button(story, i, direction) {
             scrollDown(previousBottomEdge);
 
         // Check for "end game"
-        // Ran out of power...
-        /*
-        if (story.variablesState.exo_power === 0) {
-            story.ChoosePathString("end_game_power");
-            continueStory();
-        }
-        */
         // Other async "end game" conditions...
     }
 

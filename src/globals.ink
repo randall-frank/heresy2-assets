@@ -60,6 +60,9 @@ VAR won_cella_fight = 0
 // if non-zero, Laura has pointed out the scales
 VAR tip_scales = 0
 
+// if non-zero you have bested the philosopher
+VAR philosopher_win = 0
+
 // variables used by combat() tunnel.  Set these first and call combat() to
 // run a round of "combat"
 VAR combat_health = 0.

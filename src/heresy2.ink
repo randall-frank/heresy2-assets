@@ -22,7 +22,7 @@ INCLUDE marble_workshop.ink
 <h1><b>αίρεση II: Of what mettle Gods?</b></h1>
 Athens Greece, 450 B.C. - The age of Pericles
 
-<h2>Copyright (C) STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni</h2>
+<h2>Copyright © STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni</h2>
 <h2>Version: STORY_VERSION</h2>
     + [Begin the adventure] -> base
     + [Heresy I: background] -> background
@@ -48,8 +48,9 @@ Sounds and images used with attribution:
 
 === licence ===
 # CLEAR
-<h2>Heresy II is released under the MIT License</h2>
-Copyright (C) STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni
+# HTML: <a target="_blank" href="https:<ss>github.com/randall-frank/heresy2-assets">Heresy II</a>
+<h2>HTML is released under the MIT License</h2>
+Copyright © STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -145,8 +146,9 @@ The android shell ran out of power.  The fluidic body cools and solidifies resul
 
 === background ===
 # CLEAR
-This story is actually a continuation of the story used in the Heresy T.I.M.E Stories fan written expansion.  That expansion can be downloaded and accessed <a href="https://github.com/randall-frank/heresy-assets">here</a>. The expansion can be downloaded, printed and played.  It is also available as a Tabletop Simulator expansion pack on Steam.
-If you are not in a position to play the game, a basic overview of the key game point is available.  Note: it does include spoilers.
+# HTML: <a target="_blank" href="https:<ss>github.com/randall-frank/heresy-assets">here</a>
+This story is actually a continuation of the story used in the Heresy T.I.M.E Stories fan written expansion.  That expansion can be downloaded and accessed HTML. The expansion can be downloaded, printed and played.  It is also available as a Tabletop Simulator expansion pack on Steam.
+If you are not in a position to play the original Heresy game, a basic overview of the key game point is available.  Note: it does include spoilers.
     + [Give me the (spoiler) background] -> spoilers
     + [I just want to play Heresy II]
         # RESTART
