@@ -91,6 +91,15 @@ name = "Fava beans"
 description = "A simple bowl of fava beans."
 url = "items/fava.png"
 
+[items.door_to_oracle_code]
+name = "Room 237 Code"
+description = "A digital lock keycode."
+url = "items/oracle_keycode.png"
+
+[items.novel]
+name = "Novel"
+description = "Gravity's Rainbow by Thomas Pynchon."
+url = "items/novel.jpg"
 #
 # States
 #

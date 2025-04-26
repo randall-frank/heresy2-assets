@@ -20,10 +20,12 @@ A click, a whirr, and life flows through you like a river undammed. The red warm
  “My, don’t you look nice! Now keep in mind appearance and ability always come with a price!” Eliza must have seen you twitch. A tinny laugh comes from the console. “But this is an all-inclusive holiday! What I meant of course was the price is POWER. You’ll need batteries to keep operating, and if you don’t have enough energy your body may enter ENERGY SAVING MODE. That means your form could freeze, while your consciousness is preserved for centuries or even millennia to come! Now one last thing before you get out there to enjoy yourself…”
     + [{continue}] -> tattoo
 
+
 = panorama
 Along the hallway to your left is a robotic tattoo machine, room 236.  Room 237 is hidden behind a security door.  An open office space on the right holds a plain desk with a computer terminal. Finally, at the end on the left is what appears to be a holding cell.
     + [Take a seat at the tattoo machine] -> tattoo
-    + [Try to enter room 237] -> door_to_oracle
+    + {not apollo} [Try to enter room 237] -> door_to_oracle
+    + {apollo} [Travel to the Temple of Apollo] -> travel_to_apollo
     + [Take a seat at the desk] -> desk
     + [Examine the computer terminal] -> computer_terminal
     + [Investigate the cell] -> padded_cell
@@ -58,11 +60,30 @@ The laser makes a few motions like a painter’s final strokes on a canvas and t
 }
 
 
+= travel_to_apollo
+# AUDIO: audio/shock.mp3
+The trip happens in a flash, literally. Some form of spatial displacement field instantly transports you from the Mausoleum to the Temple of Apollo.
+    + [{continue}] -> apollo
+
+
 = door_to_oracle
 # CLEAR
 # AUDIO: audio/door_locked.m4a
-A locked and bolted metal door with a digital keypad stands before you, looking like something that would protect the entrance to an underworld hideout. You try the door but it won’t budge, even with your considerable strength, you will need to find the keycode. Peering through the grille high upon the door, you glimpse the bronze escutcheon of Apollo on the wall.  Listening closely you overhear hushed whispers of Pythia’s great machine..   
-    -> panorama
+A locked and bolted metal door with a digital keypad stands before you, looking like something that would protect the entrance to an underworld hideout. You try the door but it won’t budge, even with your considerable strength, you will need to find the keycode..
+~ combo_symbols = 1
+~ combo_value = 0
+# COMBO
+Peering through the grille high upon the door, you glimpse the bronze escutcheon of Apollo on the wall.  Listening closely you overhear hushed whispers of Pythia’s great machine.
+    + [Try the combination]
+        { combo_value == 7154:
+            The door opens and you stem in...
+            -> travel_to_apollo
+        - else:
+            The keypad sizzles, draining some of your energy.
+            -> power_change( -2 ) ->
+            + [Try again] -> door_to_oracle
+        }
+    + [Leave] -> panorama
 
 
 = desk
