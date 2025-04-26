@@ -68,7 +68,7 @@ Pick an answer:
 
 = question_two
 # CLEAR
-The philosopher snorts at you. “Life and death isn’t the only concern of a thinker. A real master of knowledge must possess control over the realm of numbers and their secret connections. Tell me, what is the mystical partner for the numbers 8 and 15?”
+The philosopher snorts at you. “Life and death isn’t the only concern of a thinker. A real master of knowledge must possess control over the realm of numbers and their secret connections. Tell me, what is the perfect partner for the numbers 8 and 15?”
 Pick an answer:
     + [22]
         ~ philosopher_win = 0

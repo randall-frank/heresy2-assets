@@ -1,7 +1,7 @@
 === marble_workshop ===
 ~ location_name = "Phidias' Workshop"
 # BACKGROUND: locations/marble_workshop.jpg
-# AUDIOLOOP: audio/temple.mp3
+# AUDIOLOOP: audio/stonemason.mp3
 -> power_change( location_change_cost ) ->
 -> panorama
 
