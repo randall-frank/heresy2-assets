@@ -35,6 +35,9 @@ On a table in the back lies another damaged receptacle.  This one appears to sor
 
 = lockpick
 # CLEAR
+~ combat_health = 30.
+~ combat_attack = 10.
+~ combat_defence = 25.
 You start to unlock the table...
 Trying...
 Trying...
@@ -52,8 +55,19 @@ A pair of stone workers come back from their midday break as you are picking the
 
 = fight
 # CLEAR
-// TODO: marble workshop fight
-    + [Return to entrance] -> panorama
+The workers look to teach you a lesson... with their fists!  You enable the combat sub-program in your suit and try to make it difficult for them.
+    ~ temp combat_result = 0
+    -> combat("stone workers", combat_result) ->
+    { combat_result == 1:
+        // you win
+        You drop the workers and they concede, brush themselves off and sheepishly head back to work. You slide the drawer open.  Inside is a weapon of some sort.  This could come in handy.
+        ~ sun_orb = 1
+            + [Leave] -> workspace
+    - else:
+        // you may run away
+        + [Continue the fight] -> fight
+        + [Tap out, you've learned your lesson] -> workspace
+    }
 
 
 = table
