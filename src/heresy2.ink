@@ -106,12 +106,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     ~ return f
 
 === function attack_power()
-TODO compute attack power (adjust based on items)
-    ~ return 20.
+// compute attack power (adjust based on items)
+    ~ temp power = 20.
+    { sun_orb:
+        ~ power += 10.
+    }
+    ~ return power
 
 === function defence_power()
-TODO compute defence power (adjust based on items)
-    ~ return 50.
+// compute defence power (adjust based on items)
+    ~ temp power = 50.
+    { quad_shield:
+        ~ power += 20.
+    }
+    ~ return power
 
 // do a round of combat.
 === combat(opponent, ref success)

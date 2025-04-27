@@ -61,7 +61,7 @@ The laser makes a few motions like a painter’s final strokes on a canvas and t
 
 
 = travel_to_apollo
-# AUDIO: audio/shock.mp3
+# AUDIO: audio/transport.m4a
 The trip happens in a flash, literally. Some form of spatial displacement field instantly transports you from the Mausoleum to the Temple of Apollo.
     + [{continue}] -> apollo
 

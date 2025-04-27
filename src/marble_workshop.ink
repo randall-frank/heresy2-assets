@@ -17,8 +17,8 @@ On the right (back of the shop), you see a lone man sitting at a desk, sketching
 
 = salesman
 # CLEAR
-The salesman excuses himself from the indecisive couple and turns to face you.  “Hello, I am Lysander, welcome to the shop of Phidias, one of the finest artists in all Athens. We offer only the finest in modern marble, glass and ceramic sculpture as you can see from our display.  We specialize in commissioned works as well, if you have something unique in mind…”.  Lysander scrutinizes you more closely and his pitch trails off as he recognizes your anthropoids receptacle.
-“You’ve been here before?  You’ve an ZXT Mark … V?  Good choice.  Nice upgrade from the Mark IV.  You’re probably here for a tuneup? The regular maintenance folks have not yet returned, but Phidias is in the back. I don’t think he is too busy”.  The couple appears to have made a decision and gesture toward Lysander.  Noting your tattoos, “Ah, those imperious ‘Bob-sans’ have finally made a decision.  Excuse me”.
+The salesman excuses himself from the indecisive couple and turns to face you.  “Hello, I am Lysander, welcome to the shop of Phidias, one of the finest artists in all Athens. We offer only the finest in modern marble, glass and ceramic sculpture as you can see from our display.  We specialize in commissioned works as well, if you have something unique in mind…”.  Lysander scrutinizes you more closely and his pitch trails off as he recognizes your anthropoid receptacle.
+“You’ve been here before?  You’ve got an ZXT Mark … V?  Good choice.  Nice upgrade from the Mark IV.  You’re probably here for a tuneup? The regular maintenance folks have not yet returned, but Phidias is in the back. I don’t think he is too busy”.  The couple appears to have made a decision and gesture toward Lysander.  Noting your tattoos, “Ah, those imperious ‘Bob-sans’ have finally made a decision.  Excuse me”.
 {not novel: You notice a dog-eared paper-back novel sitting on his desk, you may choose to talk Lysander out of his favorite novel.}
     + {not novel and cash >= 2} [Buy the novel]
         ~ novel = 1
@@ -27,22 +27,43 @@ The salesman excuses himself from the indecisive couple and turns to face you.  
 
 = workspace
 # CLEAR
-A freestanding, headless anthropoid receptacle is in the center of this half of the workshop. A cable runs from its navel out of sight to the floor. Along the wall are an odd collection of tools.  Along with a standard collection of hammers you notice a soni-dimensional chisel and a covalent parasander.  It is not surprising that this shop produces some of the finest sculptures in all of Athens. On a small side table with several drawers lies the receptacle head.
+A freestanding, headless anthropoid receptacle is in the center of this half of the workshop. A cable runs from its navel out of sight to the floor.  Hanging on the wall are an odd collection of tools.  Along with a standard collection of hammers you notice a soni-dimensional chisel and a covalent parasander.  It is not surprising that this shop produces some of the finest sculptures in all of Athens.
 On a table in the back lies another damaged receptacle.  This one appears to sort of still be working?
-    + [Attempt to pick the table lock] -> lockpick
+    + {lockpick_table == 0} [Attempt to pick the table lock] -> lockpick
     + [Check out the receptacle on the table] -> table
     + [Return to entrance] -> panorama
 
 = lockpick
 # CLEAR
-// TODO: success or fight...
+You start to unlock the table...
+Trying...
+Trying...
+{ RANDOM(0,10) >= 5:
+Click. Success! You have picked the lock. You slide the drawer open.  Inside is a weapon of some sort.  This could come in handy.
+    ~ sun_orb = 1
+    ~ lockpick_table = 2
+    + [{continue}] -> workspace
+- else:
+A pair of stone workers come back from their midday break as you are picking the lock. “Hey you, what are you doing? There is a lock on there for a reason!”.
+    ~ lockpick_table = 1
+    + [Attempt to subdue the workers] -> fight
+    + [Apologize and step back] -> workspace
+}
+
+= fight
+# CLEAR
+// TODO: marble workshop fight
     + [Return to entrance] -> panorama
+
 
 = table
 # CLEAR
 On the table lies a heavily damaged android receptacle. It appears its legs have been crushed, beyond repair and deep gouges marr the rest of the body.  You notice the  arm tattoo.  It is likely the receptacle standing nearby was being prepped as a replacement for this one.
 As you look over the shattered form, suddenly eyes flitter open and the occupant turns its head to speak to you. “... do I know you???   Aren’t you part of Gold Squad?  It’s me, Nelda Powell from Squad Porspet”.  She follows your gaze down to her missing legs, “It looks a lot worse than it is.  At least Phidias says I will get a new receptacle, this one has had it”.  “Just another example of Inquisition retaliation, I’m afraid. I’m pretty sure they arranged for the quarry accident that brought me here. I almost prefer it to their little power recharging games. Be careful in your interactions with folks here in Athens. Phidias is sympathetic to our plight, but will not do anything that brings suspicion on himself.”
-// TODO: Owl for another clue
+{not anthropoid_head:
+On a small side table lies a receptacle head.  Laura lands on the head and gesticulates excitedly producing unintelligible sounds.  You discretely collect the head.
+    ~ anthropoid_head = 1
+}
     + [{continue}] -> workspace
 
 = phidias
@@ -54,8 +75,13 @@ As you step up to Phidias’ desk you note the piece of glass he has been writin
 
 = help
 # CLEAR
-    + [Trust] -> phidias_confidence
-    + [{continue}] -> phidias
+Pleading with Phidias, “We can't just sit here idly!  How many 'Nelda's do you need to fix?  With Laura we have a chance.  Please help me.”
+{ RANDOM(0,10) > 3:
+    -> phidias_confidence
+- else:
+“Sorry, I simply do not trust you.  I've see what they did to Nelda and Andrew.  Maybe you should talk with them.”
+}
+    + [Return to entrance] -> panorama
 
 = phidias_confidence
 # CLEAR

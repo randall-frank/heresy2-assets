@@ -43,6 +43,10 @@ hide_variable = "temple_found"
 name = "Crutch"
 description = "A rough and worn crutch."
 
+[items.anthropoid_head]
+name = "Anthropoid Head"
+description = "A detached head from an anthropoid receptacle."
+
 [items.melampus_key]
 name = "Melampus door code"
 description = "The digital door code for Melampus' office: 1337."
@@ -100,6 +104,11 @@ url = "items/oracle_keycode.png"
 name = "Novel"
 description = "Gravity's Rainbow by Thomas Pynchon."
 url = "items/novel.jpg"
+
+[items.sun_orb]
+name = "Sun Orb"
+description = "A Robinson Psychosys 534 Stun Orb. Sometimes in combat you just need a little extra boost.  The stun orb will slow your attacker just a little bit, without disrupting your attack."
+
 #
 # States
 #

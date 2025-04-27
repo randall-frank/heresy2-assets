@@ -63,6 +63,10 @@ VAR tip_scales = 0
 // if non-zero you have bested the philosopher
 VAR philosopher_win = 0
 
+// State of marble workshop lockpicking 0=none, 1=failed, 2=worked
+VAR lockpick_table = 0
+
+
 // variables used by combat() tunnel.  Set these first and call combat() to
 // run a round of "combat"
 VAR combat_health = 0.

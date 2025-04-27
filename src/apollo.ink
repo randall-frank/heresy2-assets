@@ -1,7 +1,7 @@
 === apollo ===
 ~ location_name = "Temple of Apollo"
 # BACKGROUND: locations/apollo.jpg
-# AUDIOLOOP: audio/temple.mp3
+# AUDIOLOOP: audio/delphi.mp3
 -> power_change( location_change_cost ) ->
 -> panorama
 
