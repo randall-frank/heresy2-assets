@@ -76,7 +76,7 @@ A locked and bolted metal door with a digital keypad stands before you, looking 
 Peering through the grille high upon the door, you glimpse the bronze escutcheon of Apollo on the wall.  Listening closely you overhear hushed whispers of Pythia’s great machine.
     + [Try the combination]
         { combo_value == 7154:
-            The door opens and you stem in...
+            The door opens and you step in...
             -> travel_to_apollo
         - else:
             The keypad sizzles, draining some of your energy.
