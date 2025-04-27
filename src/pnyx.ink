@@ -11,6 +11,7 @@ A small square opens in front of you. A group of people is assembled around an o
     + {not philosopher_win} [Talk to the orator] -> orator
     + [Circulate though the crowd] -> audience
     + {not buy_it} [Investigate the man in the barrel] -> wine_barrel
+    + [Visit the Eridanos] -> river
     + [Travel to the Agora] -> agora
 
 = audience
