@@ -76,7 +76,11 @@ def build_story_js() -> None:
     inklecate_path = os.environ.get("HERESY2_INKLECATE", inklecate_path)
     cmd = [inklecate_path, "-o", "tmp.json", "-j", "-v", os.path.join("src", "heresy2.ink")]
     print(f"Running compiler: {cmd}\n")
-    result = subprocess.run(cmd, stdout=subprocess.PIPE)
+    try:
+        result = subprocess.run(cmd, stdout=subprocess.PIPE)
+    except FileNotFoundError:
+        print(f"Could not run inklecate using path: {inklecate_path}.\nCheck your system PATH or HERESY2_INKLECATE environmental variable.")
+        exit(-1)
     print(result.stdout.decode('utf-8'))
     # Build the Javascript from the JSON content
     with open("tmp.json", "rb") as fp:
