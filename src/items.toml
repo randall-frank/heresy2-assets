@@ -47,6 +47,10 @@ description = "A rough and worn crutch."
 name = "Anthropoid Head"
 description = "A detached head from an anthropoid receptacle."
 
+[items.sunbeam_plate]
+name = "Sunbeam plate"
+description = "An old man with a crutch walks towards a pomegranate tree. Right of the tree, a bearded man holds scales, followed by a severed head and a plate that looks much like this one."
+
 [items.melampus_key]
 name = "Melampus door code"
 description = "The digital door code for Melampus' office: 1337."
@@ -59,7 +63,7 @@ hide_variable = "antivius"
 
 [items.antivirus]
 name = "Antivirus"
-description = "Custom-developed USB key containing a the software needed to 'unlock' Laura."
+description = "Custom-developed USB key containing software needed to 'unlock' Laura."
 url = "items/antivirus.png"
 
 [items.oscillator]
@@ -105,8 +109,8 @@ name = "Novel"
 description = "Gravity's Rainbow by Thomas Pynchon."
 url = "items/novel.jpg"
 
-[items.sun_orb]
-name = "Sun Orb"
+[items.stun_orb]
+name = "Stun Orb"
 description = "A Robinson Psychosys 534 Stun Orb. Sometimes in combat you just need a little extra boost.  The stun orb will slow your attacker just a little bit, without disrupting your attack."
 
 #

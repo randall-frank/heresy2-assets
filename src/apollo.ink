@@ -24,16 +24,51 @@ Once again you step into the portal and are spirited back to the workshop.
 = statue
 # CLEAR
 # SBIMAGE: locations/statue.png
-A male “statue” reclines before you. From a distance, it appears to be another magnificent example of Phidias’ work, but there is more at play here.  Closer observation reveals you are mistaken. This is a Mark IV receptacle in powered down mode! From the arm tattoo, another detainee. In the right hand of the supine receptacle you notice a unique plate bearing a sunbeam impression. It would certainly warrant more detailed observation.
+A male statue reclines before you. From a distance, it appears to be another magnificent example of Phidias’ work, but there is more at play here.  Closer observation reveals you are mistaken. This is a Mark IV receptacle in powered down mode! From the arm tattoo, another detainee. {sunbeam_plate: In the right hand of the supine receptacle you notice a unique plate bearing a sunbeam impression. It would certainly warrant more detailed observation.}
+    + {exo_power > 10} [Transfer 10 power to the receptacle] -> powerup
+    + [Return to entrance] -> panorama
 
-You may place a power cell into the receptacle in an attempt to revive its occupant. If you do, the android receptacle powers up in response to the power cell and the statue suddenly comes to life.  In a thick Russian accent, “What… where…  how long was I out…  What year is it?”  You answer, “452 B.C.?” He continues “10, no 12 years I’ve been out.  Спасибо!  A few more years and the emergency battery…  I don’t want to think about it.  That’s not the worst though, do you know how many times you can read Dostoyevsky???”
+= powerup
+# CLEAR
+# SBIMAGE: locations/statue.png
+-> power_change( -10 ) ->
+The android receptacle powers up in response to the power cell and the statue suddenly comes to life.  In a thick Russian accent, “What… where…  how long was I out…  What year is it?”  You answer, “452 B.C.?” He continues “10, no 12 years I’ve been out.  Спасибо!  A few more years and the emergency battery…  I don’t want to think about it.  That’s not the worst though, do you know how many times you can read Dostoyevsky???”
+{sunbeam_plate: The black and gold plate sits beneath a sunbeam, its outside adorned, the inside blazing with golden light. The owl lands on its edge and stares into its silver depths. As though mesmerized, its head spins slowly round three times then blinks as though it cannot comprehend what it has seen. It flies off.}
+    + {exo_power > 10} [Offer another 10 power for the plate] -> plate
+    + [Return to entrance] -> panorama
+
+= plate
+# CLEAR
+-> power_change( -10 ) ->
+“Ah, this old thing. It's obvious that someone understands its importance” he motions to the owl. “It is yours now.  Be careful with how you use it as you are likely to have only one shot at the game you are playing.  I (and many others) wish you luck!”
+You pick up the plate and examine its design. An old man with a crutch walks towards a pomegranate tree. Right of the tree, a bearded man holds scales, followed by a severed head and a plate that looks much like this one.
+    ~ sunbeam_plate = 1
     + [Return to entrance] -> panorama
 
 = gate
 # CLEAR
-# SBIMAGE: items/delphic.png
-You walk up to the gate, looking for a way into the temple. You test the mettle of the gate…  Tritanium?  What is Tritanium doing in a Greek temple?  You haven’t the equipment, or time, to negotiate this obstacle right now.  You strain to see beyond the gate.  It looks like… desks and cubicles?  You make out the faint, but unmistakable hum of computing machinery in the background.
+# SBIMAGE: locations/gate.png
+// Combination: 9232 - hourglass, scale, sun, scale
+You walk up to the gate, looking for a way into the temple. You test the mettle of the gate…  Tritanium?  What is Tritanium doing in a Greek temple?  You haven’t the equipment, or time, to negotiate this obstacle right now.  You strain to see beyond the gate.  It looks like… desks and cubicles?  You make out the faint, but unmistakable hum of computing machinery in the background. A cryptic keypad appears to be connected to the gate.
+    + [Try the keypad] -> keypad
+    + [Return to entrance] -> panorama
+
+= keypad
+# CLEAR
+# SBIMAGE: locations/gate.png
 If not, a passing temple guard notices your interest and confronts you, “Hey, this area is off limits to you and your kind. You know the punishment!”  He reaches behind his back and brings out his quadiken and fires. As you are bathed in the ionized gas, you feel the inescapable effects of the Inquisition “corrective” measure. All agents on this card lose two power points.
+~ combo_symbols = 1
+~ combo_value = 0
+# COMBO
+    + [Try the combination]
+        { combo_value == 9232:
+            The gate swings opens.
+            + [Enter the back room] -> apollo_backroom
+        - else:
+            The keypad sizzles, draining some of your energy.
+            -> power_change( -2 ) ->
+            + [Try again] -> keypad
+        }
     + [Return to entrance] -> panorama
 
 = pythia

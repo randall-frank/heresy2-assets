@@ -311,6 +311,9 @@ function combo_lock_button(story, i, direction) {
 
         // Placeholder for in injected raw HTML
         var HTML_text = '';
+        
+        // IMAGEHEIGHT specification for the IMAGE option
+        var IMAGE_height = null;
 
         // Generate story text - loop through available content
         while(story.canContinue) {
@@ -368,11 +371,19 @@ function combo_lock_button(story, i, direction) {
                     showAfter(delay, imageElement);
                     delay += 200.0;
                 }
-
+                // IMAGEHEIGHT: height   (inline image height)
+                else if (splitTag && splitTag.property == "IMAGEHEIGHT") {
+                    IMAGE_height = splitTag.val;
+                }
                 // IMAGE: src   (inline image)
-                if( splitTag && splitTag.property == "IMAGE" ) {
+                else if( splitTag && splitTag.property == "IMAGE" ) {
                     var imageElement = document.createElement('img');
                     imageElement.src = splitTag.val;
+                    if (IMAGE_height != null) {
+                        imageElement.style.height = IMAGE_height;
+                        imageElement.style.width = 'auto';
+                        IMAGE_height = null;
+                    }
                     storyContainer.appendChild(imageElement);
 
                     imageElement.onload = () => {

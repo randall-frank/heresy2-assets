@@ -17,8 +17,11 @@ A lazy river appears in front of you. The sun rays playfully bounce off its wate
 # CLEAR
 You sit on the bench to enjoy the view and the fresh breeze on your face. You close your eyes slightly to better take in the moment… and that’s when you see with the corner of your eyes a folded pergamen laying on the ground next to you. You pick it up and unfold it:
 # class: writing
+# IMAGE: items/delphic.png
 “This is day 3 of this iteration. How many iterations has it been already? Gosh, I’ve lost count. For sure Bob has found an ironic way to make a paradise into a new hell… His new friends must have thought him a thing or two about the Divine Comedy. Or maybe Bob watched Groundhog day one too many times. Smart man, managing to not break any do-not-kill law while forever making his enemies harmless. Somebody help, I feel I’m about to lose my mind. Anything would be better than this so called life.”
 # class:
+# IMAGEHEIGHT: 3em
+# IMAGE: items/apollo_keycode.png
     + [Walk the stream] -> panorama
 
 = lute
@@ -45,6 +48,7 @@ You find a large bush and tell Daphne to crouch behind it. Then, you please a fe
     + [You have no choice but to confront him] -> fight
 
 = fight
+// Note: you basically cannot 'win' this fight.  You are doomed to 'lose', but Daphne steps in...
 # CLEAR
 Apollo attempts to grapple with you, though you can tell his heart is not in it.
     ~ temp combat_result = 0

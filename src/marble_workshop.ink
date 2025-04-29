@@ -43,7 +43,7 @@ Trying...
 Trying...
 { RANDOM(0,10) >= 5:
 Click. Success! You have picked the lock. You slide the drawer open.  Inside is a weapon of some sort.  This could come in handy.
-    ~ sun_orb = 1
+    ~ stun_orb = 1
     ~ lockpick_table = 2
     + [{continue}] -> workspace
 - else:
@@ -61,7 +61,7 @@ The workers look to teach you a lesson... with their fists!  You enable the comb
     { combat_result == 1:
         // you win
         You drop the workers and they concede, brush themselves off and sheepishly head back to work. You slide the drawer open.  Inside is a weapon of some sort.  This could come in handy.
-        ~ sun_orb = 1
+        ~ stun_orb = 1
             + [Leave] -> workspace
     - else:
         // you may run away

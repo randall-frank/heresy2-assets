@@ -10,6 +10,7 @@ INCLUDE agora.ink
 INCLUDE pnyx.ink
 INCLUDE marble_workshop.ink
 INCLUDE apollo.ink
+INCLUDE apollo_backroom.ink
 INCLUDE river.ink
 
 -> intro
@@ -85,6 +86,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     ->->
 
 === function check_melampus_list()
+// oscillator - Pnyx orator necklace
+// lcd_display - workshop sit at computer
+// simple_battery - river take from Apollo/Daphne
+// gold_wiring - take at agora
+// convert into 'antivirus'
     { oscillator and lcd_display and simple_battery and gold_wiring:
         ~ return 1
     }
@@ -109,7 +115,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 === function attack_power()
 // compute attack power (adjust based on items)
     ~ temp power = 20.
-    { sun_orb:
+    { stun_orb:
         ~ power += 10.
     }
     ~ return power

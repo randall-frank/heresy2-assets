@@ -23,6 +23,12 @@
  *  # AUDIOLOOP: src  - background audio
  *  # AUDIO: src      - one-shot audio
  *
+ *  # IMAGEHEIGHT: height - the height of the next IMAGE (preserves aspect ratio)
+ *  
+ *  # COMBO - insert an instance of the combo lock - combo_symbols and combo_value interface to this
+ *
+ *  # HTML: text  - insert the text verbatim into the HTML stream.  Note: use '<ss>'' for '//'
+ *
  * see main.js for how these are handled.  However, any other
  * tags are legal as well (e.g. # HELLO: foobar) and the "step"
  * function in main.js can detect and respond to these while
