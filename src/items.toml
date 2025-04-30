@@ -113,6 +113,10 @@ url = "items/novel.jpg"
 name = "Stun Orb"
 description = "A Robinson Psychosys 534 Stun Orb. Sometimes in combat you just need a little extra boost.  The stun orb will slow your attacker just a little bit, without disrupting your attack."
 
+[items.combat_training]
+name = "Mark II combat training"
+description = "The combat training program from a Mark II receptacle.  It improves reflexes and targeting in combat situations."
+
 #
 # States
 #

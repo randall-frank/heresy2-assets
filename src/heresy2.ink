@@ -118,6 +118,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     { stun_orb:
         ~ power += 10.
     }
+    { combat_training:
+        // precision
+        ~ power += 10.
+    }
     ~ return power
 
 === function defence_power()
@@ -125,6 +129,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     ~ temp power = 50.
     { quad_shield:
         ~ power += 20.
+    }
+    { combat_training:
+        // agility/reflexes
+        ~ power += 30.
     }
     ~ return power
 

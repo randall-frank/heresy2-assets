@@ -50,7 +50,7 @@ You pick up the plate and examine its design. An old man with a crutch walks tow
 # SBIMAGE: locations/gate.png
 You walk up to the gate, looking for a way into the temple. You test the mettle of the gate…  Tritanium?  What is Tritanium doing in a Greek temple?  You haven’t the equipment, or time, to negotiate this obstacle right now.  You strain to see beyond the gate.  It looks like… desks and cubicles?  You make out the faint, but unmistakable hum of computing machinery in the background. A cryptic keypad appears to be connected to the gate.
     + {keypad} [Try the keypad] -> keypad
-    + {not keypad} [Try the keypad] -> guard
+    + {not keypad} [Step up to the keypad] -> guard
     + [Return to entrance] -> panorama
 
 = guard
@@ -72,7 +72,7 @@ A passing temple guard notices your interest and confronts you, “Hey, this are
 # CLEAR
 # SBIMAGE: locations/gate.png
 // Combination: 9232 - hourglass, scale, sun, scale
-If not, a passing temple guard notices your interest and confronts you, “Hey, this area is off limits to you and your kind. You know the punishment!”  He reaches behind his back and brings out his quadiken and fires. As you are bathed in the ionized gas, you feel the inescapable effects of the Inquisition “corrective” measure. All agents on this card lose two power points.
+A passing temple guard notices your interest and confronts you, “Hey, this area is off limits to you and your kind. You know the punishment!”  He reaches behind his back, brings out a quadiken and fires. As you are bathed in the ionized gas, you feel the inescapable effects of the Inquisition “corrective” measure. All agents on this card lose two power points.
 ~ combo_symbols = 1
 ~ combo_value = 0
 # COMBO
@@ -99,6 +99,22 @@ She quickly takes your hand in a surprisingly strong grip, throws her head back 
 # CLEAR
 # SBIMAGE: locations/venus.png
 A second statue graces the far side of the temple entrance.  This one is in considerably poorer shape than the other one. The arms of the female form have been cruelly detached from the otherwise pristine form and lay as rubble at the foot of the statue. You note the ubiquitous detainee tattoo on a fragment of the arms. Recognition of the situation slowly filters into your consciousness…  an agent receptacle!   An older model, Mark II maybe Mark III?  Those models lacked the emergency power source, key to the preservation of the agent inside.  This poor soul, blinked out of existence after a power failure?  Accident?  Incident?  A body at the agency left forever without its human presence… A chance every agent takes, but an end is still an end.
-// TODO Merkaba Driver
-You may undertake an engineering challenge to try to collect technology from the rubble.  On success, take: Item: Merkaba Driver
+# TODO Merkaba Driver - Not sure what to do here...
+# You may undertake an engineering challenge to try to collect technology from the rubble.  On success, take: Item: Merkaba Driver - a very TIME Stories option - adjust abilites
+# Maybe just a pickup to enhance attack and defense???
+    + {exo_power > 2} [Run a diagnostic on the recepticle (2 power)]
+        -> power_change( -2 ) ->
+        -> diagnostic
+    + [Return to entrance] -> panorama
+
+= diagnostic
+# CLEAR
+# SBIMAGE: locations/venus.png
+// ご冥福をお祈り申し上げます = (gomeifuku o oinori moushiagemasu), which translates to "May their soul rest in peace
+T.I.M.E Corrections Agency agent Murata Sumiko. Last assignment was to investigate rumours of time displacement equipment being used by elements of the Spanish Inquisition, an entirely unauthorized timeline. On return from assignment, disiplinary action was taken (no reason given) and she was exiled to this temporal location for 'supervision and re-education'.  An old Mark II suit outfitted for hard labor/combat.  Unfortunately, the suit lacked emergency 'cold storage' for the preservation of the occupant (illegal by today's standards). Any notion of Murata Sumiko perished in that suit when it ran out of power. “ご冥福をお祈り申し上げます”, you whisper.
+{not combat_training: A further diagnostic reveals the combat training algorithm is compatible with the Mark V.}
+    + {exo_power > 2 and not combat_training} [Upload the training algorithm (2 power)]
+        -> power_change( -2 ) ->
+        ~ combat_training = 1
+        -> diagnostic
     + [Return to entrance] -> panorama
