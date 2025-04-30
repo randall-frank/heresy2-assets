@@ -173,7 +173,7 @@ If you are not in a position to play the original Heresy game, a basic overview 
 
 === spoilers ===
 # CLEAR
-TODO Heresy I spoilers
+// TODO Heresy I spoilers
     + [{continue}] -> background
 
 === outro ===
