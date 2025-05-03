@@ -25,7 +25,8 @@
  *
  *  # IMAGEHEIGHT: height - the height of the next IMAGE (preserves aspect ratio)
  *  
- *  # COMBO - insert an instance of the combo lock - combo_symbols and combo_value interface to this
+ *  # COMBO: var_name - insert an instance of the combo lock - combo_symbols and combo_value interface to this
+ *                    the var_name is a variable that holds the correct combo, currently only used in 'debug' runs
  *
  *  # HTML: text  - insert the text verbatim into the HTML stream.  Note: use '<ss>'' for '//'
  *
@@ -88,6 +89,19 @@ VAR combat_ratio = 100.
 VAR combo_value = 0
 // If set to 1, use the set of symbols rather than numbers
 VAR combo_symbols = 0
+
+// These are all the combinations used in the story. Storing them in JS accessible 
+// variables allows for randomization of the combinations or access from JS by name
+// for 'debug' runs.
+
+// Access to Melampus in the Temple of Hephaestus
+VAR code_melampus = 1337
+
+// Access to apollo_backroom from apollo foyer
+VAR code_apollo_backroom = 9232
+
+// Access to apollo foyer in the Mausoleum Workshop
+VAR code_apollo_foyer = 7154
 
 // debug can be set to any value via '?dev=x'
 // This enables shortcuts {debug} that speed development

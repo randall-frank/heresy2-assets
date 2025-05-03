@@ -119,15 +119,27 @@ function build_status(story) {
 fa-solid fa-fire
 fa-solid fa-tree
 */
+var numeric_names = ["fa-solid fa-0", "fa-solid fa-1", "fa-solid fa-2",
+    "fa-solid fa-3", "fa-solid fa-4", "fa-solid fa-5", "fa-solid fa-6",
+    "fa-solid fa-7", "fa-solid fa-8", "fa-solid fa-9"];
+    
+var symbol_names = ["fa-solid fa-crutch", "fa-solid fa-bolt", "fa-solid fa-scale-balanced",
+    "fa-regular fa-sun", "fa-solid fa-fish", "fa-regular fa-moon",
+    "fa-regular fa-star", "fa-solid fa-wind", "fa-regular fa-user",
+    "fa-regular fa-hourglass"];
+
+function icon_html(digit, symbols) {
+    let cnames = numeric_names;
+    if (symbols) {
+        cnames = symbol_names;
+    }
+    return '<i class="' + cnames[digit] + '"></i>';
+}
+
 function combo_lock_update_icons(story) {
-    let cnames = ["fa-solid fa-0", "fa-solid fa-1", "fa-solid fa-2",
-        "fa-solid fa-3", "fa-solid fa-4", "fa-solid fa-5", "fa-solid fa-6",
-        "fa-solid fa-7", "fa-solid fa-8", "fa-solid fa-9" ];
+    let cnames = numeric_names;
     if (story.variablesState.combo_symbols) {
-        cnames = ["fa-solid fa-crutch", "fa-solid fa-bolt", "fa-solid fa-scale-balanced",
-            "fa-regular fa-sun", "fa-solid fa-fish", "fa-regular fa-moon",
-            "fa-regular fa-star", "fa-solid fa-wind", "fa-regular fa-user",
-            "fa-regular fa-hourglass"];
+        cnames = symbol_names;
     }
     let value = story.variablesState.combo_value;
     let digit = value % 10;
@@ -147,10 +159,15 @@ function combo_lock_update_icons(story) {
     elem.className = cnames[digit];
 }
 
-function insert_combo_lock(story, parent) {
+function insert_combo_lock(story, parent, combo_var_name) {
     let combo_div = document.createElement('div');
     combo_div.style.width = "100%";
-    let s = `<table class="combo-holder">
+    let s = '';
+    let combination = story.variablesState[combo_var_name];
+    if (story.variablesState.debug) {
+        s += '<p>' + combination.toString() + '</p>';
+    }
+    s += `<table class="combo-holder">
 <tr>
 <td>
 <table class="combo">
@@ -395,9 +412,9 @@ function combo_lock_button(story, i, direction) {
                     delay += 200.0;
                 }
 
-                // COMBO  (inline combination lock)
-                else if (tag == "COMBO")  {
-                    let elem = insert_combo_lock(story, storyContainer);
+                // COMBO: code_*name  (inline combination lock)
+                else if( splitTag && splitTag.property == "COMBO" ) {
+                    let elem = insert_combo_lock(story, storyContainer, splitTag.val);
                     showAfter(delay, elem);
                     delay += 200.0;
                 }

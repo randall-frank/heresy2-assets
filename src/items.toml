@@ -117,6 +117,10 @@ description = "A Robinson Psychosys 534 Stun Orb. Sometimes in combat you just n
 name = "Mark II combat training"
 description = "The combat training program from a Mark II receptacle.  It improves reflexes and targeting in combat situations."
 
+[items.computer_room_key]
+name = "Digital keycard"
+description = "Computer room special access keycard."
+
 #
 # States
 #

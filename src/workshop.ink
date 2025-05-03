@@ -72,10 +72,10 @@ The trip happens in a flash, literally. Some form of spatial displacement field 
 A locked and bolted metal door with a digital keypad stands before you, looking like something that would protect the entrance to an underworld hideout. You try the door but it won’t budge, even with your considerable strength, you will need to find the keycode..
 ~ combo_symbols = 1
 ~ combo_value = 0
-# COMBO
+# COMBO: code_apollo_foyer
 Peering through the grille high upon the door, you glimpse the bronze escutcheon of Apollo on the wall.  Listening closely you overhear hushed whispers of Pythia’s great machine.
     + [Try the combination]
-        { combo_value == 7154:
+        { combo_value == code_apollo_foyer:
             The door opens and you step in...
             -> travel_to_apollo
         - else:
