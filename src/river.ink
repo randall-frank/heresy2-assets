@@ -16,12 +16,11 @@ A lazy river appears in front of you. The sun rays playfully bounce off its wate
 = bench
 # CLEAR
 You sit on the bench to enjoy the view and the fresh breeze on your face. You close your eyes slightly to better take in the moment… and that’s when you see with the corner of your eyes a folded pergamen laying on the ground next to you. You pick it up and unfold it:
-# class: writing
+# CLASS: writing
 # IMAGE: items/delphic.png
 “This is day 3 of this iteration. How many iterations has it been already? Gosh, I’ve lost count. For sure Bob has found an ironic way to make a paradise into a new hell… His new friends must have thought him a thing or two about the Divine Comedy. Or maybe Bob watched Groundhog day one too many times. Smart man, managing to not break any do-not-kill law while forever making his enemies harmless. Somebody help, I feel I’m about to lose my mind. Anything would be better than this so called life.”
-# class:
-# IMAGEHEIGHT: 3em
-# IMAGE: items/apollo_keycode.png
+{not apollo_backroom_keycode: A digital keycode is attached to the letter.  You keep it for future reference.}
+    ~ apollo_backroom_keycode = 1
     + [Walk the stream] -> panorama
 
 = lute

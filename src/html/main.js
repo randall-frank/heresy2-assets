@@ -23,11 +23,13 @@ function refresh_inventory(story, elem) {
 
 function inventory_select(e) {
     let selected_info = null;
+    let selected_name = null;
     for( const [name, value] of Object.entries(storyItems['items'])) {
         let item_elem = document.querySelector('#item_'+name);
         if (item_elem === e.target) {
             item_elem.className = 'item_selected';
-            selected_info = value
+            selected_info = value;
+            selected_name = name;
         } else {
             item_elem.className = '';
         }
@@ -37,7 +39,7 @@ function inventory_select(e) {
         if (selected_info.hasOwnProperty('url')) {
             info += '<img src="' + selected_info.url + '">';
         }
-        info += "<p>" + selected_info.description + "</p>";
+        info += "<p>" + selected_info.description + combo_html(selected_name) + "</p>";
     }
     // set details innerHTML to info...
     document.querySelector('#itemdetails').innerHTML = info;
@@ -128,12 +130,41 @@ var symbol_names = ["fa-solid fa-crutch", "fa-solid fa-bolt", "fa-solid fa-scale
     "fa-regular fa-star", "fa-solid fa-wind", "fa-regular fa-user",
     "fa-regular fa-hourglass"];
 
-function icon_html(digit, symbols) {
+function icon_digit_html(digit, symbols) {
     let cnames = numeric_names;
     if (symbols) {
         cnames = symbol_names;
     }
     return '<i class="' + cnames[digit] + '"></i>';
+}
+
+function combo_html(item_name) {
+    let html = '';
+    for( const [name, value] of Object.entries(storyItems['items'])) {
+        if (item_name == name) {
+            if (value.hasOwnProperty('code')) {
+                let combo = theStory.variablesState[value.code];
+                let symbol = false;
+                if (value.hasOwnProperty('symbol')) symbol = true;
+                let digit = combo % 10;
+                combo = Math.trunc(combo / 10);
+                html = icon_digit_html(digit, symbol) + html;
+                digit = combo % 10;
+                combo = Math.trunc(combo / 10);
+                html = icon_digit_html(digit, symbol) + '&nbsp;' + html;
+                digit = combo % 10;
+                combo = Math.trunc(combo / 10);
+                html = icon_digit_html(digit, symbol) + '&nbsp;' + html;
+                digit = combo % 10;
+                combo = Math.trunc(combo / 10);
+                html = icon_digit_html(digit, symbol) + '&nbsp;' + html;
+            }
+        }
+    }
+    if (html.length) {
+        html = "<p class='codetext'>" + html + "</p>";
+    }
+    return html;
 }
 
 function combo_lock_update_icons(story) {
@@ -227,17 +258,17 @@ function insert_combo_lock(story, parent, combo_var_name) {
     combo_lock_update_icons(story);
     for (let i = 0; i < 4; i++) {
         let elem = document.querySelector("#up" + i.toString());
-        const up_callback = combo_lock_button.bind(null, story, i, 1);
+        const up_callback = combo_lock_button.bind(null, i, 1);
         elem.addEventListener("click", up_callback);
         elem = document.querySelector("#down" + i.toString());
-        const down_callback = combo_lock_button.bind(null, story, i, -1);
+        const down_callback = combo_lock_button.bind(null, i, -1);
         elem.addEventListener("click", down_callback);
     }
     return combo_div;
 }
 
-function combo_lock_button(story, i, direction) {
-    let value = story.variablesState.combo_value;
+function combo_lock_button(i, direction) {
+    let value = theStory.variablesState.combo_value;
     let digits = value.toString().split("").map(Number);
     while (digits.length < 4) digits.unshift(0);
     digits[i] += direction;
@@ -248,8 +279,8 @@ function combo_lock_button(story, i, direction) {
     for(let i = 1; i<4; i++) {
         value = value * 10 + digits[i];
     }
-    story.variablesState.combo_value = value;
-    combo_lock_update_icons(story);
+    theStory.variablesState.combo_value = value;
+    combo_lock_update_icons(theStory);
 }
 
 /**********************  Story starts here *******************/
@@ -258,6 +289,7 @@ function combo_lock_button(story, i, direction) {
 
     // Create ink story from the content using inkjs
     var story = new inkjs.Story(storyContent);
+    theStory = story;
 
     var savePoint = "";
 

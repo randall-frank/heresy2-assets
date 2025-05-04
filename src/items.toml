@@ -15,6 +15,8 @@
 # Optional item keys:
 # url = "items/tattoo.png"   - local URL to an image of the item
 # hide_variable = "varname"  - name of a variable that will hide the item is the variable is non-zero
+# code = "varname"           - the name of a variable with a keycode value
+# symbol = "1"               - if 'symbol' is present, then the code is symbols, not numbers
 #
 
 [items]
@@ -53,8 +55,9 @@ description = "An old man with a crutch walks towards a pomegranate tree. Right 
 
 [items.melampus_key]
 name = "Melampus door code"
-description = "The digital door code for Melampus' office: 1337."
+description = "The digital door code for Melampus' office."
 hide_variable = "melampus_list"
+code = "code_melampus"
 
 [items.melampus_list]
 name = "Melampus item list"
@@ -100,9 +103,16 @@ description = "A simple bowl of fava beans."
 url = "items/fava.png"
 
 [items.door_to_oracle_code]
-name = "Room 237 Code"
+name = "Room 237 keycode"
 description = "A digital lock keycode."
-url = "items/oracle_keycode.png"
+code = "code_apollo_foyer"
+symbol = "1"
+
+[items.apollo_backroom_keycode]
+name = "Apollo backroom code"
+description = "A digital lock keycode."
+code = "code_apollo_backroom"
+symbol = "1"
 
 [items.novel]
 name = "Novel"

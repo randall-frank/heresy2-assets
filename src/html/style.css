@@ -149,6 +149,10 @@ p {
     line-height: 1.7em;
     /* font-weight: lighter; */
 }
+.codetext {
+    font-size: 20pt;
+    text-align: center;
+}
 
 a {
     font-weight: 700;
