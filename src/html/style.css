@@ -17,6 +17,11 @@ body {
     font-family: cursive;
 }
 
+.computer {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
 h1,
 h2 {
     text-align: center;

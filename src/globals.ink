@@ -73,6 +73,9 @@ VAR philosopher_win = 0
 // State of marble workshop lockpicking 0=none, 1=failed, 2=worked
 VAR lockpick_table = 0
 
+// if laura is owl and encrypted = 0, laura is owl but unencrypted = 1
+VAR laura_state = 0
+
 
 // variables used by combat() tunnel.  Set these first and call combat() to
 // run a round of "combat"

@@ -71,7 +71,6 @@ A passing temple guard notices your interest and confronts you, “Hey, this are
 = keypad
 # CLEAR
 # SBIMAGE: locations/gate.png
-// Combination: 9232 - hourglass, scale, sun, scale
 A passing temple guard notices your interest and confronts you, “Hey, this area is off limits to you and your kind. You know the punishment!”  He reaches behind his back, brings out a quadiken and fires. As you are bathed in the ionized gas, you feel the inescapable effects of the Inquisition “corrective” measure. All agents on this card lose two power points.
 ~ combo_symbols = 1
 ~ combo_value = 0

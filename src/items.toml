@@ -27,7 +27,7 @@ description = "A tattoo, laser burnt into your arm."
 url = "items/tattoo.png"
 
 [items.padded_cell_key]
-name = "Digital card key"
+name = "Magnetic card key"
 description = "A standard magnetic card swipe key."
 url = "items/keycard.png"
 
@@ -128,8 +128,9 @@ name = "Mark II combat training"
 description = "The combat training program from a Mark II receptacle.  It improves reflexes and targeting in combat situations."
 
 [items.computer_room_key]
-name = "Digital keycard"
-description = "Computer room special access keycard."
+name = "Contectless keycard"
+description = "Computer room special access card."
+url = "items/computer_room_key.png"
 
 #
 # States
