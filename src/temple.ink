@@ -117,9 +117,11 @@ A steel rimmed keypad sits next to a heavy door flanked with flickering torches.
     + [Try the combination]
         { combo_value == code_melampus:
             "Access granted." The door swings open noiselessly and as you step through it swings shut. In here there is only the sound of one hammer…
+# AUDIO: audio/postive.mp3            
             + [{continue}] -> melampus
         - else:
             "Bzzt! Invalid access attempt logged."
+# AUDIO: audio/error.mp3
             + [Try again] -> keypad
         }
     + [Leave] -> panorama

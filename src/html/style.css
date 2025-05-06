@@ -347,6 +347,24 @@ body.dark {
 }
 
 
+/****************** Attribution table ******************/
+table.attr {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.attr td,
+table.attr th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+table.attr tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
 /****************** For the combination box table(s) ****************/
 table.combo button {
 	background-color: DimGray;

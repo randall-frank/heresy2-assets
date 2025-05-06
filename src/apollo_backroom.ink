@@ -54,6 +54,7 @@ A long pause and her eyes open again, “Strange, of those words, I have… no r
 The heavy security door looks capable of sustaining a significant amount of abuse.  The badge reader blinks red...
     + {computer_room_key} [Use the computer room key]
         { 1:
+# AUDIO: audio/door_unlock.mp3
             The reader blinks green, you hear a thunk and the handle will turn.
                 + [Open the door and walk in] -> open_computer_door
         }

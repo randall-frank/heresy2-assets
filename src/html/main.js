@@ -465,6 +465,12 @@ function combo_lock_button(i, direction) {
                 else if( splitTag && splitTag.property == "HTML" ) {
                     HTML_text = splitTag.val.replace("<ss>", "//");
                 }
+                                    // HTML: text
+                else if (tag == "ATTRIBUTION") {
+                    let elem = attribution(storyContainer);
+                    showAfter(delay, elem);
+                    delay += 200.0;
+                }
 
                 // BACKGROUND: src
                 else if( splitTag && splitTag.property == "BACKGROUND" ) {
@@ -795,3 +801,52 @@ function combo_lock_button(i, direction) {
     }
 
 })(storyContent);
+
+
+function attribution(parent) {
+    let attr = document.createElement('div');
+    attr.style.width = "100%";
+    s = `
+<h1>Attributions and Thanks</h1>
+
+<p>This project draws on the inspiration and efforts of a number of folks.</p>
+
+<h2>Testers</h2>
+<ul>
+<li>Randy Frank</li>
+<li>Andrew Florance</li>
+<li>Marina Galvagni</li>
+</ul>
+
+<h2>Imagery used with attribution</h2>
+<ul>
+<li>Various images generated using DALL·E</li>
+<li>Textures: www.myfreetextures.com</li>
+<li>Some Icons by Font Awesome fontawesome.com, Copyright Fonticons, Inc, License: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></li>
+</ul>
+
+<h2>Audio used with attribution from freesound.org</h2>
+<p></p>
+<table class="attr">
+<tr><th>Individual</th><th>Sound number</th><th>License</th></tr>
+<tr><td>Apollo89</td>
+    <td><a href="https://freesound.org/s/648208/" target="_blank" rel="noopener noreferrer">648208</a></td>
+    <td><a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">Creative Commons 0</a></td></tr>
+<tr><td>Janaund</td>
+    <td><a href="https://freesound.org/s/274763/" target="_blank" rel="noopener noreferrer">274763</a></td>
+    <td><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">Attribution 3.0</a></td></tr>
+<tr><td>klankbeeld</td>
+    <td><a href="https://freesound.org/s/580356/" target="_blank" rel="noopener noreferrer">580356</a></td>
+    <td><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Attribution 4.0</a></td></tr>
+<tr><td>Universfield</td>
+    <td><a href="https://freesound.org/s/730122/" target="_blank" rel="noopener noreferrer">730122</a></td>
+    <td><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Attribution 4.0</a></td></tr>
+<tr><td>qubodup</td>
+    <td><a href="https://freesound.org/s/722375/" target="_blank" rel="noopener noreferrer">722375</a></td>
+    <td><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Attribution 4.0</a></td></tr>
+</table>
+`
+    attr.innerHTML = s;
+    parent.appendChild(attr);
+    return attr;
+}

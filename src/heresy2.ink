@@ -36,17 +36,7 @@ Athens Greece, 450 B.C. - The age of Pericles
 
 === thanks_to ===
 # CLEAR
-This project draws on the inspiration and efforts of a number of folks:
-
-Testers:
-<ul>
-<li>Randy Frank</li><li>Andrew Florance</li><li>Marina Galvagni</li>
-</ul>
-
-Sounds and images used with attribution:
-<ul>
-<li>Various images generated using DALL·E</li><li>Apollo89 - taverns, street, chatter, people, ambience, athens, greece.wav by Apollo89 -- freesound.org 648208 -- License: Creative Commons 0</li><li>Textures: www.myfreetextures.com</li><li>Stone_Mason Work_Shop-001.wav by Janaund -- freesound.org 274763 -- License: Attribution 3.0</li><li>klankbeeld -- freesound.org 580356</li><li>Some Icons by Font Awesome fontawesome.com, Copyright Fonticons, Inc, License: CC BY 4.0</li>
-</ul>
+# ATTRIBUTION
     + [Back] -> intro
 
 === licence ===

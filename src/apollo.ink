@@ -77,9 +77,11 @@ A passing temple guard notices your interest and confronts you, “Hey, this are
 # COMBO: code_apollo_backroom
     + [Try the combination]
         { combo_value == code_apollo_backroom:
+# AUDIO: audio/postive.mp3
             The gate swings opens.
             + [Enter the back room] -> apollo_backroom
         - else:
+# AUDIO: audio/error.mp3
             The keypad sizzles, draining some of your energy.
             -> power_change( -2 ) ->
             + [Try again] -> keypad
