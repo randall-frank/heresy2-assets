@@ -1,7 +1,7 @@
 === apollo_backroom ===
 ~ location_name = "Temple of Apollo: Backroom"
-# BACKGROUND: locations/apollo.jpg
-# AUDIOLOOP: audio/delphi.mp3
+# BACKGROUND: locations/computerroom.jpg
+# AUDIOLOOP: audio/office.mp3
 -> power_change( location_change_cost ) ->
 -> panorama
 
