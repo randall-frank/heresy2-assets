@@ -17,9 +17,23 @@ body {
     font-family: cursive;
 }
 
+/************ computer text ****************/
 .computer {
     font-family: 'Courier New', monospace;
     font-weight: bold;
+}
+
+
+/************ blinking computer text ****************/
+.computerblink {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    animation: blinker 1.5s linear infinite;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }
 
 h1,
@@ -345,6 +359,7 @@ body.dark {
 .dark #controls {
     background: black;
 }
+
 
 
 /****************** Attribution table ******************/

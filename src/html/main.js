@@ -844,6 +844,12 @@ function attribution(parent) {
 <tr><td>qubodup</td>
     <td><a href="https://freesound.org/s/722375/" target="_blank" rel="noopener noreferrer">722375</a></td>
     <td><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Attribution 4.0</a></td></tr>
+<tr><td>0ktober</td>
+    <td><a href="https://freesound.org/s/188828/" target="_blank" rel="noopener noreferrer">188828</a></td>
+    <td><a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">Creative Commons 0</a></td></tr>
+<tr><td>Aemyn</td>
+    <td><a href="https://freesound.org/s/564166/" target="_blank" rel="noopener noreferrer">564166</a></td>
+    <td><a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">Creative Commons 0</a></td></tr>
 </table>
 `
     attr.innerHTML = s;
