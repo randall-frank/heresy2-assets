@@ -383,27 +383,28 @@ function combo_lock_button(i, direction) {
 
                 // AUDIO: src
                 if( splitTag && splitTag.property == "AUDIO" ) {
-                  if('audio' in this) {
-                    this.audio.pause();
-                    this.audio.removeAttribute('src');
-                    this.audio.load();
-                  }
-                  this.audio = new Audio(splitTag.val);
-                  this.audio.volume = 0.3;
-                  this.audio.play();
+                    if(audio !== null) {
+                        audio.pause();
+                        audio.removeAttribute('src');
+                        audio.load();
+                    }
+                    audio = new Audio(splitTag.val); 
+                    audio.volume = 0.3;
+                    audio.play();
                 }
 
                 // AUDIOLOOP: src
                 else if( splitTag && splitTag.property == "AUDIOLOOP" ) {
-                  if('audioLoop' in this) {
-                    this.audioLoop.pause();
-                    this.audioLoop.removeAttribute('src');
-                    this.audioLoop.load();
-                  }
-                  this.audioLoop = new Audio(splitTag.val);
-                  this.audioLoop.volume = 0.1;
-                  this.audioLoop.loop = true;
-                  this.audioLoop.play();
+                    if(audioLoop !== null) {
+                        audioLoop.pause();
+                        audioLoop.removeAttribute('src');
+                        audioLoop.load();
+                        
+                    }
+                    audioLoop = new Audio(splitTag.val); 
+                    audioLoop.volume = 0.1;
+                    audioLoop.loop = true;
+                    audioLoop.play();
                 }
 
                 // SBIMAGE: src
@@ -571,6 +572,11 @@ function combo_lock_button(i, direction) {
             if(isClickable){
                 var choiceAnchorEl = choiceParagraphElement.querySelectorAll("a")[0];
                 choiceAnchorEl.addEventListener("click", function(event) {
+
+                    // Stop any playing audio item.
+                    if(audio != null) {
+                        audio.pause();
+                    }
 
                     // Don't follow <a> link
                     event.preventDefault();
