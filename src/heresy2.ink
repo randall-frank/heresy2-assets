@@ -12,6 +12,8 @@ INCLUDE marble_workshop.ink
 INCLUDE apollo.ink
 INCLUDE apollo_backroom.ink
 INCLUDE river.ink
+INCLUDE hypermarket.ink
+INCLUDE computerroom.ink
 
 -> intro
 

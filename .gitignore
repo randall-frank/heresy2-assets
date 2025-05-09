@@ -20,3 +20,4 @@ venv/
 tmp.json
 src/item_globals.ink
 build/
+unused/

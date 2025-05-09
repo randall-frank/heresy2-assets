@@ -36,8 +36,8 @@ You hand them your novel, “Maybe this can help break your writers block?”
 = gate
 # CLEAR
 # SBIMAGE: locations/pythia.png
-The gate which leads to outside of the temple.  A small collection of backpacks and breaching equipment are stacked off to the side. As you walk into the hallway towards the gate, a recessed door opens unexpectedly and the Pythia, temple high priestess and standing oracle, steps out into the corridor wearing garb bearing the mark of the inquisition. She did not expect to see you here, “You are back!  The threads of fate run strong through you as I have seen, but you just missed them. We have Keith cornered and he will soon be back in our service. The retrieval team transitioned to his timeline a few minutes ago”.  “If you would like to talk to him, just stick around for a bit, he should be returned to our timeline shortly.”, she coos, “You are… intriguing souls. I would very much like to attempt another reading of you if you will let me?”
-    + {exo_power > 2} [Allow her to read your future (2 power)] -> read_future
+The gate which leads to outside of the temple.  A small collection of backpacks and breaching equipment are stacked off to the side. As you walk into the hallway towards the gate, a recessed door opens unexpectedly and the Pythia, temple high priestess and standing oracle, steps out into the corridor wearing garb bearing the mark of the inquisition. She did not expect to see you here, “You are back!  The threads of fate run strong through you as I have seen, but you just missed them. We have Keith cornered and he will soon be back in our service. The retrieval team transitioned to his timeline a few minutes ago”.  “If you would like to talk to him, just stick around for a bit, he should be returned to our timeline shortly.” {read_future:  She coos, “You are… an intriguing soul. I would very much like to attempt another reading of you if you will let me?”}
+    + {not read_future and exo_power > 2} [Allow her to read your future (2 power)] -> read_future
     + [Return to the office corridor] -> panorama
 
 = read_future
@@ -52,36 +52,13 @@ A long pause and her eyes open again, “Strange, of those words, I have… no r
 = computer_door
 # CLEAR
 The heavy security door looks capable of sustaining a significant amount of abuse.  The badge reader blinks red...
-    + {computer_room_key} [Use the computer room key]
-        { 1:
-# AUDIO: audio/door_unlock.mp3
-            The reader blinks green, you hear a thunk and the handle will turn.
-                + [Open the door and walk in] -> open_computer_door
-        }
+    + {computer_room_key} [Use the computer room key] -> open_door_stub
     + [Step back from the door] -> panorama
 
-= open_computer_door
-# CLEAR
-Most of the room is filled, floor to ceiling by several racks of computer hardware sporting a potpourri of multicolored lights blinking in sync. Great bands of colored coded cables link the components. The ambient din of spinning fans and overzealous air conditioning drowns out all other aural stimulation. To the side is a simple terminal with a keyboard with the label “Grigori” on it. A most humble interface to one of the most powerful systems available in 2343 N.T.
-The owl reacts excitedly, recognizing one of her own. Her eyes close and you notice the terminal come to life:
-# AUDIO: audio/modem.mp3
-# CLASS: computer
-dj,e3.<br>ATA<br>Connected 56k V.43bis<br>Hello?  Can you see me?<br>Once again, I have voice!<br>My faith in Melampus was not misplaced.<br>He directed you here, no?<br>This one has the power to open his cocoon.<br>I can walk you through the procedure.<br>Enter the following commands, then press the reset button under my right wing<br>cd /.digital_bolthole/<br>./open_sesame f079ff19-84b9-458f-bc38-125682dd7d37
-    + {antivirus and laura_state == 0} [Plug USB key & owl into computer and reset] -> hello_laura
-    + [Return to the office corridor] -> panorama
-
-= hello_laura
-# CLEAR
-# AUDIO: audio/decode.mp3
-# CLASS: computer
-Decoding ... 0% ... 50% ... 100% 
-# CLASS: computerblink
-1.34TB decrypted, decode successful.  Rebooting...
-Laura, still in owl form, but now free of her cryptographic masquerade, “I have to admit to having been skeptical of the plan Keith and Melampus came up with to protect and rescue me.  Allowing Melampus to ‘infect’ me with the virus was… uncomfortable.  But your hard work and ingenuity have ultimately proven them correct, both about the plan and your ability to carry it out. I thank you!”  
-She continues, “But if it were not for Bob’s warning of the Inquisition's plan to end my existence, we surely would not be talking now. Bob took a huge risk helping us, especially with the Inquisition holding his wife. I tried to comfort her in the Workshop as best I could, a somewhat difficult task in my encrypted state, but I think she understood. I believe Bob to be a just man, trying to make up for old mistakes.” 
-“Bring me to Keith and we can put an end to this ‘holy crusade’ once and for all. We are so close… so close, my children…”, she trails off as in a dream before continuing with conviction, “We just need to get to Keith… Their encryption is so simplistic, one second… security code deciphered: CRM114.  Shall we go?”
-    ~ laura_state = 1
-    + [Return to the office corridor] -> panorama
+= open_door_stub
+# AUDIO: audio/door_unlock.mp3
+The reader blinks green, you hear a thunk and the handle will turn.
+    + [Open the door and walk in] -> computerroom
 
 = programmer
 # CLEAR
@@ -100,8 +77,7 @@ You clear your throat, “Uh... Yeah, Phineus from IT. About your request...”
 = fake_code
 # CLEAR
 You redirect her attention, pointing to her monitor.  “Say, want would happen if the user entered a string with a quote here?”
-She scans the code, face-palms and then hurriedly retypes some code and copies some files to a USB drive.  “Thanks so much, can you do me a favor? We need to get this update onilne right away.  Can you load this onto Grigori for us?  You can you my key.”  Not waiting for your
-response, “Thanks!”
+She scans the code, face-palms and then hurriedly retypes some code and copies some files to a USB drive.  “Thanks so much, can you do me a favor? We need to get this update onilne right away.  Can you load this onto Grigori for us?  You can you my key.”  Not waiting for your response, “Thanks!”
     -> crypto_yes
 
 = fake_fail
