@@ -1,7 +1,7 @@
 === hypermarket ===
 ~ location_name = "HyperMarket Redux"
-# BACKGROUND: locations/river.jpg
-# AUDIOLOOP: audio/river.mp3
+# BACKGROUND: locations/hypermarket.jpg
+# AUDIOLOOP: audio/hypermarket.mp3
 -> power_change( location_change_cost ) ->
 -> panorama
 
@@ -9,7 +9,11 @@
 # CLEAR
 An odd sense of deja vu washes over you, have we been here before? You stand before a large, box-like structure with an advertisement covered facade announcing incredible deals found inside. As you approach the entrance, you notice the symbol 
 # IMAGE: items/tattoo.png
-decorating workers’, oddly hooded uniforms.  We must be getting close.
+decorating workers’, oddly hooded uniforms.  15th century Spanish clergy if memory serves.  There are no shoppers, just workers busily collecting items.
+    + [Apparel section] -> apparel
+    + [Deli counter] -> deli
+    + [Garden center] -> gardening
+    + [Automotive center] -> automotive
     + [Return to the Apollo computer room] -> apollo_backroom
 
 = apparel
@@ -24,3 +28,16 @@ A standard garment fitting room, but with an integrated garment scanner lock, cu
 As you open the door and step in, the door closes behind you in a rather aggressive fashion, locking you in. You note yourself being observed via a camera in the back wall. A laser scanner sweeps over you, passing judgment.
     + [{continue}] -> panorama
 
+= deli
+This is a meat counter with a selection of sausages and cheeses available. A deli slicer and cash register rest at the end of the counter.  A solitary employee stands guard over the counter. Blocks of provolone and Swiss nestle between globes of mozzarella alongside a selection of salami, capicola and summer sausage. Astronomical placards stand like tombstones between the offerings.  
+    + [{continue}] -> panorama
+
+= gardening
+# CLEAR
+Unknown at present
+    + [{continue}] -> panorama
+
+= automotive
+# CLEAR
+Unknown at present
+    + [{continue}] -> panorama
