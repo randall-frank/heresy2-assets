@@ -13,11 +13,11 @@ The owl reacts excitedly, recognizing one of her own. Her eyes close and you not
 # CLASS: computer
 dj,e3.<br>ATA<br>Connected 56k V.43bis<br>Hello?  Can you see me?<br>Once again, I have voice!<br>My faith in Melampus was not misplaced.<br>He directed you here, no?<br>This one has the power to open his cocoon.<br>I can walk you through the procedure.<br>Enter the following commands, then press the reset button under my right wing<br>cd /.digital_bolthole/<br>./open_sesame f079ff19-84b9-458f-bc38-125682dd7d37
 }
-    + {antivirus and laura_state == 0} [Plug USB key & owl into computer and reset] -> hello_laura
+    + {antivirus and laura_state == 0} [Plug USB key & owl into computer and reset] -> decode_laura
     + [Step over to the time portal] -> portal
     + [Return to the office] -> apollo_backroom
 
-= hello_laura
+= decode_laura
 # CLEAR
 # AUDIO: audio/decode.mp3
 # CLASS: computer

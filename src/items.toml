@@ -132,6 +132,25 @@ name = "Contectless keycard"
 description = "Computer room special access card."
 url = "items/computer_room_key.png"
 
+[items.hypermarket_id]
+name = "HyperMarket ID"
+description = "An ID badge that identifies you as 'James'."
+
+[items.item_shorts]
+name = "Shorts"
+description = "What are you?  5?  A whore?  A 5 year old whore? "
+url = "items/shorts.png"
+
+[items.item_poloshirt]
+name = "Polo shirt"
+description = "An ID badge that identifies you as 'James'."
+url = "items/poloshirt.png"
+
+[items.item_sandals]
+name = "Sandals"
+description = "There’s only one being that could pull off those sandals… and it isn’t you. What were you thinking?"
+url = "items/sandals.png"
+
 #
 # States
 #

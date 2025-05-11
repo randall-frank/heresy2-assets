@@ -73,7 +73,7 @@ VAR philosopher_win = 0
 // State of marble workshop lockpicking 0=none, 1=failed, 2=worked
 VAR lockpick_table = 0
 
-// if laura is owl and encrypted = 0, laura is owl but unencrypted = 1
+// if laura is owl and encrypted = 0, laura is owl but unencrypted = 1, has spoken to keith = 2
 VAR laura_state = 0
 
 
@@ -105,6 +105,9 @@ VAR code_apollo_backroom = 9232
 
 // Access to apollo foyer in the Mausoleum Workshop
 VAR code_apollo_foyer = 7154
+
+// Access to fridge (time portal) in the HyperMarket Deli section
+VAR code_deli_fridge = 3287
 
 // debug can be set to any value via '?dev=x'
 // This enables shortcuts {debug} that speed development
