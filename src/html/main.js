@@ -757,6 +757,46 @@ function combo_lock_button(i, direction) {
             document.body.classList.add("dark");
     }
 
+    // Save and Load story state...
+    function downloadState() {
+        const text = theStory.state.toJson();
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL( new Blob([text], { type:`application/json` }) );
+        a.download = "heresy2_saved_game.json";
+        a.click();
+    }
+
+    function uploadState() {
+        // Get the file to upload
+        const inputFileElement = document.createElement('input');
+        inputFileElement.setAttribute('type', 'file');
+        inputFileElement.setAttribute('accept', '.json');
+        inputFileElement.onchange = function() {
+            getUploadedJson(this)
+        };
+        document.body.appendChild(inputFileElement);
+        inputFileElement.click();
+        inputFileElement.remove();
+    }
+
+    function getUploadedJson(fileInput) {
+        var files = fileInput.files;
+        if (files.length <= 0) return;
+        files[0].text().then(function(text) { 
+            // console.log(text);
+            try {
+                if (text.length) {
+                    removeAll("p");
+                    removeAll("img");
+                    story.state.LoadJson(text);
+                    continueStory(true);
+                }
+            } catch (e) {
+                console.debug("Couldn't load save state");
+            }
+        });
+    }
+
     // Used to hook up the functionality for global functionality buttons
     function setupButtons(hasSave) {
 
@@ -769,34 +809,13 @@ function combo_lock_button(i, direction) {
         });
 
         let saveEl = document.getElementById("save");
-        if (saveEl) saveEl.addEventListener("click", function(event) {
-            try {
-                window.localStorage.setItem('save-state', savePoint);
-                document.getElementById("reload").removeAttribute("disabled");
-                window.localStorage.setItem('theme', document.body.classList.contains("dark") ? "dark" : "");
-            } catch (e) {
-                console.warn("Couldn't save state");
-            }
-
+        if (saveEl) saveEl.addEventListener("click", function (event) {
+            downloadState();
         });
 
         let reloadEl = document.getElementById("reload");
-        if (!hasSave) {
-            reloadEl.setAttribute("disabled", "disabled");
-        }
-        reloadEl.addEventListener("click", function(event) {
-            if (reloadEl.getAttribute("disabled"))
-                return;
-
-            removeAll("p");
-            removeAll("img");
-            try {
-                let savedState = window.localStorage.getItem('save-state');
-                if (savedState) story.state.LoadJson(savedState);
-            } catch (e) {
-                console.debug("Couldn't load save state");
-            }
-            continueStory(true);
+        reloadEl.addEventListener("click", function (event) {
+            uploadState();
         });
 
         let themeSwitchEl = document.getElementById("theme-switch");
