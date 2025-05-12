@@ -14,6 +14,10 @@ INCLUDE apollo_backroom.ink
 INCLUDE river.ink
 INCLUDE hypermarket.ink
 INCLUDE computerroom.ink
+INCLUDE base_return.ink
+INCLUDE control.ink
+INCLUDE ascension.ink
+INCLUDE normal.ink
 
 -> intro
 

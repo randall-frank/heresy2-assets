@@ -117,8 +117,13 @@ You can feel an excited hum coming from behind the door, but there is still the 
 # SBIMAGE: locations/deli_computer.jpg
 Entering the walk-in you notice a steep drop in temperature, but this is no food storage unit. A rack of humming computer hardware hastily wired to a glowing pad dominates the room. The Time Portal is obviously active.  A pad off to the side displays time-space coordinates while a glowing green light signals the device’s readiness.  It appears to be locked into the Time Corrections Agency base.
 {laura_state < 2: Laura is visibly agitated,  “We’re not ready yet. I don’t have the access codes for this device. We must find Keith!”. }
-    + {laura_state > 1} [Initiate the transfer] -> deli_computer
+    + {laura_state > 1} [Initiate the transfer] -> travel_back_to_base
     + [Return to the deli counter] -> deli
+
+= travel_back_to_base
+# AUDIO: audio/transport.m4a
+The trip happens in a flash, literally. Some form of spatial displacement field instantly transports you back to the T.I.M.E Corrections Agency.
+    + [{continue}] -> base_return
 
 = gardening
 # CLEAR

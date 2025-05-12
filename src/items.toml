@@ -151,6 +151,11 @@ name = "Sandals"
 description = "There’s only one being that could pull off those sandals… and it isn’t you. What were you thinking?"
 url = "items/sandals.png"
 
+[items.inquisition_leader_badge]
+name = "Inquisition Badge"
+description = "A badge marking you as being a high-level Inquisition leader"
+url = "items/inq_badge.png"
+
 #
 # States
 #
