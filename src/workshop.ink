@@ -89,7 +89,7 @@ Peering through the grille high upon the door, you glimpse the bronze escutcheon
 = desk
 # CLEAR
 An early 21st century modular desk sits covered in dust, probably one of the popular GUDMUND line from that. Stacks of papers stand atop, detailing transfers of office supplies, prisoners, and other sundries to the facility. A sticky note attached to one form contains a request for a red stapler. But there’s no stapler anywhere to be seen…
-    + { not padded_cell_key} [Rifle through the drawers] -> find_padded_cell_key
+    + {not padded_cell_key} [Rifle through the drawers] -> find_padded_cell_key
     + [Return to the hallway] -> panorama
     
 = find_padded_cell_key
@@ -107,7 +107,7 @@ Your obvious fumblings have broken the computer terminal beyond simple repair. I
 - else:
 A computer terminal is built into what appears to be a marble slab. What a beauty! You run your hands over the display to admire the workmanship, and the feel of this hand-crafted design. But as your finger grazes the bezel of the display, it pops loose and you’re barely able to catch it as it falls towards the floor. The illusion of quality is gone but at least you’ll have a souvenir of your trip…
 }
-    + { not lcd_display} [Pry the LCD panel loose] -> find_lcd_display
+    + {not lcd_display} [Pry the LCD panel loose] -> find_lcd_display
     + [Return to the hallway] -> panorama
     
 = find_lcd_display
@@ -122,40 +122,37 @@ The LCD panel might still be in working order in the right hands.
 - padded_cell_key:
 # AUDIO: audio/door.m4a
 You run the digital card key though the scanner.  There is a "beep" and the faded LED turns a muted shade of green. The door is covered in dust and seems to have been sealed years if not decades ago. With a mighty pull you twist the bar open and peer into the dark cell before you.
-    -> talk_with_helen
+    -> meet_helen
 - else:
 A padded cell with a heavy, locked door.  It seems to be controlled by an ancient digital card reader.  Its swipe slot is caked with grime. A dimly lit red LED flickers off to one side.
 }
-    + { padded_cell_key} [Step into the cell] -> talk_with_helen
+    + {padded_cell_key} [Step into the cell] -> meet_helen
     + [Return to the hallway] -> panorama
 
+
+= meet_helen
+# CLEAR
+On the floor is a woman with long hair that spills around her feet. The name on her soiled jumpsuit says “Helen”?
+In an alcove on the wall, a mechanical owl spins its head and spouts gibberish in a sing-song voice. “Creaky creaky! Sneaky sneaky! What are you doing Bob-buuuuuuu!?” <bzzt> The owl shudders and ruffles its shimmering feathers.
+At the mention of Bob the woman gasps like someone woken from a nightmare. She scrapes at her eyes and her face. Days, weeks, months of webs and spiders’ prey falls from her face. She clutches the sides of her head and stares at the owl, unblinking as she screams the word, “LAURAAAAAAAAA!!!”. Then as suddenly as she came alive, her skin goes cold and her features turn to stone.
+… as she turns from you, a profound look of sadness ….
+    + {not insane_laura} [Approach the owl] -> owl
+    + {not talk_with_helen} [Talk to Helen] -> talk_with_helen
+    + [Return to the hallway] -> panorama
 
 = talk_with_helen
 # CLEAR
-On the floor is a woman with long hair that spills around her feet. The name on her soiled jumpsuit says “Helen”?
-
-In an alcove on the wall, a mechanical owl spins its head and spouts gibberish in a sing-song voice. “Creaky creaky! Sneaky sneaky! What are you doing Bob-buuuuuuu!?” <bzzt> The owl shudders and ruffles its shimmering feathers.
-
-At the mention of Bob the woman gasps like someone woken from a nightmare. She scrapes at her eyes and her face. Days, weeks, months of webs and spiders’ prey falls from her face. She clutches the sides of her head and stares at the owl, unblinking as she screams the word, “LAURAAAAAAAAA!!!”. Then as suddenly as she came alive, her skin goes cold and her features turn to stone.
-
-… as she turns from you, a profound look of sadness ….  A item slips from her fingers to the floor, within your reach  (TODO: Item: Helen Locket??).
-
-    + { not insane_laura} [Approach the owl] -> owl
-    + [Return to the hallway] -> panorama
-
+You kneel beside Helen and brush back her hair.  She seems so familiar to you, but you fail to place her.  Your kindness does not go unnoticed as a rare stretch of lucidity (or is it desperation?) seems to grip her.  “Bob, you know him right?  He sent you here?” Her gaze drifts... “So many mistakes.  We should have seen the danger.  You are here, so perhaps all is not lost.”  In a last breath of sanity she whispers, “Should you ever see my love again.  Remind him of that night on Europa where he proposed when we were so full of love and hope.  Remind him that as long as we are still alive, there is still hope.”
+    + [{continue}] -> meet_helen
 
 = owl
 # CLEAR
 # SBIMAGE: items/owl.png
 An intricate mechanical masterpiece of animated genius. It flexes and flies with agility, perhaps even exceeding an anatomical predator. When close by, it even seems to breathe. But the eyes… they stalk you with visible intelligence.
-
 Intelligence… yes,there is an undeniable intelligence present in this mechanical wonder.
-
 On closer inspection, the owl hosts a quantum array storage vessel. This lightweight chamber is capable of storing the entire quantum state of a state of the art AI. The vessel sports a high-speed computer interface compatible with most computational platforms.
 A faint glow emanates from the quantum storage nodes, suggesting that the vessel is currently occupied.
-
 The owl seems to recognize you and drops a key to you.
-
     ~ garden_door_key = 1
     ~ insane_laura = 1
-    + [Focus on Helen] -> talk_with_helen
+    + [Focus on Helen] -> meet_helen

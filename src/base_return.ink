@@ -18,7 +18,7 @@ As your vision recovers swiftly from the translocation flash, chaotic mayhem ove
 Bob, a broken shell of his former self, is balled up behind a desk.
 “It’s you! You escaped…”, he exclaimed. “They, the Inquisition , turned on Jordan and I and somehow jumped here a couple of weeks ago in a mad fury. They came looking for Laura, claiming she was a ‘witch’ and that they needed to ‘cure’ her. Melampus managed to hide her and help her escape to Dr Hastings, but wait, she’s here?  You’ve got to do something before they…”, an expression of desperation and fear swept over his face. “Helen, do they still have her?  Is she safe? Can you protect her?”, he pleads as a solitary tear rolls down his cheek.
 # TODO: consider Bob's wife ...  maybe he gives you the Inquisition badge???
-    + [Repeat Helen's words] -> helen
+    + {workshop.talk_with_helen} [Repeat Helen's words] -> helen
     + [Step back] -> panorama
 
 = helen
@@ -60,4 +60,3 @@ Dr Hastings is completely engrossed in his work, racing against time to complete
 “Keith?”, is the first question out of your mouth as you recognize the physical mannerisms of ‘Keith’ now in his true body. “Yeah”, Dr Hastings smirks at the name and recognition of work, “Thanks for getting me out of that shell by the way. It is nice to be back in a fully working body again. Can you lend me a hand here? Laura was my greatest achievement and I’m not going to let these philistines take her from me again. I’ve completed her neural diffraction adjustments, just enough to make assimilation possible.”  “Assimilation?  Are you trying to merge Laura back into the agency AI?”, you ponder. Dr Hastings responds with a condescending laugh, “You have no idea of the precipice upon which we hover…  You will see, a new beginning awaits us Laura… There, done and ready, would you kindly press ‘return’ for me.”  He sits back in the chair as the terminal next to him enters the final stages of a countdown.
     + [Press 'return'] -> ascension
     + [Step back] -> panorama
-    
