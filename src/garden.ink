@@ -34,7 +34,7 @@ At the center of the alcove sits a table with little more than scraps. Empty jug
 
 = dish
 Around its edge, a repeating set of symbols wind in a pattern:
-GLYPH0 GLYPH1 GLYPH2 GLYPH3 GLYPH4 GLYPH5 GLYPH6 GLYPH7 GLYPH8 GLYPH9
+GLYPHA GLYPHA GLYPHE GLYPHD GLYPH6 GLYPHD GLYPHE GLYPHA GLYPHA GLYPHE GLYPHD GLYPH5 GLYPHD GLYPHE GLYPHA GLYPHA GLYPHE GLYPHD GLYPH3 GLYPHD GLYPHE GLYPHA GLYPHA
 The mechanical owl swoops from above, stands in the center of the dish and pecks at:
 GLYPH6
 It whistles mournfully before taking flight.

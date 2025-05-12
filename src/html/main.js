@@ -116,6 +116,12 @@ function build_status(story) {
 7 fa-solid fa-wind
 8 fa-solid fa-gear
 9 fa-regular fa-hourglass
+A fa-solid fa-bars
+B fa-solid fa-xmark
+C fa-solid fa-tree
+D fa-solid fa-circle
+E fa-solid fa-square
+F fa-solid fa-water
 */
 /* Alternatives
 8 fa-regular fa-user
@@ -129,7 +135,9 @@ var numeric_names = ["fa-solid fa-0", "fa-solid fa-1", "fa-solid fa-2",
 var symbol_names = ["fa-solid fa-crutch", "fa-solid fa-bolt", "fa-solid fa-scale-balanced",
     "fa-regular fa-sun", "fa-solid fa-fish", "fa-regular fa-moon",
     "fa-regular fa-star", "fa-solid fa-wind", "fa-solid fa-gear",
-    "fa-regular fa-hourglass"];
+    "fa-regular fa-hourglass",
+    "fa-solid fa-bars", "fa-solid fa-xmark", "fa-solid fa-tree",
+    "fa-solid fa-circle", "fa-solid fa-square", "fa-solid fa-water"];
 
 function icon_digit_html(digit, symbols) {
     let cnames = numeric_names;
@@ -523,11 +531,17 @@ function combo_lock_button(i, direction) {
             // Inject # HTML tag into the paragraph text verbatim
             paragraphText = paragraphText.replace("HTML", HTML_text);
             HTML_text = '';
-            // Convert GLYPH0-9 into html
+            // Convert GLYPH0-9A-F into html
             while (paragraphText.includes("GLYPH")) {
                 for (let i = 0; i < 10; i++) {
                     paragraphText = paragraphText.replace("GLYPH" + i.toString(), icon_digit_html(i, true));
-                }                
+                }
+                paragraphText = paragraphText.replace("GLYPHA", icon_digit_html(10, true));
+                paragraphText = paragraphText.replace("GLYPHB", icon_digit_html(11, true));
+                paragraphText = paragraphText.replace("GLYPHC", icon_digit_html(12, true));
+                paragraphText = paragraphText.replace("GLYPHD", icon_digit_html(13, true));
+                paragraphText = paragraphText.replace("GLYPHE", icon_digit_html(14, true));
+                paragraphText = paragraphText.replace("GLYPHF", icon_digit_html(15, true));
             }
             // fill in the <p> text
             paragraphElement.innerHTML = paragraphText;
