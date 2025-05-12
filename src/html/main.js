@@ -139,6 +139,23 @@ function icon_digit_html(digit, symbols) {
     return '<i class="' + cnames[digit] + '"></i>';
 }
 
+function number_to_html(combo, symbol) {
+    let html = '';
+    let digit = combo % 10;
+    combo = Math.trunc(combo / 10);
+    html = icon_digit_html(digit, symbol) + html;
+    digit = combo % 10;
+    combo = Math.trunc(combo / 10);
+    html = icon_digit_html(digit, symbol) + '&nbsp;' + html;
+    digit = combo % 10;
+    combo = Math.trunc(combo / 10);
+    html = icon_digit_html(digit, symbol) + '&nbsp;' + html;
+    digit = combo % 10;
+    combo = Math.trunc(combo / 10);
+    html = icon_digit_html(digit, symbol) + '&nbsp;' + html;
+    return html;
+}
+
 function combo_html(item_name) {
     let html = '';
     for( const [name, value] of Object.entries(storyItems['items'])) {
@@ -147,18 +164,7 @@ function combo_html(item_name) {
                 let combo = theStory.variablesState[value.code];
                 let symbol = false;
                 if (value.hasOwnProperty('symbol')) symbol = true;
-                let digit = combo % 10;
-                combo = Math.trunc(combo / 10);
-                html = icon_digit_html(digit, symbol) + html;
-                digit = combo % 10;
-                combo = Math.trunc(combo / 10);
-                html = icon_digit_html(digit, symbol) + '&nbsp;' + html;
-                digit = combo % 10;
-                combo = Math.trunc(combo / 10);
-                html = icon_digit_html(digit, symbol) + '&nbsp;' + html;
-                digit = combo % 10;
-                combo = Math.trunc(combo / 10);
-                html = icon_digit_html(digit, symbol) + '&nbsp;' + html;
+                html = number_to_html(combo, symbol);
             }
         }
     }
@@ -197,7 +203,7 @@ function insert_combo_lock(story, parent, combo_var_name) {
     let s = '';
     let combination = story.variablesState[combo_var_name];
     if (story.variablesState.debug) {
-        s += '<p>' + combination.toString() + '</p>';
+        s += '<p>' + number_to_html(combination, story.variablesState.combo_symbols) + '</p>';
     }
     s += `<table class="combo-holder">
 <tr>
@@ -517,6 +523,12 @@ function combo_lock_button(i, direction) {
             // Inject # HTML tag into the paragraph text verbatim
             paragraphText = paragraphText.replace("HTML", HTML_text);
             HTML_text = '';
+            // Convert GLYPH0-9 into html
+            while (paragraphText.includes("GLYPH")) {
+                for (let i = 0; i < 10; i++) {
+                    paragraphText = paragraphText.replace("GLYPH" + i.toString(), icon_digit_html(i, true));
+                }                
+            }
             // fill in the <p> text
             paragraphElement.innerHTML = paragraphText;
             storyContainer.appendChild(paragraphElement);

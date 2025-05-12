@@ -35,6 +35,10 @@
  * function in main.js can detect and respond to these while
  * generating the HTML blocks.
  *
+ * Codes in the text:
+ *    'HTML' is replaced by the HTML: 'text'
+ *    'GLYPHx' is replaced by the code for x where x = [0,9]
+ *
  * Useful links to the ink language:
  *
  * https://github.com/sawradip/ink-cheat-sheet
@@ -107,7 +111,7 @@ VAR code_apollo_backroom = 9232
 VAR code_apollo_foyer = 7154
 
 // Access to fridge (time portal) in the HyperMarket Deli section
-VAR code_deli_fridge = 4028
+VAR code_deli_fridge = 6028
 
 // debug can be set to any value via '?dev=x'
 // This enables shortcuts {debug} that speed development

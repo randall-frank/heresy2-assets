@@ -33,10 +33,10 @@ At the center of the alcove sits a table with little more than scraps. Empty jug
     + [Return to entrance] -> garden_gate
 
 = dish
-Around its edge, a repeating set of symbols wind in a pattern.
-# IMAGE: items/rim_icons.png
-The mechanical owl swoops from above, stands in the center of the dish and pecks at
-# IMAGE: items/star_icon.png
+Around its edge, a repeating set of symbols wind in a pattern:
+GLYPH0 GLYPH1 GLYPH2 GLYPH3 GLYPH4 GLYPH5 GLYPH6 GLYPH7 GLYPH8 GLYPH9
+The mechanical owl swoops from above, stands in the center of the dish and pecks at:
+GLYPH6
 It whistles mournfully before taking flight.
     + [{continue}] -> alcove
 

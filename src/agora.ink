@@ -116,3 +116,4 @@ As you enter, the proprietor finishes her work. The hand twitches and she looks 
         ~ gold_wiring = 1
         -> panorama
     + [Return to the street] -> panorama
+    
