@@ -41,7 +41,7 @@ A beautiful girl with long hair and a short dress hides behind a tree. Her eyes 
 # CLEAR
 ~ combat_health = 90.
 ~ combat_attack = 10.
-~ combat_defence = 25.
+~ combat_defense = 25.
 You find a large bush and tell Daphne to crouch behind it. Then, you please a few leaves and branches in front of her while footsteps are approaching. It’s Apollo coming your direction. You think you did a good job, but it’s hard to fool a paranoid lover
 “Daphne what is going on? Why are you sitting there? And who is this person? Did they make you hide from me? Are they trying to steal you from me? Or are they trying to kidnap you? How DARE YOU!” With irrational rage, Apollo charges at you. Daphne jumps out of the bushes to try to pull him away from you.
     + [You have no choice but to confront him] -> fight

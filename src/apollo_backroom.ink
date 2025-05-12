@@ -7,7 +7,7 @@
 
 = panorama
 # CLEAR
-A cold flash of blinding light precedes your arrival, but where are we?  A definititively “modern” spin on 450 BC Greece.  You recognize the marble walls and Delphic iconography
+A cold flash of blinding light precedes your arrival, but where are we?  A definitively “modern” spin on 450 BC Greece.  You recognize the marble walls and Delphic iconography
 # IMAGE: items/delphic.png 
 but the interior appears to be lit with LED lighting and contains a collection of work “cubicles” circa North America, 2000s perhaps?  The backroom of the Temple of Apollo is a lively place with office workers in garb from various frames of time.  They hardly take notice of your entrance, fixated in zombie-like stupor on the glowing terminal screens they worship. Most are talking into headsets and furiously typing on antiquated input devices (keyboards). In the center you recognize the back of the Tritanium gate leading to the temple exterior.  In the back of the office is a door with a sign reading: "Computer room: Restricted access".
     + [Talk to the tech writers] -> writers
@@ -77,12 +77,12 @@ You clear your throat, “Uh... Yeah, Phineus from IT. About your request...”
 = fake_code
 # CLEAR
 You redirect her attention, pointing to her monitor.  “Say, want would happen if the user entered a string with a quote here?”
-She scans the code, face-palms and then hurriedly retypes some code and copies some files to a USB drive.  “Thanks so much, can you do me a favor? We need to get this update onilne right away.  Can you load this onto Grigori for us?  You can you my key.”  Not waiting for your response, “Thanks!”
+She scans the code, face-palms and then hurriedly retypes some code and copies some files to a USB drive.  “Thanks so much, can you do me a favor? We need to get this update online right away.  Can you load this onto Grigori for us?  You can you my key.”  Not waiting for your response, “Thanks!”
     -> crypto_yes
 
 = fake_fail
 # CLEAR
-The pogrammer slowy turns to look at you, something about you does not seem to register for her.   “Phineus is it?  Can I see your badge?”
+The programmer slowly turns to look at you, something about you does not seem to register for her.   “Phineus is it?  Can I see your badge?”
 You feign running your hands through your pockets...  “Sorry miss, I seem to have left it in the office.  I'll be right back.”
 “Yeah, you do that” she turns back to her monitors and begins typing a message.
     + [Leave as soon as you can] -> panorama

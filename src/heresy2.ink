@@ -32,7 +32,7 @@ Athens Greece, 450 B.C. - The age of Pericles
     + [Begin the adventure] -> base
     + [Heresy I: background] -> background
     + [Thanks] -> thanks_to
-    + [License] -> licence
+    + [License] -> license
     + [Quit] -> outro
 
 
@@ -41,7 +41,7 @@ Athens Greece, 450 B.C. - The age of Pericles
 # ATTRIBUTION
     + [Back] -> intro
 
-=== licence ===
+=== license ===
 # CLEAR
 # HTML: <a target="_blank" href="https:<ss>github.com/randall-frank/heresy2-assets">Heresy II</a>
 <h2>HTML is released under the MIT License</h2>
@@ -116,8 +116,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     }
     ~ return power
 
-=== function defence_power()
-// compute defence power (adjust based on items)
+=== function defense_power()
+// compute defense power (adjust based on items)
     ~ temp power = 50.
     { quad_shield:
         ~ power += 20.
@@ -131,11 +131,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 // do a round of combat.
 === combat(opponent, ref success)
     You are locked in combat with {opponent} who is {combat_health>exo_power: stronger|weaker} than you.
-    // Compute base damage as = attack*(ratio/(ratio+defence))
+    // Compute base damage as = attack*(ratio/(ratio+defense))
     // Then weight by a sample from a normal distribution
-    ~ temp dmg_to_other = INT(FLOAT(attack_power())*FLOAT(combat_ratio)/FLOAT(combat_ratio+combat_defence))
+    ~ temp dmg_to_other = INT(FLOAT(attack_power())*FLOAT(combat_ratio)/FLOAT(combat_ratio+combat_defense))
     ~ dmg_to_other = INT(FLOAT(dmg_to_other)*(rand_norm()/100.0))
-    ~ temp dmg_to_player = INT(FLOAT(combat_attack)*FLOAT(combat_ratio)/FLOAT(combat_ratio+defence_power()))
+    ~ temp dmg_to_player = INT(FLOAT(combat_attack)*FLOAT(combat_ratio)/FLOAT(combat_ratio+defense_power()))
     ~ dmg_to_player = INT(FLOAT(dmg_to_player)*(rand_norm()/100.0))
     You do {dmg_to_other} damage while they do {dmg_to_player} to you.
     -> power_change(-dmg_to_player) ->

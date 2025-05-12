@@ -81,8 +81,8 @@ VAR laura_state = 0
 // run a round of "combat"
 VAR combat_health = 0.
 VAR combat_attack = 0.
-VAR combat_defence = 50.
-// damage = attack*(ratio/(ratio+defence))
+VAR combat_defense = 50.
+// damage = attack*(ratio/(ratio+defense))
 VAR combat_ratio = 100.
 
 // variable used by the "combination lock" (# COMBO)
@@ -107,7 +107,7 @@ VAR code_apollo_backroom = 9232
 VAR code_apollo_foyer = 7154
 
 // Access to fridge (time portal) in the HyperMarket Deli section
-VAR code_deli_fridge = 3287
+VAR code_deli_fridge = 4028
 
 // debug can be set to any value via '?dev=x'
 // This enables shortcuts {debug} that speed development

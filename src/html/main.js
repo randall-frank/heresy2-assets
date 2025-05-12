@@ -114,10 +114,11 @@ function build_status(story) {
 5 fa-regular fa-moon
 6 fa-regular fa-star
 7 fa-solid fa-wind
-8 fa-regular fa-user
+8 fa-solid fa-gear
 9 fa-regular fa-hourglass
 */
 /* Alternatives
+8 fa-regular fa-user
 fa-solid fa-fire
 fa-solid fa-tree
 */
@@ -127,7 +128,7 @@ var numeric_names = ["fa-solid fa-0", "fa-solid fa-1", "fa-solid fa-2",
     
 var symbol_names = ["fa-solid fa-crutch", "fa-solid fa-bolt", "fa-solid fa-scale-balanced",
     "fa-regular fa-sun", "fa-solid fa-fish", "fa-regular fa-moon",
-    "fa-regular fa-star", "fa-solid fa-wind", "fa-regular fa-user",
+    "fa-regular fa-star", "fa-solid fa-wind", "fa-solid fa-gear",
     "fa-regular fa-hourglass"];
 
 function icon_digit_html(digit, symbols) {
@@ -377,7 +378,7 @@ function combo_lock_button(i, direction) {
                 var tag = tags[i];
 
                 // Detect tags of the form "X: Y". Currently used for IMAGE and CLASS but could be
-                // customised to be used for other things too.
+                // customized to be used for other things too.
                 var splitTag = splitPropertyTag(tag);
 				splitTag.property = splitTag.property.toUpperCase();
 
@@ -789,6 +790,7 @@ function combo_lock_button(i, direction) {
                     removeAll("p");
                     removeAll("img");
                     story.state.LoadJson(text);
+                    savePoint = story.state.toJson();
                     continueStory(true);
                 }
             } catch (e) {

@@ -49,13 +49,13 @@ One Quantum Crypto Unit it is!
 { not tip_scales:
 # SBIMAGE: items/scales.jpg
 A marble counter serves food to those of the lower caste on Mypos. Those like you. The kitchen is strikingly modern behind the counter, with a stove, pressure cookers, and a soft-serve ice cream machine. A cook behind the counter shouts and sweats as he slings bowls of food.
-The cook calls out to you, and his voice sings of riches. As you move forward to see what wares he has for sale, the owl swoops forward and lands atop a set of scales. As one arm drops, the other rises, and the owl adjusts to keep balance. But something is off.
-The cook tries to shoo the bird away, but the owl flaps its wings and shifts its mass, tipping over the scales and sending a stack of five golden coins to the ground. The chef curses and rights the empty scales. That’s when everyone notices they’re uneven. The owl clicks a guttural sound as though laughing before it flies above the gathering crowd.
+The cook calls out to you, and his voice sings of riches. As you move forward to see what wares he has for sale, the owl swoops forward and lands atop a set of scales, gesticulating and making eye contact with you. 
+As one arm drops, the other rises, and the owl adjusts to keep balance. But something is off. The cook tries to shoo the bird away, but the owl flaps its wings and shifts its mass, tipping over the scales and sending a stack of five golden coins to the ground. The chef curses and rights the empty scales. That’s when everyone notices they’re uneven. The owl clicks a guttural sound as though laughing before it flies above the gathering crowd.
     ~ tip_scales = 1
     -> cash_change(5) ->
     + [{continue}] -> fast_food
 - else:
-There’s a crush of people at the counter, all of them bearing the mark of Keith. By the time you make it to the front, there’s little left. The cook swats at hungry customers during his free moments.
+There’s a crush of people at the counter, all of them bearing the mark of Keith. By the time you make it to the front, there is little left. The cook swats at hungry customers during his free moments.
 “Cold beans,” says the cook, gesturing to a rough bowl. “Take it or leave it.” He blows his nose into his apron then stares at you. “You heard what I said! Buy ‘em or go!” Seeing that you won’t discipline yourself, he reaches for a wooden spoon to strike you with.
     + {not fava_beans and cash >= 2} [Fava beans: 2 Drachm]
         ~ fava_beans = 2
@@ -76,7 +76,7 @@ You lean across the counter and barely reach the soft-serve ice cream machine. Y
         ~ fava_beans = 1
     }
 - else:
-The cook sees your game. He cracks you on the hand with a wooden spoon and spends quite a while telling you what a disappointment you are to everyone you know and everyone you don’t. He throws a clump of ice cream and the resulting shock resonates though your suit.
+The cook sees your game. He cracks you on the hand with a wooden spoon and spends quite a while telling you what a disappointment you are to everyone you know and everyone you don’t. He pours a pitcher of dishwater your way and the resulting shock resonates though your suit.
 # AUDIO: audio/shock.mp3
     -> power_change(-5) ->
 }

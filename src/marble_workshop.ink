@@ -37,7 +37,7 @@ On a table in the back lies another damaged receptacle.  This one appears to sor
 # CLEAR
 ~ combat_health = 30.
 ~ combat_attack = 10.
-~ combat_defence = 25.
+~ combat_defense = 25.
 You start to unlock the table...
 Trying...
 Trying...
@@ -74,9 +74,9 @@ The workers look to teach you a lesson... with their fists!  You enable the comb
 # CLEAR
 On the table lies a heavily damaged android receptacle. It appears its legs have been crushed, beyond repair and deep gouges marr the rest of the body.  You notice the  arm tattoo.  It is likely the receptacle standing nearby was being prepped as a replacement for this one.
 As you look over the shattered form, suddenly eyes flitter open and the occupant turns its head to speak to you. “... do I know you???   Aren’t you part of Gold Squad?  It’s me, Nelda Powell from Squad Porspet”.  She follows your gaze down to her missing legs, “It looks a lot worse than it is. At least Phidias says I will get a new receptacle, this one has had it”.  “Just another example of Inquisition retaliation, I’m afraid. I’m pretty sure they arranged for the quarry accident that brought me here. I almost prefer it to their little power recharging games. Be careful in your interactions with folks here in Athens. Phidias is sympathetic to our plight, but will not do anything that brings suspicion on himself.”
-{not anthropoid_head:
-On a high shelf, a marble head sits staring at you with empty eyes. Is it a work in progress or is it a life that has done what it needs? It’s a question you ponder as the owl lands on the shelf. It stares at you as it takes six careful sideways steps towards the head. Once there, it shoves the lifeless stone with its foot.  You instinctively react and catch it before it hits the ground.
-    ~ anthropoid_head = 1
+{not anthropoid_gear:
+On a high shelf, a mechanical mechanism sits without obvious purpose. Is it a work in progress or was it harvested from an other-worldly device? It’s a question you ponder as the owl lands on the shelf. It stares at you as it takes six careful sideways steps towards the gear. Once there, it gives it a cat-like shove with its foot.  You instinctively react and catch it before it hits the ground.
+    ~ anthropoid_gear = 1
 }
     + [{continue}] -> workspace
 

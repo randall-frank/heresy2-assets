@@ -45,9 +45,9 @@ hide_variable = "temple_found"
 name = "Crutch"
 description = "A rough and worn crutch."
 
-[items.anthropoid_head]
-name = "Anthropoid Head"
-description = "A detached head from an anthropoid receptacle."
+[items.anthropoid_gear]
+name = "Anthropoid gear"
+description = "A tempered gear harvested from an anthropoid receptacle."
 
 [items.sunbeam_plate]
 name = "Sunbeam plate"
@@ -62,7 +62,7 @@ code = "code_melampus"
 [items.melampus_list]
 name = "Melampus item list"
 description = "- Oscillator<br>- Gold wiring<br>- LCD display<br>- Simple battery"
-hide_variable = "antivius"
+hide_variable = "antivirus"
 
 [items.antivirus]
 name = "Antivirus"
@@ -121,14 +121,14 @@ url = "items/novel.jpg"
 
 [items.stun_orb]
 name = "Stun Orb"
-description = "A Robinson Psychosys 534 Stun Orb. Sometimes in combat you just need a little extra boost.  The stun orb will slow your attacker just a little bit, without disrupting your attack."
+description = "A Robinson Psychosis 534 Stun Orb. Sometimes in combat you just need a little extra boost.  The stun orb will slow your attacker just a little bit, without disrupting your attack."
 
 [items.combat_training]
 name = "Mark II combat training"
 description = "The combat training program from a Mark II receptacle.  It improves reflexes and targeting in combat situations."
 
 [items.computer_room_key]
-name = "Contectless keycard"
+name = "Contactless keycard"
 description = "Computer room special access card."
 url = "items/computer_room_key.png"
 

@@ -60,7 +60,7 @@ As you move into the darkness of the temple, the heat and smell of furnace fires
 # CLEAR
 ~ combat_health = 20.
 ~ combat_attack = 10.
-~ combat_defence = 20.
+~ combat_defense = 20.
 A crowd of people are milling about the center of the space, their attention on two men sneering and snapping at each other like sharp-toothed dogs. A man with a lame leg and a tattoo matching yours on his shoulder spits and screams and a man with smooth, unburnt skin and cold eyes that do not belong here.
 Jeers of anticipation fill the air like smoke like fire from a forge. Nothing like a good fight to clear the air.
 The lame man screams at his opponent, “You think you can come here like some tourist? To take what you want while we toil day and night?” He shakes his fist. “You tell that bastard Bob to come here himself. You tell him to come and I’ll tell him to…” The crowd howls as the man with cold eyes throws a right hook and the dispute is lost beneath the waves of cheers.
@@ -117,7 +117,7 @@ A steel rimmed keypad sits next to a heavy door flanked with flickering torches.
     + [Try the combination]
         { combo_value == code_melampus:
             "Access granted." The door swings open noiselessly and as you step through it swings shut. In here there is only the sound of one hammer…
-# AUDIO: audio/postive.mp3            
+# AUDIO: audio/positive.mp3            
             + [{continue}] -> melampus
         - else:
             "Bzzt! Invalid access attempt logged."

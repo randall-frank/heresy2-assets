@@ -20,12 +20,12 @@ decorating workers’, oddly hooded uniforms.  15th century Spanish clergy if me
 # CLEAR
 ~ combat_health = 30.
 ~ combat_attack = 10.
-~ combat_defence = 25.
+~ combat_defense = 25.
 Two hooded figures stand in front of tables of unreasonably comfortable clothing at reasonable prices. You can’t see their faces. One is holding a strange device that looks like a gun but has too many barrels and they point at unusual angles. The other is holding up a pair of sweatpants for inspection. 
 “I don’t know…” one says while holding up a pair of sweatpants for inspection “We must wear the uniform, sure. But do you think they care what we have on under the robe?” The other shrugs. As you draw near, “I recognize you not, friend. What is your business here?”
     + {hypermarket_id} [Pretend to be a clerk] -> fake_clerk
     + {not hypermarket_id} [Pretend to be a clerk] -> fight_pair
-    + [Ask to see thier IDs] -> fight_pair
+    + [Ask to see their IDs] -> fight_pair
 
 = fight_pair
 # CLEAR
@@ -69,7 +69,7 @@ You clip your ID to your toga, then hand a pair of sweatpants to each of the gua
 # CLEAR
 The scan completes.  After a considerable pause, the back wall slides open, revealing the unmistakable visage of Keith. Keith stands slowly, his battered exoskeleton servos complaining in the background. As he turns to face you, the history of Inquisition insults to his person read as excruciating hieroglyphics etched across his physique.  Laura excitedly flutters over to his outstretched arm as he visibly relaxes with an audible sigh of relief.
 “You’ve made it!  I should never have doubted Melampus.”  Keith turns to you, “I guess I have you to thank for bringing my greatest engineering masterpiece back to me?”  Laura’s “personage” tangibly “blushes” at his kind words.  “Yes,” she blurts out, “They have brought me back to you and now we can strike back at those who even now rush to consolidate their control over Bob and the agency!”
-At the mention of that name, “Bob”, Keith’s face is stained with deep sadness. “It is not Bob’s fault, or at least I am as much to blame as him. We thought we could use the Inquisition to bring about real, evolutionary change.  After all, did we not both believe in the betterment, not only of man, but of the entire trajectory of mankind? Sadly, they see technology as merely a tool of control and not the instrument of change…”  “What manners have I?” Kieth askes, “We don’t have a lot of resources here, but what we do have are yours. I must assume you are being followed and we will need to leave here soon.”
+At the mention of that name, “Bob”, Keith’s face is stained with deep sadness. “It is not Bob’s fault, or at least I am as much to blame as him. We thought we could use the Inquisition to bring about real, evolutionary change.  After all, did we not both believe in the betterment, not only of man, but of the entire trajectory of mankind? Sadly, they see technology as merely a tool of control and not the instrument of change…”  “What manners have I?” Kieth asks, “We don’t have a lot of resources here, but what we do have are yours. I must assume you are being followed and we will need to leave here soon.”
 “But we have an option, there is a Time Portal here.  It is a bit incomplete, but with it we can at least make it back to the Agency,” Laura interjects. “We… You… have a unique opportunity here to deliver the seeds of new horizons, the aspirations of both man and mankind.  You can use the Agency computers and full Time Portal, with my help, to correct their injurious actions.”
 “Enough, Laura. Give our friends what little time they have to rest and recover.”, Keith counters, “There will be time to discuss plans, after a meal and drink.  Come.”
     ~ laura_state = 2
@@ -78,7 +78,7 @@ At the mention of that name, “Bob”, Keith’s face is stained with deep sadn
 = deli
 # CLEAR
 // access to fridge -> time portal.
-This is a meat counter with a selection of sausages and cheeses available. A deli slicer and cash register rest at the end of the counter.  A solitary employee stands guard over the counter. Blocks of provolone and Swiss nestle between globes of mozzarella alongside a selection of salami, capicola and summer sausage. Astronomical placards stand like tombstones between the offerings.
+This is a meat counter with a selection of sausages and cheeses available. A deli slicer and cash register rest at the end of the counter.  A solitary employee stands guard over the counter. Blocks of provolone and Swiss nestle between globes of mozzarella alongside a selection of salami, Capocollo and summer sausage. Astronomical placards stand like tombstones between the offerings.
 Behind the counter there is a walk-in refrigerator.  The door is closed and an exotic looking lock is mounted above the handle. Not something one might see on a normal walk-in fridge...
     + [Walk behind the counter] -> fridge
     + [{continue}] -> panorama
@@ -103,7 +103,7 @@ You can feel an excited hum coming from behind the door, but there is still the 
     + [Try the combination]
         { combo_value == code_deli_fridge:
             "Access granted." The door swings open noiselessly and as you step through it swings shut.
-# AUDIO: audio/postive.mp3            
+# AUDIO: audio/positive.mp3            
             + [{continue}] -> deli_computer
         - else:
             "Bzzt! Invalid access attempt logged."
