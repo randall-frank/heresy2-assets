@@ -8,6 +8,7 @@ Suddenly you feel a strong tug at the base of your stomach and are forced to clo
 
 = panorama
 ~ location_name = "Spain (1499 A.D.)"
+# BACKGROUND: locations/spain.jpg
 # CLEAR
 Next to you, an acolyte is looking at you and offering you a hand to get you up. Close by, a priest is throwing something in the remains of a fire.  The priest makes eye contact and gestures for you to join him.  On the open field to the right, a group of priests are arousing a crowd of jubilant simpletons mixed with men in high-tech uniforms.
     + [Accept the hand of the acolyte] -> acolyte
