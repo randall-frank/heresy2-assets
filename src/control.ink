@@ -1,4 +1,5 @@
 === control ===
+// Spain 1499 (“Inquisition ending” postscript)
 ~ location_name = "Time Corrections Agency (2413 A.D.)"
 # BACKGROUND: locations/base.jpg
 The acolytes turn towards you with a big smile on their face as soon as you plug the device into the android body. “All is done now. God’s will once again has been victorious over man's hubris. Come, come with us to celebrate. Let us show you what you helped us achieve“. 
