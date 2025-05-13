@@ -156,6 +156,11 @@ name = "Inquisition Badge"
 description = "A badge marking you as being a high-level Inquisition leader"
 url = "items/inq_badge.png"
 
+[items.wafer_chip]
+name = "Computer wafer chip"
+description = "A circular computer chip."
+url = "items/wafer.png"
+
 #
 # States
 #
