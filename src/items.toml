@@ -148,7 +148,7 @@ url = "items/poloshirt.png"
 
 [items.item_sandals]
 name = "Sandals"
-description = "There’s only one being that could pull off those sandals… and it isn’t you. What were you thinking?"
+description = "There’s only one being that could pull off those sandals… and it isn’t you. Besides, open-toed shoes on a male?"
 url = "items/sandals.png"
 
 [items.inquisition_leader_badge]
