@@ -187,7 +187,7 @@ Fade to black... and with that you have reached the end of our story.  We certai
     -> outro
 
 === outro ===
-# AUDIOLOOP:
+# AUDIOLOOP: audio/endgame.m4a
 ~ location_name = ""
 # CLASS: end
 Thank you for your consideration.
