@@ -138,7 +138,7 @@ description = "An ID badge that identifies you as 'James'."
 
 [items.item_shorts]
 name = "Shorts"
-description = "What are you?  5?  A whore?  A 5 year old whore? "
+description = "While those may have been in vogue in Spain, say 1499, one has to question this choice."
 url = "items/shorts.png"
 
 [items.item_poloshirt]
@@ -153,7 +153,7 @@ url = "items/sandals.png"
 
 [items.inquisition_leader_badge]
 name = "Inquisition Badge"
-description = "A badge marking you as being a high-level Inquisition leader"
+description = "A badge marking you as being a high-level Inquisition leader."
 url = "items/inq_badge.png"
 
 [items.wafer_chip]

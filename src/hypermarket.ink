@@ -140,13 +140,11 @@ Interesting, they left their ID attached to the robe.  You pilfer the ID.
 = racks
 # CLEAR
 Tables/hanging garments, a clerk stands ready to help you. Between a table of shorts, a rack of polo shirts and boxes of sneakers, a clerk “stands guard”, looking you over hawkishly, noting your tattoos, but not recognizing you, “You must be new to our cause. Has Keith given you an ‘errand’? We have options for all time periods, many appropriate for different disguises.” 
-“Make a selection and if needed, you can check the size in the fitting room over there.”, he winks at you.  “Today we are offering:”
-Shorts
-# IMAGE: items/shorts.png
-Poloshirt
-# IMAGE: items/poloshirt.png
-Sandals
-# IMAGE: items/sandals.png
+“Make a selection and if needed, you can check the size in the fitting room over there.”, he winks at you.  “Today we are offering:
+shorts, a poloshirt and sandals.  Care to make a choice?”
+# SBIMAGE: items/shorts.png
+# SBIMAGE: items/poloshirt.png
+# SBIMAGE: items/sandals.png
     + [Pick up a pair of shorts] -> pickup_shorts
     + [A poloshirt would be nice] -> pickup_poloshirt
     + [Classic sandals] -> pickup_sandals
