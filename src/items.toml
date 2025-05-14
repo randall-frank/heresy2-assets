@@ -72,7 +72,7 @@ url = "items/antivirus.png"
 [items.oscillator]
 name = "Oscillator"
 description = "A finely tuned crystal oscillator."
-url = "items/oscillator.jpg"
+url = "items/oscillator.png"
 
 [items.lcd_display]
 name = "LCD display board"
@@ -82,7 +82,7 @@ url = "items/lcd_panel.png"
 [items.gold_wiring]
 name = "Gold wire"
 description = "A spool of gold wire."
-url = "items/gold_wiring.jpg"
+url = "items/gold_wiring.png"
 
 [items.simple_battery]
 name = "Battery"

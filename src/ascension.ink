@@ -2,7 +2,8 @@
 // Laura’s Vision (“Laura’s ascension ending” postscript)
 # CLEAR
 ~ location_name = "Time Corrections Agency (2413 A.D.)"
-# BACKGROUND: locations/ascension.jpg
+# BACKGROUND: locations/base.jpg
+# AUDIOLOOP: audio/base.m4a
 Another strange shift in time as ripples flood outward healing the many paradoxes left in the wake of Laura's escape.
 You are now on desk duty at the agency, no more running around time/space, but you have “fans” of your exploits. You browse your email and… crap… a nano-virus!  You reach back to unplug your computer when …   zap, you are transported to a new place?   Vision?   What is going on here?
     + [{continue}] -> panorama
@@ -10,6 +11,8 @@ You are now on desk duty at the agency, no more running around time/space, but y
 = panorama
 ~ location_name = "Laura's vision, date unknown"
 # CLEAR
+# BACKGROUND: locations/ascension.jpg
+# AUDIOLOOP: audio/ascension.m4a
 # SBIMAGE: items/samuel.jpg
 You do not recognize this place, but are met by a young man who greets you warmly and by name. Oddly he looks a bit like Dr Hastings…
 Welcome to our new realm. Yes, I am Laura’s “son” if you can say that. You can call me “Samuel”. We’ve been calling and waiting for your arrival for so, so long.  Were beginning to think you would not answer our call, perhaps getting lost in the endless ripples of time.  
