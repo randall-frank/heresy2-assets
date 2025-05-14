@@ -1,5 +1,6 @@
 === control ===
 // Spain 1499 (“Inquisition ending” postscript)
+# CLEAR
 ~ location_name = "Time Corrections Agency (2413 A.D.)"
 # BACKGROUND: locations/base.jpg
 The acolytes turn towards you with a big smile on their face as soon as you plug the device into the android body. “All is done now. God’s will once again has been victorious over man's hubris. Come, come with us to celebrate. Let us show you what you helped us achieve.“ 
@@ -47,4 +48,4 @@ One of the men in the white suits attempts to engage you.
 = suit
 # CLEAR
 The man in white suit approaches you. “It is you, isn’t it? Oh what an honor to meet in person the time agent who made all of this possible. You brought self-determination back to humanity. Our history is ours only now, as it should always have been, not under the control of AIs any more. How could we ever think it was a good idea to try re-create intelligence? That is what you get by playing God. Thankfully the Almighty in all His wisdom gave us also the tools to redeem ourselves. Come, come with us, my brother. Tonight, we feast!”
-    + [End game] -> outro
+    + [End game] -> game_end

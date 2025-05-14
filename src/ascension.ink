@@ -1,5 +1,6 @@
 === ascension ===
 // Laura’s Vision (“Laura’s ascension ending” postscript)
+# CLEAR
 ~ location_name = "Time Corrections Agency (2413 A.D.)"
 # BACKGROUND: locations/ascension.jpg
 Another strange shift in time as ripples flood outward healing the many paradoxes left in the wake of Laura's escape.
@@ -42,4 +43,4 @@ Laura greets you, “Welcome!  You’ve met Samuel, yes our son.  He prefers tha
 “I never had a chance to properly thank you for all you have done for us”, she continues. “Please let our thanks take a more practiced form. We’ve been waiting for you to join us…”
 You can enter the room she gestures you toward.
 Wait a laboratory with caissons?  You pull back recognizing what is in store for you, but you feel “compelled”.  Laura recognizes your resistance, “Yes, we have developed rudimentary forms of suggestion. Please don't fight them, we would prefer this to be of your own free will.  We need you to continue Dr Hastings role, we need new seed to continue with our plans…”   “Don't worry about your physical form in this timeline.  We have AI androids waiting to take your place...”, is the last thing you hear as the white light envelopes you and you feel yourself expanding to fulfill your destiny.  
-    + [End game] -> outro
+    + [End game] -> game_end

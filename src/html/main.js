@@ -342,7 +342,8 @@ function combo_lock_button(i, direction) {
 
     // page features setup
     setupTheme(globalTagTheme);
-    var hasSave = loadSavePoint();
+    // var hasSave = loadSavePoint();
+    var hasSave = false;
     setupButtons(hasSave);
     build_inventory(story, inventoryContainer);
     build_status(story);

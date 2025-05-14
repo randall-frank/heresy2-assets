@@ -180,10 +180,15 @@ If you are not in a position to play the original Heresy game, a basic overview 
 // TODO Heresy I spoilers
     + [{continue}] -> background
 
+=== game_end ===
+# CLEAR
+// TODO: audio
+Fade to black... and with that you have reached the end of our story.  We certainly hope you enjoyed participating in the journey as much as we enjoyed building it.
+    -> outro
+
 === outro ===
-# CLASS: end
 # AUDIOLOOP:
 ~ location_name = ""
+# CLASS: end
 Thank you for your consideration.
-
     -> END

@@ -51,7 +51,7 @@ description = "A tempered gear harvested from an anthropoid receptacle."
 
 [items.sunbeam_plate]
 name = "Sunbeam plate"
-description = "An old man with a crutch walks away from a pomegranate tree against a night sky. Right of the elderly man, a bearded man holds a set of scales and points to a complex mechanical apparatus to the right."
+description = "An old man with a crutch walks away from a pomegranate tree against a night sky to his left. Right of the elderly man, a bearded man holds a set of scales and points to a complex mechanical apparatus to the right."
 
 [items.melampus_key]
 name = "Melampus door code"
@@ -143,7 +143,7 @@ url = "items/shorts.png"
 
 [items.item_poloshirt]
 name = "Polo shirt"
-description = "An ID badge that identifies you as 'James'."
+description = "Black poloshirt with an embroidered owl."
 url = "items/poloshirt.png"
 
 [items.item_sandals]
