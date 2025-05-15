@@ -1,8 +1,21 @@
-[![CC-0 license](https://img.shields.io/badge/License-CC--0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0)
+[![CC BY 4.0][cc-by-shield]][cc-by]
+
+[Heresy]: http://heresy.mrtrashcan.com
+[Ink]: https://github.com/inkle/ink/tree/master
+[Inklecate]: https://github.com/inkle/ink/releases
 
 # Heresy II: Of What Mettle Gods?
 
 Copyright (C) 2022-2025 Andrew Florance, Marina Galvagni and Randy Frank
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
 Heresy II is officially a work in progress.  It was originally envisioned
 as a T.I.M.E Stories follow-on to the [Heresy] fan expansion.  This version
@@ -27,24 +40,30 @@ available.  It can be included in the system search path on your system or one c
 set the environmental variable `HERESY2_INKLECATE` to the complete pathname of
 the executable.  A Powershell example:
 
-> $Env:HERESY2_INKLECATE = "E:\hersey-ink\inklecate_windows\inklecate.exe"
-> & $Env:HERESY2_INKLECATE
+```
+$Env:HERESY2_INKLECATE = "E:\hersey-ink\inklecate_windows\inklecate.exe"
+& $Env:HERESY2_INKLECATE
 Usage: inklecate <options> <ink file> ...
+```
+
 Once this is set up, one can use the `build.py` file to build and run the story:
 
-> python build.py fullbuild
+```
+python build.py fullbuild
 Story version: 0.1.0
 Running compiler: ['E:\\hersey-ink\\inklecate_windows\\inklecate.exe', '-o', 'tmp.json', '-j', '-v', 'src\\heresy2.ink']
 
 {"compile-success": true}
 {"issues":[]}{"export-complete": true}
 
-> python build.py serve  
+python build.py serve  
 Serving story:  http://127.0.0.1:9000
+```
+
 At this point, pointing a browser tab at: ``http://127.0.0.1:9000`` will view the
 story.  Alternatively, one can double-click on the `index.html` file in the `build`
-directory to view the story (at present, the story is simply a collection of
-static web files).
+directory to view the story.  Note it may not always be possible to use this method. At present, the story is simply a collection of static files, but that could change in the
+future.
 
 Build.py has four options:
 
@@ -62,6 +81,3 @@ Build.py has four options:
     directory on the selected port.  This simulates an actual web deployment. The
     default port is 9000.
 
-[Heresy]: http://heresy.mrtrashcan.com
-[Ink]: https://github.com/inkle/ink/tree/master
-[Inklecate]: https://github.com/inkle/ink/releases
