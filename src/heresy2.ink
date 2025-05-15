@@ -27,12 +27,15 @@ INCLUDE normal.ink
 # CLEAR
 # BACKGROUND: greece.png
 # AUDIOLOOP:
-
-<h1><b>αίρεση II: Of what mettle Gods?</b></h1>
+# CLASS: head1
+αίρεση II: Of what mettle Gods?
+# CLASS: centered
 Athens Greece, 450 B.C. - The age of Pericles
+# CLASS: head2
+Copyright © STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni
+# CLASS: head2
+Version: STORY_VERSION
 
-<h2>Copyright © STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni</h2>
-<h2>Version: STORY_VERSION</h2>
     + [Begin the adventure] -> base
     + [Heresy I: background] -> background
     + [Thanks] -> thanks_to
@@ -48,11 +51,12 @@ Athens Greece, 450 B.C. - The age of Pericles
 === license ===
 # CLEAR
 # HTML: <a target="_blank" href="https:<ss>github.com/randall-frank/heresy2-assets">Heresy II</a>
-<h2>HTML is released under the MIT License</h2>
+# CLASS: head2
+HTML is released under a Creative Commons Attribution License.  
+# CLASS: head2
 Copyright © STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+# HTML: <a target="_blank" href="http:<ss>creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+The license allows people to use and adapt the work for any purpose, even commercially, as long as they give credit to the creators. Attribution must include the Title, Author, Source and License.  HTML is the complete text of the license agreement.
     + [Back] -> intro
 
 // This tunnel is used to change the current power value up (+) or down (-)
