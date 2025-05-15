@@ -130,17 +130,24 @@ A steel rimmed keypad sits next to a heavy door flanked with flickering torches.
 # CLEAR
 # SBIMAGE: locations/melampus.png
 You round a corner and find a man hunched over a bench, working with a delicate piece of circuitry. A jeweler's loupe is fastened to one eye. In the corner an automated machine hammers a piece of metal, shaping it into things yet to come. High above among the columns, mechanical planets orbit a perfect sun.
-{ not melampus_list:
-The owl flies to the other side of his bench and whistles. The man looks up and smiles. “Laura. You’re right of course..” The owl’s head spins and its wings flap enthusiastically. He laughs. “It worked! The plan worked.”
-He turns to you but doesn’t rise from his seat. “So you’re the one Laura chose. That’s a heavy burden, but I learned long ago not to doubt her.” He looks at the owl. “Even when I was told to imprison her.” He snorts.
-“But the time has come to set her free from this… this… what other word is there than madness?” He waves his arms around the room. “Bring me these items and we can restore her to where she belongs.” Melampus throws a scroll at you and returns to his work.
-    ~ melampus_list = 1
-- else:
-    { check_melampus_list():
-        "Excellent!  I've already started on the item you need."  He disappears behind a workbench, returning with a USB key.  "Here it is!  You need only plug this into Laura... the owl via a reasonably powerful computer.  Good luck!"
-        ~ antivirus = 1
+{ not antivirus:
+    { not melampus_list:
+    The owl flies to the other side of his bench and whistles. The man looks up and smiles. “Laura. You’re right of course..” The owl’s head spins and its wings flap enthusiastically. He laughs. “It worked! The plan worked.”
+    He turns to you but doesn’t rise from his seat. “So you’re the one Laura chose. That’s a heavy burden, but I learned long ago not to doubt her.” He looks at the owl. “Even when I was told to imprison her.” He snorts.
+    “But the time has come to set her free from this… this… what other word is there than madness?” He waves his arms around the room. “Bring me these items and we can restore her to where she belongs.” Melampus throws a scroll at you and returns to his work.
+        ~ melampus_list = 1
     - else:
-        Exasperated, "You don't seem to have all of the list items yet.  I can't help Laura without all those parts."
+        { check_melampus_list():
+            "Excellent!  I've already started on the item you need."  He disappears behind a workbench, returning with a USB key.  "Here it is!  You need only plug this into Laura... the owl via a reasonably powerful computer.  Good luck!"
+            ~ antivirus = 1
+            ~ oscillator = 0
+            ~ lcd_display = 0
+            ~ simple_battery = 0
+            ~ gold_wiring = 0
+            ~ melampus_list = 0
+        - else:
+            Exasperated, "You don't seem to have all of the list items yet.  I can't help Laura without all those parts."
+        }
     }
 }
     + [Leave] -> panorama

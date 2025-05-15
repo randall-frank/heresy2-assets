@@ -116,7 +116,8 @@ h2 {
     grid-template-columns: 20.0% 50.0% 30.0%;
     justify-content: left;
     text-align: left;
-    margin: 8px;
+    /* margin: 8px; */
+    column-gap: 20px;
 }
 
 .outerContainer {
@@ -146,35 +147,37 @@ h2 {
 
 .sidebar {
     display: block;
-    /* max-width: 600px; */
     width: 90%;
     height: fit-content;
-    /* margin: 0 auto; */
-    padding: 10px;
-    /*
-    padding-top: 4em;
-    background-image: url('background.png');
-    */
+    /* margin: 10px; */
+    padding-left: 15px;
+    padding-right: 15px;
     background: white;
+    border: solid #404040;
+    border-width: 5px 5px 5px 5px;
+    /* border-radius: 98% 2% 98% 2% / 2% 98% 2% 98%;*/
+    border-radius: 200px 12px 200px 12px / 12px 200px 12px 200px;
 }
 
 .imagesidebar {
     display: block;
     height: fit-content;
-    /* max-width: 600px; */
-    /* margin: 0 auto; */
-    padding-left: 8px;
-    /* padding-top: 4em; */
+    margin-top: 5px;
+    width: 85%;
 }
 
 .container {
     display: block;
+    width: 95%;
     height: fit-content;
-    /* max-width: 600px; */
-    margin: 0 auto;
-    padding: 10px;
-    /* padding-top: 4em; */
+    /* margin: 10px; */
+    padding-left: 15px;
+    padding-right: 15px;
     background: white;
+    border: solid #404040;
+    border-width: 5px 5px 5px 5px;
+    /* border-radius: 98% 2% 98% 2% / 2% 98% 2% 98%; */
+    border-radius: 200px 12px 200px 12px / 12px 200px 12px 200px;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {

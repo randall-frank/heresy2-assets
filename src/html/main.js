@@ -876,6 +876,7 @@ function attribution(parent) {
 <ul>
 <li>Various images generated using DALL·E</li>
 <li>Textures: www.myfreetextures.com</li>
+<li>Some images used from wikipedia under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></li>
 <li>Some Icons by Font Awesome fontawesome.com, Copyright Fonticons, Inc, License: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></li>
 </ul>
 
