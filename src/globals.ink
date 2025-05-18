@@ -74,6 +74,9 @@ VAR tip_scales = 0
 // if non-zero you have bested the philosopher
 VAR philosopher_win = 0
 
+// if non-zero, apollo and daphne have become a statue
+VAR apollo_and_daphne = 0
+
 // State of marble workshop lockpicking 0=none, 1=failed, 2=worked
 VAR lockpick_table = 0
 

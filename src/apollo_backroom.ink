@@ -20,6 +20,7 @@ but the interior appears to be lit with LED lighting and contains a collection o
 # CLEAR
 A pair of writers sit at their terminals arguing. “... how far are you planning to take that Zeus rubbish Timo?  I mean you’ve gotten this far with that story, but do you really think they will believe any of this?  The whole eagle liver thing kind of worked, but turning her into a fly and eating her… are you serious”
 “Look Alejandro, I’m running out of ideas here, what do you suggest?  We’ve got to get this copy out to Phidias this weekend to get started on the statues and you’re not helping much!”
+{apollo_and_daphne: Alejandro interjects, “We also have to make up a story about Jenna and Carlos!” Timo offers him a confused look. “`Apollo` and `Daphne`.  Yeah they created a scene and left a pair of frozen anthropoids we need to cover up.  I'm thinking a love spat between a god and a river nymph, people eat that stuff up.  Sound reasonable to you?”}
 Alejandro and Timo take notice of your entrance, turn to face you, “What do you want?  Can’t you see we’re busy here?  We’ve got a deadline and it is not going well.”
     + {novel} [Hand them your novel] -> give_book
     + [Leave them to their work] -> panorama

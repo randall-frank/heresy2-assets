@@ -73,6 +73,7 @@ With your last punch, Apollo is finally out of breath. He turns his head towards
 # SBIMAGE: locations/lovers.png
 You’re out of breath, fighting Apollo isn’t a walk in the park. But just when you think there’s no way for you to win, he turns toward Daphne and tries to grab her. Desperate to make him stop, she grabs his battery pack and rips it out of its pouch. But in the heat of this last attempt, she does not realize her energies are all drained. She as no more power to keep going... The two ex lovers become statues, forever intertwined.
     ~ simple_battery = 1
+    ~ apollo_and_daphne = 1
     + [Walk the stream] -> panorama
 
 = love_her
@@ -83,4 +84,5 @@ you two start holding hands while whispering in each other’s ears. You can hea
 The look of defeat in Apollo’s eyes makes you feel almost sorry for him. You two turn away, relieved that he took the news with no further action. Suddenly you hear him scream “Oh cruel destiny!” and nothing more. You run back, and find a statue in his place. He ripped his battery pack out. You pick it up from the ground.
 Daphne, shocked by his actions begins to weep uncontrollably. “No! No! This is not what I wanted! I've killed him!”  And with that exclamation, rips her own battery out.  Two ex-lovers eternally captured in stone.
     ~ simple_battery = 1
+    ~ apollo_and_daphne = 1
     + [Walk the stream] -> panorama
