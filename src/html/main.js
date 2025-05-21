@@ -39,7 +39,7 @@ function inventory_select(e) {
         if (selected_info.hasOwnProperty('url')) {
             info += '<img src="' + selected_info.url + '">';
         }
-        info += "<p>" + selected_info.description + combo_html(selected_name) + "</p>";
+        info += "<p>" + expand_text_to_html(selected_info.description) + combo_html(selected_name) + "</p>";
     }
     // set details innerHTML to info...
     document.querySelector('#itemdetails').innerHTML = info;
@@ -298,6 +298,21 @@ function combo_lock_button(i, direction) {
     combo_lock_update_icons(theStory);
 }
 
+function expand_text_to_html(text) {
+    // Convert GLYPH0-9A-F into html
+    while (text.includes("GLYPH")) {
+        for (let i = 0; i < 10; i++) {
+            text = text.replace("GLYPH" + i.toString(), icon_digit_html(i, true));
+        }
+        text = text.replace("GLYPHA", icon_digit_html(10, true));
+        text = text.replace("GLYPHB", icon_digit_html(11, true));
+        text = text.replace("GLYPHC", icon_digit_html(12, true));
+        text = text.replace("GLYPHD", icon_digit_html(13, true));
+        text = text.replace("GLYPHE", icon_digit_html(14, true));
+        text = text.replace("GLYPHF", icon_digit_html(15, true));
+    }
+    return text;
+}
 /**********************  Story starts here *******************/
 
 (function(storyContent) {
@@ -532,18 +547,8 @@ function combo_lock_button(i, direction) {
             // Inject # HTML tag into the paragraph text verbatim
             paragraphText = paragraphText.replace("HTML", HTML_text);
             HTML_text = '';
-            // Convert GLYPH0-9A-F into html
-            while (paragraphText.includes("GLYPH")) {
-                for (let i = 0; i < 10; i++) {
-                    paragraphText = paragraphText.replace("GLYPH" + i.toString(), icon_digit_html(i, true));
-                }
-                paragraphText = paragraphText.replace("GLYPHA", icon_digit_html(10, true));
-                paragraphText = paragraphText.replace("GLYPHB", icon_digit_html(11, true));
-                paragraphText = paragraphText.replace("GLYPHC", icon_digit_html(12, true));
-                paragraphText = paragraphText.replace("GLYPHD", icon_digit_html(13, true));
-                paragraphText = paragraphText.replace("GLYPHE", icon_digit_html(14, true));
-                paragraphText = paragraphText.replace("GLYPHF", icon_digit_html(15, true));
-            }
+            // Handle "macros" like GLYPH3 -> <i>..</i>
+            paragraphText = expand_text_to_html(paragraphText);
             // fill in the <p> text
             paragraphElement.innerHTML = paragraphText;
             storyContainer.appendChild(paragraphElement);

@@ -49,9 +49,10 @@ description = "A rough and worn crutch."
 name = "Anthropoid gear"
 description = "A tempered gear harvested from an anthropoid receptacle."
 
+# Note the embedded table is generated using the 'plate.py' file
 [items.sunbeam_plate]
 name = "Sunbeam plate"
-description = "An old man with a crutch walks away from a pomegranate tree against a night sky to his left. Right of the elderly man, a bearded man holds a set of scales and points to a complex mechanical apparatus to the right."
+description = "A silver plate polished to a mirror shine.  A grid of icons decorates the center:<br><table style='width:100%'><table style='width:100%'><tr><th>GLYPH7</th><th>GLYPH0</th><th>GLYPH8</th><th>GLYPH8</th><th>GLYPH8</th></tr><tr><th>GLYPH2</th><th>GLYPH3</th><th>GLYPH5</th><th>GLYPH7</th><th>GLYPH3</th></tr><tr><th>GLYPH4</th><th>GLYPH2</th><th>GLYPH5</th><th>GLYPH0</th><th>GLYPH5</th></tr><tr><th>GLYPH5</th><th>GLYPH5</th><th>GLYPH6</th><th>GLYPH7</th><th>GLYPH9</th></tr><tr><th>GLYPH2</th><th>GLYPH3</th><th>GLYPH1</th><th>GLYPH8</th><th>GLYPH7</th></tr></table>"
 
 [items.melampus_key]
 name = "Melampus door code"
