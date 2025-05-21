@@ -171,8 +171,9 @@ The android shell ran out of power.  The fluidic body cools and solidifies resul
 === background ===
 # CLEAR
 # HTML: <a target="_blank" href="https:<ss>github.com/randall-frank/heresy-assets">here</a>
-This story is actually a continuation of the story used in the Heresy T.I.M.E Stories fan written expansion.  That expansion can be downloaded and accessed HTML. The expansion can be downloaded, printed and played.  It is also available as a Tabletop Simulator expansion pack on Steam.
-If you are not in a position to play the original Heresy game, a basic overview of the key game point is available.  Note: it does include spoilers.
+This story is conceptually a continuation of the story from the Heresy T.I.M.E Stories fan written expansion.  That expansion can be downloaded and accessed HTML. The expansion can be downloaded, printed and played for free at any time.  A play-through is normally around 3-4 hours.  It is also available as a Tabletop Simulator expansion pack on Steam if you don't want to create physical cards.
+If you are not in a position to play the original Heresy game, a basic overview of the key game point is available to bring you up to speed.  
+Note: the background does include spoilers for the original game and we would strongly suggest one play that story first.  One other note, if you have played the original game, the spoilers might help jog your memory or point out some details that might have been unclear.
     + [Give me the (spoiler) background] -> spoilers
     + [I just want to play Heresy II]
         # RESTART
@@ -181,12 +182,16 @@ If you are not in a position to play the original Heresy game, a basic overview 
 
 === spoilers ===
 # CLEAR
-// TODO Heresy I spoilers
+Ok, you asked for it...
+The original game was written to be a T.I.M.E Stories expansion scenario.  You start at the base and are sent to stop a rogue agent named Keith who Bob asserts has constructed his own time portal somewhere in time and must be stopped.  Your team is sent to Spain 1499. 
+The party is dropped directly into an Spanish Inquisition witch hunt and becomes the target of their investigation.  As you deal with them, you unearth the presence of a time portal that is being used to access a "box store" in the year 2015.  The Hypermarket is being used as a base and to provide supplies by Keith and his cohorts.  You eventually encounter Keith, leave him defeated and disable the time portal. 
+As you return to the base after 'successful' resolution of the case, you are thanked by Bob, but he seems... off?  He is wearing an unfamiliar uniform that has the logo of the Inquisition and includes a soul medallion of the type Keith used to power time portals.
+Bob even goes so far as to suggest that you deserve a vacation...
+Summary: It appears that Keith had been operating independently of the Inquisition, using their crusade to facilitate his work.  The purpose of which is not clear.  While his goals have been thwarted or at least delayed by your work, it is not clear that Keith was actually killed.  Likewise, the Inquisition have been using leverage over Bob to attempt to gain control over Keith's time portal and use it to further their own goals.  They have thus asserted control over aspects of T.I.M.E Agency itself, minimally through Bob, but perhaps other individuals.
     + [{continue}] -> background
 
 === game_end ===
 # CLEAR
-// TODO: audio
 Fade to black... and with that you have reached the end of our story.  We certainly hope you enjoyed participating in the journey as much as we enjoyed building it.
     -> outro
 
