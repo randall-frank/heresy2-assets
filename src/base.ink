@@ -51,6 +51,7 @@ Order? To take a vacation?
     
 = card_C
 # CLEAR
+# ELIZA
 # SBIMAGE: locations/base_d.png
 Bob steps back, a sad smile on his face but not in his eyes. “We’re sending you back to ancient Greece for a little R&R. Eliza will fill you in.” Eliza? “Laura’s understudy. They’ve decided that some of the staff needed time off..” He fiddles with his medallion, giving it a gentle pull before letting his arm hang to the side.
     * [{continue}] -> card_D

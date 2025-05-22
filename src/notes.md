@@ -10,4 +10,4 @@
 - Images in the "end-game" locations
 - Enhance the initial meeting w/Keith in the HyperMarket to reflect what happened in Heresy I
 - Embed the elizabot.js engine in the right sidebar (augment it with information about the Inquisition, Bob, etc)
-
+- Include a comment about the arm tattoo from the garden in the Heresy I spoilers

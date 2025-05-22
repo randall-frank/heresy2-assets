@@ -1,3 +1,5 @@
+var eliza_object = null;
+var eliza_lines = null;
 
 function refresh_inventory(story, elem) {
     for( const [name, value] of Object.entries(storyItems['items'])) {
@@ -321,6 +323,8 @@ function expand_text_to_html(text) {
     var story = new inkjs.Story(storyContent);
     theStory = story;
 
+    eliza_init();
+
     var savePoint = "";
 
     let savedTheme;
@@ -388,6 +392,9 @@ function expand_text_to_html(text) {
 
         // Clear the image sidebar
         imageContainer.innerHTML = '';
+
+        // disable eliza
+        eliza_enable(false);
 
         // Placeholder for in injected raw HTML
         var HTML_text = '';
@@ -497,13 +504,21 @@ function expand_text_to_html(text) {
                 else if( splitTag && splitTag.property == "HTML" ) {
                     HTML_text = splitTag.val.replace("<ss>", "//");
                 }
-                                    // HTML: text
+                    
+                // ATTRIBUTION
                 else if (tag == "ATTRIBUTION") {
                     let elem = attribution(storyContainer);
                     showAfter(delay, elem);
                     delay += 200.0;
                 }
-
+                                
+                else if (tag == "ELIZA") {
+                    // Enable eliza
+                    if (story.variablesState.debug) {
+                        eliza_enable(true);
+                    }
+                }
+                    
                 // BACKGROUND: src
                 else if( splitTag && splitTag.property == "BACKGROUND" ) {
                     outerScrollContainer.style.backgroundImage = 'url('+splitTag.val+')';
@@ -911,8 +926,68 @@ function attribution(parent) {
     <td><a href="https://freesound.org/s/564166/" target="_blank" rel="noopener noreferrer">564166</a></td>
     <td><a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">Creative Commons 0</a></td></tr>
 </table>
+<p></p>
+<h2>Eliza core used with attribution</h2>
+<p></p>
+<p>"elizabot.js" by © Norbert Landsteiner 2005, <a href="http://www.masswerk.at" target="_blank" rel="noopener noreferrer">mass:werk</a>.</p>
+<p>"elizabot.js" is free software and provided "as is". It is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose.</p>
+
 `
     attr.innerHTML = s;
     parent.appendChild(attr);
     return attr;
+}
+
+//  Eliza interface
+function eliza_init() {
+    const e_inp = document.getElementById("e_input");
+    eliza_object = new ElizaBot();
+    eliza_lines = Array();
+    e_inp.addEventListener("keydown", eliza_keydown_cb);
+}
+
+function eliza_keydown_cb(e) {
+    if (e.keyCode == 13) {
+        eliza_input();
+    }
+}
+
+function eliza_input() {
+    const e_inp = document.getElementById("e_input");
+    const e_dsp = document.getElementById("e_display");
+    const input = e_inp.value;
+	var usr = 'User:  ' + input;
+    var rpl = 'Eliza: ' + eliza_object.transform(input);
+    eliza_lines.push(usr);
+    eliza_lines.push(rpl);
+    // display nicely
+    // (fit to textarea with last line free - reserved for extra line caused by word wrap)
+    var temp  = new Array();
+    var l = 0;
+    for (var i=eliza_lines.length-1; i>=0; i--) {
+        l += 1 + Math.floor(eliza_lines[i].length/40);
+        if (l >= 20) break
+        else temp.push(eliza_lines[i]);
+    }
+    eliza_lines = temp.reverse();
+    e_inp.value = "";
+    e_inp.focus();
+    e_dsp.value = eliza_lines.join('\n');
+}
+
+function eliza_enable(on) {
+    const e_div = document.getElementById("eliza");
+    const e_inp = document.getElementById("e_input");
+    const e_dsp = document.getElementById("e_display");
+    if (on) {
+        eliza_object.reset();
+        eliza_lines.length = 0;
+        var initial = 'Eliza: ' + eliza_object.getInitial();
+		eliza_lines.push(initial);
+		e_dsp.value = initial + '\n';
+        e_inp.value = "";
+        e_div.style.display = 'block';
+    } else {
+        e_div.style.display = 'none';
+    }
 }

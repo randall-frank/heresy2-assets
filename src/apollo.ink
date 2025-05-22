@@ -39,6 +39,7 @@ The android receptacle powers up in response to the power cell and the statue su
 
 = plate
 # CLEAR
+# SBIMAGE: locations/statue.png
 -> power_change( -10 ) ->
 “Ah, this old thing. It's obvious that someone understands its importance” he motions to the owl. “It is yours now.  Be careful with how you use it as you are likely to have only one shot at the game you are playing.  I (and many others) wish you luck!”
 You pick up the plate and examine its design.  It is a highly polished silver plate with an complex, ornate border. Embossed at the center of the plate is a grid of symbols that look oddly familiar...
