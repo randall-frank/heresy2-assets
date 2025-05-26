@@ -474,3 +474,17 @@ table.combo>tbody:not(:last-child),
 table.combo>tfoot:not(:last-child) {
 	border-bottom: 1px solid #505050;
 }
+
+
+/****************** Eliza screen ****************/
+.eliza {
+    padding: 4px 4px; 
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background: #1a2d12;
+    color: #29f329;
+    font-family: courier, fixed, monospace;
+    /* font-weight: bold; */
+    font-size: smaller;
+}

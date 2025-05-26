@@ -982,7 +982,8 @@ function eliza_enable(on) {
     if (on) {
         eliza_object.reset();
         eliza_lines.length = 0;
-        var initial = 'Eliza: ' + eliza_object.getInitial();
+        var initial = "ELIZABOT 0.2.3β, (C) 2413 TimeCo, Inc.\n";
+        initial += 'Eliza: ' + eliza_object.getInitial();
 		eliza_lines.push(initial);
 		e_dsp.value = initial + '\n';
         e_inp.value = "";
