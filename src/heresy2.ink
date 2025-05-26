@@ -38,7 +38,7 @@ Version: STORY_VERSION
 
     + [Begin the adventure] -> base
     + [Heresy I: background] -> background
-    + [Thanks] -> thanks_to
+    + [Attributions and thanks] -> thanks_to
     + [License] -> license
     + [Quit] -> outro
 
@@ -184,7 +184,8 @@ Note: the background does include spoilers for the original game and we would st
 # CLEAR
 Ok, you asked for it...
 The original game was written to be a T.I.M.E Stories expansion scenario.  You start at the base and are sent to stop a rogue agent named Keith who Bob asserts has constructed his own time portal somewhere in time and must be stopped.  Your team is sent to Spain 1499. 
-The party is dropped directly into an Spanish Inquisition witch hunt and becomes the target of their investigation.  As you deal with them, you unearth the presence of a time portal that is being used to access a "box store" in the year 2015.  The Hypermarket is being used as a base and to provide supplies by Keith and his cohorts.  You eventually encounter Keith, leave him defeated and disable the time portal. 
+The party is dropped directly into an Spanish Inquisition witch hunt and becomes the target of their investigation.  As you deal with them, you unearth the presence of a time portal that is being used to access a "box store" in the year 2015.  The Hypermarket is being used as a base and to provide supplies by Keith and his cohorts.  You eventually encounter Keith, leave him defeated and disable the time portal.
+Along the way, you run into a number of Inquisition followers as well as Agency agents (like yourself and Keith). At some point, you come across a human arm sporting a tattoo of a star pattern (asterism) that factored into your investigation.
 As you return to the base after 'successful' resolution of the case, you are thanked by Bob, but he seems... off?  He is wearing an unfamiliar uniform that has the logo of the Inquisition and includes a soul medallion of the type Keith used to power time portals.
 Bob even goes so far as to suggest that you deserve a vacation...
 Summary: It appears that Keith had been operating independently of the Inquisition, using their crusade to facilitate his work.  The purpose of which is not clear.  While his goals have been thwarted or at least delayed by your work, it is not clear that Keith was actually killed.  Likewise, the Inquisition have been using leverage over Bob to attempt to gain control over Keith's time portal and use it to further their own goals.  They have thus asserted control over aspects of T.I.M.E Agency itself, minimally through Bob, but perhaps other individuals.
