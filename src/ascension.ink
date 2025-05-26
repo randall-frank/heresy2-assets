@@ -24,6 +24,7 @@ Before you is a most unrecognizable world, if one could even call it a world.  I
 
 = schoolhouse
 # CLEAR
+# SBIMAGE: locations/schoolhouse.jpg
 A teacher discusses human philosophy to a collection of clones.  Samuel speaks to you as clearly as if he were next to you.  It must be some form of digital telepathy?  “See the care we take to educate our young before 'implanting' them into the timeline?  We are not taking any chances of a random paradox standing in the way of our progress.”
     + [Return to Samuel] -> panorama
 
