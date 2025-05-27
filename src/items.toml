@@ -105,13 +105,13 @@ url = "items/fava.png"
 
 [items.door_to_oracle_code]
 name = "Room 237 keycode"
-description = "A digital lock keycode."
+description = "A digital lock keycode. Provides access to the Oracle at the Temple of Apollo."
 code = "code_apollo_foyer"
 symbol = "1"
 
 [items.apollo_backroom_keycode]
-name = "Apollo backroom code"
-description = "A digital lock keycode."
+name = "Apollo gate code"
+description = "A digital lock core for Temple of Apollo entry gate."
 code = "code_apollo_backroom"
 symbol = "1"
 
@@ -161,6 +161,10 @@ url = "items/inq_badge.png"
 name = "Computer wafer chip"
 description = "A circular computer chip."
 url = "items/wafer.png"
+
+[items.crm114_key]
+name = "CRM114 key"
+description = "Allows the CRM114 to be changed to other settings."
 
 #
 # States

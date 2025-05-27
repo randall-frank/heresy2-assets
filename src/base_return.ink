@@ -55,7 +55,7 @@ You engage the leader in hand to hand combat.  Seeking not to kill but to force 
 Two robed figures are busy assaulting the caisson, trying desperately to access Laura’s recumbent form.
 Through the ALON ceramic panel you observe the android body of Laura.  Her form remains unmoving, but her eyes are open.  They scan the activity around her in terror, recognizing the precarious nature of her predicament.
     + [Help them attach the Inquisition control device to the caisson] -> control
-    + {inquisition_leader_badge} [Plug Laura into the computer] -> plug
+    + {inquisition_leader_badge and crm114_key} [Adjust the CRM114 to redirect Laura into the base computer] -> plug
     + [Step back] -> panorama
 
 = plug

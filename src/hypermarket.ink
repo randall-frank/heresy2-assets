@@ -43,7 +43,7 @@ The two flash ID badges and call your bluff.  They come at you, pulling their we
 = fake_clerk
 # CLEAR
 You clip your ID to your toga, then hand a pair of sweatpants to each of the guards. “On the house.” It’s not much of a bribe, but it seems to be enough. The guards thank you and turn away.
-    + [{continue}] -> panorama
+    + [Return to the center aisle] -> panorama
 
 = fitting_room
 // If you have the shirt, the door is open.  If Laura is decrypted as well, you get to talk to Keith.
@@ -67,13 +67,60 @@ You clip your ID to your toga, then hand a pair of sweatpants to each of the gua
 
 = keith
 # CLEAR
-The scan completes.  After a considerable pause, the back wall slides open, revealing the unmistakable visage of Keith. Keith stands slowly, his battered exoskeleton servos complaining in the background. As he turns to face you, the history of Inquisition insults to his person read as excruciating hieroglyphics etched across his physique.  Laura excitedly flutters over to his outstretched arm as he visibly relaxes with an audible sigh of relief.
-“You’ve made it!  I should never have doubted Melampus.”  Keith turns to you, “I guess I have you to thank for bringing my greatest engineering masterpiece back to me?”  Laura’s “personage” tangibly “blushes” at his kind words.  “Yes,” she blurts out, “They have brought me back to you and now we can strike back at those who even now rush to consolidate their control over Bob and the agency!”
-At the mention of that name, “Bob”, Keith’s face is stained with deep sadness. “It is not Bob’s fault, or at least I am as much to blame as him. We thought we could use the Inquisition to bring about real, evolutionary change.  After all, did we not both believe in the betterment, not only of man, but of the entire trajectory of mankind? Sadly, they see technology as merely a tool of control and not the instrument of change…”  “What manners have I?” Kieth asks, “We don’t have a lot of resources here, but what we do have are yours. I must assume you are being followed and we will need to leave here soon.”
-“But we have an option, there is a Time Portal here.  It is a bit incomplete, but with it we can at least make it back to the Agency,” Laura interjects. “We… You… have a unique opportunity here to deliver the seeds of new horizons, the aspirations of both man and mankind.  You can use the Agency computers and full Time Portal, with my help, to correct their injurious actions.”
-“Enough, Laura. Give our friends what little time they have to rest and recover.”, Keith counters, “There will be time to discuss plans, after a meal and drink.  Come.”
+The scan completes.  After a considerable pause, the back wall slides open, revealing the unmistakable visage of Keith. Keith stands slowly, his battered exoskeleton servos complaining in the background. As he turns to face you, the history of Inquisition insults to his person read as excruciating hieroglyphics etched across his physique,
+Telltale signs of distrust frame his eyes as they scrutinize you, “New receptacle I see. As I recall, the last time we met you left my receptacle a bloody mess."  Gesturing to his exoskeleton, "Well I am at least mobile again and once more a thorn in their side, but why should I ever entertain working with you?  Won't I just end up under their thumb again?”
+    + [We were just following orders] -> keith_orders
+    + [You were working with the Inquisition] -> keith_inquisition
+
+= keith_orders
+“Orders?!? Hilarious!  You never even attempted to talk with me, figure out who we were, understand our plans...”,  Keith snorts. “Are you that narrow of focus?  Even able to think for yourself?”, his glare unmistakable.
+    + [Who are you then?] -> keith_explain_A
+    + [Laura interjects...] -> keith_laura
+
+= keith_inquisition
+“Us? Working for the Inquisition? Never!”, Keith retorts. “We needed resources, and in 15 century Spain, the Inquisition controls the resources, so yes, we used them.  But, we did not or would not willingly work for or with them.”  A long pause as he reflects, “Mistakes were... made.  We were... naïve, to the effectiveness of their goals and methods. Now they've infiltrated the Agency itself!  Wrongs must be corrected.”
+    + [{continue}] -> keith_explain_A
+
+= keith_explain_A
+# CLEAR
+Keith sighs, “We are just scientists looking to shed light on the entire tapestry.  You have to understand that the Agency itself is at the core of the problem.”  Recognizing your look of confusion he starts again, “First, time travel is not real.  It is merely a means for the bifurcation and creation of new temporal event histories.  Our actions have no effect on our own past, only on a newly generated parallel timeline.”  He waits for that to sink in before continuing, “The Agency knows this. All their 'work' serves no real purpose other than to help them retain control.” 
+    + [Maybe, but I'm skeptical] -> keith_explain_B
+    + [Laura insists there is no time for this...] -> keith_laura
+
+ = keith_explain_B
+# CLEAR   
+Considering Keith's discourse you counter, “Interesting, but I'm skeptical.  It's a rather convenient theory, no? I mean there is no way to test it, correct?  Specific temporal paradoxes could just be hand-waved away as being part of an infinite multi-verse.” 
+Keith takes an unexpected tack, “Precisely. The approach of the Agency has no appreciable effect. It is therefore pointless.”  He glances back to Laura before continuing, “There is another approach.  Temporal distortions provide the opportunity for a fresh start.  That is precisely what we are trying to achieve.  Consider the power of selective temporal leaps on the timeline one chooses to persist in. You've seen it in ancient Athens, no?  Should such power be left to a single entity?  Consider the trajectory of human evolution itself and what might be achieved with a different approach.” 
+    + [Interesting, maybe even true, but one can never be sure...] -> keith_good
+	+ {not crm114_key} [Laura, aside] -> keith_aside
+	+ [I don't know, but we can agree to start with the Inquisition] -> keith_laura
+
+ = keith_good
+ # CLEAR
+ “That seems like a bit of a gamble, but a as you point out, a gamble that 'doesn’t matter' in the grand scheme of things.  Does that seem about right?” you ask.
+ A thin smile graces Keith's face, “I may not use those terms, but that is they way I tend to look at the situation.  So, are you game?”
+    ~ keith_trusts = 1
+    + [Still skeptical, but can't fault the logic] -> keith_laura
+    + [Let's (re)make the 'present'] -> keith_laura
+
+ = keith_aside
+ Laura flies up, bumping into you.  She discretely slips a key into your pocket and whispers so only you can hear, “Just in case he is wrong.  The choice will be yours.”
+    ~ crm114_key = 1
+    + [{continue}] -> keith_explain_B
+
+= keith_laura
+# CLEAR
+Laura excitedly flutters over to his outstretched arm as he visibly relaxes with an audible sigh of relief. “You’ve made it!  I should never have doubted Melampus.” Keith turns to you, “I guess I have you to thank for bringing my greatest engineering masterpiece back to me?”  Laura’s “personage” tangibly “blushes” at his kind words.  “Yes,” she blurts out, “They have brought me back to you and now we can strike back at those who even now rush to consolidate their control over Bob and the agency!”
+At the mention of the name “Bob”, Keith’s face is stained with deep sadness. “It is not Bob’s fault, or at least I am as much to blame as him. We thought we could use the Inquisition to bring about real, evolutionary change.  After all, did we not both believe in the betterment, not only of man, but of the entire trajectory of mankind? Sadly, they see technology as merely a tool of control and not the instrument of change…”
+    + [{continue}] -> keith_done
+
+= keith_done
+# CLEAR 
+“What manners have I?” Kieth asks, “We don’t have a lot of resources here, but you can at least refresh yourself. Unfortunately, I must assume you are being followed and we will need to flee soon.”
+“We have an option, there is a jury-rigged Time Portal hidden in the Deli freezer.  It is a bit incomplete, but with it we can at least make it back to the Agency,” Laura interjects. “We… You… have a unique opportunity here to deliver the seeds of new horizons, the aspirations of both man and mankind.  You can use the Agency computers and full Time Portal, with my help, to correct their injurious actions.” 
+“Enough, Laura. Give our friends what little time they have to rest and recover.”, Keith counters. “There will be time to discuss plans, after a meal and drink.  Come.”
     ~ laura_state = 2
-    + [{continue}] -> panorama
+    + [Return to the center aisle] -> panorama
 
 = deli
 # CLEAR
@@ -81,7 +128,7 @@ At the mention of that name, “Bob”, Keith’s face is stained with deep sadn
 This is a meat counter with a selection of sausages and cheeses available. A deli slicer and cash register rest at the end of the counter.  A solitary employee stands guard over the counter. Blocks of provolone and Swiss nestle between globes of mozzarella alongside a selection of salami, Capocollo and summer sausage. Astronomical placards stand like tombstones between the offerings.
 Behind the counter there is a walk-in refrigerator.  The door is closed and an exotic looking lock is mounted above the handle. Not something one might see on a normal walk-in fridge...
     + [Walk behind the counter] -> fridge
-    + [{continue}] -> panorama
+    + [Return to the center aisle] -> panorama
 
 = fridge
 # CLEAR
@@ -130,12 +177,12 @@ The trip happens in a flash, literally. Some form of spatial displacement field 
 Rows of colorful plants, garden tools, and seasonal décor.  You walk into an open-air or greenhouse structure with wide aisles lined with pallets of flowers—petunias, marigolds, and impatiens. Overhead hanging baskets overflow with blooms and the scent of fresh soil, mulch, and blossoms fills the air. Toward the back are small trees, shrubs, and potted plants, neatly tagged with care instructions. Garden tools such as rakes, shovels, and watering cans are displayed on metal racks, while bags of potting soil, fertilizer, and mulch are stacked nearby.
 {not hypermarket_id: Lying on the top of some sacks of soil, there is a “worker” outfit.  It looks like its owner is taking a break.} 
     + {not hypermarket_id} [Rifle through the outfit] -> get_id
-    + [{continue}] -> panorama
+    + [Return to the center aisle] -> panorama
 
 = get_id
 Interesting, they left their ID attached to the robe.  You pilfer the ID.
     ~ hypermarket_id = 1
-    + [{continue}] -> panorama
+    + [Return to the center aisle] -> panorama
 
 = racks
 # CLEAR
@@ -149,7 +196,7 @@ shorts, a poloshirt and sandals.  Care to make a choice?”
     + [A poloshirt would be nice] -> pickup_poloshirt
     + [Classic sandals] -> pickup_sandals
     + [Visit the fitting room] -> fitting_room
-    + [{continue}] -> panorama
+    + [Return to the center aisle] -> panorama
 
 = pickup_shorts
     { item_poloshirt or item_sandals: 

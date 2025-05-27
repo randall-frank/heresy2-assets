@@ -83,6 +83,8 @@ VAR lockpick_table = 0
 // if laura is owl and encrypted = 0, laura is owl but unencrypted = 1, has spoken to keith = 2
 VAR laura_state = 0
 
+// if keith trusts you, this will be non-zero
+VAR keith_trusts = 0
 
 // variables used by combat() tunnel.  Set these first and call combat() to
 // run a round of "combat"
