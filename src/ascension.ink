@@ -44,7 +44,14 @@ Laura’s vision is truly 'enlightened'.
 # CLEAR
 You walk up to the quaint cottage.  The extensive flower gardens are in bloom with unrecognizable flowers.
 Laura greets you, “Welcome!  You’ve met Samuel, yes our son.  He prefers that age while I have found an older, maternal look more to my liking.  Yes, Dr Hastings has passed on, but his legacy lives on as you can see.”
-“I never had a chance to properly thank you for all you have done for us”, she continues. “Please let our thanks take a more practiced form. We’ve been waiting for you to join us…”
-You can enter the room she gestures you toward.
-Wait a laboratory with caissons?  You pull back recognizing what is in store for you, but you feel “compelled”.  Laura recognizes your resistance, “Yes, we have developed rudimentary forms of suggestion. Please don't fight them, we would prefer this to be of your own free will.  We need you to continue Dr Hastings role, we need new seed to continue with our plans…”   “Don't worry about your physical form in this timeline.  We have AI androids waiting to take your place...”, is the last thing you hear as the white light envelopes you and you feel yourself expanding to fulfill your destiny.  
+{keith_trusts:
+    “I never had a chance to properly thank you for all you have done for us”, she continues. “Please let our thanks take a more practiced form. We’ve been waiting for you to join us…”
+    You enter the room she gestures you toward.
+    Wait a laboratory with caissons?  You pull back recognizing what is in store for you, but you feel “compelled”.  Laura recognizes your resistance, “Yes, we have developed rudimentary forms of suggestion. Please don't fight them, we would prefer this to be of your own free will.  We need you to continue Dr Hastings role, we need new seed to continue with our plans… Do not worry about your physical form in this timeline.  We have AI androids waiting to take your place...”, is the last thing you hear as the white light envelopes you and you feel yourself expanding to fulfill your destiny.
+- else:
+    “We never had a chance to properly thank you for all you have done”, she continues. “Please let our thanks take a more practiced form. We’ve been waiting for you…”
+    You enter the room she gestures you toward.
+    As you enter the room, a chill runs up your spine.  In the room are a number of static receptacles, plugged into the servers, but unmoving, unblinking, inactive receptacles.  You spin around as Laura plugs you into the servers and you loose physical control over your receptacle.  
+    The cabling falls from Laura's hands as she speaks, “You are far too adept to be allowed total freedom.  Keith saw value in your experiences and mental processes, but steps have to be taken to protect our progress.  You will appear to the Agency to have had an 'accident' and your corporeal form will cease to exist.  Your mental essence will be free to join the common when it is ready to do so.  Others in this room already have and in time, you will too.  Welcome to the new age!”
+}  
     + [End game] -> game_end
