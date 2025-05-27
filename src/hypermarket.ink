@@ -153,7 +153,7 @@ You can feel an excited hum coming from behind the door, but there is still the 
 # AUDIO: audio/positive.mp3            
             + [{continue}] -> deli_computer
         - else:
-            "Bzzt! Invalid access attempt logged."
+            "Invalid access attempt logged."
 # AUDIO: audio/error.mp3
             + [Try again] -> fridge_code
         }

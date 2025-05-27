@@ -59,7 +59,7 @@ The heavy security door looks capable of sustaining a significant amount of abus
 = open_door_stub
 # AUDIO: audio/door_unlock.mp3
 The reader blinks green, you hear a thunk and the handle will turn.
-    + [Open the door and walk in] -> computerroom
+    + [Open the door and walk in] -> computer_room
 
 = programmer
 # CLEAR
