@@ -1,6 +1,6 @@
 === base_return ===
 ~ location_name = "Time Corrections Agency (2413 A.D.)"
-# BACKGROUND: locations/base.jpg
+# BACKGROUND: locations/base.png
 -> power_change( location_change_cost ) ->
 -> panorama
 
