@@ -10,7 +10,7 @@
 # CLEAR
 The Temple of Hephaestus towers before you, a breathing forge of industry that fires the island. Around the edges of the temple artisans and potters ply their trade, throwing clay and molding into beautiful ceramics and artistic works of metal. They honor the god, pouring themselves into their work. Carefully crafted colonnades hold the roof aloft while priests and adherents work their rites within.
 The outer temple columns serve as both workplace and home for the lost and discarded. Beggars ply their arts for alms while an individual, not of sound mind or soul, wanders by, endlessly muttering to themselves and anyone willing to lend an ear.
-One can almost make out the large statue gracing the pornaos.
+One can almost make out the large statue gracing the pronaos.
 {not intervene:
     The Cella is filled with small groups of people having conversions and milling about.
 }
@@ -35,7 +35,7 @@ A beggar in rags kneels by a rough, unbaked bowl. The craftspeople avoid even lo
     The beggar sees the tattoo on your shoulder and barks out a laugh that turns to a phlegmy cough. “So you’re one of them, eh? It was helping your kind that got me ruined. Maybe you could take pity on me and throw some wine or silver my way?”
         + {cash} [Give him a coin] -> donate
 }
-    + [{continue}] -> panorama
+    + [Walk away] -> panorama
 
 = donate
 He blinks his unbelieving eyes... "Thank you kind sir, take this.  It may help you more than I. I will remember you."  He tears off a swatch of (modern) cloth from his rags.  It bears the logo of the Time Corrections Agency.
@@ -46,14 +46,22 @@ He blinks his unbelieving eyes... "Thank you kind sir, take this.  It may help y
 = pronaos
 # CLEAR
 # SBIMAGE: locations/hephaestus.jpg
-As you move into the darkness of the temple, the heat and smell of furnace fires grows stronger. A statue of Hephaestus protects the entrance. He sits atop an anvil, holding his hammer, and staring at those who enter as though they are merely metal to work in his forge.
+As you move into the darkness of the temple, the heat and smell of ceremonial furnace fires grows stronger. A statue of Hephaestus protects the entrance. He sits atop an anvil, holding his hammer, and staring at those who enter as though they are merely metal to work in his forge.
 {not crutch:
-    Leaning against the side of the statue is a crutch. Perhaps it was left by a wounded man who was helped inside or perhaps it was left by a beggar while they went and got lunch. But whoever owns it now, it’s clear that the rough and worn crutch once helped a wounded man move.
-    The owl swoops between the columns and perches atop it, lets out one long whistle, then hops atop Hephaestus while the crutch falls to the floor.
-    + [Collect the crutch] ->
+    Leaning against the side of the statue is an old crutch.  Sitting next to it is a well-dressed middle aged woman with a disease ridden leg.  She is not begging, but rather appears to be just resting at the foot of the great statue perhaps collecting strength or meditating.
+    The mechanical owl swoops between the columns and perches atop the crutch, waves to collect your attention and lets out one long whistle, before hopping atop Hephaestus as the crippled woman shoos it away angrily.
+    + [Snatch the crutch and slip into the crowd] -> steal_crutch
+    + {cash > 1} [Offer the woman 2 coins for the crutch] ->
+        -> cash_change(-2) ->
         ~ crutch = 1
         -> pronaos
 }
+    + [Leave] -> panorama
+
+= steal_crutch
+“Relieving me of my means of motility! βάλλ᾽ ἐς κόρακας you cowards!”  She exclaims as you slip away.  
+    ~ crutch = 1
+    ~ stole_crutch = 1
     + [{continue}] -> panorama
 
 = cella

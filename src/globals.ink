@@ -62,6 +62,9 @@ VAR temple_found = 0
 // is non-zero if they helped the beggar at the temple
 VAR helped_beggar = 0
 
+// is non-zero if you stole the crutch at the temple
+VAR stole_crutch = 0
+
 // is non-zero if you spoke with the servant in the garden (who "vouches" for you).
 VAR spoke_with_andrew = 0
 
