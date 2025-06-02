@@ -23,13 +23,17 @@ A dark alley fills the gap between the eating establishments and an ironmongers.
 = black_market
 # CLEAR
 You approach the stall hoping to find some useful tools for the work ahead. A merchant smiles broadly at you and his tongue flicks behind a broken wall of teeth. He moves a filthy cloth to uncover a series of gadgets that hum in your mind with strange music.
-“Everything’s for sale,” he purrs. “If you’re willing to pay the price… or willing to be paid.”
-    { cash <= 0:
-        His eyelids flicker as he scans you... "Everything has a cost but it looks like you have nothing to offer.  A pity, I would like to have been able to help you"
+{crutch and stole_crutch:
+He notices Aspasia's crutch and turns away from you, “I have nothing to sell to someone of your nature!”
+- else:
+“Everything is for sale,” he purrs. “If you’re willing to pay the price… or willing to be paid.”
+    { cash <= 1:
+        His eyelids flicker as he scans you... "Everything has a price but it looks like you have nothing to offer that will meet your budget.  A pity, I would like to have been able to help you"
     - else:
         + {not crypto_unit and cash >= 2} [Quantum Crypto Unit: 2 Drachm] -> buy_crypto
         + {not quad_shield and cash >= 3} [Quadiken Shield: 3 Drachm] -> buy_shield
     }
+}
     + [Return to the street] -> panorama
 
 = buy_shield
@@ -84,19 +88,23 @@ The cook sees your game. He cracks you on the hand with a wooden spoon and spend
 
 = restaurant
 # CLEAR
-A maitre’d stands outside of a lavishly appointed restaurant, the bow tie with a toga is a bold fashion choice.
-As you try to enter, the maitre’d clips a velvet rope to a stanchion by the door and stares with disdain at the symbol that marks you. “No entrance for the likes of you. Now leave before I call the guards.”
+A maître d' stands outside of a lavishly appointed restaurant, the bow tie with a toga is a bold fashion choice.
+As you try to enter, the maître d' clips a velvet rope to a stanchion by the door and stares with disdain at the symbol that marks you. “No entrance for the likes of you. Now leave before I call the guards.”
     + [Debase yourself and beg] -> beg
     + [Return to the street] -> panorama
 
 = beg
 # CLEAR
-{ RANDOM(0, 10) > 4:
-Why are you making a scene?! Fine, fine… take this and go away. Here’s something you could use.” He tosses you a recharge strip then turns to sunnily greet a couple who have arrived for their reservation.
-You plug the strip into an arm socket and your outlook improves a little.
-    -> power_change(10) ->
+{crutch and stole_crutch:
+“You have got to be kidding!  You steal Aspasia's crutch and then have the audacity to beg for more!?”, the maître d' scowls. “Begone!” You flee under a hail of blows.
 - else:
-The maitre’d uncoils the velvet rope and proceeds to whip you with it. “Begone!” You flee under a hail of blows, with your pride being the only thing injured.
+    { RANDOM(0, 10) > 4:
+    Why are you making a scene?! Fine, fine… take this and go away. Here is something you look like you could use.” He tosses you a recharge strip then turns to sunnily greet a couple who have arrived for their reservation.
+    You plug the strip into an arm socket and your outlook improves a little.
+        -> power_change(10) ->
+    - else:
+    The maître d' uncoils the velvet rope and proceeds to whip you with it. “Begone!” You flee under a hail of blows, with your pride being the only thing injured.
+    }
 }
     + [Return to the street] -> panorama
 
@@ -105,7 +113,7 @@ The maitre’d uncoils the velvet rope and proceeds to whip you with it. “Bego
 Two columns frame the entrance to a dark space between two buildings. Even in the midday sun, this alley remains black as night, a pathway to an unknown place. It’s littered with shards of broken amphoras and the smell of drunken sickness. You pass the remains of a roasted chicken boiling with flies, round a corner into a cloud of ionized gas, and find a puddle of stale water rushing to meet you before all goes dark.
 When you awake you find your purse lighter. A pile of rags and shadows laughs in the corner. “Plouton will have his due. You’re lucky you’re not alive. He would have taken that too!” The creature laughs a phlegmy laugh and turns on its side.
 Perhaps it would be best to leave while you can.
-    -> cash_change(-1) ->
+    -> cash_change(-4) ->
     + [Return to the street] -> panorama
 
 = hardware

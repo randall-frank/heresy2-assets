@@ -7,21 +7,35 @@
 
 = panorama
 # CLEAR
-A lazy river appears in front of you. The sun rays playfully bounce off its waters, making it look like a shimmery bed of milk and honey. On the left, a bench would allow a visitor to rest while soaking in the view. {not simple_battery: In the middle a muscular man strumming a few notes from a lute. } {lute and not simple_battery: On the right, a beautiful girl with sad eyes is hiding behind a tree.}
-    + [Use the bench to relax] -> bench
+A lazy river appears in front of you. The sun rays playfully bounce off its waters, making it look like a shimmery bed of milk and honey. On the left, a path leads down to the water's edge. {not simple_battery: In the middle a muscular man strumming a few notes from a lute. } {lute and not simple_battery: On the right, a beautiful girl with sad eyes is hiding behind a tree.}
+    + [Walk down the path] -> pathway
     + {not simple_battery} [Listen to the lute] -> lute
     + {lute and not simple_battery} [Talk to the girl] -> girl
     + [Return to the Pnyx] -> pnyx
 
+= pathway
+# CLEAR
+A narrow, gravel strewn path wanders along the river.  A variety of trees and lush vegetation line the way. A large boulder to one side protects a small open area with a view of the river.  A most peaceful spot as shafts of light pierce air heavily laden with floral scents.
+{crutch and stole_crutch: Aspasia is hare, resting against the boulder.  Her faces tightens into a mask of disgust as she becomes aware of your approach.}
+A small bench can be seen further down the path.
+    + {crutch and stole_crutch} [Return the crutch to Aspasia] -> return_crutch
+    + [Use the bench to relax] -> bench
+    + [Head back toward the entrance] -> panorama
+
+= return_crutch
+Aspasia spits in front of you as you come into view, “Looking to return to the good graces of Zeus? Very well, but I never want to see you again!” and she awkwardly ambles away.
+    ~ crutch = 0
+    + [{continue}] -> pathway
+
 = bench
 # CLEAR
-You sit on the bench to enjoy the view and the fresh breeze on your face. You close your eyes slightly to better take in the moment… and that’s when you see with the corner of your eyes a folded pergamen laying on the ground next to you. You pick it up and unfold it:
+You sit on the bench to enjoy the view and the fresh breeze on your face. You close your eyes slightly to better take in the moment… and that is when you see with the corner of your eyes a bit of folded pergamen laying on the ground next to you. You pick it up and unfold it:
 # CLASS: writing
 # IMAGE: items/delphic.png
-“This is day 3 of this iteration. How many iterations has it been already? Gosh, I’ve lost count. For sure Bob has found an ironic way to make a paradise into a new hell… His new friends must have thought him a thing or two about the Divine Comedy. Or maybe Bob watched Groundhog day one too many times. Smart man, managing to not break any do-not-kill law while forever making his enemies harmless. Somebody help, I feel I’m about to lose my mind. Anything would be better than this so called life.”
-{not apollo_backroom_keycode: A digital keycode is attached to the letter.  You keep it for future reference.}
+“This is day 3 of this iteration. How many iterations has it been already? I’ve lost count. Bob has most certainly found an ironic way to make a paradise into a new hell… His new friends must have taught him a thing or two about the Divine Comedy. Or maybe he watched Groundhog day one too many times? Smart man, managing to not break any 'life preservation' laws while forever making his enemies harmless. Somebody help, I feel I’m about to lose my mind. Anything would be better than this so-called life.”
+{not apollo_backroom_keycode: A digital keycode is attached to the letter.  You pocket it for future reference.}
     ~ apollo_backroom_keycode = 1
-    + [Walk the stream] -> panorama
+    + [Head back toward the entrance] -> pathway
 
 = lute
 # CLEAR

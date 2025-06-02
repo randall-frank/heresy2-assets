@@ -106,7 +106,7 @@ The philosopher looks at you with a large smile and opens his arms. “A real me
 # IMAGE: items/oscillator.jpg
     ~ oscillator = 1
 - else:
-A grim smile lightens up the philosopher’s face. “I knew it! You are just a poser, pretending to be part of something bigger than you, while in reality you are so far off from the light of truth that you keep banging against the walls of the dark cave of ignorance. Be gone now, do not waste more of my time!”. He turns his back at you and resumes addressing the audience, not paying any more attention to you.
+A grim smile lightens up the philosopher’s face. “I knew it! You are just a poser, pretending to be part of something bigger than you, while in reality you are so far off from the light of truth that you keep banging against the walls of the dark cave of ignorance. Be gone now, do not waste more of my time!” He turns his back at you and resumes addressing the audience, not paying any more attention to you.
 }
     + [{continue}] -> panorama
 

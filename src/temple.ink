@@ -47,11 +47,11 @@ He blinks his unbelieving eyes... "Thank you kind sir, take this.  It may help y
 # CLEAR
 # SBIMAGE: locations/hephaestus.jpg
 As you move into the darkness of the temple, the heat and smell of ceremonial furnace fires grows stronger. A statue of Hephaestus protects the entrance. He sits atop an anvil, holding his hammer, and staring at those who enter as though they are merely metal to work in his forge.
-{not crutch:
+{not crutch and not stole_crutch:
     Leaning against the side of the statue is an old crutch.  Sitting next to it is a well-dressed middle aged woman with a disease ridden leg.  She is not begging, but rather appears to be just resting at the foot of the great statue perhaps collecting strength or meditating.
     The mechanical owl swoops between the columns and perches atop the crutch, waves to collect your attention and lets out one long whistle, before hopping atop Hephaestus as the crippled woman shoos it away angrily.
     + [Snatch the crutch and slip into the crowd] -> steal_crutch
-    + {cash > 1} [Offer the woman 2 coins for the crutch] ->
+    + {cash > 1} [Offer the woman 2 drachm for the crutch] ->
         -> cash_change(-2) ->
         ~ crutch = 1
         -> pronaos
@@ -59,6 +59,7 @@ As you move into the darkness of the temple, the heat and smell of ceremonial fu
     + [Leave] -> panorama
 
 = steal_crutch
+# SBIMAGE: locations/hephaestus.jpg
 “Relieving me of my means of motility! βάλλ᾽ ἐς κόρακας you cowards!”  She exclaims as you slip away.  
     ~ crutch = 1
     ~ stole_crutch = 1
@@ -155,6 +156,9 @@ You round a corner and find a man hunched over a bench, working with a delicate 
             ~ melampus_list = 0
         - else:
             Exasperated, "You don't seem to have all of the list items yet.  I can't help Laura without all those parts."
+            {crutch and stole_crutch:
+                Noticing the crutch you are carrying, “How did you come into Aspasia's crutch?”.  He gives you an accusing stare, “You should strongly consider giving that back to her.  She spends a lot of time down by the river and the route will be challenging for without her crutch.”
+            }
         }
     }
 }
