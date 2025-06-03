@@ -43,11 +43,11 @@ hide_variable = "temple_found"
 
 [items.crutch]
 name = "Crutch"
-description = "A rough and worn crutch."
+description = "A rough and worn crutch: GLYPH0"
 
 [items.anthropoid_gear]
 name = "Anthropoid gear"
-description = "A tempered gear harvested from an anthropoid receptacle."
+description = "A tempered gear GLYPH8 harvested from an anthropoid receptacle."
 
 # Note the embedded table is generated using the 'plate.py' file
 [items.sunbeam_plate]
@@ -136,6 +136,7 @@ url = "items/computer_room_key.png"
 [items.hypermarket_id]
 name = "HyperMarket ID"
 description = "An ID badge that identifies you as 'James'."
+url = "items/james_id.png"
 
 [items.item_shorts]
 name = "Shorts"

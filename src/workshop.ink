@@ -29,7 +29,7 @@ Along the hallway to your left is a robotic tattoo machine, room 236.  Room 237 
     + [Take a seat at the desk] -> desk
     + [Examine the computer terminal] -> computer_terminal
     + [Investigate the cell] -> padded_cell
-    + [Exit via the iron gates] -> to_garden
+    + [Exit the workshop via the iron gate] -> to_garden
     + [Capitulate...] -> give_up
 
 = to_garden

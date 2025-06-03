@@ -22,7 +22,7 @@ Deep in the interior of the temple is the opisthodomos flanked by wary acolytes.
     + {not melampus_key} [Approach the opisthodomos] -> opisthodomos
     + {not melampus} [Examine the keypad] -> keypad
     + {melampus} [Visit Melampus via the locked door] -> melampus
-    + {melampus_list} [Travel to the Agora] -> agora
+    + {melampus} [Travel to the Agora] -> agora
     + [Travel to the Private Garden] -> garden
 
 = beggar

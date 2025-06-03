@@ -9,11 +9,22 @@ import os
 import platform
 import shutil
 import subprocess
+try:
+    import git
+    repo = git.Repo(".")
+    branch_name = repo.active_branch.name
+    branch_sha = repo.active_branch.commit.hexsha
+    __version_git__ = f"Source: {branch_name}:{branch_sha}"
+except:
+    __version_git__ = ""
 
 
 # Get the current version number
 with open("version.txt", "r") as f:
     __version__ = f.read().strip()
+    
+# Get the current time/date
+__version_date__ = datetime.datetime.now().isoformat(timespec='minutes', sep=" ") 
     
 """
 Command line build tool:
@@ -91,6 +102,8 @@ def build_story_js() -> None:
         s = b"var storyContent = " + s
         s = s.replace(b"STORY_VERSION", version)
         s = s.replace(b"STORY_YEAR", copyright_year)
+        s = s.replace(b"STORY_GIT_BRANCH", __version_git__.encode("utf8"))
+        s = s.replace(b"STORY_BUILD_DATE", __version_date__.encode("utf8"))
         with open(os.path.join("build", "heresy2.js"), "wb") as output:
             output.write(s)
 
