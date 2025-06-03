@@ -2,15 +2,15 @@
 // Laura’s Vision (“Laura’s ascension ending” postscript)
 # CLEAR
 ~ location_name = "Time Corrections Agency (2413 A.D.)"
-# BACKGROUND: locations/base.jpg
+# BACKGROUND: locations/base.png
 # AUDIOLOOP: audio/base.m4a
 Another strange shift in time as ripples flood outward healing the many paradoxes left in the wake of Laura's escape.
 You are now on desk duty at the agency, no more running around time/space, but you have “fans” of your exploits. You browse your email and… crap… a nano-virus!  You reach back to unplug your computer when …   zap, you are transported to a new place?   Vision?   What is going on here?
     + [{continue}] -> panorama
 
 = panorama
-~ location_name = "Laura's vision, date unknown"
 # CLEAR
+~ location_name = "Laura's vision, date unknown"
 # BACKGROUND: locations/ascension.jpg
 # AUDIOLOOP: audio/ascension.m4a
 # SBIMAGE: items/samuel.jpg
