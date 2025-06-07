@@ -2,9 +2,9 @@
 // Spain 1499 (“Inquisition ending” postscript)
 # CLEAR
 ~ location_name = "Time Corrections Agency (2413 A.D.)"
-# BACKGROUND: locations/base.jpg
+# BACKGROUND: locations/base.png
 # AUDIOLOOP: audio/base.m4a
-The acolytes turn towards you with a big smile on their face as soon as you plug the device into the android body. “All is done now. God’s will once again has been victorious over man's hubris. Come, come with us to celebrate. Let us show you what you helped us achieve.“ 
+The acolytes turn towards you with a big smile on their face as soon as you plug the device into the android body. “All is done now. God’s will once again has been victorious over the hubris of man. Come, come with us to celebrate. Let us show you what you helped us achieve.” 
 Suddenly you feel a strong tug at the base of your stomach and are forced to close your eyes while everything spins around you. After what feels like forever, you open your eyes and find yourself in the middle of a field. In the distance, a medieval town. Next to you, what remains of a series of fires, with the ashes still burning. Wait, haven’t you been here before?
     + [{continue}] -> panorama
 
@@ -13,7 +13,7 @@ Suddenly you feel a strong tug at the base of your stomach and are forced to clo
 # BACKGROUND: locations/spain.jpg
 # AUDIOLOOP: audio/control.mp3
 # CLEAR
-Next to you, an acolyte is looking at you and offering you a hand to get you up. Close by, a priest is throwing something in the remains of a fire.  The priest makes eye contact and gestures for you to join him.  On the open field to the right, a group of priests are arousing a crowd of jubilant simpletons mixed with men in high-tech uniforms.
+Next to you, an acolyte is looking at you and offering you a hand to get you up. Close by, a priest is throwing something in the remains of a fire.  The priest makes eye contact and gestures for you to join him.  On the open field to the right, a group of priests are arousing a crowd of jubilant villagers mixed with men in high-tech uniforms.
     + [Accept the hand of the acolyte] -> acolyte
     + [Engage the priest] -> fire
     + [Listen to the speakers] -> priests 
@@ -22,7 +22,7 @@ Next to you, an acolyte is looking at you and offering you a hand to get you up.
 = acolyte
 # CLEAR
 A man dressed with a long robe is looks directly at you and offers you his hand. “Welcome, brother! Please get up slowly. We had to use a quite rudimentary time travel system to get you here. Without Laura to control the portals, time travel has become quite bumpy. A small price to pay for finally freeing the human race from the pestilence of those machines designed by the Devil himself! 
-Thank you for all your work and service. The Inquisition is forever grateful to you for your contribution. Oh dear Almighty, how terrible and exhausted you look! Maybe we can do something about that. What about a time vacation?”
+Thank you for all your work and service. The Inquisition is forever grateful to you for your contribution. Oh dear Almighty, how terrible and exhausted you look! Maybe we can do something about that. What about a vacation? I hear Athens was nice in 450 B.C.”
     + [{continue}] -> panorama
 
 = fire
@@ -42,12 +42,12 @@ Once the flames destroy this copy, Laura will be no more. Burned on the same fir
 = crowd
 # CLEAR
 A group of diverse people are listening to the priests and vehemently agreeing with them, clapping and raising their hands to the sky. You can see some farmers dressed with medieval clothes - these must be the locals. But among them, a few men with high-tech white suits as well, with large grins on their faces.
-“Hey Ferrando, what are those priests talking about?” “Who knows, who cares, all I know is that they declared today as a festivity, which means no work in the fields, and they have started distributing half a cow to each family to celebrate… whatever it is we are celebrating. As long as I don’t have to break my back and our women are preparing a feast for us back home, I’m all for whatever this is! Hope it becomes an annual thing!”
+You overhear a conversation between two villagers, “Hey Ferrando, what are those priests talking about?” Ferrando replies, “Who knows, who cares, all I know is that they declared today a festival. No work in the fields, and they have started distributing half a cow to each family to celebrate…  Whatever it is we are celebrating, as long as I don’t have to break my back and our women are preparing a feast for us back home, I’m all for whatever this is!  I hope it becomes an annual celebration!”
 One of the men in the white suits attempts to engage you.
     + [Talk to the man in the white suit] -> suit
     + [Step back] -> panorama
 
 = suit
 # CLEAR
-The man in white suit approaches you. “It is you, isn’t it? Oh what an honor to meet in person the time agent who made all of this possible. You brought self-determination back to humanity. Our history is ours only now, as it should always have been, not under the control of AIs any more. How could we ever think it was a good idea to try re-create intelligence? That is what you get by playing God. Thankfully the Almighty in all His wisdom gave us also the tools to redeem ourselves. Come, come with us, my brother. Tonight, we feast!”
+The man in white suit approaches you. “It is you, isn’t it? Oh what an honor to meet the agent who made all of this possible in person. You brought self-determination back to humanity. Our history is ours now, as it should always have been, not under the control of the AIs any more. How could we ever think it was a good idea to try re-create intelligence? That is what one reaps when they play God. Thankfully the Almighty in all His wisdom gave us also the tools to redeem ourselves. Come, come with us, my brother. Tonight, we feast!”
     + [End game] -> game_end

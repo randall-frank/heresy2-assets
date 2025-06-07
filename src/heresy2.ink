@@ -25,7 +25,7 @@ INCLUDE normal.ink
 ~ location_name = ""
 
 # CLEAR
-# BACKGROUND: greece.png
+# BACKGROUND: locations/greece.png
 # AUDIOLOOP:
 # CLASS: head1
 αίρεση II: Of what mettle Gods?

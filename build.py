@@ -68,7 +68,7 @@ def build_story_js() -> None:
         info = tomllib.loads(fp.read())
     # create items_globals.js
     js = json.dumps(info)
-    with open(os.path.join("build", "item_globals.js"), "w", encoding='utf-8') as fp:
+    with open(os.path.join("build", "js", "item_globals.js"), "w", encoding='utf-8') as fp:
         fp.write(f"var storyItems = {js};\n")
         fp.write("var theStory = null;\n")
         fp.write("var audio = null;\n")
@@ -104,7 +104,7 @@ def build_story_js() -> None:
         s = s.replace(b"STORY_YEAR", copyright_year)
         s = s.replace(b"STORY_GIT_BRANCH", __version_git__.encode("utf8"))
         s = s.replace(b"STORY_BUILD_DATE", __version_date__.encode("utf8"))
-        with open(os.path.join("build", "heresy2.js"), "wb") as output:
+        with open(os.path.join("build", "js", "heresy2.js"), "wb") as output:
             output.write(s)
 
 
