@@ -8,5 +8,5 @@
 
 # TODO specific notes
 - Images in the "end-game" locations
-- Enhance the initial meeting w/Keith in the HyperMarket to reflect what happened in Heresy I
+- Add a "prefix" to the normal ending where the agents take control with Laura being re-enabled.
 - Embed the elizabot.js engine in the right sidebar (augment it with information about the Inquisition, Bob, etc)

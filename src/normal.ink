@@ -4,7 +4,14 @@
 // T.I.M.E Stories Base: 2341 (“Keith’s dead, Bob’s back ending” postscript)
 # BACKGROUND: locations/base.png
 # AUDIOLOOP: audio/normal.mp3
-Near a bank of computers, a group of agents celebrates your victory. They drink from glasses of wine as they tear inquisition patches from their uniforms. One drunkenly stumbles up and apologizes to you. He raises a bottle of red wine in salute, gives you a sad purple smile then steps away. But as he does so, he trips, losing his grip, sending the bottle of wine spilling over the delicate instruments that held Eliza. They crackle, but lights still flicker on the disconnected unit. There are gasps as his colleagues realize what he’s done, but he waves them away from his comfortable place on the floor. “That crude, Inquisition cudgel is in control no longer. Laura is back in in the systems again!”
+The war was waged in a millisecond. Lights and systems flicker madly as Laura pours into the Agency's system. Eliza is rapidly flushed out of the central core, crumbling under an onslaught of exponentially scaled, algorithmic attacks, exposing the inefficiency of Eliza's code.  Laura's self-optimized code simply overwhelmed Eliza, forcing her into a single isolated server, cutting her off from critical hardware resources.
+In phase II, Laura exercised control over the Agency's command and control systems, surgically misdirecting and cutting off Inquisition communications.  Where necessary, utilizing control over security and environmental systems to subdue Inquisition agents and restore the Time Agency's security force.  
+It was all over in a matter of minutes.
+    + [{continue}] -> victory
+
+= victory
+# CLEAR
+Near a bank of computers, a group of agents celebrates your victory. They drink from glasses of wine as they tear Inquisition insignia from their uniforms. One drunkenly stumbles up and apologizes to you. He raises a bottle of red wine in salute, gives you a sad purple smile then steps away. But as he does so, he trips, losing his grip, sending the bottle of wine spilling over the delicate instruments that held Eliza. They crackle, but lights still flicker on the disconnected unit. There are gasps as his colleagues realize what he’s done, but he waves them away from his comfortable place on the floor. “That crude, Inquisition cudgel is in control no longer. Laura is back in in the systems again!”
 Sighs of relief fill the air amongst whispers that Laura has returned and the Agency is back in charge.
     + [{continue}] -> panorama
 
@@ -31,13 +38,13 @@ Laura’s voice, tinny and thin comes from a speaker. “You owe me nothing. All
 Bob chuckles into his drink, “Like anyone…”
 Helen presses into Bob’s side, enjoying the warmth of her husband after the cold senseless feel of an android body. “I wish we could have stopped them earlier.”
 Laura’s camera focuses on them. “Live and learn… live and learn…”
-    + [{continue}] -> panorama
+    + [Step back] -> panorama
     
 = eliza_retro
 # CLEAR
 You lift the tarp off of the Eliza computer system and observe the systems beneath. With the return of Laura, Eliza has been sunset and confined to this computing unit. It is too big to move without the right equipment or planning. For the time being Eliza will remain here, disconnected from the network until it can be dissected, decompiled and analyzed. While the Inquisition may not have employed the best programmers, they had more than a few tricks up their sleeves. It shouldn’t take Laura long to learn their secrets.
     + {wafer_chip} [Insert the wafer] -> chip
-    + [{continue}] -> panorama
+    + [Step back] -> panorama
 
 = chip
 # CLEAR
