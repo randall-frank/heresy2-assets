@@ -92,7 +92,7 @@ Keith sighs, “We are just scientists looking to shed light on the entire tapes
 Considering Keith's discourse you counter, “Interesting, but I'm skeptical.  It's a rather convenient theory, no? I mean there is no way to test it, correct?  Specific temporal paradoxes could just be hand-waved away as being part of an infinite multi-verse.” 
 Keith takes an unexpected tack, “Precisely. The approach of the Agency has no appreciable effect. It is therefore pointless.”  He glances back to Laura before continuing, “There is another approach.  Temporal distortions provide the opportunity for a fresh start.  That is precisely what we are trying to achieve.  Consider the power of selective temporal leaps on the timeline one chooses to persist in. You've seen it in ancient Athens, no?  Should such power be left to a single entity?  Consider the trajectory of human evolution itself and what might be achieved with a different approach.” 
     + [Interesting, maybe even true, but one can never be sure...] -> keith_good
-	+ {not crm114_key} [Laura, aside] -> keith_aside
+	+ {not crm114_key} [Laura gestures you aside] -> keith_aside
 	+ [I don't know, but we can agree to start with the Inquisition] -> keith_laura
 
  = keith_good
