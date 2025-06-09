@@ -37,7 +37,6 @@ Perhaps the caissons need to be re-calibrated? As you enter the hallway leading 
     ~ apollo_backroom_keycode = 1
     ~ novel = 1
     ~ stun_orb = 1
-    ~ combat_training = 1
     ~ antivirus = 1
     -> apollo
 

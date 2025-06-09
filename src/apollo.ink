@@ -104,7 +104,7 @@ A second statue graces the far side of the temple entrance.  This one is in cons
 # TODO Merkaba Driver - Not sure what to do here...
 # You may undertake an engineering challenge to try to collect technology from the rubble.  On success, take: Item: Merkaba Driver - a very TIME Stories option - adjust abilities
 # Maybe just a pickup to enhance attack and defense???
-    + {exo_power > 2 and not combat_training} [Run a diagnostic on the receptacle (2 power)]
+    + {exo_power > 2 and combat_training == 0} [Run a diagnostic on the receptacle (2 power)]
         -> power_change( -2 ) ->
         -> diagnostic
     + [Return to entrance] -> panorama
@@ -115,7 +115,7 @@ A second statue graces the far side of the temple entrance.  This one is in cons
 // ご冥福をお祈り申し上げます = (gomeifuku o oinori moushiagemasu), which translates to "May their soul rest in peace
 T.I.M.E Corrections Agency agent Murata Sumiko. Last assignment was to investigate rumours of time displacement equipment being used by elements of the Spanish Inquisition, an entirely unauthorized timeline. On return from assignment, disciplinary action was taken (no reason given) and she was exiled to this temporal location for 'supervision and re-education'.  An old Mark II suit outfitted for hard labor/combat.  Unfortunately, the suit lacked emergency 'cold storage' for the preservation of the occupant (illegal by today's standards). Any notion of Murata Sumiko perished in that suit when it ran out of power. “ご冥福をお祈り申し上げます”, you whisper.
 {not combat_training: A further diagnostic reveals the combat training algorithm is compatible with the Mark V.}
-    + {exo_power > 2 and not combat_training} [Upload the training algorithm (2 power)]
+    + {exo_power > 2 and combat_training == 0} [Upload the training algorithm (2 power)]
         -> power_change( -2 ) ->
         ~ combat_training = 1
         -> diagnostic
