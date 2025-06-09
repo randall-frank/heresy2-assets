@@ -25,7 +25,7 @@ Once again you step into the portal and are spirited back to the workshop.
 # CLEAR
 # SBIMAGE: locations/statue.png
 A male statue reclines before you. From a distance, it appears to be another magnificent example of Phidias’ work, but there is more at play here.  Closer observation reveals you are mistaken. This is a Mark IV receptacle in powered down mode! From the arm tattoo, another detainee. {sunbeam_plate: In the right hand of the supine receptacle you notice a unique plate bearing a sunbeam impression. It would certainly warrant more detailed observation.}
-    + {exo_power > 10} [Transfer 10 power to the receptacle] -> powerup
+    + {exo_power > 10 and sunbeam_plate == 0} [Transfer 10 power to the receptacle] -> powerup
     + [Return to entrance] -> panorama
 
 = powerup
@@ -104,7 +104,7 @@ A second statue graces the far side of the temple entrance.  This one is in cons
 # TODO Merkaba Driver - Not sure what to do here...
 # You may undertake an engineering challenge to try to collect technology from the rubble.  On success, take: Item: Merkaba Driver - a very TIME Stories option - adjust abilities
 # Maybe just a pickup to enhance attack and defense???
-    + {exo_power > 2} [Run a diagnostic on the receptacle (2 power)]
+    + {exo_power > 2 and not combat_training} [Run a diagnostic on the receptacle (2 power)]
         -> power_change( -2 ) ->
         -> diagnostic
     + [Return to entrance] -> panorama

@@ -11,6 +11,7 @@ It was all over in a matter of minutes.
 
 = victory
 # CLEAR
+# BACKGROUND: locations/victory_agency.png
 Near a bank of computers, a group of agents celebrates your victory. They drink from glasses of wine as they tear Inquisition insignia from their uniforms. One drunkenly stumbles up and apologizes to you. He raises a bottle of red wine in salute, gives you a sad purple smile then steps away. But as he does so, he trips, losing his grip, sending the bottle of wine spilling over the delicate instruments that held Eliza. They crackle, but lights still flicker on the disconnected unit. There are gasps as his colleagues realize what he’s done, but he waves them away from his comfortable place on the floor. “That crude, Inquisition cudgel is in control no longer. Laura is back in in the systems again!”
 Sighs of relief fill the air amongst whispers that Laura has returned and the Agency is back in charge.
     + [{continue}] -> panorama
@@ -24,6 +25,7 @@ To one side you see the Inquisition acolytes and their leader being hustled away
 
 = inquisition
 # CLEAR
+# SBIMAGE: items/guarding.png
 Three robed figures are on their knees, praying. Two have their hoods up, faces hidden. The third has his hood down. He is an old man, impossibly old.  Tears run down his face. He is smiling. He holds a small open book as he stares upward where an Agency security guard with an assault rifle stares down at him.
 The old man whispers, “Te, Dómine, sancte Pater, omnípotens aetérne Deus, supplices deprecámur pro anima famuli tui N., quem de hoc sǽculo ad te venire iussísti…” He stares at you as you walk up before continuing. “We are in your hands. Your path has been set and I will question it no longer.  Grant us the peace of a painless death.”
 The guard nudges the man with his gun. “Get moving.”
@@ -42,12 +44,14 @@ Laura’s camera focuses on them. “Live and learn… live and learn…”
     
 = eliza_retro
 # CLEAR
+# SBIMAGE: items/eliza_rack.png
 You lift the tarp off of the Eliza computer system and observe the systems beneath. With the return of Laura, Eliza has been sunset and confined to this computing unit. It is too big to move without the right equipment or planning. For the time being Eliza will remain here, disconnected from the network until it can be dissected, decompiled and analyzed. While the Inquisition may not have employed the best programmers, they had more than a few tricks up their sleeves. It shouldn’t take Laura long to learn their secrets.
     + {wafer_chip} [Insert the wafer] -> chip
     + [Step back] -> panorama
 
 = chip
 # CLEAR
+# SBIMAGE: items/eliza_rack.png
 You place the wafer on the computer’s sensor and Eliza speaks, “Here you go. Let me know if you need anything else, I’m here to serve!” Text scrolls across a nearby screen. It streams by quickly, but you skim the highlights.
 # CLASS computer
 The old man led the inquisition... the last from a distant future, to help, to fight, to stop…
