@@ -66,8 +66,8 @@ description = "- Oscillator<br>- Gold wiring<br>- LCD display<br>- Simple batter
 hide_variable = "antivirus"
 
 [items.antivirus]
-name = "Antivirus"
-description = "Custom-developed USB key containing software needed to 'unlock' Laura."
+name = "Antivirus USB key"
+description = "Melampus developed USB key containing custom antivirus software that can be used to 'decode' Laura."
 url = "items/antivirus.png"
 
 [items.oscillator]

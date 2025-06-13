@@ -10,7 +10,6 @@
 An ornate arbor draped with Hedera serves as the gateway through the manicured hedgerow and into the private garden.  Meandering walkways paved with natural cut white marble guide visitors through the lilly lined maze of private alcoves partitioned by collections of fruit laden trees.  Distinctive notes of olive, pomegranate and fig waft through the garden on the rose soaked breeze coming in from the sea.
 A party seems to be in progress as you make your way into this idyllic scene.
 A noble stands near the garden entrance pouring wine into what looks like Murano (1300’s?) glassware on a tray held by a rather nervous looking servant. To the right there is an alcove around a table and a single fruit laden olive tree surrounded by Delphinium.  A hummingbird can be seen hovering around the flowers but turned towards you. A break in the hedges reveals a magnificent view of the ocean and bustling coastal waters. To your left, a servant stands at a bit of a distance, carefully observing you.  They make eye contact… an invitation to talk?  Straight ahead there is a group of party-goers deep in stimulating conversation.
-
     + [Talk to the noble] -> noble
     + [Walk into the alcove] -> alcove
     + [Listen in on the conversation] -> conversation
@@ -23,7 +22,7 @@ A noble stands near the garden entrance pouring wine into what looks like Murano
 “Welcome, welcome to my villa my friends!”, your elegantly attired host pours you a glass of wine and hands it to you.  His brow furrows as he looks you over, noticing your tattoos “you are… newcomers?”
 “This can be a very hospitable time/place, but make no mistake, we are true disciples of the Inquisition here and you will have plenty of time to reflect upon your ‘indiscretions’ under our ‘supervision’. Might I suggest a reflective evening’s stroll along the river with a glass of fine, Greek wine as the perfect end of a day.”
 “All agents have been invited to my home for today’s festivities, introduce yourselves and enjoy the party!”
-    -> garden_gate
+    + [{continue}] -> garden_gate
 
 = alcove
 # CLEAR
