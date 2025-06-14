@@ -27,11 +27,12 @@ Deep in the interior of the temple is the opisthodomos flanked by wary acolytes.
 
 = beggar
 # CLEAR
-A beggar in rags kneels by a rough, unbaked bowl. The craftspeople avoid even looking at him as they go about their day. As you approach, he lifts his head and an all too familiar symbol appears.
-“Yeah, I worked for Bob. So what? Came all the way back to serve, to build a portal…”
+A beggar in rags kneels by a rough, unbaked bowl. The craftspeople avoid even looking at him as they go about their day. 
 { helped_beggar:
     "It is you again...  See, I remember!" followed by a befouled coughing fit.
 - else:
+    As you approach, he lifts his head and an all too familiar symbol appears.
+    “Yeah, I worked for Bob. So what? Came all the way back to serve, to build a portal…”
     The beggar sees the tattoo on your shoulder and barks out a laugh that turns to a phlegmy cough. “So you’re one of them, eh? It was helping your kind that got me ruined. Maybe you could take pity on me and throw some wine or silver my way?”
         + {cash} [Give him a coin] -> donate
 }

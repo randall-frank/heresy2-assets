@@ -60,6 +60,11 @@ description = "The digital door code for Melampus' office."
 hide_variable = "melampus_list"
 code = "code_melampus"
 
+[items.helped_beggar]
+name = "Cloth swatch"
+description = "A Time Corrections Agency badge only issued to Agency personnel."
+url = "items/agency_badge.png"
+
 [items.melampus_list]
 name = "Melampus item list"
 description = "- Oscillator<br>- Gold wiring<br>- LCD display<br>- Simple battery"

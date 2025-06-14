@@ -59,9 +59,6 @@ VAR location_change_cost = -1
 // is non-zero if the path to the temple has been found
 VAR temple_found = 0
 
-// is non-zero if they helped the beggar at the temple
-VAR helped_beggar = 0
-
 // is non-zero if you stole the crutch at the temple
 VAR stole_crutch = 0
 
