@@ -14,7 +14,7 @@ A noble stands near the garden entrance pouring wine into what looks like Murano
     + [Walk into the alcove] -> alcove
     + [Listen in on the conversation] -> conversation
     + [Speak with the servant] -> servant
-    + {temple_found} [Travel to the Temple of Hephaestus] -> temple
+    + {temple_found} [Leave via the greenway to the Temple of Hephaestus] -> temple
     + [Go back to the Mausoleum] -> workshop
 
 = noble

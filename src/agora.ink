@@ -16,9 +16,9 @@ A dark alley fills the gap between the eating establishments and an ironmongers.
     + [Approach the fancy restaurant] -> restaurant
     + [Amble down the alley] -> alley
     + [Pay a visit to the ironmongers] -> hardware
-    + [Travel to the Pnyx forum] -> pnyx
-    + [Travel to Phidias workshop] -> marble_workshop
-    + [Travel to the Temple of Hephaestus] -> temple
+    + [Continue down the main street to the Pnyx forum] -> pnyx
+    + [Take the southern walkway to Phidias' workshop] -> marble_workshop
+    + [Return to the Temple of Hephaestus] -> temple
 
 = black_market
 # CLEAR
@@ -26,26 +26,21 @@ You approach the stall hoping to find some useful tools for the work ahead. A me
 {crutch and stole_crutch:
 He notices Aspasia's crutch and turns away from you, “I have nothing to sell to someone of your nature!”
 - else:
-“Everything is for sale,” he purrs. “If you’re willing to pay the price… or willing to be paid.”
-    { cash <= 1:
-        His eyelids flicker as he scans you... "Everything has a price but it looks like you have nothing to offer that will meet your budget.  A pity, I would like to have been able to help you"
-    - else:
-        + {not crypto_unit and cash >= 2} [Quantum Crypto Unit: 2 Drachm] -> buy_crypto
-        + {not quad_shield and cash >= 3} [Quadiken Shield: 3 Drachm] -> buy_shield
-    }
+“Everything is for sale,” he purrs. “If you are willing to pay the price… or able to.”
+    + {not crypto_unit} [Quantum Crypto Unit: 2 Drachm] -> buy_crypto
+    + {not quad_shield} [Quadiken Shield: 3 Drachm] -> buy_shield
+    + {CHOICE_COUNT() == 0} [Sorry, my stock is completely depleted at the moment.] -> panorama
 }
     + [Return to the street] -> panorama
 
 = buy_shield
-One Quadiken Shield it is!
-    ~ quad_shield = 1
-    -> cash_change(-3) ->
+    -> buy_something(3, quad_shield) ->
+    {quad_shield: One Quadiken Shield it is!}
     + [{continue}] -> black_market
 
 = buy_crypto
-One Quantum Crypto Unit it is!
-    ~ crypto_unit = 1
-    -> cash_change(-2) ->
+    -> buy_something(2, crypto_unit) ->
+    {crypto_unit: One Quantum Crypto Unit it is!}
     + [{continue}] -> black_market
 
 = fast_food
@@ -60,15 +55,20 @@ As one arm drops, the other rises, and the owl adjusts to keep balance. But some
     + [{continue}] -> fast_food
 - else:
 There’s a crush of people at the counter, all of them bearing the mark of Keith. By the time you make it to the front, there is little left. The cook swats at hungry customers during his free moments.
-“Cold beans,” says the cook, gesturing to a rough bowl. “Take it or leave it.” He blows his nose into his apron then stares at you. “You heard what I said! Buy ‘em or go!” Seeing that you won’t discipline yourself, he reaches for a wooden spoon to strike you with.
-    + {not fava_beans and cash >= 2} [Fava beans: 2 Drachm]
-        ~ fava_beans = 2
-        -> cash_change(-2) ->
-        -> fast_food
-    + [Create a distraction] -> chaos
+{not fava_beans:
+    “Cold beans,” says the cook, gesturing to a rough bowl. “Take it or leave it.” He blows his nose into his apron then stares at you. “You heard what I said! Buy ‘em or go!” Seeing that you won’t discipline yourself, he reaches for a wooden spoon to strike you with.
+        + [Fava beans: 2 Drachm] -> buy_beans
+        + [Create a distraction] -> chaos
+- else:
+    “You have your portion!” snarls the cook, pointing at your bowl of beans. “Next!”
+}
     + [Return to the street] -> panorama
 }
 
+= buy_beans
+    -> buy_something(2, fava_beans) ->
+    {fava_beans: You are the proud owner of a bowl of fava beans!}
+    + [{continue}] -> fast_food
 
 = chaos
 # CLEAR

@@ -76,8 +76,22 @@ The license allows people to use and adapt the work for any purpose, even commer
     }
     ->->
 
-// This tunnel is used to change the amount of cash one has.
-// At present, it does not redirect in any way, but it could...
+
+// This is used to buy an item.  It subtracts the cash and marks the item as being
+// in your inventory.
+=== buy_something(x, ref item)
+    // Trap the case when one does not have enough money to buy something...
+    { (cash - x) < 0:
+        You do not have sufficient funds for this purchase. Perhaps a visit to the power exchange station in Phidias' workshop is in order?
+        ->->
+    }
+    // Buy the item and add it to your inventory
+    ~ item = 1
+    ~ cash -= x
+    ->->
+
+// This tunnel is used to change the amount of cash one has.  There is a minimum, but no maximum
+// Used for things like stealing, having money added to your account, etc.  
 === cash_change(x)
     ~ cash += x
     { cash < 0:

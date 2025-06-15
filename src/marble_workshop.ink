@@ -13,17 +13,20 @@ On the right (back of the shop), you see a lone man sitting at a desk, sketching
     + [Engage the salesman] -> salesman
     + [Check out the workspace] -> workspace
     + [Step into the back of the shop] -> phidias
-    + [Travel to the Agora] -> agora
+    + [Take the paved avenue to the Agora] -> agora
 
 = salesman
 # CLEAR
 The salesman excuses himself from the indecisive couple and turns to face you.  “Hello, I am Lysander, welcome to the shop of Phidias, one of the finest artists in all Athens. We offer only the finest in modern marble, glass and ceramic sculpture as you can see from our display.  We specialize in commissioned works as well, if you have something unique in mind…”.  Lysander scrutinizes you more closely and his pitch trails off as he recognizes your anthropoid receptacle.
 “You’ve been here before?  You’ve got an ZXT Mark … V?  Good choice.  Nice upgrade from the Mark IV.  You’re probably here for a tuneup? The regular maintenance folks have not yet returned, but Phidias is in the back. I don’t think he is too busy”.  The couple appears to have made a decision and gesture toward Lysander.  Noting your tattoos, “Ah, those imperious ‘Bob-sans’ have finally made a decision.  Excuse me”.
 {not novel: You notice a dog-eared paper-back novel sitting on his desk, you may choose to talk Lysander out of his favorite novel.}
-    + {not novel and cash >= 2} [Buy the novel]
-        ~ novel = 1
-        -> panorama
+    + {not novel} [Buy the novel (offer 2 Drachm)] -> buy_novel
     + [Return to entrance] -> panorama
+
+= buy_novel
+    -> buy_something(2, novel) ->
+    {novel: One dog-eared novel is now yours.}
+    + [{continue}] -> panorama
 
 = workspace
 # CLEAR

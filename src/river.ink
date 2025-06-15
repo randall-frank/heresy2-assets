@@ -11,7 +11,7 @@ A lazy river appears in front of you. The sun rays playfully bounce off its wate
     + [Walk down the path] -> pathway
     + {not simple_battery} [Listen to the lute] -> lute
     + {lute and not simple_battery} [Talk to the girl] -> girl
-    + [Return to the Pnyx] -> pnyx
+    + [Head back up the hill to the Pnyx] -> pnyx
 
 = pathway
 # CLEAR

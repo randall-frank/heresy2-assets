@@ -22,8 +22,8 @@ Deep in the interior of the temple is the opisthodomos flanked by wary acolytes.
     + {not melampus_key} [Approach the opisthodomos] -> opisthodomos
     + {not melampus} [Examine the keypad] -> keypad
     + {melampus} [Visit Melampus via the locked door] -> melampus
-    + {melampus} [Travel to the Agora] -> agora
-    + [Travel to the Private Garden] -> garden
+    + {melampus} [Walk down the main street to the Agora] -> agora
+    + [Take the greenway to the Private Garden] -> garden
 
 = beggar
 # CLEAR
@@ -34,14 +34,13 @@ A beggar in rags kneels by a rough, unbaked bowl. The craftspeople avoid even lo
     As you approach, he lifts his head and an all too familiar symbol appears.
     “Yeah, I worked for Bob. So what? Came all the way back to serve, to build a portal…”
     The beggar sees the tattoo on your shoulder and barks out a laugh that turns to a phlegmy cough. “So you’re one of them, eh? It was helping your kind that got me ruined. Maybe you could take pity on me and throw some wine or silver my way?”
-        + {cash} [Give him a coin] -> donate
+        + [Give him a coin] -> donate
 }
     + [Walk away] -> panorama
 
 = donate
+    -> buy_something(1, helped_beggar) ->
 He blinks his unbelieving eyes... "Thank you kind sir, take this.  It may help you more than I. I will remember you."  He tears off a swatch of (modern) cloth from his rags.  It bears the logo of the Time Corrections Agency.
-    -> cash_change(-1) ->
-    ~ helped_beggar = 1
     + [{continue}] -> panorama
 
 = pronaos
@@ -52,10 +51,7 @@ As you move into the darkness of the temple, the heat and smell of ceremonial fu
     Leaning against the side of the statue is an old crutch.  Sitting next to it is a well-dressed middle aged woman with a disease ridden leg.  She is not begging, but rather appears to be just resting at the foot of the great statue perhaps collecting strength or meditating.
     The mechanical owl swoops between the columns and perches atop the crutch, waves to collect your attention and lets out one long whistle, before hopping atop Hephaestus as the crippled woman shoos it away angrily.
     + [Snatch the crutch and slip into the crowd] -> steal_crutch
-    + {cash > 1} [Offer the woman 2 drachm for the crutch] ->
-        -> cash_change(-2) ->
-        ~ crutch = 1
-        -> pronaos
+    + [Offer the woman 2 Drachm for the crutch] -> buy_crutch
 }
     + [Leave] -> panorama
 
@@ -65,6 +61,12 @@ As you move into the darkness of the temple, the heat and smell of ceremonial fu
     ~ crutch = 1
     ~ stole_crutch = 1
     + [{continue}] -> panorama
+
+= buy_crutch
+# SBIMAGE: locations/hephaestus.jpg
+You attempt to buy the crutch from the woman...
+    -> buy_something(2, crutch) ->
+    + [{continue}] -> pronaos
 
 = cella
 # CLEAR

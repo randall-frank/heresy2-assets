@@ -11,8 +11,8 @@ A small square opens in front of you. A group of people is assembled around an o
     + {not philosopher_win} [Talk to the orator] -> orator
     + [Circulate though the crowd] -> audience
     + {not buy_it} [Investigate the man in the barrel] -> wine_barrel
-    + [Visit the Eridanos] -> river
-    + [Travel to the Agora] -> agora
+    + [Visit the Eridanos flowing nearby] -> river
+    + [Return to the Agora] -> agora
 
 = audience
 # CLEAR
@@ -22,16 +22,19 @@ You leave them to their thoughts and comments.
 
 = wine_barrel
 # CLEAR
-“Ehi young traveler, where are you going in such a rush? The sun and the stars won’t stop dancing their dance in the sky if you stop to take the time to look around you, think about what is really important and soak the beauty and the ugly of every moment you have, before we all go to the Hades Panta rei dear friend, panta rei…. Oh, but I see you do not have the patience for this. Very well then, for only 5 drachm I can save you some of your precious time and give you directly some powerful insight.”
-    + {cash >= 5} [Give him the money] -> buy_it
+“Ehi young traveler, where are you going in such a rush? The sun and the stars won’t stop dancing their dance in the sky if you stop to take the time to look around you, think about what is really important and soak the beauty and the ugly of every moment you have, before we all go to the Hades Panta rei dear friend, panta rei…. Oh, but I see you do not have the patience for this. Very well then, for only 5 Drachm I can save you some of your precious time and give you directly some powerful insight.”
+    + [Give him the money] -> buy_it
     + [Step back] -> panorama
 
 = buy_it
 # CLEAR
-Diogenes quickly jumps out of the wine barrel, then snatches the coins from your hand. He takes a lantern from inside the barrel, shines its light into your eyes and looks at you deeply…
-“Alas, know this one truth. That there are no honest men in this world”.
-He throws the lantern to the ground and runs away at a surprisingly good speed for a man his age, leaving you foolishly empty handed while the rest of the people look at you with pity.
-    -> cash_change(-5) ->
+    ~ dummy_item = 0
+    -> buy_something(5, dummy_item) ->
+    {dummy_item: 
+        Diogenes quickly jumps out of the wine barrel, then snatches the coins from your hand. He takes a lantern from inside the barrel, shines its light into your eyes and looks at you deeply…
+        “Alas, know this one truth. That there are no honest men in this world”.
+        He throws the lantern to the ground and runs away at a surprisingly good speed for a man his age, leaving you foolishly empty handed while the rest of the people look at you with pity.
+    }
     + [{continue}] -> panorama
 
 = orator

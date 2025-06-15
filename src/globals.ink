@@ -118,6 +118,9 @@ VAR code_apollo_foyer = 7154
 // Access to fridge (time portal) in the HyperMarket Deli section
 VAR code_deli_fridge = 6028
 
+// This is used when we need a cash check w/o an item in play. 
+VAR dummy_item = 0
+
 // debug can be set to any value via '?dev=x'
 // This enables shortcuts {debug} that speed development
 VAR debug = 0
