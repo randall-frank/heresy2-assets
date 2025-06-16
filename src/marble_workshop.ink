@@ -31,10 +31,40 @@ The salesman excuses himself from the indecisive couple and turns to face you.  
 = workspace
 # CLEAR
 A freestanding, headless anthropoid receptacle is in the center of this half of the workshop. A cable runs from its navel out of sight to the floor.  Hanging on the wall are an odd collection of tools.  Along with a standard collection of hammers you notice a soni-dimensional chisel and a covalent parasander.  It is not surprising that this shop produces some of the finest sculptures in all of Athens.
-On a table in the back lies another damaged receptacle.  This one appears to sort of still be working?
+On a table in the back lies another damaged receptacle.  This one appears to sort of still be working?  In the far corner is a power conversion station.
     + {lockpick_table == 0} [Attempt to pick the table lock] -> lockpick
     + [Check out the receptacle on the table] -> table
+    + [Access the power conversion station] -> power_conversion
     + [Return to entrance] -> panorama
+
+= power_conversion
+# CLEAR
+# SBIMAGE: items/power_conversion.png
+A power conversion station in the corner of the workshop.  A simple device that converts the local power grid to a form usable by your anthropoid receptacle, for money.  You can plug in and recharge your receptacle here and you may also sell any excess power you have stored in your receptacle.
+    + [Buy power (4% for 1 Drachm)] -> buy_power
+    + [Sell power (1 Drachm for 5%)] -> sell_power
+    + [Return to entrance] -> panorama
+
+= buy_power
+    { cash < 1:
+        You do not have enough Drachm to buy power.
+    - else:
+        -> cash_change(-1) ->
+        -> power_change(4) ->
+        You have purchased 4% power for 1 Drachm.
+    }
+    + [{continue}] -> power_conversion
+
+= sell_power
+    { exo_power < 20:
+        It would be dangerous to sell power when you have so little.  You might consider a recharge first.
+    - else:
+        -> cash_change(1) ->
+        -> power_change(-5) ->
+        You have sold 5% power for 1 Drachm.
+    }
+    + [{continue}] -> power_conversion
+
 
 = lockpick
 # CLEAR
@@ -75,10 +105,10 @@ The workers look to teach you a lesson... with their fists!  You enable the comb
 
 = table
 # CLEAR
-On the table lies a heavily damaged android receptacle. It appears its legs have been crushed, beyond repair and deep gouges marr the rest of the body.  You notice the  arm tattoo.  It is likely the receptacle standing nearby was being prepped as a replacement for this one.
+On the table lies a heavily damaged android receptacle. It appears its legs have been crushed, beyond repair and deep gouges marr the rest of the body.  You notice the arm tattoo matching yours.  It is likely the receptacle standing nearby was being prepped as a replacement for this one.
 As you look over the shattered form, suddenly eyes flitter open and the occupant turns its head to speak to you. “... do I know you???   Aren’t you part of Gold Squad?  It’s me, Nelda Powell from Squad Porspet”.  She follows your gaze down to her missing legs, “It looks a lot worse than it is. At least Phidias says I will get a new receptacle, this one has had it”.  “Just another example of Inquisition retaliation, I’m afraid. I’m pretty sure they arranged for the quarry accident that brought me here. I almost prefer it to their little power recharging games. Be careful in your interactions with folks here in Athens. Phidias is sympathetic to our plight, but will not do anything that brings suspicion on himself.”
 {not anthropoid_gear:
-On a high shelf, a mechanical mechanism sits without obvious purpose. Is it a work in progress or was it harvested from an other-worldly device? It’s a question you ponder as the owl lands on the shelf. It stares at you as it takes six careful sideways steps towards the gear. Once there, it gives it a cat-like shove with its foot.  You instinctively react and catch it before it hits the ground.
+On a high shelf, a mechanical mechanism sits without obvious purpose. Is it a work in progress or was it harvested from an other-worldly device? It’s a question you ponder as the owl lands on the shelf. It stares at you as it takes six careful sideways steps towards the gear. Once there, it gives it a cat-like shove with its foot.  You instinctively react and catch it before it hits the ground while the owl responds with an excited squawk.
     ~ anthropoid_gear = 1
 }
     + [{continue}] -> workspace

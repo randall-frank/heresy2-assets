@@ -21,7 +21,7 @@ Deep in the interior of the temple is the opisthodomos flanked by wary acolytes.
     + {not intervene} [Walk the cella] -> cella
     + {not melampus_key} [Approach the opisthodomos] -> opisthodomos
     + {not melampus} [Examine the keypad] -> keypad
-    + {melampus} [Visit Melampus via the locked door] -> melampus
+    + {melampus} [Visit Melampus via the unlocked door] -> melampus
     + {melampus} [Walk down the main street to the Agora] -> agora
     + [Take the greenway to the Private Garden] -> garden
 

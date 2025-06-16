@@ -25,13 +25,14 @@ A dark alley fills the gap between the eating establishments and an ironmongers.
 You approach the stall hoping to find some useful tools for the work ahead. A merchant smiles broadly at you and his tongue flicks behind a broken wall of teeth. He moves a filthy cloth to uncover a series of gadgets that hum in your mind with strange music.
 {crutch and stole_crutch:
 He notices Aspasia's crutch and turns away from you, “I have nothing to sell to someone of your nature!”
+    + [Return to the street] -> panorama
 - else:
 “Everything is for sale,” he purrs. “If you are willing to pay the price… or able to.”
     + {not crypto_unit} [Quantum Crypto Unit: 2 Drachm] -> buy_crypto
     + {not quad_shield} [Quadiken Shield: 3 Drachm] -> buy_shield
-    + {CHOICE_COUNT() == 0} [Sorry, my stock is completely depleted at the moment.] -> panorama
+    + {crypto_unit and quad_shield} [Sorry, my stock is completely depleted at the moment.] -> panorama
+    + {not (crypto_unit and quad_shield)} [Return to the street] -> panorama
 }
-    + [Return to the street] -> panorama
 
 = buy_shield
     -> buy_something(3, quad_shield) ->

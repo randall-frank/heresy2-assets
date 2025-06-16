@@ -82,7 +82,7 @@ The license allows people to use and adapt the work for any purpose, even commer
 === buy_something(x, ref item)
     // Trap the case when one does not have enough money to buy something...
     { (cash - x) < 0:
-        You do not have sufficient funds for this purchase. Perhaps a visit to the power exchange station in Phidias' workshop is in order?
+        You do not have sufficient funds for this purchase. Perhaps a visit to the power exchange station in Phidias' workspace is in order?
         ->->
     }
     // Buy the item and add it to your inventory

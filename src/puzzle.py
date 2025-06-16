@@ -3,6 +3,7 @@ random.seed()
 
 def generate_puzzle():
     solution = [0,0,0,-1]
+    alg = []
     # the final value must be [0,9999] for the 4 digit GUI
     count = 0
     while (min(solution) < 0) or (max(solution) > 9999):
@@ -15,8 +16,9 @@ def generate_puzzle():
         while len(solution) < 5:
             solution.append(m*solution[-1] + b)
         count += 1
+        alg = [m, b, count]
         # print("Tried: ", solution, count, m, b)
-    return solution
+    return solution, alg
 
 for i in range(1000):
     print(generate_puzzle())
