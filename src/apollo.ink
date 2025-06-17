@@ -66,6 +66,7 @@ A passing temple guard notices your interest and confronts you, “Hey, this are
 - else:
     As you are bathed in the ionized plasma, you feel the inescapable effects of the Inquisition “corrective” measure.
     -> power_change( -10 ) ->
+    You need protection from the guard's quadiken.  Such a mechanism might be available from the black market.
     + [{continue}] -> gate
 }
 

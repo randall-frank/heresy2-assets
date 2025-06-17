@@ -118,6 +118,9 @@ VAR code_apollo_foyer = 7154
 // Access to fridge (time portal) in the HyperMarket Deli section
 VAR code_deli_fridge = 6028
 
+// Impossible computer code for the workshop computer
+VAR code_workshop_computer = 10000
+
 // This is used when we need a cash check w/o an item in play. 
 VAR dummy_item = 0
 

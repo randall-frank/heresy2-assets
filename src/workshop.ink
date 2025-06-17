@@ -97,24 +97,37 @@ You find a digital card key.  To what?  where?
     ~ padded_cell_key = 1
     ->panorama
 
-
 = computer_terminal
 # CLEAR
 # AUDIO: audio/computer.m4a
-{
-- computer_terminal > 1:
-Your obvious fumblings have broken the computer terminal beyond simple repair. In your hands it has been reduced effectively to a pile of e-waste.
+{find_lcd_display:
+Your aggressive actions with the LCD display have carried the computer terminal beyond simple repair. It has been reduced effectively to a pile of e-waste.
 - else:
-A computer terminal is built into what appears to be a marble slab. What a beauty! You run your hands over the display to admire the workmanship, and the feel of this hand-crafted design. But as your finger grazes the bezel of the display, it pops loose and you’re barely able to catch it as it falls towards the floor. The illusion of quality is gone but at least you’ll have a souvenir of your trip…
+A computer terminal is built into what appears to be a marble slab. What a beauty! You run your hands over the display to admire the workmanship, and the feel of this hand-crafted design.
 }
-    + {not lcd_display} [Pry the LCD panel loose] -> find_lcd_display
+    + {not find_lcd_display} [Attempt to log into the terminal] -> computer_login
+    + {not find_lcd_display} [Pry the LCD panel loose] -> find_lcd_display
     + [Return to the hallway] -> panorama
     
 = find_lcd_display
+You apply but a fraction of your freakish receptacle enhanced strength as your finger grazes the bezel of the display.  It pops loose and you are barely able to catch it as the rest of the terminal falls towards the floor. At least you’ve a souvenir of your trip??
 The LCD panel might still be in working order in the right hands.
     ~ lcd_display = 1
-    ->panorama
+    + [{continue}] -> computer_terminal
 
+= computer_login
+# CLEAR
+You sit down at the terminal and try to log in.  The screen lights up with a message, “Welcome to the Agency Workshop computer system.  Please enter today's access code.”
+~ combo_symbols = 0
+~ combo_value = 0
+# COMBO: code_computer_terminal
+    + [Try the combination] -> bad_try
+    + [Give up] -> computer_terminal
+
+= bad_try
+    "Bzzt! Invalid access attempt logged."
+# AUDIO: audio/error.mp3
+    + [Try again] -> computer_login
 
 = padded_cell
 # CLEAR

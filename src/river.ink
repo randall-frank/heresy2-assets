@@ -85,7 +85,7 @@ With your last punch, Apollo is finally out of breath. He turns his head towards
 
 = loss
 # SBIMAGE: locations/lovers.png
-You’re out of breath, fighting Apollo isn’t a walk in the park. But just when you think there’s no way for you to win, he turns toward Daphne and tries to grab her. Desperate to make him stop, she grabs his battery pack and rips it out of its pouch. But in the heat of this last attempt, she does not realize her energies are all drained. She as no more power to keep going... The two ex lovers become statues, forever intertwined.
+You’re out of breath, fighting Apollo isn’t a walk in the park. But just when you think there’s no way for you to win, he turns toward Daphne and tries to grab her. Desperate to make him stop, she grabs his battery pack and rips it out of its pouch. But in the heat of this last attempt, she does not realize her energies are all drained. She as no more power to keep going... Two ex-lovers eternally captured in stone.
     ~ simple_battery = 1
     ~ apollo_and_daphne = 1
     + [Walk the stream] -> panorama
@@ -95,8 +95,8 @@ You’re out of breath, fighting Apollo isn’t a walk in the park. But just whe
 # SBIMAGE: locations/lovers.png
 you two start holding hands while whispering in each other’s ears. You can hear Apollo’s footsteps approaching, while your heart beats louder and louder, and the fear of his reaction makes your knees go weak. Why did you agree to this silly plan, will it even work? Finally, Apollo turns a corner and sees the two of you. He immediately freezes on his step.
 “Oh, is that you? Sorry, we didn’t hear you coming” giggles Daphne “See, when I told you we had grown too apart for each other… this is what I meant”
-The look of defeat in Apollo’s eyes makes you feel almost sorry for him. You two turn away, relieved that he took the news with no further action. Suddenly you hear him scream “Oh cruel destiny!” and nothing more. You run back, and find a statue in his place. He ripped his battery pack out. You pick it up from the ground.
-Daphne, shocked by his actions begins to weep uncontrollably. “No! No! This is not what I wanted! I've killed him!”  And with that exclamation, rips her own battery out.  Two ex-lovers eternally captured in stone.
+The look of defeat in Apollo’s eyes almost makes you feel almost sorry for him. You turn away, relieved that he took the news with no further action. Daphne, shocked by his action begins to weep uncontrollably. “No! No! This is not what I wanted! I've made a terrible mistake and must...change...”  And with that exclamation she runs off into the trees to him. 
+Suddenly you hear him scream “Oh cruel destiny!” and nothing more. You run back, and find them embodied in 'stone'.  Daphne, her transformation half complete and Apollo, reaching her from behind as he ripped his battery pack out in angst. Lovers, forever captured in stone.  You sign and pick the battery up from the ground.
     ~ simple_battery = 1
     ~ apollo_and_daphne = 1
     + [Walk the stream] -> panorama

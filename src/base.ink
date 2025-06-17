@@ -46,7 +46,7 @@ Perhaps the caissons need to be re-calibrated? As you enter the hallway leading 
 As the two of you walk back towards the caissons, you begin to question Bob about the new uniforms. He holds up a finger as he hurries along, as though he knew what you were going to ask.
 “There will be plenty of time for that. After you get some ‘rest’.” He grasps your shoulder and ushers you towards the caisson. “Orders have come down. It’s time to take a vacation.”
 Order? To take a vacation?
-“Taking care of Keith has opened some new doors. Strange doors. And well…” He doesn’t look at you. “The higher ups though you deserve time off… while we see what’s behind them.” The lighting is too bright in here, the air too stale. Only the constellations outside the window remain the same. Bob eases you back into the caisson and secures the restraints around your wrists and ankles. Restraints? Was this part of protocol? With a tug, you’re secured.
+“Taking care of Keith has opened some new doors. Strange doors. And well…” He doesn’t look at you. “The higher ups though you deserve time off… while we see what’s behind them.” The lighting is too bright in here, the air too stale. Only the constellations outside the window remain the same. Bob ushers you back into a caisson and activates the restraint system. Restraints? Was this part of protocol?
     * [{continue}] -> card_C
     
 = card_C
@@ -59,7 +59,7 @@ Bob steps back, a sad smile on his face but not in his eyes. “We’re sending 
 = card_D
 # CLEAR
 # SBIMAGE: locations/base_tube.png
-Bob presses the button to start the time transfer. He looms above, while the cover of the caisson envelops your view, blocking his legs, neck, and smile, until at last only his distant, hollow eyes remain. The cover snaps shut with a hermetic hiss. He’s gone and darkness is everywhere.
+Bob presses the button to start the time transfer. He looms above, while the door of the caisson slides up slowly reducing your view, blocking his legs, neck, and smile, until at last only his distant, hollow eyes remain. It snaps shut with a hermetic hiss. He’s gone and darkness is everywhere.
     * [{continue}] -> card_E
     
 = card_E
