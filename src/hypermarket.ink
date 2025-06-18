@@ -150,11 +150,13 @@ You can feel an excited hum coming from behind the door, but there is still the 
     + [Try the combination]
         { combo_value == code_deli_fridge:
             "Access granted." The door swings open noiselessly and as you step through it swings shut.
-# AUDIO: audio/positive.mp3            
+# AUDIO: audio/positive.mp3
+# COMBO_DONE: pass       
             + [{continue}] -> deli_computer
         - else:
             "Invalid access attempt logged."
 # AUDIO: audio/error.mp3
+# COMBO_DONE: fail
             + [Try again] -> fridge_code
         }
     + [Return to the deli counter] -> deli

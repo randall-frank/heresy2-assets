@@ -38,7 +38,7 @@ Peering through the iron grates, you see that the building has the facade of a m
 {
 - garden_door_key:
     You use the key to open the garden gate and exit into the garden.
-    -> garden
+    + [{continue}] -> garden
 - else:
     -> panorama
 }
@@ -61,6 +61,7 @@ The laser makes a few motions like a painter’s final strokes on a canvas and t
 
 
 = travel_to_apollo
+# COMBO_DONE: pass
 # AUDIO: audio/transport.m4a
 The trip happens in a flash, literally. Some form of spatial displacement field instantly transports you from the Mausoleum to the Temple of Apollo.
     + [{continue}] -> apollo
@@ -79,6 +80,8 @@ Peering through the grille high upon the door, you glimpse the bronze escutcheon
             The door opens and you step in...
             -> travel_to_apollo
         - else:
+# AUDIO: audio/error.mp3
+# COMBO_DONE: fail
             The keypad sizzles, draining some of your energy.
             -> power_change( -2 ) ->
             + [Try again] -> door_to_oracle
@@ -99,10 +102,10 @@ You find a digital card key.  To what?  where?
 
 = computer_terminal
 # CLEAR
-# AUDIO: audio/computer.m4a
 {find_lcd_display:
 Your aggressive actions with the LCD display have carried the computer terminal beyond simple repair. It has been reduced effectively to a pile of e-waste.
 - else:
+# AUDIO: audio/computer.m4a
 A computer terminal is built into what appears to be a marble slab. What a beauty! You run your hands over the display to admire the workmanship, and the feel of this hand-crafted design.
 }
     + {not find_lcd_display} [Attempt to log into the terminal] -> computer_login
@@ -125,8 +128,9 @@ You sit down at the terminal and try to log in.  The screen lights up with a mes
     + [Give up] -> computer_terminal
 
 = bad_try
-    "Bzzt! Invalid access attempt logged."
 # AUDIO: audio/error.mp3
+# COMBO_DONE: fail
+    "Bzzt! Invalid access attempt logged."
     + [Try again] -> computer_login
 
 = padded_cell

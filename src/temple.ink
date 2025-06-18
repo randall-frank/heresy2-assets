@@ -57,7 +57,7 @@ As you move into the darkness of the temple, the heat and smell of ceremonial fu
 
 = steal_crutch
 # SBIMAGE: locations/hephaestus.jpg
-“Relieving me of my means of motility! βάλλ᾽ ἐς κόρακας you cowards!”  She exclaims as you slip away.  
+“Relieving me of my means of motility! βάλλ᾽ ἐς κόρακας you cowards!”, she exclaims as you slip away.  Exasperated, she shakes her head and limps off in the direction of the Eridanos stream.
     ~ crutch = 1
     ~ stole_crutch = 1
     + [{continue}] -> panorama
@@ -129,11 +129,13 @@ A steel rimmed keypad sits next to a heavy door flanked with flickering torches.
     + [Try the combination]
         { combo_value == code_melampus:
             "Access granted." The door swings open noiselessly and as you step through it swings shut. In here there is only the sound of one hammer…
-# AUDIO: audio/positive.mp3            
+# AUDIO: audio/positive.mp3
+# COMBO_DONE: pass         
             + [{continue}] -> melampus
         - else:
             "Bzzt! Invalid access attempt logged."
 # AUDIO: audio/error.mp3
+# COMBO_DONE: fail
             + [Try again] -> keypad
         }
     + [Leave] -> panorama

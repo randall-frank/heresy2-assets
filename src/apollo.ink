@@ -80,10 +80,12 @@ With the guard subdued, you may make try to enter the correct combination.
     + [Try the combination]
         { combo_value == code_apollo_backroom:
 # AUDIO: audio/positive.mp3
+# COMBO_DONE: pass
             The gate swings opens.
             + [Enter the back room] -> apollo_backroom
         - else:
 # AUDIO: audio/error.mp3
+# COMBO_DONE: fail
             The keypad sizzles, draining some of your energy.
             -> power_change( -2 ) ->
             + [Try again] -> keypad
