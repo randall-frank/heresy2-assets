@@ -86,8 +86,11 @@ Peering through the grille high upon the door, you glimpse the bronze escutcheon
             -> power_change( -2 ) ->
             + [Try again] -> door_to_oracle
         }
-    + [Leave] -> panorama
-
+    + [Leave] 
+        { 1:
+# COMBO_DONE: disable
+            -> panorama
+        }
 
 = desk
 # CLEAR

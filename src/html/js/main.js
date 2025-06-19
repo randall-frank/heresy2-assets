@@ -207,17 +207,20 @@ function combo_lock_update_icons(story) {
     elem.className = cnames[digit];
 }
 
-function end_combo_lock(story, storyContainer, pass) {
+function end_combo_lock(story, storyContainer, option) {
     // button.disabled = true;
-    let color = "#ba100d";  //red
-    if (pass) color = "#2c940f"; // green
+    let color = null; // "disable" case
+    if (option === "pass") color = "#2c940f"; // green
+    if (option === "fail") color = "#ba100d"; // red
     for (let i = 0; i < 4; i++) {
         let elem = document.querySelector("#up" + i.toString());
         if (elem) elem.disabled = true;
         elem = document.querySelector("#down" + i.toString());
         if (elem) elem.disabled = true;
-        elem = document.querySelector("#digit" + i.toString());
-        if (elem) elem.parentElement.style.backgroundColor  = color;
+        if (color) {
+            elem = document.querySelector("#digit" + i.toString());
+            if (elem) elem.parentElement.style.backgroundColor = color;
+        }
     }
 }
 
@@ -503,10 +506,9 @@ function expand_text_to_html(text) {
                     showAfter(delay, elem);
                     delay += 200.0;
                 }
-                // COMBO_DONE: pass|fail
+                // COMBO_DONE: pass|fail|disable
                 else if (splitTag && splitTag.property == "COMBO_DONE") {
-                    let pass = splitTag.val === "pass";
-                    end_combo_lock(story, storyContainer, pass);
+                    end_combo_lock(story, storyContainer, splitTag.val);
                 }
 
                 // LINK: url

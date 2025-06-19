@@ -27,8 +27,8 @@
  *  
  *  # COMBO: var_name - insert an instance of the combo lock - combo_symbols and combo_value interface to this
  *           var_name is a variable that holds the correct combo, currently only used in 'debug' runs
- *  # COMBO_DONE: pass|fail - used to indicate that the combo lock has been solved or failed. The buttons
- *           are disabled.  TODO: change the look of the combo lock to indicate this.
+ *  # COMBO_DONE: pass|fail|disable - used to indicate that the combo lock has been solved or failed. 
+ *           The buttons are disabled. 
  *
  *  # HTML: text  - insert the text verbatim into the HTML stream.  Note: use '<ss>'' for '//'
  *
