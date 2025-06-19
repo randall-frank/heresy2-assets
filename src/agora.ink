@@ -27,7 +27,7 @@ You approach the stall hoping to find some useful tools for the work ahead. A me
 He notices Aspasia's crutch and turns away from you, “I have nothing to sell to someone of your nature!”
     + [Return to the street] -> panorama
 - else:
-“Everything is for sale,” he purrs. “If you are willing to pay the price… or able to.”
+“Everything is for sale,” he purrs. “If you are willing and able to pay the price…”
     + {not crypto_unit} [Quantum Crypto Unit: 2 Drachm] -> buy_crypto
     + {not quad_shield} [Quadiken Shield: 3 Drachm] -> buy_shield
     + {crypto_unit and quad_shield} [Sorry, my stock is completely depleted at the moment.] -> panorama
@@ -48,22 +48,24 @@ He notices Aspasia's crutch and turns away from you, “I have nothing to sell t
 # CLEAR
 { not tip_scales:
 # SBIMAGE: items/scales.jpg
-A marble counter serves food to those of the lower caste on Mypos. Those like you. The kitchen is strikingly modern behind the counter, with a stove, pressure cookers, and a soft-serve ice cream machine. A cook behind the counter shouts and sweats as he slings bowls of food.
-The cook calls out to you, and his voice sings of riches. As you move forward to see what wares he has for sale, the owl swoops forward and lands atop a set of scales, gesticulating and making eye contact with you. 
-As one arm drops, the other rises, and the owl adjusts to keep balance. But something is off. The cook tries to shoo the bird away, but the owl flaps its wings and shifts its mass, tipping over the scales and sending a stack of five golden coins to the ground. The chef curses and rights the empty scales. That’s when everyone notices they’re uneven. The owl clicks a guttural sound as though laughing before it flies above the gathering crowd.
+A marble counter serves food to those of the lower caste on Mypos and Inquisition detainees like you. The kitchen is strikingly modern behind the counter with its own oven. Agency and Inquisition technology are subtly integrated into the traditional Greek kitchen, further evidence the Inquisition is at least influencing the Agency.
+A cook behind the counter shouts and sweats as he slings bread, olives and bowls of lentils.  He calls out to you, encouraging you to step forward. As you move forward to see what wares he has for sale, the owl swoops forward and lands atop a set of scales, gesticulating and making eye contact with you. 
+As one arm drops, the other rises, and the owl adjusts to keep balance, but something is off. The cook tries to shoo the bird away, but the owl flaps its wings and shifts its mass, tipping over the scales and sending a hidden stack of three coins he was using to bias the scale to the ground. The chef curses and rights the empty scales. 
+Everyone in line notices the scales were rigged. The crowd confronts the cook, demanding to know what he has to say for himself. In the confusion, you see a chance to grab the coins and exit the establishment. The owl clicks a guttural sound as though laughing before it flies above the gathering crowd.  
     ~ tip_scales = 1
-    -> cash_change(5) ->
-    + [{continue}] -> fast_food
+    -> cash_change(3) ->
+    + [{continue}] -> panorama
 - else:
-There’s a crush of people at the counter, all of them bearing the mark of Keith. By the time you make it to the front, there is little left. The cook swats at hungry customers during his free moments.
+There’s a crush of people at the counter, nearly all of them bearing the same tattoo as you.  The cook however displays the symbol of the Inquisition sewn crudely to his apron.  By the time you make it to the front, there is little left. The cook swats at flies hovering over the last dregs of fish and barley loves during his free moments.
+As before, the owl is attracted to the scales. It lands on them, stamping and squawking to get your attention, but this time it does not tip them over. 
 {not fava_beans:
-    “Cold beans,” says the cook, gesturing to a rough bowl. “Take it or leave it.” He blows his nose into his apron then stares at you. “You heard what I said! Buy ‘em or go!” Seeing that you won’t discipline yourself, he reaches for a wooden spoon to strike you with.
-        + [Fava beans: 2 Drachm] -> buy_beans
+    “Beans and kykeon,” says the cook, gesturing to a rough bowl. “Take it or leave it.” He wipes his nose into his apron then stares at you. “You heard what I said! Buy ‘em or go!” Seeing that you won’t discipline yourself, he reaches for a wooden spoon to strike you with.
+        + [Buy fava beans (2 Drachm)] -> buy_beans
         + [Create a distraction] -> chaos
 - else:
-    “You have your portion!” snarls the cook, pointing at your bowl of beans. “Next!”
+    “You've had your portion!” snarls the cook, pointing at your bowl of beans. “Next!”
 }
-    + [Return to the street] -> panorama
+    + [Leave the establishment] -> panorama
 }
 
 = buy_beans
@@ -73,19 +75,21 @@ There’s a crush of people at the counter, all of them bearing the mark of Keit
 
 = chaos
 # CLEAR
-You lean across the counter and barely reach the soft-serve ice cream machine. You pop open the control panel and fiddling with the wires you overclock the dispensing rate to 11. You draw back and the machine begins to tremble, boiling over over with ice cream from every joint and opening.
+You lean across the counter and barely reach a container of brining feta, tipping it onto the floor. The clay vessel shatters sending shards of clay awash in salty water into the corner of the room.  The cheese spills out with it, rolling across the floor. 
 { RANDOM(0,10) > 3:
-    Hearing the rattle, the cook turns and shrieks. At long last, inevitably, his bad dreams have come true.
-    { not fava_beans:
-        You take the opportunity to grab some beans.
-        ~ fava_beans = 1
-    }
+    The cook yells in anger and rushes to clean up the mess, leaving his station unattended.
+    + {not fava_beans} [Grab the beans] -> grab_beans
 - else:
-The cook sees your game. He cracks you on the hand with a wooden spoon and spends quite a while telling you what a disappointment you are to everyone you know and everyone you don’t. He pours a pitcher of dishwater your way and the resulting shock resonates though your suit.
+    The cook sees your game. He cracks you on the hand with a wooden spoon and spends quite a while telling you what a disappointment you are to everyone you know and everyone you don’t. He then throws a pitcher of dishwater your way and the resulting shock resonates though your suit.
 # AUDIO: audio/shock.mp3
     -> power_change(-5) ->
 }
-    + [Run away] -> panorama
+    + [Leave the establishment] -> panorama
+
+= grab_beans
+    You take the opportunity to grab some beans.
+    ~ fava_beans = 1
+    + [Leave the cook to his mess] -> panorama
 
 = restaurant
 # CLEAR
