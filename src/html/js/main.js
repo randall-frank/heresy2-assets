@@ -1,6 +1,33 @@
 var eliza_object = null;
 var eliza_lines = null;
 
+
+function post_location_change(story) {
+    if (!story.variablesState.debug) return;
+    let name = story.state.currentPathString;
+    if (!name || name.length === 0) return;
+
+    // Build the URL from the current path
+    const index = name.indexOf(".0.");
+    if (index !== -1) {
+        // Remove everything after the first ".0."
+        name = name.substring(0, index);
+    }
+
+    let root = window.location.href;
+    root = root.split(window.location.pathname)[0];
+    const url = root + "/" + name;
+    console.log("Location change: " + name);
+
+    // push the location change as a URL change to GA
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': 'virtualPageview',
+        'pageUrl': url,
+        'pageTitle': name,
+    });
+}
+
 function refresh_inventory(story, elem) {
     for( const [name, value] of Object.entries(storyItems['items'])) {
         let item_elem = document.querySelector('#item_'+name);
@@ -418,7 +445,10 @@ function expand_text_to_html(text) {
         
         // IMAGEHEIGHT specification for the IMAGE option
         var IMAGE_height = null;
-
+        
+        // Record location changes (this is actually the previous location and is only working in debug mode)
+        post_location_change(story);
+        
         // Generate story text - loop through available content
         while(story.canContinue) {
 
@@ -567,7 +597,7 @@ function expand_text_to_html(text) {
                     }
                 }
             }
-
+            
             // Update the inventory items
             refresh_inventory(story, inventoryContainer);
             // Update the status
