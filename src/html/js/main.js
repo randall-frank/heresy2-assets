@@ -1,6 +1,6 @@
 var eliza_object = null;
 var eliza_lines = null;
-
+var old_url = window.location.href;
 
 function post_location_change(story) {
     if (!story.variablesState.debug) return;
@@ -23,8 +23,13 @@ function post_location_change(story) {
     console.log("Location change: " + url);
 
     gtag('config', 'G-2CCLGG3BX9', {
-        page_path: url
+        'send_page_view': false,
+        'page_referrer': old_url,
+        'page_location': url,
+        'update': true,
     });
+    gtag('event', 'page_view');
+    old_url = url;
 }
 
 function refresh_inventory(story, elem) {
