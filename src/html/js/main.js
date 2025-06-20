@@ -7,24 +7,23 @@ function post_location_change(story) {
     let name = story.state.currentPathString;
     if (!name || name.length === 0) return;
 
-    // Build the URL from the current path
-    const index = name.indexOf(".0.");
-    if (index !== -1) {
-        // Remove everything after the first ".0."
-        name = name.substring(0, index);
+    // Keep the first one or two parts of the path
+    let parts = name.split('.');
+    if ((parts.length == 1) || (parts[1] === '0')) {
+        name = parts[0];
+    } else {
+        name = parts.slice(0, 2).join(".");
     }
+    if (name.length < 3) return;
 
+    // Build the URL from the current path
     let root = window.location.href;
     root = root.split(window.location.pathname)[0];
     const url = root + "/" + name;
-    console.log("Location change: " + name);
+    console.log("Location change: " + url);
 
-    // push the location change as a URL change to GA
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': 'virtualPageview',
-        'pageUrl': url,
-        'pageTitle': name,
+    gtag('config', 'G-2CCLGG3BX9', {
+        page_path: url
     });
 }
 
