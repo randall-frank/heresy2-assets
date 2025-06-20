@@ -1,9 +1,10 @@
 var eliza_object = null;
 var eliza_lines = null;
 var old_url = window.location.href;
+var heresy_allow_cookies = false;
 
 function post_location_change(story) {
-    if (!story.variablesState.debug) return;
+    if (!heresy_allow_cookies) return;
     let name = story.state.currentPathString;
     if (!name || name.length === 0) return;
 
@@ -692,8 +693,20 @@ function expand_text_to_html(text) {
                     // Remove all existing choices
                     removeAll(".choice");
 
+                    /* Temporarily monkey patch the ChoosePath() function to log the target
+                    let temp = story.ChoosePath;
+                    story.ChoosePath = function (target) {
+                        console.log("ChoosePath called with target: " + target.componentsString);
+                        temp.call(story, target);
+                    }
+                    */
+                    
                     // Tell the story where to go next
                     story.ChooseChoiceIndex(choice.index);
+
+                    /* remove the monkey patch 
+                    story.ChoosePath = temp;
+                    */
 
                     // This is where the save button will save from
                     savePoint = story.state.toJson();
