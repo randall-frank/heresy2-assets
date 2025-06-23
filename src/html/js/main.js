@@ -3,6 +3,10 @@ var eliza_lines = null;
 var old_url = window.location.href;
 var heresy_allow_cookies = false;
 
+// Volume control
+let current_volume = 30;
+let last_volume = 30;
+
 function post_location_change(story) {
     if (!heresy_allow_cookies) return;
     let name = story.state.currentPathString;
@@ -479,7 +483,7 @@ function expand_text_to_html(text) {
                         audio.load();
                     }
                     audio = new Audio(splitTag.val); 
-                    audio.volume = 0.3;
+                    audio.volume = parseFloat(current_volume) * 0.01;
                     audio.play();
                 }
 
@@ -492,7 +496,7 @@ function expand_text_to_html(text) {
                         
                     }
                     audioLoop = new Audio(splitTag.val); 
-                    audioLoop.volume = 0.1;
+                    audioLoop.volume = (parseFloat(current_volume) * 0.01)* 0.5;
                     audioLoop.loop = true;
                     audioLoop.play();
                 }
@@ -1060,3 +1064,57 @@ function eliza_enable(on) {
         e_div.style.display = 'none';
     }
 }
+
+
+// update the volume
+function audio_volume_update() {
+    if (audioLoop !== null) {
+        audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5;
+    }
+    if (audio !== null) {
+        audio.volume = parseFloat(current_volume) * 0.01;
+    }
+}
+
+// The UI changed
+function volume_update(el){
+    if (el.target) el = el.target;
+    const off = document.querySelector('#volume_off');
+    const med = document.querySelector('#volume_med');
+    const high = document.querySelector('#volume_high');
+    if (el.value == 0) {
+        off.style.display = 'block';
+        med.style.display = 'none';
+        high.style.display = 'none';
+    } else if (el.value < 50) {
+        off.style.display = 'none';
+        med.style.display = 'block';
+        high.style.display = 'none';
+    } else {
+        off.style.display = 'none';
+        med.style.display = 'none';
+        high.style.display = 'block';
+    }
+    current_volume = el.value;
+    audio_volume_update();
+}
+
+// Clicking on the volume icons
+function volume_mute() {
+    const slider = document.querySelector('#volume_slider');
+    if(slider.value > 0) {
+        last_volume = slider.value;
+        slider.value = 0;
+        volume_update(slider);
+    } else {
+        slider.value = last_volume;
+        volume_update(slider);
+    }
+}
+
+volume_update(document.querySelector('#volume_slider'));
+
+document.querySelector('#volume_slider').addEventListener('input', volume_update);
+document.querySelector('#volume_off').addEventListener('click', volume_mute);
+document.querySelector('#volume_med').addEventListener('click', volume_mute);
+document.querySelector('#volume_high').addEventListener('click', volume_mute);

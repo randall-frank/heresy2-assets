@@ -18,6 +18,7 @@ INCLUDE base_return.ink
 INCLUDE control.ink
 INCLUDE ascension.ink
 INCLUDE normal.ink
+INCLUDE debrief.ink
 
 -> intro
 
@@ -36,7 +37,7 @@ Copyright © STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni
 # CLASS: head2
 Version: STORY_VERSION (STORY_BUILD_DATE)
 
-    + [Begin the adventure] -> base
+    + [Begin the adventure] -> debrief
     + [Heresy I: background] -> background
     + [Attributions and thanks] -> thanks_to
     + [License] -> license

@@ -94,7 +94,7 @@ Peering through the grille high upon the door, you glimpse the bronze escutcheon
 
 = desk
 # CLEAR
-An early 21st century modular desk sits covered in dust, probably one of the popular GUDMUND line from that. Stacks of papers stand atop, detailing transfers of office supplies, prisoners, and other sundries to the facility. A sticky note attached to one form contains a request for a red stapler. But there’s no stapler anywhere to be seen…
+An early 21st century modular desk sits covered in dust, probably one of the popular Gudmund line from that. Stacks of papers stand atop, detailing transfers of office supplies, prisoners, and other sundries to the facility. A sticky note attached to one form contains a request for a red stapler, but there is no stapler anywhere to be seen…
     + {not padded_cell_key} [Rifle through the drawers] -> find_padded_cell_key
     + [Return to the hallway] -> panorama
     
