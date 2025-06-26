@@ -1,7 +1,7 @@
 === debrief ===
 ~ location_name = "Time Corrections Agency Debriefing Lounge (2413 A.D.)"
 # BACKGROUND: locations/debrief.png
-# AUDIOLOOP: audio/base.m4a
+# AUDIOLOOP: audio/debrief.mp3
 -> lounge
 
 = lounge

@@ -32,5 +32,4 @@ Bob presses the button to start the time transfer. He looms above, while the doo
 In the black of the chamber, a light appears, rushing towards you. Videos of lush olive groves, bustling city centers, and craftspeople plying their trade fill your view and your senses. Great temples tower above, and by the sea, vacationers lounge with their cups, soothed by the sound of wine-dark waves. Beautiful music fills your ears and wonder fills your mind. 
 A symbol flashes before your eyes on a background of static then it is gone.
 Eliza begins to speak. “Welcome vacationer! You have earned… an unspecified amount of time …on the Greek paradise of Mypos, year 450 BCE. Your mission: enjoy yourself!”
-
     * [{continue}] -> workshop.transfer

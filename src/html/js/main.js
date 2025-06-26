@@ -7,6 +7,31 @@ var heresy_allow_cookies = false;
 let current_volume = 30;
 let last_volume = 30;
 
+// Function to set a cookie
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Function to get a cookie
+function getCookie(name) {
+    const cname = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(cname) === 0) {
+            return c.substring(cname.length, c.length);
+        }
+    }
+    return "";
+}
+
 function post_location_change(story) {
     if (!heresy_allow_cookies) return;
     let name = story.state.currentPathString;
@@ -964,12 +989,13 @@ function attribution(parent) {
 <li>Marina Galvagni</li>
 </ul>
 
-<h2>Imagery used with attribution</h2>
+<h2>Imagery and audio used with attribution</h2>
 <ul>
 <li>Various images generated using DALL·E</li>
 <li>Textures: www.myfreetextures.com</li>
 <li>Some images used from wikipedia under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></li>
 <li>Some Icons by Font Awesome fontawesome.com, Copyright Fonticons, Inc, License: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></li>
+<li>Some audio tracks where licensed from Nicolas Jeudy and <a href="https://darkfantasystudio.com/" target="_blank" rel="noopener noreferrer">DARK FANTASY STUDIO</a></li>
 </ul>
 
 <h2>Audio used with attribution from freesound.org</h2>
@@ -1074,6 +1100,7 @@ function audio_volume_update() {
     if (audio !== null) {
         audio.volume = parseFloat(current_volume) * 0.01;
     }
+    setCookie("heresy_audio_volume", String(current_volume), 30);
 }
 
 // The UI changed
@@ -1112,6 +1139,11 @@ function volume_mute() {
     }
 }
 
+let temp_volume = getCookie("heresy_audio_volume");
+if (temp_volume.length) {
+    current_volume = temp_volume
+    document.querySelector('#volume_slider').value = current_volume;
+}
 volume_update(document.querySelector('#volume_slider'));
 
 document.querySelector('#volume_slider').addEventListener('input', volume_update);
