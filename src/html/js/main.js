@@ -172,7 +172,7 @@ function build_status(story) {
 0 fa-solid fa-crutch
 1 fa-solid fa-bolt
 2 fa-solid fa-scale-balanced
-3 fa-regular fa-sun
+3 fa-solid fa-wine-bottle  (was "fa-regular fa-sun")
 4 fa-solid fa-fish
 5 fa-regular fa-moon
 6 fa-regular fa-star
@@ -196,7 +196,7 @@ var numeric_names = ["fa-solid fa-0", "fa-solid fa-1", "fa-solid fa-2",
     "fa-solid fa-7", "fa-solid fa-8", "fa-solid fa-9"];
     
 var symbol_names = ["fa-solid fa-crutch", "fa-solid fa-bolt", "fa-solid fa-scale-balanced",
-    "fa-regular fa-sun", "fa-solid fa-fish", "fa-regular fa-moon",
+    "fa-solid fa-wine-bottle", "fa-solid fa-fish", "fa-regular fa-moon",
     "fa-regular fa-star", "fa-solid fa-wind", "fa-solid fa-gear",
     "fa-regular fa-hourglass",
     "fa-solid fa-bars", "fa-solid fa-xmark", "fa-solid fa-tree",
@@ -400,6 +400,12 @@ function expand_text_to_html(text) {
     // Create ink story from the content using inkjs
     var story = new inkjs.Story(storyContent);
     theStory = story;
+
+    // Randomize some of the lock combinations
+    story.variablesState.code_melampus = Math.floor(Math.random() * 10000);
+    story.variablesState.code_apollo_backroom = Math.floor(Math.random() * 10000);
+    story.variablesState.code_apollo_foyer = Math.floor(Math.random() * 10000);
+    // Note: code_deli_fridge cannot change as the solution is tied into the plate
 
     eliza_init();
 

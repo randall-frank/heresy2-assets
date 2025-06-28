@@ -73,11 +73,13 @@ Telltale signs of distrust frame his eyes as they scrutinize you, “New recepta
     + [You were working with the Inquisition] -> keith_inquisition
 
 = keith_orders
+# CLEAR
 “Orders?!? Hilarious!  You never even attempted to talk with me, figure out who we were, understand our plans...”,  Keith snorts. “Are you that narrow of focus?  Even able to think for yourself?”, his glare unmistakable.
     + [Who are you then?] -> keith_explain_A
     + [Allow Laura to interject] -> keith_laura
 
 = keith_inquisition
+# CLEAR
 “Us? Working for the Inquisition? Never!”, Keith retorts. “We needed resources, and in 15 century Spain, the Inquisition controls the resources, so yes, we used them.  But, we did not or would not willingly work for or with them.”  A long pause as he reflects, “Mistakes were... made.  We were... naïve, to the effectiveness of their goals and methods. Now they've infiltrated the Agency itself!  Wrongs must be corrected.”
     + [{continue}] -> keith_explain_A
 
@@ -104,6 +106,7 @@ Keith takes an unexpected tack, “Precisely. The approach of the Agency has no 
     + [Let's (re)make the 'present'] -> keith_laura
 
  = keith_aside
+ # CLEAR
  Laura flies up, bumping into you.  She discretely slips a key into your pocket and whispers so only you can hear, “Just in case he is wrong.  The choice will be yours.”
     ~ crm114_key = 1
     + [{continue}] -> keith_explain_B
@@ -134,7 +137,8 @@ Behind the counter there is a walk-in refrigerator.  The door is closed and an e
 # CLEAR
     { hypermarket_id:
         The guard checks your badge and then steps aside.
-        + [Step up to the lock] -> fridge_code
+        + {not deli_computer} [Step up to the lock] -> fridge_code
+        + {deli_computer} [Enter the refrigerator] -> deli_computer
     -else:
         The guard steps up and confronts you, “Hold it! What are you doing back here? You need to step back
         in front of the counter.  Now!”  He guides you back with authority.
@@ -177,14 +181,25 @@ The trip happens in a flash, literally. Some form of spatial displacement field 
 = gardening
 # CLEAR
 Rows of colorful plants, garden tools, and seasonal décor.  You walk into an open-air or greenhouse structure with wide aisles lined with pallets of flowers—petunias, marigolds, and impatiens. Overhead hanging baskets overflow with blooms and the scent of fresh soil, mulch, and blossoms fills the air. Toward the back are small trees, shrubs, and potted plants, neatly tagged with care instructions. Garden tools such as rakes, shovels, and watering cans are displayed on metal racks, while bags of potting soil, fertilizer, and mulch are stacked nearby.
-{not hypermarket_id: Lying on the top of some sacks of soil, there is a “worker” outfit.  It looks like its owner is taking a break.} 
+{not hypermarket_id: Lying on the top of some sacks of soil, there is a “worker” outfit.  It looks like its owner is taking a break?}
+{not dummies_book: A curious book entitled "Space-Time Portals for Dummies" lies on a table nearby.}
+    + {not dummies_book} [Pick up the book] -> get_dummies_book
     + {not hypermarket_id} [Rifle through the outfit] -> get_id
     + [Return to the center aisle] -> panorama
 
 = get_id
-Interesting, they left their ID attached to the robe.  You pilfer the ID.
+# CLEAR
+# SBIMAGE: items/james_id.png
+Interesting, they left their ID attached to the robe.  You abscond with the ID badge, which identifies the owner as “James Smith”, employee number 78841200.  The ID is a simple plastic card with a barcode and the HyperMarket name.  It seems to be a standard employee ID card. 
     ~ hypermarket_id = 1
-    + [Return to the center aisle] -> panorama
+    + [Return to the gardening aisle] -> gardening
+
+= get_dummies_book
+# CLEAR
+# SBIMAGE: items/st_dummies.png
+You pick up the book and leaf through it.  The book is well-worn, with notes scribbled in the margins and a few pages dog-eared. It seems to be a practical guide for those who want to understand the basics of space-time portals, including how to create and use them.  The author appears to be one "Jordan Hastings, PhD", a name you recognize from the Agency. 
+    ~ dummies_book = 1
+    + [Return to the gardening aisle] -> gardening
 
 = racks
 # CLEAR

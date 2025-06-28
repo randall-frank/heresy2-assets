@@ -125,6 +125,21 @@ name = "Novel"
 description = "Gravity's Rainbow by Thomas Pynchon."
 url = "items/novel.jpg"
 
+[items.dummies_book]
+name = "Dummies Book"
+description = "Space-Time Portals for Dummies by Professor Jordan Hastings."
+url = "items/st_dummies.png"
+
+[items.soulgem_empty]
+name = "Empty Soul Gem"
+description = "An empty soul gem pendant."
+url = "items/soul_empty.png"
+
+[items.soulgem_full]
+name = "Full Soul Gem"
+description = "A full soul gem pendant."
+url = "items/soul_full.png"
+
 [items.stun_orb]
 name = "Stun Orb"
 description = "A Robinson Psychosis 534 Stun Orb. Sometimes in combat you just need a little extra boost.  The stun orb will slow your attacker just a little bit, without disrupting your attack."
@@ -140,7 +155,7 @@ url = "items/computer_room_key.png"
 
 [items.hypermarket_id]
 name = "HyperMarket ID"
-description = "An ID badge that identifies you as 'James'."
+description = "An ID badge that identifies you as 'James Smith'."
 url = "items/james_id.png"
 
 [items.item_shorts]
@@ -151,6 +166,16 @@ url = "items/shorts.png"
 [items.item_poloshirt]
 name = "Polo shirt"
 description = "Black poloshirt with an embroidered owl."
+url = "items/poloshirt.png"
+
+[items.item_poloshirt_inquisition]
+name = "Polo shirt"
+description = "Black poloshirt with the Inquisition logo embroidered on it."
+url = "items/poloshirt.png"
+
+[items.item_poloshirt_plain]
+name = "Polo shirt"
+description = "Plain black poloshirt."
 url = "items/poloshirt.png"
 
 [items.item_sandals]

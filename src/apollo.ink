@@ -24,7 +24,7 @@ Once again you step into the portal and are spirited back to the workshop.
 = statue
 # CLEAR
 # SBIMAGE: locations/statue.png
-A male statue reclines before you. From a distance, it appears to be another magnificent example of Phidias’ work, but there is more at play here.  Closer observation reveals you are mistaken. This is a Mark IV receptacle in powered down mode! From the arm tattoo, another detainee. {sunbeam_plate: In the right hand of the supine receptacle you notice a unique plate bearing a sunbeam impression. It would certainly warrant more detailed observation.}
+A male statue reclines before you. From a distance, it appears to be another magnificent example of Phidias’ work, but there is more at play here.  Closer observation reveals you are mistaken. This is a Mark IV receptacle in powered down mode! From the arm tattoo, another detainee. {not sunbeam_plate: In the right hand of the supine receptacle you notice a unique plate bearing a sunbeam impression. Laura looks at the plate and cannot restrain her excitement, making sure you see it.  It would certainly warrant more detailed observation.}
     + {exo_power > 10 and sunbeam_plate == 0} [Transfer 10 power to the receptacle] -> powerup
     + [Return to entrance] -> panorama
 
@@ -50,8 +50,12 @@ You pick up the plate and examine its design.  It is a highly polished silver pl
 # CLEAR
 # SBIMAGE: locations/gate.png
 You walk up to the gate, looking for a way into the temple. You test the mettle of the gate…  Tritanium?  What is Tritanium doing in a Greek temple?  You haven’t the equipment, or time, to negotiate this obstacle right now.  You strain to see beyond the gate.  It looks like… desks and cubicles?  You make out the faint, but unmistakable hum of computing machinery in the background. A cryptic keypad appears to be connected to the gate.
+{apollo_backroom:
+    + [Enter the temple back room] -> apollo_backroom
+- else:
     + {keypad} [Try the keypad] -> keypad
     + {not keypad} [Step up to the keypad] -> guard
+}
     + [Return to entrance] -> panorama
 
 = guard
