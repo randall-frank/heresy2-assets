@@ -85,6 +85,10 @@ VAR lockpick_table = 0
 // if laura is owl and encrypted = 0, laura is owl but unencrypted = 1, has spoken to keith = 2
 VAR laura_state = 0
 
+// The state of the workers in the hypermarket apparel section
+// 0=not met, 1=bribed and have left, 2=unconscious not drained, 3=unconscious drained
+VAR apparel_workers = 0
+
 // if keith trusts you, this will be non-zero
 VAR keith_trusts = 0
 

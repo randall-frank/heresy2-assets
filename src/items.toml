@@ -132,12 +132,12 @@ url = "items/st_dummies.png"
 
 [items.soulgem_empty]
 name = "Empty Soul Gem"
-description = "An empty soul gem pendant."
+description = "An empty soul gem pendant. A full soul gem contains enough power to activate a time portal."
 url = "items/soul_empty.png"
 
 [items.soulgem_full]
 name = "Full Soul Gem"
-description = "A full soul gem pendant."
+description = "A full soul gem pendant. In your previous missions, Keith used these to power his time portal."
 url = "items/soul_full.png"
 
 [items.stun_orb]
@@ -171,12 +171,7 @@ url = "items/poloshirt.png"
 [items.item_poloshirt_inquisition]
 name = "Polo shirt"
 description = "Black poloshirt with the Inquisition logo embroidered on it."
-url = "items/poloshirt.png"
-
-[items.item_poloshirt_plain]
-name = "Polo shirt"
-description = "Plain black poloshirt."
-url = "items/poloshirt.png"
+url = "items/poloshirt_inquisition.png"
 
 [items.item_sandals]
 name = "Sandals"

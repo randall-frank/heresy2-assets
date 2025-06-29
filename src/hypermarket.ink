@@ -3,14 +3,18 @@
 # BACKGROUND: locations/hypermarket.jpg
 # AUDIOLOOP: audio/hypermarket.mp3
 -> power_change( location_change_cost ) ->
--> panorama
+# CLEAR
+An odd sense of deja vu washes over you, have we been here before? You stand before a large, box-like structure with an advertisement covered facade announcing incredible deals found inside. As you enter the structure, you notice the symbol 
+# IMAGE: items/tattoo.png
+decorating workers’, oddly hooded uniforms.  15th century Spanish clergy if memory serves.
+“He is so close now,” Laura exclaims, “We must find Keith and get him to the Time Corrections Agency base.  He can help us understand what is going on here and how it can be fixed.  I can feel his presence, but we must proceed with caution.”
+    + [{continue}] -> panorama
 
 = panorama
 # CLEAR
-An odd sense of deja vu washes over you, have we been here before? You stand before a large, box-like structure with an advertisement covered facade announcing incredible deals found inside. As you approach the entrance, you notice the symbol 
-# IMAGE: items/tattoo.png
-decorating workers’, oddly hooded uniforms.  15th century Spanish clergy if memory serves.  There are no shoppers, just workers busily collecting items.
-    + {not apparel} [Apparel section] -> apparel
+The interior is a vast, open space with high ceilings and rows of shelves stocked with various goods. The air is filled with the hum of fluorescent lights and the faint sound of music playing in the background.  A large sign hangs from the ceiling, reading "HyperMarket - Everything You Need, All in One Place!", but there are no shoppers, just workers busily collecting items. 
+{ not soulgem_full and not item_poloshirt: “We are going to need to find something to get Keith's attention”, Laura notes. “Your previous encounter with him left him rather paranoid.  Perhaps something that would be familiar to him would help...”}
+    + [Apparel section] -> apparel
     + [Clothing racks] -> racks
     + [Deli counter] -> deli
     + [Garden center] -> gardening
@@ -21,11 +25,60 @@ decorating workers’, oddly hooded uniforms.  15th century Spanish clergy if me
 ~ combat_health = 30.
 ~ combat_attack = 10.
 ~ combat_defense = 25.
-Two hooded figures stand in front of tables of unreasonably comfortable clothing at reasonable prices. You can’t see their faces. One is holding a strange device that looks like a gun but has too many barrels and they point at unusual angles. The other is holding up a pair of sweatpants for inspection. 
-“I don’t know…” one says while holding up a pair of sweatpants for inspection “We must wear the uniform, sure. But do you think they care what we have on under the robe?” The other shrugs. As you draw near, “I recognize you not, friend. What is your business here?”
-    + {hypermarket_id} [Pretend to be a clerk] -> fake_clerk
-    + {not hypermarket_id} [Pretend to be a clerk] -> fight_pair
+The apparel section walls are adorned with posters advertising the latest fashion trends, and the air is filled with the scent of fresh fabric.  A large sign comments, "Dress to Impress!". In the corner, a garment alteration station is set up with a sewing machine and various fabrics.
+{ apparel_workers == 0:
+    // Not yet met guys
+    Two hooded figures stand in front of tables of unreasonably comfortable clothing at reasonable prices. You can’t see their faces. One is holding a strange device that looks like a gun but has too many barrels and they point at unusual angles. The other is holding up a pair of sweatpants for inspection. 
+    “I don’t know…” one says while holding up a pair of sweatpants for inspection “We must wear the uniform, sure. But do you think they care what we have on under the robe?” The other shrugs. As you draw near, “I recognize you not, friend. What is your business here?”
+    + {hypermarket_id} [Pretend to be a clerk using your ID] -> fake_clerk
     + [Ask to see their IDs] -> fight_pair
+}
+{ apparel_workers == 1:
+    // you bribed them, they left
+    The apparel section is empty, the tables of clothing still neatly arranged.  A sign reads, "Uniforms available for purchase. Ask a clerk for assistance."
+}
+{ apparel_workers == 2:
+    // you won the fight, but did not drain them
+    The two hooded figures lie unconscious on the floor, their strange device and sweatpants scattered around them. They are still breathing, but you can’t tell if they will wake up soon or not.
+    {soulgem_empty:
+        Laura gestures at your empty Soul Gem, “Keith used filled soul gems to power time portals in the past.  Given the pair here, we could filled a Soul Gem without causing them permanent harm.”
+        + [Fill the Soul Gem from the unconscious workers] -> fill_soul_gem
+    }
+}
+{ apparel_workers == 3:
+    // you drained them
+    The two hooded figures lie unconscious on the floor, some of their ethereal essence drained.
+}
+    + [Visit the garment alteration station] -> sewing_machine
+    + [Return to the center aisle] -> panorama
+
+= sewing_machine
+# CLEAR
+You approach the garment alteration station, where a sewing machine sits ready for use.  A sign reads, "Alterations available for all garments. Ask a clerk for assistance."  The machine is well-maintained and appears to be in good working order.
+    { item_poloshirt_inquisition:
+        + [Alter the poloshirt] -> altered_poloshirt
+    - else:
+        Laura comments, “We don't have any items that need to be altered right now.
+    }
+    + [Return to the apparel section] -> apparel
+
+= altered_poloshirt
+# CLEAR
+# SBIMAGE: items/poloshirt.png
+Laura flutters up to you, “I can alter the poloshirt for you.  It will take a moment, but I can replace the Inquisition logo with a more fitting symbol for Keith.”  In a few minutes, the unmistakable visage of Laura herself graces the shirt where the Inquisition logo once was. "Perhaps that will appeal more to Keith.  I think he will at least appreciate the gesture.”  She hands you the altered poloshirt.
+    ~ item_poloshirt = 1
+    ~ item_poloshirt_inquisition = 0
+    + [Return to the apparel section] -> apparel
+
+= fill_soul_gem
+# CLEAR
+# SBIMAGE items/soul_full.png
+You hold the empty Soul Gem pendant over the two hooded figures.  The pendant glows faintly as you channel your power into it, filling it with energy.  The figures stir slightly, but do not wake up.
+    ~ soulgem_full = 1
+    ~ soulgem_empty = 0
+    ~ apparel_workers = 3
+    + [{continue}] -> apparel
+
 
 = fight_pair
 # CLEAR
@@ -34,40 +87,68 @@ The two flash ID badges and call your bluff.  They come at you, pulling their we
     -> combat("hooded figures", combat_result) ->
     { combat_result == 1:
         // you win
-        You incapacitate the two, drag them under the table and out of sight.
-            + [Leave] -> panorama
+        You incapacitate the two and drag them off to the side.
+            ~ apparel_workers = 2
+            + [{continue}] -> apparel
     - else:
         + [Continue the fight] -> fight_pair
     }
 
 = fake_clerk
 # CLEAR
-You clip your ID to your toga, then hand a pair of sweatpants to each of the guards. “On the house.” It’s not much of a bribe, but it seems to be enough. The guards thank you and turn away.
-    + [Return to the center aisle] -> panorama
+You clip your "James" ID to your toga, then hand a pair of sweatpants to each of the guards. “On the house.”  It’s not much of a bribe, but it seems to be enough. The guards thank you and turn away.
+    ~ apparel_workers = 1
+    + [{continue}] -> apparel
 
 = fitting_room
 // If you have the shirt, the door is open.  If Laura is decrypted as well, you get to talk to Keith.
 # CLEAR
-    A standard garment fitting room, but with an integrated garment scanner lock, currently showing “LOCKED”.
-    { item_poloshirt:
 # AUDIO: audio/fitting_scanner.m4a
-        As you open the door and step in, the door closes behind you in a rather aggressive fashion, locking you in. You note yourself being observed via a camera in the back wall. A laser scanner sweeps over you, passing judgment.
+    A standard garment fitting room, but with an integrated garment scanner lock, currently showing “LOCKED”.  As you enter, the scanner is activated and a laser sweeps over you,passing judgment.  It pauses at the owl on your shoulder.  A voice from the scanner announces, “Please present an item to be scanned.”  
+    The scan completes.
+        + [{continue}] -> scan_completes
+
+= scan_completes
+    { item_poloshirt:
         { laura_state > 0:
-            + [{continue}] -> keith
+# AUDIO: audio/positive.mp3
+            The scanner recognizes the poloshirt and the door unlocks.
+                + [{continue}] -> keith
         - else:
-            The scanner pauses at the owl, but then continues to completion.
+# AUDIO: audio/error.mp3
             + [{continue}] -> racks
         }
-    - else:
+    }
+    { item_poloshirt_inquisition:
+# AUDIO: audio/error.mp3
+        The scanner does not recognize the poloshirt.  “I doubt Keith would embrace that logo”, Laura notes.
+            + [{continue}] -> racks
+    }
+    { soulgem_full:
+        { laura_state > 0:
+# AUDIO: audio/positive.mp3
+            The scanner recognizes the soul gem and the door unlocks.
+                + [{continue}] -> keith
+        - else:
+# AUDIO: audio/error.mp3
+            + [{continue}] -> racks
+        }
+    }
+    { item_shorts:
+# AUDIO: audio/error.mp3
         ~ item_shorts = 0
-        ~ item_sandals = 0 
-        The current garment does not seem to be recognized by the scanner lock.  You leave it behind.
+        The shorts do not seem to be recognized by the scanner lock.  You leave them behind.
+            + [{continue}] -> racks
+    }
+    { soulgem_empty:
+# AUDIO: audio/error.mp3
+        The scanner does not recognize the empty Soul Gem pendant.  “Perhaps if it were full, it would be recognized?”, Laura suggests.
             + [{continue}] -> racks
     }
 
 = keith
 # CLEAR
-The scan completes.  After a considerable pause, the back wall slides open, revealing the unmistakable visage of Keith. Keith stands slowly, his battered exoskeleton servos complaining in the background. As he turns to face you, the history of Inquisition insults to his person read as excruciating hieroglyphics etched across his physique,
+After a considerable pause, the back wall slides open, revealing the unmistakable visage of Keith. Keith stands slowly, his battered exoskeleton servos complaining in the background. As he turns to face you, the history of Inquisition insults to his person read as excruciating hieroglyphics etched across his physique,
 Telltale signs of distrust frame his eyes as they scrutinize you, “New receptacle I see. As I recall, the last time we met you left my receptacle a bloody mess."  Gesturing to his exoskeleton, "Well I am at least mobile again and once more a thorn in their side, but why should I ever entertain working with you?  Won't I just end up under their thumb again?”
     + [We were just following orders] -> keith_orders
     + [You were working with the Inquisition] -> keith_inquisition
@@ -75,12 +156,36 @@ Telltale signs of distrust frame his eyes as they scrutinize you, “New recepta
 = keith_orders
 # CLEAR
 “Orders?!? Hilarious!  You never even attempted to talk with me, figure out who we were, understand our plans...”,  Keith snorts. “Are you that narrow of focus?  Even able to think for yourself?”, his glare unmistakable.
-    + [Who are you then?] -> keith_explain_A
+    + [Who are you then?] -> keith_explain_A_full_soulgem
     + [Allow Laura to interject] -> keith_laura
 
 = keith_inquisition
 # CLEAR
 “Us? Working for the Inquisition? Never!”, Keith retorts. “We needed resources, and in 15 century Spain, the Inquisition controls the resources, so yes, we used them.  But, we did not or would not willingly work for or with them.”  A long pause as he reflects, “Mistakes were... made.  We were... naïve, to the effectiveness of their goals and methods. Now they've infiltrated the Agency itself!  Wrongs must be corrected.”
+    + [{continue}] -> keith_explain_A_full_soulgem
+
+= keith_explain_A_full_soulgem
+// If you do not have the full soulgem, skip to keith_explain_A
+    {not soulgem_full:
+        -> keith_explain_A
+    }
+# CLEAR
+Keith looks deeply at you and continues in a tone of concern mixed with anger, “You filled a Soul Gem pendant with the essence of one of my workers! What right have you to do so?”
+    + [We caused no permanent injury] -> no_injury
+    + [It was the only way to get you to talk] -> only_way
+
+= no_injury
+# CLEAR
+Slowly you begin, “Let me assure you that your workers have suffered no permanent injury.  I used only a fraction of the essence of each of them to fill the gem.  We just needed to catch your attention and...”  
+Keith interrupts you with a raised hand, “ok, ok, I suppose it is too late now.  I will take the gem however, perhaps I can return some essence back to them.”
+    ~ soulgem_full = 0
+    + [{continue}] -> keith_explain_A
+
+= only_way
+# CLEAR
+You return his query aggressively, “Laura and I needed to talk to you.  You used soul gems to activate portals in the 'past' which the Inquisition filled the souls of witches they burned at the stake!  Your workers are still living, breathing.  We need to make sure they can never do that again.”
+Keith pauses, recalling past events before replying, “Yes... We need allies and focus...  I will take the gem however, I should be able to return essence back to those guys.”
+    ~ soulgem_full = 0
     + [{continue}] -> keith_explain_A
 
 = keith_explain_A
@@ -102,6 +207,10 @@ Keith takes an unexpected tack, “Precisely. The approach of the Agency has no 
  “That seems like a bit of a gamble, but a as you point out, a gamble that 'doesn’t matter' in the grand scheme of things.  Does that seem about right?” you ask.
  A thin smile graces Keith's face, “I may not use those terms, but that is they way I tend to look at the situation.  So, are you game?”
     ~ keith_trusts = 1
+    // If you responded aggressively abut the soul gem, you lost trust
+    {only_way:
+        ~ keith_trusts = 0
+    }
     + [Still skeptical, but can't fault the logic] -> keith_laura
     + [Let's (re)make the 'present'] -> keith_laura
 
@@ -119,11 +228,22 @@ At the mention of the name “Bob”, Keith’s face is stained with deep sadnes
 
 = keith_done
 # CLEAR 
-“What manners have I?” Kieth asks, “We don’t have a lot of resources here, but you can at least refresh yourself. Unfortunately, I must assume you are being followed and we will need to flee soon.”
-“We have an option, there is a jury-rigged Time Portal hidden in the Deli freezer.  It is a bit incomplete, but with it we can at least make it back to the Agency,” Laura interjects. “We… You… have a unique opportunity here to deliver the seeds of new horizons, the aspirations of both man and mankind.  You can use the Agency computers and full Time Portal, with my help, to correct their injurious actions.” 
-“Enough, Laura. Give our friends what little time they have to rest and recover.”, Keith counters. “There will be time to discuss plans, after a meal and drink.  Come.”
+“What manners have I?” Keith asks, “We don’t have a lot of resources here, but you can at least refresh yourself. Unfortunately, I must assume you are being followed and we will need to flee soon.”
+“We have an option, there is a jury-rigged Time Portal hidden in the Deli freezer.  It is a bit incomplete, but with it we can at least make it back to the Agency,” Laura interjects. “We… You… have a unique opportunity here to deliver the seeds of new horizons, the aspirations of both man and mankind.  You can use the Agency computers and full Time Portal, with my help, to correct their injurious actions.”
     ~ laura_state = 2
+    + [{continue}] -> book_check
+
+= book_check
+# CLEAR
+    { dummies_book:
+# SBIMAGE: items/st_dummies.png
+        Keith notices your copy of, 'Space-Time Portals for Dummies'.  “Where did you get that?” he asks, a hint of surprise and laughter in his voice.  “Would you like me to autograph it for you?”
+        "You? You wrote this book? 'Justin Hastings'?” you ask, surprised. 
+        “Yes, that is my real name.  I only use 'Keith' while in a caisson. I wrote that book years ago as an primer for new Agency personnel.  Unfortunately, the Inquisition got a copy and it helped them infiltrate the Agency”, Keith explains, “I only ask you prove a better chaperone than I did.”
+    }
+    “Enough. We should use what little time we have to rest and recover”, Keith continues. “There will be time to discuss plans, after a meal and drink.  Prepare, then meet me in the deli freezer when you are ready.”  Keith turns and walks away,  exoskeleton servos whirring softly as he moves, humming, “We skipped the light fandango, Turned some cartwheels across the floor, I was feeling kind of seasick...”
     + [Return to the center aisle] -> panorama
+
 
 = deli
 # CLEAR
@@ -170,6 +290,7 @@ You can feel an excited hum coming from behind the door, but there is still the 
 # SBIMAGE: locations/deli_computer.jpg
 Entering the walk-in you notice a steep drop in temperature, but this is no food storage unit. A rack of humming computer hardware hastily wired to a glowing pad dominates the room. The Time Portal is obviously active.  A pad off to the side displays time-space coordinates while a glowing green light signals the device’s readiness.  It appears to be locked into the Time Corrections Agency base.
 {laura_state < 2: Laura is visibly agitated,  “We’re not ready yet. I don’t have the access codes for this device. We must find Keith!”. }
+{laura_state == 2: Keith steps into view from behind the computer, “I have the access codes for this device.  I can initiate the transfer back to the Agency base whenever you are ready.”}
     + {laura_state > 1} [Initiate the transfer] -> travel_back_to_base
     + [Return to the deli counter] -> deli
 
@@ -204,37 +325,55 @@ You pick up the book and leaf through it.  The book is well-worn, with notes scr
 = racks
 # CLEAR
 Tables/hanging garments, a clerk stands ready to help you. Between a table of shorts, a rack of polo shirts and boxes of sneakers, a clerk “stands guard”, looking you over hawkishly, noting your tattoos, but not recognizing you, “You must be new to our cause. Has Keith given you an ‘errand’? We have options for all time periods, many appropriate for different disguises.” 
-“Make a selection and if needed, you can check the size in the fitting room over there.”, he winks at you.  “Today we are offering:
-shorts, a poloshirt and sandals.  Care to make a choice?”
+“Make a selection and if needed, you can check the size in the fitting room over there.”  He winks at you, “Today we are offering:
+shorts, a poloshirt and pendants.  Care to make a choice?”
 # SBIMAGE: items/shorts.png
-# SBIMAGE: items/poloshirt.png
-# SBIMAGE: items/sandals.png
+# SBIMAGE: items/poloshirt_inquisition.png
+# SBIMAGE: items/soul_empty.png
     + [Pick up a pair of shorts] -> pickup_shorts
     + [A poloshirt would be nice] -> pickup_poloshirt
-    + [Classic sandals] -> pickup_sandals
+    + [A dark pendant] -> pickup_pendant
     + [Visit the fitting room] -> fitting_room
     + [Return to the center aisle] -> panorama
 
 = pickup_shorts
-    { item_poloshirt or item_sandals: 
-        “Only one item at a time please.”
+    { already_have_a_garment(): 
+        “Only one item at a time please,” requests the clerk. “Would you like to return your current item?”
+            + [Return current item] -> drop_items
+            + [Keep current item] -> racks
     - else:
-        ~ item_shorts = 1
+        Laura turns her head and makes a gesture that can best be described as 'judgemental', “Exactly what are you thinking?  This is not 'television' from the 1980's.”  
+            ~ item_shorts = 1
+            + [Pick up a pair of shorts] -> racks
     }
-    + [{continue}] -> racks
 
 = pickup_poloshirt
-    { item_shorts or item_sandals: 
-        “Only one item at a time please.”
+    { already_have_a_garment(): 
+        “Only one item at a time please,” requests the clerk. “Would you like to return your current item?”
+            + [Return current item] -> drop_items
+            + [Keep current item] -> racks
     - else:
-        ~ item_poloshirt = 1
+        “Interesting choice but I doubt Keith will think highly of that logo”, notes Laura, pointing at the Inquisition symbol. “Perhaps we can alter it later, but for now, it is a start.”  
+        ~ item_poloshirt_inquisition = 1
+        + [Pick up a shirt] -> racks
     }
-    + [{continue}] -> racks
 
-= pickup_sandals
-    { item_poloshirt or item_shorts: 
-        “Only one item at a time please.”
+
+= pickup_pendant
+    { already_have_a_garment(): 
+        “Only one item at a time please,” requests the clerk. “Would you like to return your current item?”
+            + [Return current item] -> drop_items
+            + [Keep current item] -> racks
     - else:
-        ~ item_sandals = 1
+        ~ soulgem_empty = 1
+        + [Pick up a pendant] -> racks
     }
-    + [{continue}] -> racks
+
+= drop_items
+    // Drop current items
+    ~ item_poloshirt = 0
+    ~ item_poloshirt_inquisition = 0
+    ~ item_shorts = 0
+    ~ soulgem_empty = 0
+    ~ soulgem_full = 0
+    -> racks

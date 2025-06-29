@@ -111,6 +111,17 @@ The license allows people to use and adapt the work for any purpose, even commer
     }
     ~ return 0
 
+=== function already_have_a_garment()
+// item_shorts
+// item_poloshirt
+// item_poloshirt_inquisition
+// soulgem_empty
+// soulgem_full
+    { item_shorts or item_poloshirt or item_poloshirt_inquisition or soulgem_empty or soulgem_full:
+        ~ return 1
+    }
+    ~ return 0
+
 // See norm.py for the derivation, but this function returns
 // a floating point number from [0,100] with an approximate
 // normal distribution.
