@@ -137,7 +137,7 @@ You clip your "James" ID to your toga, then hand a pair of sweatpants to each of
     { item_shorts:
 # AUDIO: audio/error.mp3
         ~ item_shorts = 0
-        The shorts do not seem to be recognized by the scanner lock.  You leave them behind.
+        The shorts do not seem to be accepted by the scanner lock.  You leave them behind.
             + [{continue}] -> racks
     }
     { soulgem_empty:
