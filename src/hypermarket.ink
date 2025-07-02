@@ -231,19 +231,29 @@ At the mention of the name “Bob”, Keith’s face is stained with deep sadnes
 “What manners have I?” Keith asks, “We don’t have a lot of resources here, but you can at least refresh yourself. Unfortunately, I must assume you are being followed and we will need to flee soon.”
 “We have an option, there is a jury-rigged Time Portal hidden in the Deli freezer.  It is a bit incomplete, but with it we can at least make it back to the Agency,” Laura interjects. “We… You… have a unique opportunity here to deliver the seeds of new horizons, the aspirations of both man and mankind.  You can use the Agency computers and full Time Portal, with my help, to correct their injurious actions.”
     ~ laura_state = 2
-    + [{continue}] -> book_check
+    + [{continue}] 
+        {dummies_book:
+            -> book_check
+        - else:
+            -> keith_final_step
+        }
 
 = book_check
 # CLEAR
-    { dummies_book:
 # SBIMAGE: items/st_dummies.png
-        Keith notices your copy of, 'Space-Time Portals for Dummies'.  “Where did you get that?” he asks, a hint of surprise and laughter in his voice.  “Would you like me to autograph it for you?”
-        "You? You wrote this book? 'Justin Hastings'?” you ask, surprised. 
-        “Yes, that is my real name.  I only use 'Keith' while in a caisson. I wrote that book years ago as an primer for new Agency personnel.  Unfortunately, the Inquisition got a copy and it helped them infiltrate the Agency”, Keith explains, “I only ask you prove a better chaperone than I did.”
-    }
+Keith notices your copy of, 'Space-Time Portals for Dummies'.  “Where did you get that?” he asks, a hint of surprise and laughter in his voice.  “Would you like me to autograph it for you?”
+"You? You wrote this book? 'Justin Hastings'?” you ask, surprised. 
+“Yes, that is my real name.  I only use 'Keith' while in a receptacle. I wrote that book years ago as an primer for new Agency personnel.  Unfortunately, the Inquisition got a copy and it helped them infiltrate the Agency”, Keith explains, “I only ask you prove a better chaperone than I did.”
+{marble_workshop.table: 
+“Were you not part of Squad Porspet?”, you ask, recognizing his name from the Agency rosters.  “You know that Nelda Powell is still alive?  She is in Athens, working with Phidias to covertly help other detainees.”
+"Nelda? Yes, I remember her. She was a good friend and a brilliant engineer. I had no idea she was still alive. I thought she had been lost in an industrial 'accident'.  I will contact Phidias and see if we can smuggle her here.” Keith pauses, “I am glad to hear that some of my old squad are still around. It gives me hope that we can make a difference.”
+}
+    + [{continue}] -> keith_final_step 
+
+= keith_final_step
+# CLEAR
     “Enough. We should use what little time we have to rest and recover”, Keith continues. “There will be time to discuss plans, after a meal and drink.  Prepare, then meet me in the deli freezer when you are ready.”  Keith turns and walks away,  exoskeleton servos whirring softly as he moves, humming, “We skipped the light fandango, Turned some cartwheels across the floor, I was feeling kind of seasick...”
     + [Return to the center aisle] -> panorama
-
 
 = deli
 # CLEAR
