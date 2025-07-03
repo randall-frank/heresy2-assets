@@ -300,13 +300,21 @@ You can feel an excited hum coming from behind the door, but there is still the 
 # SBIMAGE: locations/deli_computer.jpg
 Entering the walk-in you notice a steep drop in temperature, but this is no food storage unit. A rack of humming computer hardware hastily wired to a glowing pad dominates the room. The Time Portal is obviously active.  A pad off to the side displays time-space coordinates while a glowing green light signals the device’s readiness.  It appears to be locked into the Time Corrections Agency base.
 {laura_state < 2: Laura is visibly agitated,  “We’re not ready yet. I don’t have the access codes for this device. We must find Keith!”. }
-{laura_state == 2: Keith steps into view from behind the computer, “I have the access codes for this device.  I can initiate the transfer back to the Agency base whenever you are ready.”}
-    + {laura_state > 1} [Initiate the transfer] -> travel_back_to_base
+{laura_state == 2: Keith steps into view from behind the computer, “I have the access codes for this device and can initiate the transfer back to the Agency base whenever you are ready.”}
+    + {laura_state > 1} [Initiate the transfer] -> travel_back_strategy
     + [Return to the deli counter] -> deli
+
+= travel_back_strategy
+# CLEAR
+You, Keith and Laura step up to the portal.  Keith begins, “The Inquisition leadership will already be at the Agency, looking to trap Laura.  Fortunately, they have only interacted with you and I while in receptacles.  They may not recognize us in our physical bodies at all.  We can use that to our advantage.”  Keith continues, “I propose we return in two groups.  You and I first, followed in a few minutes by Laura.”
+“What about Bob?”, you ask, pointing out a rather obvious concern. “He will recognize both of us.  What if he is there?”
+“That is a chance we will have to take.  Bob is not enamored with the Inquisition and they hold Helen, so his loyalties may prove 'flexible'”, Keith retorts. “Unfortunately, We'll just have to chance that one.”  
+Turning to Laura Keith continues, “After we leave, wait 5 minutes and follow us through. Hopefully we can catch them off guard.”
+    + [{continue}] -> travel_back_to_base
 
 = travel_back_to_base
 # AUDIO: audio/transport.m4a
-The trip happens in a flash, literally. Some form of spatial displacement field instantly transports you back to the T.I.M.E Corrections Agency.
+You and Keith step in and the trip happens in a flash, literally. Some form of spatial displacement field instantly transports you back to the T.I.M.E Corrections Agency.
     + [{continue}] -> base_return
 
 = gardening
