@@ -242,17 +242,17 @@ At the mention of the name “Bob”, Keith’s face is stained with deep sadnes
 # CLEAR
 # SBIMAGE: items/st_dummies.png
 Keith notices your copy of, 'Space-Time Portals for Dummies'.  “Where did you get that?” he asks, a hint of surprise and laughter in his voice.  “Would you like me to autograph it for you?”
-"You? You wrote this book? 'Justin Hastings'?” you ask, surprised. 
+"You? You wrote this book? 'Justin Hastings'?” you reply, surprised. 
 “Yes, that is my real name.  I only use 'Keith' while in a receptacle. I wrote that book years ago as an primer for new Agency personnel.  Unfortunately, the Inquisition got a copy and it helped them infiltrate the Agency”, Keith explains, “I only ask you prove a better chaperone than I did.”
 {marble_workshop.table: 
 “Were you not part of Squad Porspet?”, you ask, recognizing his name from the Agency rosters.  “You know that Nelda Powell is still alive?  She is in Athens, working with Phidias to covertly help other detainees.”
-"Nelda? Yes, I remember her. She was a good friend and a brilliant engineer. I had no idea she was still alive. I thought she had been lost in an industrial 'accident'.  I will contact Phidias and see if we can smuggle her here.” Keith pauses, “I am glad to hear that some of my old squad are still around. It gives me hope that we can make a difference.”
+"Nelda? Yes, I remember her. She was a good friend and a brilliant engineer. I had no idea her receptacle is still there. I thought she had been lost in an industrial 'accident'.  I will contact Phidias and see if we can smuggle her out.” Keith pauses, “I am glad to hear some of my old squad are still around. It gives me hope that we can make a difference.”
 }
     + [{continue}] -> keith_final_step 
 
 = keith_final_step
 # CLEAR
-    “Enough. We should use what little time we have to rest and recover”, Keith continues. “There will be time to discuss plans, after a meal and drink.  Prepare, then meet me in the deli freezer when you are ready.”  Keith turns and walks away,  exoskeleton servos whirring softly as he moves, humming, “We skipped the light fandango, Turned some cartwheels across the floor, I was feeling kind of seasick...”
+    “Enough. We should use what little time we have to rest and recover”, Keith continues. “There will be time to discuss plans, after a meal and drink.  Prepare, then meet me in the deli freezer when you are ready.”  Keith turns and walks away slowly, exoskeleton servos whirring softly as he retreats, humming, “We skipped the light fandango, Turned some cartwheels across the floor, I was feeling kind of seasick...”
     + [Return to the center aisle] -> panorama
 
 = deli
@@ -307,7 +307,7 @@ Entering the walk-in you notice a steep drop in temperature, but this is no food
 = travel_back_strategy
 # CLEAR
 You, Keith and Laura step up to the portal.  Keith begins, “The Inquisition leadership will already be at the Agency, looking to trap Laura.  Fortunately, they have only interacted with you and I while in receptacles.  They may not recognize us in our physical bodies at all.  We can use that to our advantage.”  Keith continues, “I propose we return in two groups.  You and I first, followed in a few minutes by Laura.”
-“What about Bob?”, you ask, pointing out a rather obvious concern. “He will recognize both of us.  What if he is there?”
+“What about the Director, Bob?”, you ask, pointing out a rather obvious concern. “He will recognize both of us.  What if he is there?”
 “That is a chance we will have to take.  Bob is not enamored with the Inquisition and they hold Helen, so his loyalties may prove 'flexible'”, Keith retorts. “Unfortunately, We'll just have to chance that one.”  
 Turning to Laura Keith continues, “After we leave, wait 5 minutes and follow us through. Hopefully we can catch them off guard.”
     + [{continue}] -> travel_back_to_base

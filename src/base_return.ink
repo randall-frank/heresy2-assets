@@ -7,18 +7,19 @@
 = base_start
 # CLEAR
 # AUDIOLOOP: audio/base.m4a
-As your vision recovers swiftly from the translocation flash, chaotic mayhem overlays the otherwise familiar space that ever so recently served as the T.I.M.E Corrections Agency headquarters. Bob and and an Inquisition Inquisitor in a hooded robe step up to greet you and Jordan Hastings as you arrive.  Just as Jordan expected, the Inquisition has arrived before you and is in the process of searching for Laura.
-Bob recognizes you and Dr Hastings and begins to speak, but you cut him off quickly. “Agents Smith and Hastings reporting back from the Malta 1989 A.D. mission. The source of the temporal anomaly report turned out to be residual temporal echo of a later mission. No action was taken and we can consider the matter closed.  We are ready for debriefing, Bob.”
-Bob seems confused, but quickly regains his composure, “Yes, I can handle this Inquisitor if you want to focus on the Laura issue...”
+As your vision recovers swiftly from the translocation flash, you recognize the T.I.M.E Corrections Agency headquarters pod 6, the main hub for temporal operations.  You and Jordan have both been returned into your physical forms, stepping out of nearby caissons. You exchange a wordless glance as Bob and an Inquisition Inquisitor in a hooded robe step up to greet the two of you.  Just as Jordan expected, Inquisition members had arrived previously and are in the process of searching for Laura.
+Bob recognizes you and Dr Hastings and begins to speak, but you cut him off quickly. “Agent Hastings and myself are reporting back from the Malta 1989 A.D. mission. The source of the temporal anomaly report turned out to be residual temporal echo of a later mission. No action was taken and we can consider the matter closed.”  Directing your attention to Bob, “We are ready for the standard debriefing protocol, Director.”
+Bob seems confused, but quickly regains his composure, “Yes, debriefing...  I can handle their debriefing Inquisitor, if you want to remain focussed on the Laura issue...”
     + [{continue}] -> laura_transport
 
 = laura_transport
 # CLEAR
 # AUDIO: audio/transport.m4a
-At that moment, the portal activates a second time and Laura appears in her android body, still locked in a caisson.
+At that moment, the portal activates a second time and Laura appears in her android body, locked in another caisson.
 The Inquisitor and his acolytes are startled by the sudden appearance of Laura and quickly turn their attention to her.  
-“Yes, yes, you can debrief these agents, we have far more important things to attend to”, stammers the clearly distracted Inquisitor to Bob. He gestures toward Laura. “Ah, the one we have been searching for, the one who has been hiding from us.  It is time you be brought to justice!”  He turns to his acolytes, “We have her!  Get the control device attached to her immediately!” They leave the room in a rush.
-Professor Hastings takes advantage of the opportunity and jumps into a nearby chair.  He begins making modifications to the portal, leaving you and Bob alone.
+“Yes, yes, you 'debrief' these agents, we have far more important things to attend to”, stammers the clearly distracted Inquisitor to Bob. 
+He gestures toward Laura. “Ah, the one we have been searching for, the one who has been hiding from us.  It is time you be brought to justice!”  He turns to his acolytes, “We have her!  Get the control device attached to her immediately!” They leave the room in a rush.
+Professor Hastings takes advantage of the opportunity and jumps into a nearby chair.  He begins making modifications to the chair and portal, leaving you and Bob alone.
     + [{continue}] -> panorama
 
 = panorama
@@ -72,8 +73,9 @@ A distinct look of hope graces Bob's countenance.  He responds with renewed vigo
 ~ combat_attack = 15.
 ~ combat_defense = 20.
 The solitary hooded figure stands behind a computer console, directing the actions of his acolytes. “Yes, we will have her now.  We cannot not allow this abomination to continue to exist.  She is a threat to the very fabric of our reality and must be eliminated!”  
-The figure turns to face you, sending you an odd flash of deja vu.  It is in his manner of moving and speaking...  A different face, but the same patterns. 
-He recognizes your confusion, “Yes, it is me... I believe you referred to me as ‘Phil’ in Spain.  Then, you eliminated my receptacle, but I returned.”  His brow furrows as he continues, “I have been on special assignment to track down and contain an internal hacker group who have been embedding A.I. entities throughout time.  Imagine my surprise when it turns out to be our resident time portal expert Dr Hastings, ‘Keith’, as it were. Bob managed to screw this one up as well when he sent you after him in Spain without informing you about my mission.  I failed to stop him in Spain, thanks largely to your intervention, but I found an dependable ally, int the Inquisition who share our consternation for this A.I. perversion.”  
+The figure turns to face you.  An odd feeling of deja vu washes over you, he is familiar to you.  It is in his manner of moving and speaking...  Different body, different face, but the same patterns and mannerisms. 
+He recognizes your confusion, “Yes, it is me... I believe you referred to me as ‘Phil’ in Spain.  Then, you eliminated my receptacle, but I returned.”  
+His brow furrows as he continues, “I am Agent Daniel Hickman, on special assignment to track down an internal hacker group who have been embedding A.I. entities throughout time, leveraging the Agencies one equipment and resources.  Imagine my surprise when it turns out to be our resident time portal expert Dr Hastings, ‘Keith’, as it were. Bob managed to screw this one up as well when he sent you after him in Spain without informing you about my mission.  I failed to stop him in Spain, thanks largely to your intervention, but we still found an dependable ally, in the Inquisition who share our consternation for this A.I. perversion.”  
 He continues with a sigh, “I had no idea how close to betraying the human race Dr Hastings got.  However, we have both he and his creation right here in front of us.  We only need to complete the capture of the mother code, Laura, and then we can use her to eliminate the other A.I.s  Then we get Dr Hastings the help he so desperately needs.”  
 “Quickly, distract Dr Hastings and help my ‘acolytes’ install the Inquisition firewall into Laura’s code.”, he notes your hesitation, “The destiny of the human race is at stake here!   Don’t you understand???” 
     + [Attempt to subdue the Inquisitor] -> subdue
