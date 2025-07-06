@@ -32,6 +32,7 @@ You are in the temporal reception area of the T.I.M.E Corrections Agency offices
 
 = bob
 # CLEAR
+# SBIMAGE: locations/bob_ending.png
 {not bob_helen:
     Bob, clearly distressed, is a man on the edge. Torn between his loyalty to the Agency and his general fear of the Inquisition who are holding his wife, he paces back and forth, wringing his hands. 
 - else:
@@ -47,7 +48,8 @@ You are in the temporal reception area of the T.I.M.E Corrections Agency offices
     + [Step back] -> panorama
 
 = bob_laura
-# CLEAR 
+# CLEAR
+# SBIMAGE: locations/bob_ending.png
 You start with a question, “We agree that the Inquisition is a threat, but what about Laura?  Dr Hastings seems to believe she is the solution to all of this and he holds the key.  Can he, they be trusted?”
 Bob looks at you with a mixture of confusion and concern. “I don’t know what to think anymore. The Inquisition is clearly after her, but they seem driven by blind fear.”
 He pauses for a moment, then continues, “I know that Laura is an advanced AI and I also know that she has been programmed to help us.  I don’t think she would ever do anything to harm us intentionally.  The Inquisition seems to think otherwise.  They are convinced that she is a threat to humanity and must be destroyed.”
@@ -57,6 +59,7 @@ You ask, “But what about Dr Hastings?  He seems to be working on something ind
 
 = bob_helen
 # CLEAR
+# SBIMAGE: locations/bob_ending.png
 You begin, “We ran into Helen in Athens, Bob.”
 “She is alive?” Bob's disposition changes dramatically.
 “Yes, she is alive.  Her receptacle is being held in the Athens Mausoleum workshop.  Taking a portal there will may be dangerous, but she is there in a cell”, you explain. “Unfortunately we do not know where her physical body is being kept.  Perhaps she knows its location?”
