@@ -507,33 +507,17 @@ function expand_text_to_html(text) {
 				splitTag.property = splitTag.property.toUpperCase();
 
                 // AUDIO: src
-                if( splitTag && splitTag.property == "AUDIO" ) {
-                    if(audio !== null) {
-                        audio.pause();
-                        audio.removeAttribute('src');
-                        audio.load();
-                    }
-                    audio = new Audio(splitTag.val); 
-                    audio.volume = parseFloat(current_volume) * 0.01;
-                    audio.play();
+                if (splitTag && splitTag.property == "AUDIO") {
+                    set_audio_source(splitTag.val);
                 }
 
                 // AUDIOLOOP: src
-                else if( splitTag && splitTag.property == "AUDIOLOOP" ) {
-                    if(audioLoop !== null) {
-                        audioLoop.pause();
-                        audioLoop.removeAttribute('src');
-                        audioLoop.load();
-                        
-                    }
-                    audioLoop = new Audio(splitTag.val); 
-                    audioLoop.volume = (parseFloat(current_volume) * 0.01)* 0.5;
-                    audioLoop.loop = true;
-                    audioLoop.play();
+                else if (splitTag && splitTag.property == "AUDIOLOOP") {
+                    set_audioloop_source(splitTag.val);
                 }
 
                 // SBIMAGE: src
-                if( splitTag && splitTag.property == "SBIMAGE" ) {
+                if (splitTag && splitTag.property == "SBIMAGE") {
                     var imageElement = document.createElement('img');
                     imageElement.src = splitTag.val;
                     imageContainer.appendChild(imageElement);
@@ -910,7 +894,12 @@ function expand_text_to_html(text) {
 
     // Save and Load story state...
     function downloadState() {
-        const text = theStory.state.toJson();
+        let game = {}
+        game.saved_ink_json = story.state.toJson();
+        game.saved_loop_audio_src = audioLoop ? audioLoop.src : "";
+        game.saved_background_src = outerScrollContainer.style.backgroundImage;
+        game.saved_story_version = story_version;
+        const text = JSON.stringify(game);
         const a = document.createElement('a');
         a.href = URL.createObjectURL( new Blob([text], { type:`application/json` }) );
         a.download = "heresy2_saved_game.json";
@@ -939,12 +928,27 @@ function expand_text_to_html(text) {
                 if (text.length) {
                     removeAll("p");
                     removeAll("img");
-                    story.state.LoadJson(text);
+                    const temp = JSON.parse(text);
+                    if (temp.hasOwnProperty('saved_story_version')) {
+                        if (temp.saved_story_version !== story_version) {
+                            alert("This save file is from a different version of the game. It may not work correctly.");
+                        }
+                    }
+                    story.state.LoadJson(temp.saved_ink_json);
                     savePoint = story.state.toJson();
                     continueStory(true);
+                    build_inventory(story, inventoryContainer);
+                    refresh_inventory(story, inventoryContainer);
+                    build_status(story);
+                    if (temp.saved_loop_audio_src) {
+                        set_audioloop_source(temp.saved_loop_audio_src);
+                    }
+                    if (temp.saved_background_src) {
+                        outerScrollContainer.style.backgroundImage = temp.saved_background_src;
+                    }
                 }
             } catch (e) {
-                console.debug("Couldn't load save state");
+                alert("The uploaded file could not be read as a valid save file.");
             }
         });
     }
@@ -1156,3 +1160,28 @@ document.querySelector('#volume_slider').addEventListener('input', volume_update
 document.querySelector('#volume_off').addEventListener('click', volume_mute);
 document.querySelector('#volume_med').addEventListener('click', volume_mute);
 document.querySelector('#volume_high').addEventListener('click', volume_mute);
+
+
+function set_audio_source(src) {
+    if(audio !== null) {
+        audio.pause();
+        audio.removeAttribute('src');
+        audio.load();
+    }
+    audio = new Audio(src); 
+    audio.volume = parseFloat(current_volume) * 0.01;
+    audio.play();
+}
+
+function set_audioloop_source(src) {
+    if (audioLoop !== null) {
+        audioLoop.pause();
+        audioLoop.removeAttribute('src');
+        audioLoop.load();
+                        
+    }
+    audioLoop = new Audio(src);
+    audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5;
+    audioLoop.loop = true;
+    audioLoop.play();
+}
