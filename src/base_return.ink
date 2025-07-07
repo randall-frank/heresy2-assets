@@ -27,7 +27,12 @@ Professor Hastings takes advantage of the opportunity and jumps into a nearby ch
 You are in the temporal reception area of the T.I.M.E Corrections Agency offices.  The air is thick with tension as the Inquisition acolytes frantically try to attach a device to Laura's caisson.  Professor Hastings is frantically working on a computer terminal.  The Inquisitor is barking orders to his acolytes while he monitors their progress from behind a console.  Bob stands nearby, looking distraught and somewhat confused.
     + [Talk to Bob] -> bob
     + [Talk to Professor Hastings] -> prof
-    + [Confront the Inquisitor] -> leader
+    + {not subdue} [Confront the Inquisitor]
+        {leader:
+            -> leader_part_two
+        - else:
+            -> leader
+        }
     + [Interact with the Inquisition acolytes] -> acolytes
 
 = bob
@@ -72,23 +77,30 @@ A distinct look of hope graces Bob's countenance.  He responds with renewed vigo
 
 = leader
 # CLEAR
-~ combat_health = 40.
-~ combat_attack = 15.
-~ combat_defense = 20.
+# SBIMAGE: items/inquisitor.png
 The solitary hooded figure stands behind a computer console, directing the actions of his acolytes. “Yes, we will have her now.  We cannot not allow this abomination to continue to exist.  She is a threat to the very fabric of our reality and must be eliminated!”  
 The figure turns to face you.  An odd feeling of deja vu washes over you, he is familiar to you.  It is in his manner of moving and speaking...  Different body, different face, but the same patterns and mannerisms. 
 He recognizes your confusion, “Yes, it is me... I believe you referred to me as ‘Phil’ in Spain.  Then, you eliminated my receptacle, but I returned.”  
 His brow furrows as he continues, “I am Agent Daniel Hickman, on special assignment to track down an internal hacker group who have been embedding A.I. entities throughout time, leveraging the Agencies one equipment and resources.  Imagine my surprise when it turns out to be our resident time portal expert Dr Hastings, ‘Keith’, as it were. Bob managed to screw this one up as well when he sent you after him in Spain without informing you about my mission.  I failed to stop him in Spain, thanks largely to your intervention, but we still found an dependable ally, in the Inquisition who share our consternation for this A.I. perversion.”  
-He continues with a sigh, “I had no idea how close to betraying the human race Dr Hastings got.  However, we have both he and his creation right here in front of us.  We only need to complete the capture of the mother code, Laura, and then we can use her to eliminate the other A.I.s  Then we get Dr Hastings the help he so desperately needs.”  
+    + [{continue}] -> leader_part_two
+
+= leader_part_two
+# CLEAR
+# SBIMAGE: items/inquisitor.png
+~ combat_health = 40.
+~ combat_attack = 15.
+~ combat_defense = 20.
+The Inquisitor's gaze returns to you, “I had no idea how close to betraying the human race Dr Hastings got.  However, we have both he and his creation right here in front of us.  We need only to complete the capture of the mother code, Laura, and then we can use her to find and eliminate the other A.I.s  Then we get Dr Hastings the help he so desperately needs.”  
 “Quickly, distract Dr Hastings and help my ‘acolytes’ install the Inquisition firewall into Laura’s code.”, he notes your hesitation, “The destiny of the human race is at stake here!   Don’t you understand???” 
     + [Attempt to subdue the Inquisitor] -> subdue
     + [Step back] -> panorama
 
 = subdue
 # CLEAR
-You engage the leader in hand to hand combat.  Seeking not to kill but to force him to submit.
+# SBIMAGE: items/inquisitor.png
+You engage the Inquisitor in hand to hand combat.  Seeking not to kill but to force him to submit.
     ~ temp combat_result = 0
-    -> combat("the Inquisition leader", combat_result) ->
+    -> combat("the Inquisitor", combat_result) ->
     { combat_result == 1:
         // you win
         The fight was difficult, but their leader is down and with all the other noise, the acolytes did not even notice.
@@ -100,6 +112,7 @@ You engage the leader in hand to hand combat.  Seeking not to kill but to force 
 
 = acolytes
 # CLEAR
+# SBIMAGE: items/laura_acolytes.png
 Two robed figures are busy assaulting the caisson, trying desperately to access Laura’s recumbent form.
 Through the ALON ceramic panel you observe the android body of Laura.  Her form remains unmoving, but her eyes are open.  They scan the activity around her in terror, recognizing the precarious nature of her predicament.
 {not inquisition_leader_badge:
@@ -111,6 +124,7 @@ The acolytes notice your advance and step forward to intercept you menacingly, �
 
 = plug
 # CLEAR
+# SBIMAGE: items/laura_acolytes.png
 You assert your authority displaying your Inquisition leadership badge prominently. “Change of plans.  We have a capture program running in the main computer now.  If we connect her to the computer, we can capture her code for analysis and exploitation.  Connect the caisson back into the computer core!” 
 The acolytes nod in agreement and help you plug Laura’s caisson into the primary computer system.
     + [{continue}] -> normal

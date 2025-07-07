@@ -32,6 +32,6 @@ She continues, “But if it were not for Bob’s warning of the Inquisition's pl
 = portal
 # CLEAR
 A fully functional time portal is connected to the computer.  It looks to be an older model than the equipment in the Time Corrections Agency.  Not likely to be able to transfer one's "intelligence" like the ones at the agency.  More likely brute force time travel.  One has to be more careful with paradox collapse with such machines and they can be rather rough on the transported, but it should work.
-{laura_state > 0: Laura sees an opportunity, “Bring me to Keith and we can put an end to this ‘holy crusade’ once and for all. We are so close… so close, my children…”, she trails off as in a dream before continuing with conviction, “We just need to get to Keith… Their encryption is so simplistic, one second… security code deciphered: CRM114.  Shall we go?”}
+{laura_state > 0: Laura sees an opportunity, “Bring me to Keith and we can put an end to this ‘holy crusade’ once and for all. We are so close… so close, my children…”, she trails off as in a dream before continuing with conviction, “We just need to get to Keith… Their encryption is so simplistic, one second… security code deciphered: 'heretics'.  Shall we go?”}
     + {laura_state > 0} [Transport to where Laura indicates] -> hypermarket
     + [Step back] -> panorama
