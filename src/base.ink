@@ -7,24 +7,28 @@
 = card_B
 # CLEAR
 # SBIMAGE: locations/bob_ending.png
-Bob begins the escort you back towards the caissons as you begin to question him about the new uniforms. He holds up a finger as he hurries along, as though he knew what you were going to ask, “There will be plenty of time for that. After you get some much deserved 'rest'. Eliza, the door please.” 
-He grasps your shoulder and ushers you towards the caisson just opened by Eliza. “Orders have come down. It’s time to take a vacation!”
-Orders? To take a vacation?
-“Taking care of Keith has opened some new doors. Strange doors. And well…” He doesn’t look at you. “The higher ups thought you deserve time off… while we see what’s behind them.” The lighting is too bright in here, the air too stale. Only the constellations outside the window remain the same. Bob ushers you back into a caisson and activates the restraint system. Restraints? Was this part of protocol?
+Bob escorts you towards the caissons as you begin to question him about the situation. He holds up a finger as he hurries along, as though he knew what you were going to ask, “There will be plenty of time for questions, after you get some much deserved rest. Eliza, the door please.”
+The doors of the caisson swing open at his request. He grasps your shoulder and gently pushes you in. Disoriented and drained, there’s little you can do to resist.
+Bob makes you comfortable then activates the restraint system. Restraints? Was this part of protocol? “Taking care of Keith has opened some new doors. Strange doors. And well...”, he doesn’t look at you. “The higher ups thought you deserve time off...  while we see what’s behind them.” 
+The lighting is too bright in here, the air too stale. Only the constellations outside the window remain the same.
     * [{continue}] -> card_C
     
 = card_C
 # CLEAR
 # ELIZA
 # SBIMAGE: locations/base_tube.png
-Bob steps back, a sad smile on his face but not in his eyes. “We’re sending you back to ancient Greece for a little R&R. Eliza will fill you in.” Eliza? “Laura’s understudy. They’ve decided that some of the staff needed time off..” He fiddles with his medallion, giving it a gentle pull before letting his arm hang to the side.
-Bob presses the button to start the time transfer. He looms above, while the door of the caisson slides up slowly reducing your view, blocking his legs, neck, and smile, until at last only his distant, hollow eyes remain. It snaps shut with a hermetic hiss. He’s gone and darkness is everywhere.
+Bob steps back, a sad smile on his face but not in his eyes. “We’re sending you back to ancient Greece for a little R&R. You remember the little facility we run there?” 
+“That detention center?”, you counter.
+Bob smiles “Does a prison have good wine and beautiful beaches? Eliza will fill you in.”
+Bob presses the button to start the time transfer. He looms above, while the doors of the caisson slide shut narrowing your view. The world narrowed by darkness until only Bob’s distant, hollow eyes remain. Then the doors snap shut with a hermetic hiss. Bob is gone and darkness is everywhere.
     * [{continue}] -> card_E
     
 = card_E
 # CLEAR
 # AUDIOLOOP: audio/alarm.m4a
-In the black of the chamber, a light appears, rushing towards you. Videos of lush olive groves, bustling city centers, and craftspeople plying their trade fill your view and your senses. Great temples tower above, and by the sea, vacationers lounge with their cups, soothed by the sound of wine-dark waves. Beautiful music fills your ears and wonder fills your mind. 
+In the black of the chamber, a light appears, rushing towards you. Videos of lush olive groves, bustling city centers, and craftspeople plying their trade fill your view and your senses. Great temples tower above, and by the sea, vacationers lounge with their cups, soothed by the sound of wine-dark waves. Beautiful music fills your ears and wonder fills your mind.
 A symbol flashes before your eyes on a background of static then it is gone.
-Eliza begins to speak. “Welcome vacationer! You have earned… an unspecified amount of time …on the Greek paradise of Mypos, year 450 BCE. Your mission: enjoy yourself!”
+Eliza begins to speak, her voice protocols primitive and rough compared to Laura.
+# CLASS: computer
+“Welcome vacationer! You have earned… an unspecified amount of time …on the Greek paradise of Mypos, year 450 BCE. Your mission: enjoy yourself!”
     * [{continue}] -> workshop.transfer
