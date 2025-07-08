@@ -81,3 +81,15 @@ Build.py has four options:
     directory on the selected port.  This simulates an actual web deployment. The
     default port is 9000.
 
+## Versioning notes:
+
+The game has a semantic version number of the form: 'x.y.z'.  This is specified by the file 'version.txt'
+in the source code.  This version number is also stored in game 'save' files, which are
+basically a snapshot of the current ink engine instance, taken just before the current
+knot is displayed.  Note: all fields can be multiple digits in length, so '0.3.12' is valid.
+
+Any time there is a change to the overall state structure (e.g. a new knot/stich is 
+added or a new item/variable is introduced), one much bump the x or y portion of the
+semantic version.  The save file loader will allow files that differ only in the 'z' digits
+to be loaded w/o warning.  So change like spelling, text revisions, etc should only update
+the 'z' field to retain backward compatibility with old save files.

@@ -894,6 +894,7 @@ function expand_text_to_html(text) {
     }
 
     // Save and Load story state...
+    // Save current state to a file
     function downloadState() {
         let game = {}
         // game.saved_ink_json = story.state.toJson();
@@ -909,7 +910,7 @@ function expand_text_to_html(text) {
         a.download = "heresy2_saved_game.json";
         a.click();
     }
-
+    // Load state from an uploaded file
     function uploadState() {
         // Get the file to upload
         const inputFileElement = document.createElement('input');
@@ -922,7 +923,7 @@ function expand_text_to_html(text) {
         inputFileElement.click();
         inputFileElement.remove();
     }
-
+    // Handle the uploaded file and load the JSON
     function getUploadedJson(fileInput) {
         var files = fileInput.files;
         if (files.length <= 0) return;
@@ -933,11 +934,19 @@ function expand_text_to_html(text) {
                     removeAll("p");
                     removeAll("img");
                     const temp = JSON.parse(text);
+                    let currentMajorVersion = story_version.slice(0, story_version.lastIndexOf('.'));
+                    let savedMajorVersion = currentMajorVersion; // default to current version
+                    let savedVersion = story_version;
                     if (temp.hasOwnProperty('saved_story_version')) {
-                        if (temp.saved_story_version !== story_version) {
-                            alert("This save file is from a different version of the game. It may not work correctly.");
-                        }
+                        savedVersion = temp.saved_story_version;
+                        savedMajorVersion = savedVersion.slice(0, savedVersion.lastIndexOf('.'));
                     }
+                    if (currentMajorVersion !== savedMajorVersion) {
+                        alert("Note: This save file is from a different version of the game. It may not load correctly.\n\n" +
+                            "Game version: " + story_version + "\n" +
+                            "Save file version: " + savedVersion);
+                    }
+                    
                     story.state.LoadJson(temp.saved_ink_json);
                     savePoint = story.state.toJson();
                     continueStory(true);
@@ -952,7 +961,7 @@ function expand_text_to_html(text) {
                     }
                 }
             } catch (e) {
-                alert("The uploaded file could not be read as a valid save file.");
+                alert("The uploaded save file could not be imported.");
             }
         });
     }
