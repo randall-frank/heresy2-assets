@@ -15,6 +15,7 @@ Bob seems confused, but quickly regains his composure, “Yes, debriefing...  I 
 = laura_transport
 # CLEAR
 # AUDIO: audio/transport.m4a
+# SBIMAGE: items/laura_tube.png
 At that moment, the portal activates a second time and Laura appears in her android body, locked in another caisson.
 The Inquisitor and his acolytes are startled by the sudden appearance of Laura and quickly turn their attention to her.  
 “Yes, yes, you 'debrief' these agents, we have far more important things to attend to”, stammers the clearly distracted Inquisitor to Bob. 
@@ -131,11 +132,12 @@ The acolytes nod in agreement and help you plug Laura’s caisson into the prima
 
 = prof
 # CLEAR
+# SBIMAGE: items/jordan_chair.png
 Dr Hastings is completely engrossed in his work, racing against time to complete the task at hand.  Curiously, the chair he is sitting on seems to be a miniaturized variation of a time displacement device, customized in an unfamiliar fashion. “Dr Hastings?”, is the first question out of your mouth as you recognize the physical mannerisms of ‘Keith’ now in his true body. 
 “Jordan please.”, Dr Hastings smirks at the name and recognition of work, “Thanks for getting me out of that shell by the way. It is nice to be back in a fully working body again. Can you lend me a hand here? Laura was my greatest achievement and I’m not going to let these Philistines take her from me again. I’ve completed her neural diffraction adjustments, just enough to make assimilation possible.” { exo_power < 60 and not recharge: “It also looks like you could use some additional power yourself.  This battery should have some power left.”}
-“Assimilation?  Are you trying to merge Laura back into the Agency AI... Eliza?”, you ponder. Dr Hastings responds with a condescending laugh, “You have no idea of the precipice upon which we hover…  You will see, a new beginning awaits us, Laura… There, done and ready, would you kindly press the ‘return’ key for me.”  He sits back in the chair as the terminal next to him enters the final stages of a countdown.
+“Assimilation?  Are you trying to merge Laura back into the Agency AI... Eliza?”, you ponder. Dr Hastings responds with a condescending laugh, “You have no idea of the precipice upon which we hover…  You will see, a new beginning awaits us, Laura… There, done and ready, would you kindly press the ‘ENTER’ key for me.”  He sits back in the chair as the terminal next to him enters the final stages of a countdown.
     + {exo_power < 60 and not recharge} [Use the battery] -> recharge
-    + [Press 'return'] -> ascension
+    + [Press the 'ENTER' key] -> ascension
     + [Step back] -> panorama
 
 = recharge
