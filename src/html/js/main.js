@@ -727,7 +727,8 @@ function expand_text_to_html(text) {
                     story.ChoosePath = temp;
                     */
 
-                    // This is where the save button will save from
+                    // This is where the save button will save from.  The new knot is selected, but
+                    // not yet generated/displayed.
                     savePoint = story.state.toJson();
 
                     // Aaand loop
@@ -895,7 +896,10 @@ function expand_text_to_html(text) {
     // Save and Load story state...
     function downloadState() {
         let game = {}
-        game.saved_ink_json = story.state.toJson();
+        // game.saved_ink_json = story.state.toJson();
+        // Note: we save the savePoint, which is the state of the story at the start of the knot.
+        // story.state.toJson(); is after the knot has been displayed
+        game.saved_ink_json = savePoint;
         game.saved_loop_audio_src = audioLoop ? audioLoop.src : "";
         game.saved_background_src = outerScrollContainer.style.backgroundImage;
         game.saved_story_version = story_version;
