@@ -25,7 +25,6 @@ to the [Ink] framework.
 There is a build.py script that will generate and optionally host the
 generated story.
 
-More information to come...
 
 ## Requirements:
 
@@ -61,9 +60,12 @@ Serving story:  http://127.0.0.1:9000
 ```
 
 At this point, pointing a browser tab at: ``http://127.0.0.1:9000`` will view the
-story.  Alternatively, one can double-click on the `index.html` file in the `build`
-directory to view the story.  Note it may not always be possible to use this method. At present, the story is simply a collection of static files, but that could change in the
-future.
+story.  
+
+> Note, if one double-clicks on the `index.html` file in the `build` directory to 
+view the story, the background sound will not work due to CORS issues as the background sound files are accessed
+via fetch() calls.
+
 
 Build.py has four options:
 
@@ -81,7 +83,7 @@ Build.py has four options:
     directory on the selected port.  This simulates an actual web deployment. The
     default port is 9000.
 
-## Versioning notes:
+## Versioning:
 
 The game has a semantic version number of the form: 'x.y.z'.  This is specified by the file 'version.txt'
 in the source code.  This version number is also stored in game 'save' files, which are

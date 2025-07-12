@@ -73,6 +73,8 @@ def build_story_js() -> None:
         fp.write("var theStory = null;\n")
         fp.write("var audio = null;\n")
         fp.write("var audioLoop = null;\n")
+        fp.write("let current_volume = 30;\n")
+        fp.write("let last_volume = 30;\n")
         fp.write("var story_version = '" + version.decode('ascii') + "';\n")
     # create items_globals.ink
     with open(os.path.join("src", "item_globals.ink"), "w") as fp:

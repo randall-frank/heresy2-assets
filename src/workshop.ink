@@ -22,6 +22,7 @@ A click, a whirr, and life flows through you like a river undammed. The red warm
 
 
 = panorama
+# CLEAR
 Along the hallway to your left is a robotic tattoo machine, room 236.  Room 237 is hidden behind a security door.  An open office space on the right holds a plain desk with a computer terminal. Finally, at the end on the left is what appears to be a holding cell.
     + [Take a seat at the tattoo machine] -> tattoo
     + {not apollo} [Try to enter room 237] -> door_to_oracle
@@ -40,7 +41,9 @@ Peering through the iron grates, you see that the building has the facade of a m
     You use the key to open the garden gate and exit into the garden.
     + [{continue}] -> garden
 - else:
-    -> panorama
+# AUDIO: audio/door_locked.m4a
+    The gate is locked and bolted.  You will need a key to open it.
+    + [{continue}] -> panorama
 }
 
 
@@ -49,14 +52,14 @@ Peering through the iron grates, you see that the building has the facade of a m
 { 
 - tattooed:
 You take a seat and the robot springs to life.  It scans your arm... "This detainee has already been marked.  Please move along." rattles Eliza.
-    -> panorama
+    + [{continue}] -> panorama
 - else:
 The slab you’re on spins and slides, coming to rest underneath a robotic arm. A laser tip hums to life. “Hold still and this won’t hurt a bit!” says Eliza from a speaker in the wall. The laser from a mobile begins to burn your right shoulder. It should hurt but the sensation is muted in this new form.
 The laser makes a few motions like a painter’s final strokes on a canvas and the machine pulls away, leaving you with a strange symbol seared into your arm:
 # IMAGE: items/tattoo.png
 “All done!” cheers Eliza. “Please proceed to the exit and prepare to have all the pleasures this island can offer.”
     ~ tattooed = 1
-    -> panorama
+    + [{continue}] -> panorama
 }
 
 
@@ -101,7 +104,7 @@ An early 21st century modular desk sits covered in dust, probably one of the pop
 = find_padded_cell_key
 You find a digital card key.  To what?  where?
     ~ padded_cell_key = 1
-    ->panorama
+    + [{continue}] -> desk
 
 = computer_terminal
 # CLEAR
@@ -170,7 +173,7 @@ You kneel beside Helen and brush back her hair.  She seems so familiar to you, b
 # SBIMAGE: items/owl.png
 An intricate mechanical masterpiece of animated genius. It flexes and flies with agility, perhaps even exceeding an anatomical predator. When close by, it even seems to breathe. But the eyes… they stalk you with visible intelligence.
 Intelligence… yes,there is an undeniable intelligence present in this mechanical wonder.
-On closer inspection, the owl hosts a quantum array storage vessel. This lightweight chamber is capable of storing the entire quantum state of a state of the art AI. The vessel sports a high-speed computer interface compatible with most computational platforms.
+On closer inspection, the owl hosts a quantum array storage vessel. This lightweight chamber is capable of storing the entire quantum state of a state-of-the-art artificial intelligence. The vessel sports a high-speed computer interface compatible with most computational platforms.
 A faint glow emanates from the quantum storage nodes, suggesting that the vessel is currently occupied.
 The owl seems to recognize you and drops a key to you.
     ~ garden_door_key = 1

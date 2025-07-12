@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inline JavaScript</title>
+</head>
+
+<body>
+    <button id="playButton">Play/Stop</button>
+    <button id="softButton">Soft</button>
+    <button id="loudButton">Loud</button>
+    <button id="onceButton">Once</button>
+    <script>
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+        let audioBuffer;
+        let gainNode
+        let oneTimeAudio;
+
+        async function loadAudio(url) {
+            const response = await fetch(url);
+            const arrayBuffer = await response.arrayBuffer();
+            audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+        }
+
+        // Call this function when the page loads, or when you want to make the audio available
+        loadAudio('audio/garden.mp3'); // Replace with your MP3 file path
+
+        let source; // To keep track of the playing audio
+
+        document.getElementById('playButton').addEventListener('click', () => {
+            if (source) {
+                source.stop(); // Stop any currently playing audio
+                source = null; // Reset source to null
+                return;
+            }
+            if (audioBuffer) {
+                source = audioContext.createBufferSource();
+                source.buffer = audioBuffer;
+                source.loop = true; // This is the crucial part for looping
+                gainNode = audioContext.createGain();
+                source.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                const gainValue = 0.3; // Set volume to 30%
+                console.log('Setting gain to:', gainValue);
+                gainNode.gain.value = gainValue;
+                source.start();
+            } else {
+                console.warn('Audio not loaded yet!');
+            }
+        });
+        document.getElementById('softButton').addEventListener('click', () => {
+            if (source) {
+                const gainValue = 0.05; // Set volume to 5%
+                console.log('Setting gain to:', gainValue);
+                gainNode.gain.value = gainValue;
+            }
+        });
+        document.getElementById('loudButton').addEventListener('click', () => {
+            if (source) {
+                const gainValue = 1.0; // Set volume to 100%
+                console.log('Setting gain to:', gainValue);
+                gainNode.gain.value = gainValue;
+            }
+        });
+        document.getElementById('onceButton').addEventListener('click', () => {
+            oneTimeAudio = new Audio('audio/alarm.m4a');
+            oneTimeAudio.play();
+        });
+
+    </script>
+</body>
+
+</html>

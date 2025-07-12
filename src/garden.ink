@@ -1,12 +1,12 @@
 === garden ===
 ~ location_name = "Private Garden"
 -> power_change( location_change_cost ) ->
+# BACKGROUND: locations/garden.jpg
+# AUDIOLOOP: audio/garden.mp3
 -> garden_gate
 
 = garden_gate
 # CLEAR
-# BACKGROUND: locations/garden.jpg
-# AUDIOLOOP: audio/garden.mp3
 An ornate arbor draped with Hedera serves as the gateway through the manicured hedgerow and into the private garden.  Meandering walkways paved with natural cut white marble guide visitors through the lilly lined maze of private alcoves partitioned by collections of fruit laden trees.  Distinctive notes of olive, pomegranate and fig waft through the garden on the rose soaked breeze coming in from the sea.
 A party seems to be in progress as you make your way into this idyllic scene.
 A noble stands near the garden entrance pouring wine into what looks like Murano (1300’s?) glassware on a tray held by a rather nervous looking servant. To the right there is an alcove around a table and a single fruit laden olive tree surrounded by Delphinium.  A hummingbird can be seen hovering around the flowers but turned towards you. A break in the hedges reveals a magnificent view of the ocean and bustling coastal waters. To your left, a servant stands at a bit of a distance, carefully observing you.  They make eye contact… an invitation to talk?  Straight ahead there is a group of party-goers deep in stimulating conversation.
