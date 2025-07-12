@@ -155,7 +155,23 @@ function build_status(story) {
             if (count === 0) hide = 1;
         }
         if (hide === 0) {
-            inner += "<p style='padding-left: 10px;'>" + value.name + ": <b>" + disp_count + "</b></p>";
+            inner += "<div style='display: flex; align-items: center;'>";  
+            let display_using_meter = 0;
+            if (value.hasOwnProperty('meter')) {
+                display_using_meter = value.meter;
+            }
+            if (display_using_meter) {
+                inner += "<p style='padding-left: 10px; margin-top: 6px; margin-bottom: 0px; display: inline-block; vertical-align: middle;'>" + value.name + ": <b>" + disp_count + "</b></p>";
+                const meter_color = interpolateHSL("#ff0000", "#00ff00", story.variablesState[name] / 100);
+                inner += "<div class='simple-meter' style='display: inline-block; flex: 1;'><span style='width: " + disp_count + "; background-color: " + meter_color + ";'></span></div>";
+            } else {
+                inner += "<p style='padding-left: 10px; margin-top: 6px; margin-bottom: 0px; display: inline-block; vertical-align: middle;'>" + value.name + ": <b>" + disp_count + "</b></p>";
+            }
+            if (value.hasOwnProperty('url')) {
+                const image_url = value.url;
+                inner += "<img src='" + image_url + "' style='height: 2em; margin-left: 12px; margin-right: 0px; display: inline-block; vertical-align: middle;'></img>";
+            }
+            inner += "</div>";
             visible_count += 1;
         }
     }
@@ -1197,4 +1213,113 @@ function set_audioloop_source(src) {
     audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5;
     audioLoop.loop = true;
     audioLoop.play();
+}
+
+/**
+ * Interpolate between two hex colors in HSL space.
+ * @param {string} color1 - The first color in hex format (e.g., "#ff0000").
+ * @param {string} color2 - The second color in hex format (e.g., "#0000ff").
+ * @param {number} t - The interpolation factor (0.0 to 1.0).
+ * @returns {string} - The interpolated color in hex format.
+ */
+function interpolateHSL(color1, color2, t) {
+    const hsl1 = rgbToHslObj(hexToRgb(color1));
+    const hsl2 = rgbToHslObj(hexToRgb(color2));
+
+    // Interpolate hue (circular interpolation)
+    let dh = hsl2.h - hsl1.h;
+    if (Math.abs(dh) > 180) {
+        dh -= Math.sign(dh) * 360;
+    }
+    const h = (hsl1.h + t * dh + 360) % 360;
+    const s = hsl1.s + t * (hsl2.s - hsl1.s);
+    const l = hsl1.l + t * (hsl2.l - hsl1.l);
+
+    const rgb = hslToRgbObj({ h, s, l });
+    return rgbToHex(rgb.r, rgb.g, rgb.b);
+}
+
+// Convert RGB object to HSL object
+function rgbToHslObj({ r, g, b }) {
+    r /= 255; g /= 255; b /= 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+
+    if (max === min) {
+        h = s = 0;
+    } else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+            case r: h = ((g - b) / d + (g < b ? 6 : 0)); break;
+            case g: h = ((b - r) / d + 2); break;
+            case b: h = ((r - g) / d + 4); break;
+        }
+        h *= 60;
+    }
+    return { h, s, l };
+}
+
+// Convert HSL object to RGB object
+function hslToRgbObj({ h, s, l }) {
+    h /= 360;
+    let r, g, b;
+    if (s === 0) {
+        r = g = b = l;
+    } else {
+        const hue2rgb = (p, q, t) => {
+            if (t < 0) t += 1;
+            if (t > 1) t -= 1;
+            if (t < 1 / 6) return p + (q - p) * 6 * t;
+            if (t < 1 / 2) return q;
+            if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+            return p;
+        };
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1 / 3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1 / 3);
+    }
+    return {
+        r: Math.round(r * 255),
+        g: Math.round(g * 255),
+        b: Math.round(b * 255)
+    };
+}
+
+/**
+ * Interpolate between two colors in sRGB space.
+ * @param {string} color1 - The first color in hex format (e.g., "#ff0000").
+ * @param {string} color2 - The second color in hex format (e.g., "#0000ff").
+ * @param {number} t - The interpolation factor (0.0 to 1.0).
+ * @returns {string} - The interpolated color in hex format.
+ */
+function interpolateSRGB(color1, color2, t) {
+  // Parse the hex colors into RGB components
+  const c1 = hexToRgb(color1);
+  const c2 = hexToRgb(color2);
+
+  // Linearly interpolate each component
+  const r = Math.round(c1.r + t * (c2.r - c1.r));
+  const g = Math.round(c1.g + t * (c2.g - c1.g));
+  const b = Math.round(c1.b + t * (c2.b - c1.b));
+
+  // Convert back to hex format
+  return rgbToHex(r, g, b);
+}
+
+// Helper function to convert hex to RGB
+function hexToRgb(hex) {
+  const bigint = parseInt(hex.slice(1), 16);
+  return {
+    r: (bigint >> 16) & 255,
+    g: (bigint >> 8) & 255,
+    b: bigint & 255,
+  };
+}
+
+// Helper function to convert RGB to hex
+function rgbToHex(r, g, b) {
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
 }

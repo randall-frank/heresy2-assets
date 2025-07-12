@@ -211,18 +211,22 @@ description = "Allows the CRM114 to be changed to other settings."
 #                             - used in the evaluation of 'hide' instead of
 #                             - the state value variable.
 # percent = 1   - if present, the value is interpreted as a "percentage" for display
+# meter = 0 - 0=no meter display, 1=meter w/base color, 2=red->green color
+# url = "foo/img.png"  - if specified, an icon to put after the status
 #
 [states]
 
 [states.exo_power]
-name = "Mark V power"
+name = "Power"
 default = 100
 hide = 2
 hide_variable = "tattooed"
 percent = 1
+meter = 1
 
 [states.cash]
 name = "Drachm"
 default = 10
 hide = 2
 hide_variable = "tattooed"
+url = "items/drachm.png"
