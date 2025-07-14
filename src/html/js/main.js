@@ -439,11 +439,7 @@ function expand_text_to_html(text) {
     build_status(story);
 
     // Check for "dev" mode
-    const urlParams = new URLSearchParams(window.location.search);
-    const dev_mode = Number(urlParams.get('dev'));
-    if (!isNaN(dev_mode)) {
-        story.variablesState.debug = dev_mode;
-    }
+    story.variablesState.debug = checkDebugMode();
 
     // Set initial save point
     savePoint = story.state.toJson();
@@ -992,11 +988,18 @@ function attribution(parent) {
 
 <p>This project draws on the inspiration and efforts of a number of folks.</p>
 
-<h2>Testers</h2>
+<h2>Writers/Developers</h2>
 <ul>
 <li>Randy Frank</li>
 <li>Andrew Florance</li>
 <li>Marina Galvagni</li>
+</ul>
+
+<h2>Beta Testers</h2>
+<ul>
+<li>David Bremer</li>
+<li>David Byrd</li>
+<li>Edward Oxford</li>
 </ul>
 
 <h2>Imagery and audio used with attribution</h2>
@@ -1035,12 +1038,14 @@ function attribution(parent) {
     <td><a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">Creative Commons 0</a></td></tr>
 </table>
 <p></p>
-<h2>Eliza core used with attribution</h2>
+`
+if (checkDebugMode()) {
+    s += `<h2>Eliza core used with attribution</h2>
 <p></p>
 <p>"elizabot.js" by © Norbert Landsteiner 2005, <a href="http://www.masswerk.at" target="_blank" rel="noopener noreferrer">mass:werk</a>.</p>
 <p>"elizabot.js" is free software and provided "as is". It is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose.</p>
-
 `
+}
     attr.innerHTML = s;
     parent.appendChild(attr);
     return attr;

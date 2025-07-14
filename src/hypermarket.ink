@@ -242,7 +242,7 @@ At the mention of the name “Bob”, Keith’s face is stained with deep sadnes
 # CLEAR
 # SBIMAGE: items/st_dummies.png
 Keith notices your copy of, 'Space-Time Portals for Dummies'.  “Where did you get that?” he asks, a hint of surprise and laughter in his voice.  “Would you like me to autograph it for you?”
-"You? You wrote this book? 'Justin Hastings'?” you reply, surprised. 
+"You? You wrote this book? 'Jordan Hastings'?” you reply, surprised. 
 “Yes, that is my real name.  I only use 'Keith' while in a receptacle. I wrote that book years ago as an primer for new Agency personnel.  Unfortunately, the Inquisition got a copy and it helped them infiltrate the Agency”, Keith explains, “I only ask you prove a better chaperone than I did.”
 {marble_workshop.table: 
 “Were you not part of Squad Porspet?”, you ask, recognizing his name from the Agency rosters.  “You know that Nelda Powell is still alive?  She is in Athens, working with Phidias to covertly help other detainees.”

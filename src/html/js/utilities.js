@@ -1,3 +1,12 @@
+/**** Check for debug mode ****/
+function checkDebugMode() {
+    // Check if the URL has a 'dev' parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const dev_mode = Number(urlParams.get('dev'));
+    if (!isNaN(dev_mode)) return dev_mode;
+    return 0; // Default to 0 if 'dev' parameter is not present or invalid
+}
+    
 /***** Audio Utilities *****/
 
 // Globals from item_globals.js
