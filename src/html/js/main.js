@@ -986,31 +986,41 @@ function attribution(parent) {
     s = `
 <h1>Attributions and Thanks</h1>
 
-<p>This project draws on the inspiration and efforts of a number of folks.</p>
-
-<h2>Writers/Developers</h2>
-<ul>
-<li>Randy Frank</li>
-<li>Andrew Florance</li>
-<li>Marina Galvagni</li>
-</ul>
-
-<h2>Beta Testers</h2>
+<p>This project draws on the inspiration and efforts of a number of folks.
+We would like to acknowledge them here and thank them all for their contributions.</p>
+<p></p>
+<h2>The Writers and Developers</h2>
+<p></p>
+<table class="devs"><tbody>
+<tr>
+    <td><img src="items/randy.png"></img></td>
+    <td><img src="items/andrew.png"></img></td>
+    <td><img src="items/marina.png"></img></td>
+</tr>
+<tr>
+    <td>Randy Frank</td>
+    <td>Andrew Florance</td>
+    <td>Marina Galvagni</td>
+</tr>
+</tbody></table>
+<p></p>
+<h2>The Beta Testers</h2>
 <ul>
 <li>David Bremer</li>
 <li>David Byrd</li>
 <li>Edward Oxford</li>
 </ul>
-
+<p></p>
 <h2>Imagery and audio used with attribution</h2>
 <ul>
 <li>Various images generated using DALL·E</li>
+<li>Various images generated using ArtSpace.ai</li>
 <li>Textures: www.myfreetextures.com</li>
 <li>Some images used from wikipedia under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></li>
 <li>Some Icons by Font Awesome fontawesome.com, Copyright Fonticons, Inc, License: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></li>
 <li>Some audio tracks where licensed from Nicolas Jeudy and <a href="https://darkfantasystudio.com/" target="_blank" rel="noopener noreferrer">DARK FANTASY STUDIO</a></li>
 </ul>
-
+<p></p>
 <h2>Audio used with attribution from freesound.org</h2>
 <p></p>
 <table class="attr">

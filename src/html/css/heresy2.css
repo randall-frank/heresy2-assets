@@ -407,6 +407,38 @@ table.attr tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+/****************** Attribution image ******************/
+table.devs {
+    font-family: arial, sans-serif;
+    border-collapse: separate;
+    border-spacing: 2;
+    width: 100%;
+    text-align: center; 
+    font-weight: bold;
+    vertical-align: middle;
+    table-layout: fixed;
+}
+
+table.devs td,
+table.devs th {
+    border: 0;
+    box-shadow: 0 0 0 2px #dddddd;
+    padding: 8px;
+}
+
+table.devs>tbody>tr:first-child>td:first-child {
+  border-top-left-radius: 10px;
+}
+table.devs>tbody>tr:first-child>td:last-child {
+  border-top-right-radius: 10px;
+}
+table.devs>tbody>tr:last-child>td:first-child {
+  border-bottom-left-radius: 10px;
+}
+table.devs>tbody>tr:last-child>td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
 /****************** For the combination box table(s) ****************/
 table.combo button {
 	background-color: DimGray;
