@@ -125,6 +125,7 @@ VAR code_apollo_backroom = 9232
 VAR code_apollo_foyer = 7154
 
 // Access to fridge (time portal) in the HyperMarket Deli section
+// GLYPH6 GLYPH0 GLYPH2 GLYPH8
 VAR code_deli_fridge = 6028
 
 // Impossible computer code for the workshop computer

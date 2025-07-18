@@ -8,8 +8,8 @@
 # CLEAR
 # AUDIOLOOP: audio/base.m4a
 A white flash and the darkness of a caisson. Your head throbs as the doors slowly slide open. You’re back in your body, back in the T.I.M.E Corrections Agency headquarters. The restraints that held your body while your mind wandered let go at once and you barely catch yourself before falling to the floor.
-A man steps from another pod, he stares at his hand with a wry smile. Could it be Keith? Or is he called Jordan? Does it matter? He looks at you then up as Bob and an Inquisitor in a hooded robe step up to greet the two of you. As expected, Inquisition members arrived before you and are searching for Laura.
-Bob begins to speak but you cut him off quickly. “Agent Hastings and I are reporting back from the Malta 1989 A.D. mission. The source of the anomaly report turned out to be residual temporal echo of a later mission.” Bob looks confused but doesn’t speak “We can consider the matter closed.” You rub your head. “Please lead us to the debriefing before we lose the details.”
+A man steps from another pod, he stares at his hand with a wry smile. Could it be Keith? Or is he called Jordan? Does it matter? He looks up at you as Bob and an Inquisitor in a hooded robe step up to greet the two of you. As expected, Inquisition members arrived before you and are searching for Laura.
+Bob begins to speak but you cut him off quickly. “Agent Hastings and I are reporting back from the Malta 1989 A.D. mission. The source of the anomaly report turned out to be a residual temporal echo of a later mission.” Bob looks confused but doesn’t speak as you continue, “We can consider the matter closed.” You rub your head. “Please lead us to the debriefing before we lose the details.”
 Bob’s eye twitches. “Yes, debriefing... please follow me. Inquisitor, if you’ll excuse me for a few moments…”
     + [{continue}] -> laura_transport
 
@@ -17,14 +17,14 @@ Bob’s eye twitches. “Yes, debriefing... please follow me. Inquisitor, if you
 # CLEAR
 # AUDIO: audio/transport.m4a
 # SBIMAGE: items/laura_tube.png
-Before you can move a klaxon sounds announcing the arrival of another agent. In caisson 7 an android body sometimes used by Laura on missions thrashes into life. 
-At that moment, the portal activates a second time and Laura appears in her android body, locked in a nearby caisson. “What is this?” the inquisitor snaps. The caisson’s scans of the android’s mind show there is no human intelligence inside. “Her! It’s her!” He gestures to his acolytes. “Get the control device attached to her immediately!” He storms to a terminal trying to decipher the meaning of what he’s seeing.
+Before you can move, a klaxon sounds announcing the arrival of another 'agent'. The portal activates a second time and in caisson 7 an android body sometimes used by Laura on missions thrashes into life. Laura has been reunited with her android body, locked in caisson 7. 
+“What is this?” the inquisitor snaps. The caisson’s scans of the android’s mind show there is no human intelligence inside. “Her! It’s her!” He gestures to his acolytes. “Get the control device attached to her immediately!” He storms to a terminal trying to decipher the meaning of what he’s seeing.
 Professor Hastings takes advantage and jumps into a nearby chair the Agency uses to facilitate scans. He begins to modify the chair and the caissons, ignoring you, Bob, and the Inquisitor.
     + [{continue}] -> panorama
 
 = panorama
 # CLEAR
-The air is thick as the Inquisition acolytes frantically try to attach a device to Laura's caisson.  Professor Hastings is frantically working on a computer terminal. The Inquisitor is barking orders to his acolytes while he monitors their progress from behind a console.  Bob stands nearby, frozen with shock as the core of his Agency erupts into chaos.
+The air is thick as the Inquisition acolytes frantically try to attach a device to Laura's caisson.  Professor Hastings is excitedly working on a computer terminal. The Inquisitor is barking orders to his acolytes while he monitors their progress from behind a console.  Bob stands nearby, frozen with shock as the core of his Agency erupts into chaos.
     + [Talk to Bob] -> bob
     + [Talk to Professor Hastings] -> prof
     + {not subdue} [Confront the Inquisitor]
@@ -41,7 +41,7 @@ The air is thick as the Inquisition acolytes frantically try to attach a device 
 {not bob_helen:
     Bob is a man on the edge. He wrings his hands, torn between his loyalty to the Agency and his fear of the Inquisition.
 - else:
-    Anger flashes across Bob’s face. “I’ll get the security teams and we’ll deal with the Inquisition.” {not inquisition_leader_badge: “Confront the Inquisitor. Deal with him and his acolytes will fall in line..”}
+    Anger flashes across Bob’s face. “I’ll get the security teams and we’ll deal with the Inquisition.” {not inquisition_leader_badge: “Confront the Inquisitor. Deal with him and his acolytes will fall in line...”}
 }
 {not bob_has_apologized:
     He lifts his head in surprise. “I thought the inquisition captured you. For a moment I thought the Inquisitor recognized you and Dr Hastings, but Laura’s arrival must have distracted him.” Bob touches your shoulder. I don’t know how you escaped Mypos but I apologize for sending you. I didn’t want to put you in danger. They have Helen and you know what they’re capable of.”
@@ -55,9 +55,9 @@ The air is thick as the Inquisition acolytes frantically try to attach a device 
 # CLEAR
 # SBIMAGE: locations/bob_ending.png
 “The Inquisition is a threat, but what about Laura?  Dr. Hastings seems to believe she is the solution to all of this. Can he, can they be trusted?”
-Bob hesitates. “Laura is an advanced AI but at her core we built her around supporting the Agency. I don’t think she would harm us intentionally. But the Inquisition seems to think otherwise. They’re convinced she’s the first step in an existential threat to humanity. Agent, they don’t want to control her, they want to destroy her.”
+Bob hesitates. “Laura is an advanced AI but we trained her core logic around supporting the Agency. I don’t think she would harm us intentionally, but the Inquisition seems to think otherwise. They’re convinced she’s the first step in an existential threat to humanity. Agent, they don’t want to control her, they want to destroy her.”
 “But what about Dr Hastings?  He seems to be working on something related to evolutionary changes to Laura. He doesn’t trust the Agency but can we trust him?”
-“Dr. Hastings has been critical of the Agency for a long time, but I always thought he was just being a contrarian. I never considered how far he might go. From his writings I think he believes that Laura is the key to unlocking the secrets of time and the universe.” Bob clenches his hands. “ I don’t know what to do. I don’t know if we should go that way…”
+“Dr. Hastings has been critical of the Agency for a long time, but I always thought he was just being a contrarian. I never considered how far he might go. From his writings I think he believes that Laura is the key to unlocking the secrets of time and the universe.” Bob clenches his hands. “I honestly don’t know what to do. I am not sure we should go that way…”
     +  [{continue}] -> bob
 
 = bob_helen
@@ -79,7 +79,8 @@ A look of hope passes across his face. “I know where her body is…” he lean
 The Inquisitor frantically types on the terminal. As you approach he barks orders to his acolytes. “We cannot not allow this abomination to exist! She is a threat to the very fabric of our reality and must be eliminated!”  
 He looks up. An odd feeling of deja vu washes over you. There’s something in his manner of moving and speaking...  Different body, different face, but your training identifies  the same patterns and mannerisms. 
 He smirks, “Yes, it’s me... I believe you referred to me as ‘Phil’ when we met before. You neutralized my receptacle, but I returned.”  
-His brow furrows as he stares at you with fury. “Do you even know who I am? Has Bob told you anything? I am Agent Daniel Hickman, on special assignment to track down an internal hacker group who have been embedding A.I. entities throughout time, leveraging the Agency’s equipment and resources.” He shakes his hand, never taking his eyes off the screen.  “Imagine my surprise when it turns out to be our resident time portal expert Dr Hastings, or  ‘Keith’, as it were. Bob managed to screw this one up as well when he sent you after him in Spain without informing you about my mission. I failed to stop him in Spain, thanks largely to your intervention, but we still found a dependable ally in the Inquisition who share our concern about this A.I. perversion.”  
+His brow furrows as he stares at you with fury. “Do you even know who I am? Has Bob told you anything? I am Agent Daniel Hickman, on special assignment to track down an internal hacker group who have been embedding A.I. entities throughout time, leveraging the Agency’s equipment and resources.” He shakes his hand, never taking his eyes off the screen.  “Imagine my surprise when it turns out to be headed by our resident time portal expert Dr Hastings, or  ‘Keith’, as it were. 
+Bob managed to screw this one up as well when he sent you after him in Spain without informing you about my mission. I failed to stop him in Spain, thanks largely to your intervention, but we still found a dependable ally in the Inquisition who share our concern about this A.I. perversion.”  
     + [{continue}] -> leader_part_two
 
 = leader_part_two
@@ -88,8 +89,8 @@ His brow furrows as he stares at you with fury. “Do you even know who I am? Ha
 ~ combat_health = 40.
 ~ combat_attack = 15.
 ~ combat_defense = 20.
-“I had no idea how close Dr. Hastings was to completing his betrayal. Of us. And I mean all of us.” You can see the concern written on his face. “But now we have both he and his creation right here in front of us. We need only to complete the capture of the Laura program then we can use her to find and eliminate the other A.I.s.” He smirks, “Then we get Dr. Hastings the help he so desperately needs.”  
-Finally looking at you he speaks with an air of authority, “Quickly, draw the attention of Dr. Hastings and help my acolytes install the Inquisition firewall into Laura’s code.”. He notes your hesitation, “The destiny of the human race is at stake here! Don’t you understand?” 
+“I had no idea how close Dr. Hastings was to completing his betrayal. Of us. And I mean all of us.” You can see the concern written on his face. “But now we have both he and his creation right here, finally within our grasp. We need only to complete the capture of the Laura program then we can use her to find and eliminate the other A.I.s.” He smirks, “Then we get Dr. Hastings the help he so desperately needs.”  
+Finally looking at you he speaks with an air of authority, “Quickly, draw the attention of Dr. Hastings and help my acolytes install the Inquisition firewall into Laura’s code.” He notes your hesitation, “The destiny of the human race is at stake here! Don’t you understand?” 
     + [Attempt to subdue the Inquisitor] -> subdue
     + [Step back] -> panorama
 
@@ -111,8 +112,8 @@ There’s no time to waste. You attack the Inquisitor.
 = acolytes
 # CLEAR
 # SBIMAGE: items/laura_acolytes.png
-Two robed figures are assaulting the caisson, trying desperately to access Laura’s recumbent form. The cables connecting the caisson to the network are unplugged and Laura is trapped in her form.
-Through the ALON ceramic panel you observe the android body of Laura. Her form remains unmoving, but her eyes are open.  They flit back and forth across the scene, cool but not calm, recognizing the precarious nature of her predicament.
+Two robed figures are assaulting the caisson, trying desperately to access Laura’s recumbent form. The cables connecting the caisson to the network are unplugged and Laura is trapped in her android form.
+Through the ALON ceramic panel you observe the android manifestation of Laura. Her form remains unmoving, but her eyes are open.  They flit back and forth across the scene, cool but not calm, recognizing the precarious nature of her predicament.
 {not inquisition_leader_badge:
 The acolytes notice you and quickly move to intercept. “Step back and let us complete our holy work. You have no authority here.”
 }

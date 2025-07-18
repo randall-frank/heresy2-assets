@@ -49,7 +49,7 @@ He notices Aspasia's crutch and turns away from you, “I have nothing to sell t
 { not tip_scales:
 # SBIMAGE: items/scales.jpg
 A marble counter serves food to those of the lower caste on Mypos and Inquisition detainees like you. The kitchen is strikingly modern behind the counter with its own oven. Agency and Inquisition technology are subtly integrated into the traditional Greek kitchen, further evidence the Inquisition is at least influencing the Agency.
-A cook behind the counter shouts and sweats as he slings bread, olives and bowls of lentils.  He calls out to you, encouraging you to step forward. As you move forward to see what wares he has for sale, the owl swoops forward and lands atop a set of scales, gesticulating and making eye contact with you. 
+A cook behind the counter shouts and sweats as he slings bread, olives and bowls of lentils.  He calls out to you, encouraging you to step forward. As you move forward to see what wares he has for sale, the owl swoops forward and lands atop a set of scales GLYPH2, gesticulating and making eye contact with you. 
 As one arm drops, the other rises, and the owl adjusts to keep balance, but something is off. The cook tries to shoo the bird away, but the owl flaps its wings and shifts its mass, tipping over the scales and sending a hidden stack of three coins he was using to bias the scale to the ground. The chef curses and rights the empty scales. 
 Everyone in line notices the scales were rigged. The crowd confronts the cook, demanding to know what he has to say for himself. In the confusion, you see a chance to grab the coins and exit the establishment. The owl clicks a guttural sound as though laughing before it flies above the gathering crowd.  
     ~ tip_scales = 1

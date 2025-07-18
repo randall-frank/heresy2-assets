@@ -49,7 +49,7 @@ He blinks his unbelieving eyes... "Thank you kind sir, take this.  It may help y
 As you move into the darkness of the temple, the heat and smell of ceremonial furnace fires grows stronger. A statue of Hephaestus protects the entrance. He sits atop an anvil, holding his hammer, and staring at those who enter as though they are merely metal to work in his forge.
 {not crutch and not stole_crutch:
     Leaning against the side of the statue is an old crutch.  Sitting next to it is a well-dressed middle aged woman with a disease ridden leg.  She is not begging, but rather appears to be just resting at the foot of the great statue perhaps collecting strength or meditating.
-    The mechanical owl swoops between the columns and perches atop the crutch, waves to collect your attention and lets out one long whistle, before hopping atop Hephaestus as the crippled woman shoos it away angrily.
+    The mechanical owl swoops between the columns and perches atop the crutch GLYPH0, waves to collect your attention and lets out one long whistle, before hopping atop Hephaestus as the crippled woman shoos it away angrily.
     + [Snatch the crutch and slip into the crowd] -> steal_crutch
     + [Offer the woman 2 Drachm for the crutch] -> buy_crutch
 }
