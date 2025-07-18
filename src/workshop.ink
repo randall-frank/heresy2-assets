@@ -157,15 +157,14 @@ A padded cell with a heavy, locked door.  It seems to be controlled by an ancien
 # CLEAR
 On the floor is a woman with long hair that spills around her feet. The name on her soiled jumpsuit says “Helen”?
 In an alcove on the wall, a mechanical owl spins its head and spouts gibberish in a sing-song voice. “Creaky creaky! Sneaky sneaky! What are you doing Bob-buuuuuuu!?” <bzzt> The owl shudders and ruffles its shimmering feathers.
-At the mention of Bob the woman gasps like someone woken from a nightmare. She scrapes at her eyes and her face. Days, weeks, months of webs and spiders’ prey falls from her face. She clutches the sides of her head and stares at the owl, unblinking as she screams the word, “LAURAAAAAAAAA!!!”. Then as suddenly as she came alive, her skin goes cold and her features turn to stone.
-… as she turns from you, a profound look of sadness ….
+At the mention of Bob the woman gasps like someone woken from a nightmare. She scrapes at her eyes and her face. Days, weeks, months of webs and spiders’ prey falls from her face. She clutches the sides of her head and stares at the owl, unblinking. She looks at you with a profound sadness.
     + {not insane_laura} [Approach the owl] -> owl
     + {not talk_with_helen} [Talk to Helen] -> talk_with_helen
     + [Return to the hallway] -> panorama
 
 = talk_with_helen
 # CLEAR
-You kneel beside Helen and brush back her hair.  She seems so familiar to you, but you fail to place her.  Your kindness does not go unnoticed as a rare stretch of lucidity (or is it desperation?) seems to grip her.  “Bob, you know him right?  He sent you here?” Her gaze drifts... “So many mistakes.  We should have seen the danger.  You are here, so perhaps all is not lost.”  In a last breath of sanity she whispers, “Should you ever see my love again.  Remind him of that night on Europa where he proposed when we were so full of love and hope.  Remind him that as long as we are still alive, there is still hope.”
+You kneel beside Helen and brush back her hair.  She seems so familiar to you, but you fail to place her.  Your kindness does not go unnoticed as a rare stretch of lucidity (or is it desperation?) seems to grip her.  “Bob, you know him right?  He sent you here?” Her gaze drifts... “So many mistakes.  We should have seen the danger.  You are here, so perhaps all is not lost.”  In a last breath of sanity she whispers, “Should you ever see my love again.  Remind him of that night on Europa where he proposed when we were so full of love and hope.  Remind him that as long as we live, there is still hope.”
     + [{continue}] -> meet_helen
 
 = owl
