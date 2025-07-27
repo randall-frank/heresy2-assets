@@ -103,7 +103,7 @@ You clip your "James" ID to your toga, then hand a pair of sweatpants to each of
 = fitting_room
 // If you have the shirt, the door is open.  If Laura is decrypted as well, you get to talk to Keith.
 # CLEAR
-# AUDIO: audio/fitting_scanner.m4a
+# AUDIO: audio/fitting_scanner.mp3
     A standard garment fitting room, but with an integrated garment scanner lock, currently showing “LOCKED”.  As you enter, the scanner is activated and a laser sweeps over you,passing judgment.  It pauses at the owl on your shoulder.  A voice from the scanner announces, “Please present an item to be scanned.”  
     The scan completes.
         + [{continue}] -> scan_completes
@@ -313,7 +313,7 @@ Turning to Laura Keith continues, “After we leave, wait 5 minutes and follow u
     + [{continue}] -> travel_back_to_base
 
 = travel_back_to_base
-# AUDIO: audio/transport.m4a
+# AUDIO: audio/transport.mp3
 You and Keith step in and the trip happens in a flash, literally. Some form of spatial displacement field instantly transports you back to the T.I.M.E Corrections Agency.
     + [{continue}] -> base_return
 

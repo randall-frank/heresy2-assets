@@ -3,14 +3,14 @@
 # CLEAR
 ~ location_name = "Time Corrections Agency (2413 A.D.)"
 # BACKGROUND: locations/base.png
-# AUDIOLOOP: audio/base.m4a
+# AUDIOLOOP: audio/base.mp3
 Another strange shift in time as ripples flood outward healing the many paradoxes left in the wake of Laura's escape.
 You are now on desk duty at the agency, no more running around time/space, but you have “fans” of your exploits. You browse your email and… crap… a nano-virus!  You reach back to unplug your computer when …   zap, you are transported to a new place?   Vision?   What is going on here?
     + [{continue}] -> setup
 
 = setup
 # BACKGROUND: locations/ascension.jpg
-# AUDIOLOOP: audio/ascension.m4a
+# AUDIOLOOP: audio/ascension.mp3
 ~ location_name = "Laura's vision, date unknown"
     -> panorama
 

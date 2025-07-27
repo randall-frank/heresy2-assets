@@ -2,7 +2,7 @@
 ~ location_name = "Mausoleum Workshop (450 B.C.)"
 # BACKGROUND: locations/mausoleum.jpg
 # CLEAR
-# AUDIOLOOP: audio/workshop.m4a
+# AUDIOLOOP: audio/workshop.mp3
 -> power_change( location_change_cost ) ->
 -> panorama
 
@@ -10,7 +10,7 @@
 ~ location_name = "Mausoleum Workshop (450 B.C.)"
 # BACKGROUND: locations/mausoleum.jpg
 # CLEAR
-# AUDIOLOOP: audio/workshop.m4a
+# AUDIOLOOP: audio/workshop.mp3
 A twinge, a brief pain in the chest and you’re in another world.
 
 You sit up, as cold as the grave you’re in. Eliza speaks from a console to the side. “Welcome Agent! We hope you enjoy your vacation and your new body: a brand new ZXT Mark V all-purpose android receptacle! Adaptable to any circumstances and nearly any form, they can practically make you a GOD. Now let’s get this body adapted to YOU.”
@@ -41,7 +41,7 @@ Peering through the iron grates, you see that the building has the facade of a m
     You use the key to open the garden gate and exit into the garden.
     + [{continue}] -> garden
 - else:
-# AUDIO: audio/door_locked.m4a
+# AUDIO: audio/door_locked.mp3
     The gate is locked and bolted.  You will need a key to open it.
     + [{continue}] -> panorama
 }
@@ -65,14 +65,14 @@ The laser makes a few motions like a painter’s final strokes on a canvas and t
 
 = travel_to_apollo
 # COMBO_DONE: pass
-# AUDIO: audio/transport.m4a
+# AUDIO: audio/transport.mp3
 The trip happens in a flash, literally. Some form of spatial displacement field instantly transports you from the Mausoleum to the Temple of Apollo.
     + [{continue}] -> apollo
 
 
 = door_to_oracle
 # CLEAR
-# AUDIO: audio/door_locked.m4a
+# AUDIO: audio/door_locked.mp3
 A locked and bolted metal door with a digital keypad stands before you, looking like something that would protect the entrance to an underworld hideout. You try the door but it won’t budge, even with your considerable strength, you will need to find the keycode..
 ~ combo_symbols = 1
 ~ combo_value = 0
@@ -111,7 +111,7 @@ You find a digital card key.  To what?  where?
 {find_lcd_display:
 Your aggressive actions with the LCD display have carried the computer terminal beyond simple repair. It has been reduced effectively to a pile of e-waste.
 - else:
-# AUDIO: audio/computer.m4a
+# AUDIO: audio/computer.mp3
 A computer terminal is built into what appears to be a marble slab. What a beauty! You run your hands over the display to admire the workmanship, and the feel of this hand-crafted design.
 }
     + {not find_lcd_display} [Attempt to log into the terminal] -> computer_login
@@ -143,7 +143,7 @@ You sit down at the terminal and try to log in.  The screen lights up with a mes
 # CLEAR
 {
 - padded_cell_key:
-# AUDIO: audio/door.m4a
+# AUDIO: audio/door.mp3
 You run the digital card key though the scanner.  There is a "beep" and the faded LED turns a muted shade of green. The door is covered in dust and seems to have been sealed years if not decades ago. With a mighty pull you twist the bar open and peer into the dark cell before you.
     -> meet_helen
 - else:
