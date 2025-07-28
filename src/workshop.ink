@@ -1,5 +1,5 @@
 === workshop ===
-~ location_name = "Mausoleum Workshop (450 B.C.)"
+~ location_name = "Mausoleum Workshop (450 BC)"
 # BACKGROUND: locations/mausoleum.jpg
 # CLEAR
 # AUDIOLOOP: audio/workshop.mp3
@@ -7,7 +7,7 @@
 -> panorama
 
 = transfer
-~ location_name = "Mausoleum Workshop (450 B.C.)"
+~ location_name = "Mausoleum Workshop (450 BC)"
 # BACKGROUND: locations/mausoleum.jpg
 # CLEAR
 # AUDIOLOOP: audio/workshop.mp3
@@ -31,7 +31,7 @@ Along the hallway to your left is a robotic tattoo machine, room 236.  Room 237 
     + [Examine the computer terminal] -> computer_terminal
     + [Investigate the cell] -> padded_cell
     + [Exit the workshop via the iron gate] -> to_garden
-    + [Capitulate...] -> give_up
+    + [Capitulate... (ends the game)] -> give_up
 
 = to_garden
 # CLEAR
@@ -156,8 +156,13 @@ A padded cell with a heavy, locked door.  It seems to be controlled by an ancien
 = meet_helen
 # CLEAR
 On the floor is a woman with long hair that spills around her feet. The name on her soiled jumpsuit says “Helen”?
-In an alcove on the wall, a mechanical owl spins its head and spouts gibberish in a sing-song voice. “Creaky creaky! Sneaky sneaky! What are you doing Bob-buuuuuuu!?” <bzzt> The owl shudders and ruffles its shimmering feathers.
+{not owl:
+In an alcove on the wall, a mechanical owl spins its head and spouts gibberish in a sing-song voice. 
+}
+{not talk_with_helen and not owl:
+“Creaky creaky! Sneaky sneaky! What are you doing Bob-buuuuuuu!?” <bzzt> The owl shudders and ruffles its shimmering feathers.
 At the mention of Bob the woman gasps like someone woken from a nightmare. She scrapes at her eyes and her face. Days, weeks, months of webs and spiders’ prey falls from her face. She clutches the sides of her head and stares at the owl, unblinking. She looks at you with a profound sadness.
+}
     + {not insane_laura} [Approach the owl] -> owl
     + {not talk_with_helen} [Talk to Helen] -> talk_with_helen
     + [Return to the hallway] -> panorama
@@ -177,4 +182,4 @@ A faint glow emanates from the quantum storage nodes, suggesting that the vessel
 The owl seems to recognize you and drops a key to you.
     ~ garden_door_key = 1
     ~ insane_laura = 1
-    + [Focus on Helen] -> meet_helen
+    + [{continue}] -> meet_helen

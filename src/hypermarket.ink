@@ -121,7 +121,7 @@ You clip your "James" ID to your toga, then hand a pair of sweatpants to each of
     }
     { item_poloshirt_inquisition:
 # AUDIO: audio/error.mp3
-        The scanner does not recognize the poloshirt.  “I doubt Keith would embrace that logo”, Laura notes.
+        The scanner does not recognize the poloshirt.  “I doubt Keith would embrace that logo. Perhaps we could change that?”, Laura notes.
             + [{continue}] -> racks
     }
     { soulgem_full:
@@ -142,7 +142,7 @@ You clip your "James" ID to your toga, then hand a pair of sweatpants to each of
     }
     { soulgem_empty:
 # AUDIO: audio/error.mp3
-        The scanner does not recognize the empty Soul Gem pendant.  “Perhaps if it were full, it would be recognized?”, Laura suggests.
+        The scanner does not recognize the empty Soul Gem pendant.  “Perhaps if it were full, it would be recognized? I can fill it, but we will need a couple of subjects to fill it.” Laura suggests.
             + [{continue}] -> racks
     }
 

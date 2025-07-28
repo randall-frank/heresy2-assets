@@ -32,7 +32,7 @@ A male statue reclines before you. From a distance, it appears to be another mag
 # CLEAR
 # SBIMAGE: locations/statue.png
 -> power_change( -10 ) ->
-The android receptacle powers up in response to the power cell and the statue suddenly comes to life.  In a thick Russian accent, “What… where…  how long was I out…  What year is it?”  You answer, “452 B.C.?” He continues “10, no 12 years I’ve been out.  Спасибо!  A few more years and the emergency battery…  I don’t want to think about it.  That’s not the worst though, do you know how many times you can read Dostoyevsky???”
+The android receptacle powers up in response to the power cell and the statue suddenly comes to life.  In a thick Russian accent, “What… where…  how long was I out…  What year is it?”  You answer, “452 BC?” He continues “10, no 12 years I’ve been out.  Спасибо!  A few more years and the emergency battery…  I don’t want to think about it.  That’s not the worst though, do you know how many times you can read Dostoyevsky???”
 {sunbeam_plate: The black and gold plate sits beneath a sunbeam, its outside adorned, the inside blazing with golden light. The owl lands on its edge and stares into its silver depths. As though mesmerized, its head spins slowly round three times then blinks as though it cannot comprehend what it has seen. It flies off.}
     + {exo_power > 10} [Offer another 10 power for the plate] -> plate
     + [Return to entrance] -> panorama
@@ -77,7 +77,7 @@ A passing temple guard notices your interest and confronts you, “Hey, this are
 = keypad
 # CLEAR
 # SBIMAGE: locations/gate.png
-With the guard subdued, you may make try to enter the correct combination.
+With the guard subdued, you may try to enter the correct combination.
 ~ combo_symbols = 1
 ~ combo_value = 0
 # COMBO: code_apollo_backroom

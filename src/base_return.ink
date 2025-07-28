@@ -44,7 +44,7 @@ The air is thick as the Inquisition acolytes frantically try to attach a device 
     Anger flashes across Bob’s face. “I’ll get the security teams and we’ll deal with the Inquisition.” {not inquisition_leader_badge: “Confront the Inquisitor. Deal with him and his acolytes will fall in line...”}
 }
 {not bob_has_apologized:
-    He lifts his head in surprise. “I thought the inquisition captured you. For a moment I thought the Inquisitor recognized you and Dr Hastings, but Laura’s arrival must have distracted him.” Bob touches your shoulder. I don’t know how you escaped Mypos but I apologize for sending you. I didn’t want to put you in danger. They have Helen and you know what they’re capable of.”
+    He lifts his head in surprise. “I thought the inquisition captured you. For a moment I thought the Inquisitor recognized you and Dr Hastings, but Laura’s arrival must have distracted him.” Bob touches your shoulder. I don’t know how you escaped but I apologize for sending you. I didn’t want to put you in danger. They have Helen and you know what they’re capable of.”
 }
     ~ bob_has_apologized = 1
     * [Talk about Helen] -> bob_helen
@@ -63,7 +63,7 @@ Bob hesitates. “Laura is an advanced AI but we trained her core logic around s
 = bob_helen
 # CLEAR
 # SBIMAGE: locations/bob_ending.png
-You whisper to Bob “The Inquisition is holding Helen in Mypos. In one of the cells at the arrival workshop.”
+You whisper to Bob “The Inquisition is holding Helen in the facility in Athens, 450 BC. In one of the cells at the arrival workshop.”
 The blood drains from his face. “She’s alive?”
 “She is. Her consciousness is trapped in an android body there. Unfortunately we don’t know where her physical body is being kept…”
 A look of hope passes across his face. “I know where her body is…” he leans in and speaks quietly “I’ve been trying to find her mind but the Inquisition has been watching me closely. I can’t just walk in there and rescue her.  If you can get her out, I will do whatever it takes to help you.”

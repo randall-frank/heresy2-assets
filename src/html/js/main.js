@@ -885,6 +885,7 @@ function expand_text_to_html(text) {
         // story.state.toJson(); is after the knot has been displayed
         game.saved_ink_json = savePoint;
         game.saved_loop_audio_src = get_audioloop_source();
+        game.saved_loop_audio_scale = get_audioloop_scale();
         game.saved_background_src = outerScrollContainer.style.backgroundImage;
         game.saved_story_version = story_version;
         const text = JSON.stringify(game);
@@ -936,8 +937,12 @@ function expand_text_to_html(text) {
                     build_inventory(story, inventoryContainer);
                     refresh_inventory(story, inventoryContainer);
                     build_status(story);
+                    let audio_scale = 1.0;
+                    if (temp.saved_loop_audio_scale) {
+                        audio_scale = temp.saved_loop_audio_scale;
+                    }
                     if (temp.saved_loop_audio_src) {
-                        set_audioloop_source(temp.saved_loop_audio_src);
+                        set_audioloop_source(temp.saved_loop_audio_src, audio_scale);
                     }
                     if (temp.saved_background_src) {
                         outerScrollContainer.style.backgroundImage = temp.saved_background_src;

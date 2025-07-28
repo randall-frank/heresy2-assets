@@ -7,7 +7,7 @@
 
 = panorama
 # CLEAR
-The center of the city, the agora, is usually well cared for and ornately decorated. But the agora of Mypos has seen better days. Long rows of colonnades stretch out before, begrimed with dirt and soot from cooking meat. Multiple shady merchants have setup shop and on the margins, dark alleys loom.
+The center of the city, the agora, is usually well cared for and ornately decorated. But the agora of Athens has seen better days. Long rows of colonnades stretch out before, begrimed with dirt and soot from cooking meat. Multiple shady merchants have setup shop and on the margins, dark alleys loom.
 There is a rather shady looking market place.  Guarded, side glances dominate this market.
 Food options include an inexpensive food counter and higher-end restaurants.
 A dark alley fills the gap between the eating establishments and an ironmongers.
@@ -48,7 +48,7 @@ He notices Aspasia's crutch and turns away from you, “I have nothing to sell t
 # CLEAR
 { not tip_scales:
 # SBIMAGE: items/scales.jpg
-A marble counter serves food to those of the lower caste on Mypos and Inquisition detainees like you. The kitchen is strikingly modern behind the counter with its own oven. Agency and Inquisition technology are subtly integrated into the traditional Greek kitchen, further evidence the Inquisition is at least influencing the Agency.
+A marble counter serves food to those of the lower caste in Athens and Inquisition detainees like you. The kitchen is strikingly modern behind the counter with its own oven. Agency and Inquisition technology are subtly integrated into the traditional Greek kitchen, further evidence the Inquisition is at least influencing the Agency.
 A cook behind the counter shouts and sweats as he slings bread, olives and bowls of lentils.  He calls out to you, encouraging you to step forward. As you move forward to see what wares he has for sale, the owl swoops forward and lands atop a set of scales GLYPH2, gesticulating and making eye contact with you. 
 As one arm drops, the other rises, and the owl adjusts to keep balance, but something is off. The cook tries to shoo the bird away, but the owl flaps its wings and shifts its mass, tipping over the scales and sending a hidden stack of three coins he was using to bias the scale to the ground. The chef curses and rights the empty scales. 
 Everyone in line notices the scales were rigged. The crowd confronts the cook, demanding to know what he has to say for himself. In the confusion, you see a chance to grab the coins and exit the establishment. The owl clicks a guttural sound as though laughing before it flies above the gathering crowd.  

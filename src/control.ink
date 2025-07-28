@@ -26,7 +26,7 @@ Next to you, an acolyte is looking at you and offering you a hand to get you up.
 # CLEAR
 # SBIMAGE: items/acolyte.png
 A man dressed with a long robe is looks directly at you and offers you his hand. “Welcome, brother! Please get up slowly. We had to use a quite rudimentary time travel system to get you here. Without Laura to control the portals, time travel has become quite bumpy. A small price to pay for finally freeing the human race from the pestilence of those machines designed by the Devil himself! 
-Thank you for all your work and service. The Inquisition is forever grateful to you for your contribution. Oh dear Almighty, how terrible and exhausted you look! Maybe we can do something about that. What about a vacation? I hear Athens was nice in 450 B.C.”
+Thank you for all your work and service. The Inquisition is forever grateful to you for your contribution. Oh dear Almighty, how terrible and exhausted you look! Maybe we can do something about that. What about a vacation? I hear Athens was nice in 450 BC.”
     + [{continue}] -> panorama
 
 = fire

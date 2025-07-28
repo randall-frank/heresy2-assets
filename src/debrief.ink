@@ -30,7 +30,7 @@ Bob nods. “Good. That's what matters.” He hands you a glass of water and a f
 # CLEAR
 # SBIMAGE: locations/bob_ending.png
 “I have a few questions for you.”
-You nod, feeling the fizz of medication. Your head lightens, your stomach relaxes. “Of course,” you reply, framing the facts of the mission with you are now not who you were then. The stars outside the window blur for a moment. A blink and they resolve..
+You nod, feeling the fizz of medication. Your head lightens, your stomach relaxes. “Of course,” you reply.  You take a deep breath, recalling and organizing the facts of the mission. The stars outside the window blur for a moment. A blink and they resolve..
 Bob takes a seat across from you, his gaze steady, “You were sent to Spain 1499 A.D. to investigate a temporal anomaly detected in the region. It was your job to find the source and correct it. Tell me about it. What caused it?"
     + [Did you find the anomaly?] -> anomaly
 

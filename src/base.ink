@@ -30,5 +30,5 @@ In the black of the chamber, a light appears, rushing towards you. Videos of lus
 A symbol flashes before your eyes on a background of static then it is gone.
 Eliza begins to speak, her voice protocols primitive and rough compared to Laura.
 # CLASS: computer
-“Welcome vacationer! You have earned… an unspecified amount of time …on the Greek paradise of Mypos, year 450 BCE. Your mission: enjoy yourself!”
+“Welcome vacationer! You have earned… an unspecified amount of time …in the Greek paradise of Athens, year 450 BCE. Your mission: enjoy yourself!”
     * [{continue}] -> workshop.transfer

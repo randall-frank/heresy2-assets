@@ -31,7 +31,7 @@ INCLUDE debrief.ink
 # CLASS: head1
 αίρεση II: Of what mettle Gods?
 # CLASS: centered
-Athens Greece, 450 B.C. - The age of Pericles
+Athens Greece, 450 BC - The age of Pericles
 # CLASS: head2
 Copyright © STORY_YEAR Randall Frank, Andrew Florance & Marina Galvagni
 # CLASS: head2

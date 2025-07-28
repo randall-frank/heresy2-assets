@@ -39,7 +39,7 @@ function stopBackgroundAudio() {
 }
 function updateBackgroundAudioVolume() {
     if (source) {
-        const gainValue = (parseFloat(current_volume) * 0.01) * 0.5 * audioLoopScale;
+        const gainValue = (parseFloat(current_volume) * 0.01) * 0.5 * get_audioloop_scale();
         gainNode.gain.value = gainValue;
     }
 }
@@ -61,7 +61,7 @@ async function startBackgroundAudio(url) {
     source.connect(gainNode);
     gainNode.connect(audioContext.destination);
     // Set the initial volume
-    const gainValue = (parseFloat(current_volume) * 0.01) * 0.5 * audioLoopScale;
+    const gainValue = (parseFloat(current_volume) * 0.01) * 0.5 * get_audioloop_scale();
     gainNode.gain.value = gainValue;
     // Start playing the audio
     source.start();
@@ -72,7 +72,7 @@ function audio_volume_update() {
     updateBackgroundAudioVolume();
     /*
     if (audioLoop !== null) {
-        audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5 * audioLoopScale;
+        audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5 * get_audioloop_scale();
     }
     */
     if (audio !== null) {
@@ -143,7 +143,12 @@ function get_audio_source() {
 function get_audioloop_source() {
     return audioLoopSrcURL;
 }
-
+function get_audio_scale() {
+    return audioScale;
+}
+function get_audioloop_scale() {
+    return audioLoopScale;
+}
 function set_audio_source(src, volume_scale = 1.0) {
     audioSrcURL = src;
     audioScale = volume_scale;
@@ -153,7 +158,7 @@ function set_audio_source(src, volume_scale = 1.0) {
         audio.load();
     }
     audio = new Audio(src); 
-    audio.volume = parseFloat(current_volume) * 0.01 * audioScale;
+    audio.volume = parseFloat(current_volume) * 0.01 * get_audio_scale();
     audio.play();
 }
 
@@ -169,7 +174,7 @@ function set_audioloop_source(src, volume_scale = 1.0) {
                         
     }
     audioLoop = new Audio(src);
-    audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5 * audioLoopScale;
+    audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5 * get_audioloop_scale();
     audioLoop.loop = true;
     audioLoop.play();
     */
