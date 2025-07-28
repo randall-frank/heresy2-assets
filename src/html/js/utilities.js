@@ -14,6 +14,7 @@ function checkDebugMode() {
 // let last_volume = 30;
 // var audio = null;
 // var audioLoop = null;
+// Note: slider volume (current_volume and last_volume) is [0-100]
 
 // Background audio loops.  To avoid loop clicking, we use the web audio API for it
 let audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -38,7 +39,7 @@ function stopBackgroundAudio() {
 }
 function updateBackgroundAudioVolume() {
     if (source) {
-        const gainValue = (parseFloat(current_volume) * 0.01) * 0.5;
+        const gainValue = (parseFloat(current_volume) * 0.01) * 0.5 * audioLoopScale;
         gainNode.gain.value = gainValue;
     }
 }
@@ -60,7 +61,7 @@ async function startBackgroundAudio(url) {
     source.connect(gainNode);
     gainNode.connect(audioContext.destination);
     // Set the initial volume
-    const gainValue = (parseFloat(current_volume) * 0.01) * 0.5
+    const gainValue = (parseFloat(current_volume) * 0.01) * 0.5 * audioLoopScale;
     gainNode.gain.value = gainValue;
     // Start playing the audio
     source.start();
@@ -71,7 +72,7 @@ function audio_volume_update() {
     updateBackgroundAudioVolume();
     /*
     if (audioLoop !== null) {
-        audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5;
+        audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5 * audioLoopScale;
     }
     */
     if (audio !== null) {
@@ -132,6 +133,8 @@ document.querySelector('#volume_high').addEventListener('click', volume_mute);
 
 let audioSrcURL = "";
 let audioLoopSrcURL = "";
+let audioScale = 1.0; // Default scale multiplier for audio volume
+let audioLoopScale = 1.0; // Default scale multiplier for audio loop volume
 
 // simpler, higher-level interface used by main.js
 function get_audio_source() {
@@ -141,20 +144,22 @@ function get_audioloop_source() {
     return audioLoopSrcURL;
 }
 
-function set_audio_source(src) {
+function set_audio_source(src, volume_scale = 1.0) {
     audioSrcURL = src;
+    audioScale = volume_scale;
     if(audio !== null) {
         audio.pause();
         audio.removeAttribute('src');
         audio.load();
     }
     audio = new Audio(src); 
-    audio.volume = parseFloat(current_volume) * 0.01;
+    audio.volume = parseFloat(current_volume) * 0.01 * audioScale;
     audio.play();
 }
 
-function set_audioloop_source(src) {
+function set_audioloop_source(src, volume_scale = 1.0) {
     audioLoopSrcURL = src;
+    audioLoopScale = volume_scale;
     startBackgroundAudio(src);
     /*
     if (audioLoop !== null) {
@@ -164,7 +169,7 @@ function set_audioloop_source(src) {
                         
     }
     audioLoop = new Audio(src);
-    audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5;
+    audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5 * audioLoopScale;
     audioLoop.loop = true;
     audioLoop.play();
     */
