@@ -180,6 +180,21 @@ function set_audioloop_source(src, volume_scale = 1.0) {
     */
 }
 
+function split_audio_name(name) {
+    // The URL can be in the form "audio/filename.mp3" or "audio/filename.mp3 1.5"
+    // We want to extract the base name and the scale factor if present.  If not
+    // present, we assume a scale factor of 1.0.
+    let scale = 1.0;
+    const parts = name.split(' ');
+    if (parts.length > 1 && !isNaN(parts[parts.length - 1])) {
+        scale = parseFloat(parts.pop());
+    }
+    return {
+        name: parts[0],
+        scale: scale
+    };
+}
+
 
 /***** Color Utilities *****/
 /**

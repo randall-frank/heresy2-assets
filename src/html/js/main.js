@@ -491,12 +491,14 @@ function expand_text_to_html(text) {
 
                 // AUDIO: src
                 if (splitTag && splitTag.property == "AUDIO") {
-                    set_audio_source(splitTag.val);
+                    let audio_tmp = split_audio_name(splitTag.val);
+                    set_audio_source(audio_tmp.name, audio_tmp.scale);
                 }
 
                 // AUDIOLOOP: src
                 else if (splitTag && splitTag.property == "AUDIOLOOP") {
-                    set_audioloop_source(splitTag.val);
+                    let audio_tmp = split_audio_name(splitTag.val);
+                    set_audioloop_source(audio_tmp.name, audio_tmp.scale);
                 }
 
                 // SBIMAGE: src
