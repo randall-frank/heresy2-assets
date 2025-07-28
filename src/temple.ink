@@ -66,6 +66,9 @@ As you move into the darkness of the temple, the heat and smell of ceremonial fu
 # SBIMAGE: locations/hephaestus.jpg
 You attempt to buy the crutch from the woman...
     -> buy_something(2, crutch) ->
+{crutch:
+    She looks at you with a mixture of surprise and suspicion. “You want to buy my crutch? It’s not for sale, but if you want it, I’ll take your money.” She hands it to you and hobbles away, leaving you with the crutch.
+}
     + [{continue}] -> pronaos
 
 = cella
