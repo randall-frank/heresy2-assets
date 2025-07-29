@@ -2,6 +2,7 @@ import soundfile as sf
 import numpy as np
 import glob
 import os
+import json
 
 v = {}
 max_rms = 0.0
@@ -20,10 +21,14 @@ for name in glob.glob("src/media/audio/*.mp3"):
 avg_rms /= len(v)
 print("Max RMS:", max_rms)
 print("Average RMS:", avg_rms)
+out = {}
 target = 0.1  # Target RMS level
 for name, rms in v.items():
     scale = target / rms
     print(f"{name}: {rms:.4f} (Scale: {scale:.2f})")
+    out[name] = scale
+print("JSON output:")
+print(json.dumps(out, indent=4))
 print("Audio processing complete.")
 
 '''

@@ -4,6 +4,7 @@
 # AUDIOLOOP: audio/hypermarket.mp3
 -> power_change( location_change_cost ) ->
 # CLEAR
+# AUDIO: audio/transport.mp3
 An odd sense of deja vu washes over you, have we been here before? You stand before a large, box-like structure with an advertisement covered facade announcing incredible deals found inside. As you enter the structure, you notice the symbol 
 # IMAGE: items/tattoo.png
 decorating workers’, oddly hooded uniforms.  15th century Spanish clergy if memory serves.
@@ -383,6 +384,7 @@ shorts, a poloshirt and pendants.  Care to make a choice?”
             + [Return current item] -> drop_items
             + [Keep current item] -> racks
     - else:
+      “Keith was using these to power portals earlier.  Perhaps we should find a way to fill this one first”, asks Laura? 
         ~ soulgem_empty = 1
         + [Pick up a pendant] -> racks
     }

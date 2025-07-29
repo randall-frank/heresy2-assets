@@ -6,7 +6,16 @@ function checkDebugMode() {
     if (!isNaN(dev_mode)) return dev_mode;
     return 0; // Default to 0 if 'dev' parameter is not present or invalid
 }
-    
+
+function getQueryValue(name) {
+    // Check if the URL has a named parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    if (!urlParams.has(name)) {
+        return ""; // Return empty string if the parameter is not present
+    }
+    return urlParams.get(name);
+}
+
 /***** Audio Utilities *****/
 
 // Globals from item_globals.js
@@ -60,8 +69,8 @@ async function startBackgroundAudio(url) {
     gainNode = audioContext.createGain();
     source.connect(gainNode);
     gainNode.connect(audioContext.destination);
-    // Set the initial volume
-    const gainValue = (parseFloat(current_volume) * 0.01) * 0.5 * get_audioloop_scale();
+    // Set the initial volume (background audio is at 30% of the slider volume)
+    const gainValue = (parseFloat(current_volume) * 0.01) * 0.3 * get_audioloop_scale();
     gainNode.gain.value = gainValue;
     // Start playing the audio
     source.start();
@@ -72,7 +81,7 @@ function audio_volume_update() {
     updateBackgroundAudioVolume();
     /*
     if (audioLoop !== null) {
-        audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.5 * get_audioloop_scale();
+        audioLoop.volume = (parseFloat(current_volume) * 0.01) * 0.3 * get_audioloop_scale();
     }
     */
     if (audio !== null) {
@@ -180,6 +189,39 @@ function set_audioloop_source(src, volume_scale = 1.0) {
     */
 }
 
+// Scaling factor for audio files
+// This is used to adjust the volume of audio files based on their RMS levels
+const audioTable = {
+    "agora.mp3": 1.8, // 2.5080528256600267,
+    "alarm.mp3": 0.9677960382716665,
+    "ascension.mp3": 1.0522622850444774,
+    "base.mp3": 2.050223882618732,
+    "computer.mp3": 1.113647869258125,
+    "computer_room.mp3": 2.1318255921133598,
+    "control.mp3": 0.8235094237036732,
+    "debrief.mp3": 3.8, // 2.1174217776383304,
+    "decode.mp3": 2.320135960111768,
+    "delphi.mp3": 0.8, // 0.5182181814735892,
+    "door.mp3": 1.229592142660205,
+    "door_locked.mp3": 2.3364377868888697,
+    "door_unlock.mp3": 2.033594200109642,
+    "endgame.mp3": 1.1458671217997978,
+    "error.mp3": 0.42301043352356504,
+    "fitting_scanner.mp3": 1.8138537345638406,
+    "garden.mp3": 3.0, // 11.603948163612854,
+    "hypermarket.mp3": 1.0006465349088194,
+    "modem.mp3": 0.978625294299687,
+    "normal.mp3": 1.4231723844573656,
+    "office.mp3": 1.8389518565355658,
+    "positive.mp3": 1.1858318123601832,
+    "river.mp3": 5.5, // 6.130947271173782,
+    "shock.mp3": 0.49520049625939244,
+    "stonemason.mp3": 12.222129921371494,
+    "temple.mp3": 2.8, // 3.4743481983806923,
+    "transport.mp3": 0.5388959176793404,
+    "workshop.mp3": 1.579235269326277
+};
+
 function split_audio_name(name) {
     // The URL can be in the form "audio/filename.mp3" or "audio/filename.mp3 1.5"
     // We want to extract the base name and the scale factor if present.  If not
@@ -188,6 +230,19 @@ function split_audio_name(name) {
     const parts = name.split(' ');
     if (parts.length > 1 && !isNaN(parts[parts.length - 1])) {
         scale = parseFloat(parts.pop());
+    }
+    let use_table = getQueryValue('audio_table'); // Check if there's an audio_table query parameter
+    if (use_table) {
+        if (Number(use_table) === 1) {
+            // Look the mp3 name up in the audio table and use that scaling factor
+            const index = parts[0].lastIndexOf('/');
+            if (index !== -1) { 
+                const filename = parts[0].substring(index + 1); // Get the filename only
+                if (audioTable.hasOwnProperty(filename)) {
+                    scale = audioTable[filename];
+                }
+            }
+        }
     }
     return {
         name: parts[0],

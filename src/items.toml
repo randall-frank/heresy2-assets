@@ -37,8 +37,8 @@ description = "A marvel of science? There seems to be an entity inside, but one 
 url = "items/owl.png"
 
 [items.garden_door_key]
-name = "A large iron key"
-description = "This looks like a gate key."
+name = "Iron key"
+description = "A large iron key.  This looks like it could be a gate key."
 hide_variable = "temple_found"
 url = "items/gate_key.png"
 
@@ -132,12 +132,12 @@ description = "Space-Time Portals for Dummies by Professor Jordan Hastings."
 url = "items/st_dummies.png"
 
 [items.soulgem_empty]
-name = "Empty Soul Gem"
+name = "Empty Soul Gem pendant"
 description = "An empty soul gem pendant. A full soul gem contains enough power to activate a time portal."
 url = "items/soul_empty.png"
 
 [items.soulgem_full]
-name = "Full Soul Gem"
+name = "Full Soul Gem pendant"
 description = "A full soul gem pendant. In your previous missions, Keith used these to power his time portal."
 url = "items/soul_full.png"
 
