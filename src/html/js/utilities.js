@@ -16,6 +16,10 @@ function getQueryValue(name) {
     return urlParams.get(name);
 }
 
+function clampValue(value, minValue, maxValue) {
+  return Math.min(Math.max(value, minValue), maxValue);
+}
+
 /***** Audio Utilities *****/
 
 // Globals from item_globals.js
@@ -85,7 +89,9 @@ function audio_volume_update() {
     }
     */
     if (audio !== null) {
-        audio.volume = parseFloat(current_volume) * 0.01;
+        let volume = (parseFloat(current_volume) * 0.01) * get_audio_scale();
+        volume = clampValue(volume, 0.0, 1.0); // Ensure volume is within [0, 1]
+        audio.volume = volume;
     }
     setCookie("heresy_audio_volume", String(current_volume), 30);
 }
@@ -166,8 +172,10 @@ function set_audio_source(src, volume_scale = 1.0) {
         audio.removeAttribute('src');
         audio.load();
     }
-    audio = new Audio(src); 
-    audio.volume = parseFloat(current_volume) * 0.01 * get_audio_scale();
+    audio = new Audio(src);
+    let volume = (parseFloat(current_volume) * 0.01) * get_audio_scale();
+    volume = clampValue(volume, 0.0, 1.0); // Ensure volume is within [0, 1]
+    audio.volume = volume;
     audio.play();
 }
 
