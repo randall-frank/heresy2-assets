@@ -53,9 +53,9 @@ You may not be able to talk with them directly, but you seat yourselves on some 
 # SBIMAGE: items/arm.png
 You make eye contact with the servant. Old, deep scars cross his sullen face as he turns and walks over, slowly reading you head to toe. What is this? The servant carries a jug of wine with his one remaining arm with its obvious Keith tattoo and is that a constellation?
 So familiar
-He warily offers to refill your drink.  “I don’t recognize you. If you are who you contend to be”, he gestures toward your tattoo, “you need to exercise extreme caution here… friend. The ‘observers’ understand the essence of pain.”
+He warily offers to refill your drink.  “I don’t recognize you. If you are what you appear to be”, he gestures toward your tattoo, “you need to exercise extreme caution here… friend. The ‘observers’ understand the essence of pain.”
 I was once an agent like yourselves. I remember it well, the Spain mission where it all went so horribly wrong. I still don’t know how the Inquisition got leverage over Bob, but Keith and I warned him of the dangers of that group and their plans. They came at night, catching us off our guard.  Somehow they knew about the “last resort” pills and managed to counteract them.
-My very existence has been one of derision and pain ever since. They took my arm to force Keith to capitulate. Lost, somewhere in time now… Make no mistake, they will stop at nothing to achieve their goals.
-Looking over the Owl, “...Laura?  Yes, maybe there is a way.  Perhaps Phidias our resident thaumaturgic sculptor?  He is a friend.  Mention to him you spoke to "Andrew".  I’ve said too much, please leave me now.”
+My very existence has been one of derision and pain ever since. They took my arm to force Keith to capitulate. Lost, somewhere in time now…  Make no mistake, they will stop at nothing to achieve their goals.
+Looking over the Owl, “...Laura?  Yes, maybe there is a way.  Perhaps Phidias our resident thaumaturgic sculptor?  He is a friend.  Mention to him you spoke to 'Andrew'.  I’ve said too much, please leave me now.”
     ~ spoke_with_andrew = 1
     + [{continue}] -> garden_gate

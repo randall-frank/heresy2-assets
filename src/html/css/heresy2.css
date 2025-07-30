@@ -25,6 +25,34 @@ body {
 }
 
 
+/************ Tooltips *************/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: max-content; 
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  border-radius: 6px;
+  border-style: solid;
+  padding: 5px 5px;
+  border-width: 1px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 110%;
+  left: 0%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 /************ blinking computer text ****************/
 .computerblink {
     font-family: 'Courier New', monospace;
