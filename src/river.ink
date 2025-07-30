@@ -85,7 +85,7 @@ With your last punch, Apollo is finally out of breath. He turns his head towards
 
 = loss
 # SBIMAGE: locations/lovers.png
-You’re out of breath, fighting Apollo isn’t a walk in the park. But just when you think there’s no way for you to win, he turns toward Daphne and tries to grab her. Desperate to make him stop, she grabs his battery pack and rips it out of its pouch. But in the heat of this last attempt, she does not realize her energies are all drained. She as no more power to keep going... Two ex-lovers eternally captured in stone.
+You’re out of breath, fighting Apollo isn’t a walk in the park. But just when you think there’s no way for you to win, he turns toward Daphne and tries to grab her. Desperate to make him stop, she grabs his battery pack and rips it out of its pouch. But in the heat of this last attempt, she does not realize her energies are all drained. She has no more power to keep going... Two ex-lovers eternally captured in stone.
     ~ simple_battery = 1
     ~ apollo_and_daphne = 1
     + [Walk the stream] -> panorama
