@@ -49,7 +49,11 @@ The philosopher looks furiously at you. “Ah, so you think you can just come he
 # CLEAR
 The orator’s eyes grow wider and wider when you open your hand, showing a few fava beans in your palm.
 “What are you doing? No… no… keep those away from me! Don’t come any closer, please! Take those horrendous beans with you and leave, I beg you, go away! Here, take this, it’s everything I’ve got on me, but please, please leave and do not come back!”
-The philosopher launches his necklace at you while running in the opposite direction. Those fava beans are really something…
+The philosopher launches his necklace at you while running in the opposite direction. Those fava beans are really something...
+You pick up the necklace, remove the pendant and examine it closely. 
+# IMAGEHEIGHT: 150
+# IMAGE: items/oscillator.png
+It seems to be some kind of electronic oscillator.  
     ~ oscillator = 1
     + [{continue}] -> panorama
 
@@ -106,7 +110,10 @@ Pick an answer:
 # CLEAR
 {philosopher_win == 1:
 The philosopher looks at you with a large smile and opens his arms. “A real member of the great mind brotherhood! Oh, what a pleasure to finally meet a kindred spirit among this mass of simpletons. Dear friend, we shall meet again in private and have long talks and discussions to help elevate each other. In the meantime, please take this as a token of my friendship.”  He takes off his necklace and hands it to you. “I shall now go back to my teaching. See you soon, my dearest friend!”
-# IMAGE: items/oscillator.jpg
+You look at the necklace, remove the pendant and examine it closely. 
+# IMAGEHEIGHT: 150
+# IMAGE: items/oscillator.png
+It seems to be some kind of electronic oscillator.  
     ~ oscillator = 1
 - else:
 A grim smile lightens up the philosopher’s face. “I knew it! You are just a poser, pretending to be part of something bigger than you, while in reality you are so far off from the light of truth that you keep banging against the walls of the dark cave of ignorance. Be gone now, do not waste more of my time!” He turns his back at you and resumes addressing the audience, not paying any more attention to you.

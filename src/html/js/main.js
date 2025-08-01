@@ -80,10 +80,17 @@ function inventory_select(e) {
 }
 
 function build_inventory(story, elem) {
+    // Get the story items
+    let itemList = [];
+    for (const [name, value] of Object.entries(storyItems['items'])) {
+        itemList.push({name: name, value: value});
+    }
+    // Sort the items by value.name
+    itemList.sort((a, b) => a.value.name.toLowerCase().localeCompare(b.value.name.toLowerCase()));
     // Build the inventory (item) section
     let item_list = "";
-    for( const [name, value] of Object.entries(storyItems['items'])) {
-        item_list += "<li id='item_" + name + "'>" + value.name + "</li>";
+    for (const item of itemList) {
+        item_list += "<li id='item_" + item.name + "'>" + item.value.name + "</li>";
     }
     elem.innerHTML = "<ul id='inventory_list' style='padding-left: 10px;'>" + item_list + "</ul>";
     let el = document.querySelector('#inventory_list');
@@ -524,7 +531,7 @@ function expand_text_to_html(text) {
                     var imageElement = document.createElement('img');
                     imageElement.src = splitTag.val;
                     if (IMAGE_height != null) {
-                        imageElement.style.height = IMAGE_height;
+                        imageElement.style.height = IMAGE_height + 'px';
                         imageElement.style.width = 'auto';
                         IMAGE_height = null;
                     }
