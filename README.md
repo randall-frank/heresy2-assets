@@ -25,42 +25,58 @@ to the [Ink] framework.
 There is a build.py script that will generate and optionally host the
 generated story.
 
-
 ## Requirements:
 
 - Python 3.10 or higher for organizing the build and acting as a local web server.
-- Inklacate CLI tool for building the story JSON representation.
+- Inklecate CLI tool for building the story JSON representation.
 - (Optional) Inky GUI tool for editing the story.  One can use Visual Studio Code as well.
 
 ## Building:
 
-To build the web-based version of the story, the '[Inklecate]' compiler needs to be
-available.  It can be included in the system search path on your system or one can
-set the environmental variable `HERESY2_INKLECATE` to the complete pathname of
-the executable.  A Powershell example:
+Start by creating a Python virtual environment and install all the necessary
+dependencies:
 
 ```
-$Env:HERESY2_INKLECATE = "E:\hersey-ink\inklecate_windows\inklecate.exe"
+pip install virtualenv
+python -m virtualenv venv
+./venv/Scripts/activate.ps1   # for Windows PowerShell, different for other shells
+pip install -r requirements.txt
+```
+
+To build the web-based version of the story, the '[Inklecate]' compiler needs to be
+available.  If you are on Windows, the `build.py` script will attempt to download the
+compiler from github when building the story.   It can also be included in the 
+search path on your system or one can set the environmental variable 
+`HERESY2_INKLECATE` to the complete pathname of the executable.  
+A Powershell example if you downloaded the CLI tools yourself:
+
+```
+$Env:HERESY2_INKLECATE = "E:\inklecate_windows\inklecate.exe"
 & $Env:HERESY2_INKLECATE
 Usage: inklecate <options> <ink file> ...
 ```
 
-Once this is set up, one can use the `build.py` file to build and run the story:
+However, in most cases you can just run the command `python build.py fullbuild`
+and the tools will be downloaded into the directory `ink_tools`.
+
+One can use the `build.py` file to build and run the story:
 
 ```
 python build.py fullbuild
-Story version: 0.1.0
-Running compiler: ['E:\\hersey-ink\\inklecate_windows\\inklecate.exe', '-o', 'tmp.json', '-j', '-v', 'src\\heresy2.ink']
-
-{"compile-success": true}
+INFO:heresy2_build:Story version: 0.5.6
+INFO:heresy2_build:File 'ink_tools\inklecate_windows.zip' downloaded successfully from 'https://github.com/inkle/ink/releases/download/v.1.2.0/inklecate_windows.zip'
+INFO:heresy2_build:All files extracted from 'ink_tools\inklecate_windows.zip' to 'ink_tools'.
+INFO:heresy2_build:{"compile-success": true}
 {"issues":[]}{"export-complete": true}
+
+INFO:heresy2_build:Operation complete
 
 python build.py serve  --browse
 Serving story:  http://127.0.0.1:9000
 ```
 
-At this point, a browser tab will be opened, pointing to: ``http://127.0.0.1:9000`` in which the
-story may be played.
+At this point, a browser tab will be opened, pointing to: ``http://127.0.0.1:9000`` 
+in which the story may be played.
 
 > Note, if one double-clicks on the `index.html` file in the `build` directory to 
 view the story, the background sound will not work due to CORS issues as the background sound files are accessed

@@ -12,6 +12,8 @@ import os
 import platform
 import shutil
 import subprocess
+import requests
+
 try:
     import git
     repo = git.Repo(".")
@@ -64,7 +66,7 @@ def build_story_js() -> None:
     # Get the story version
     with open("version.txt", "rb") as fp:
         version = fp.read()
-    print(f"Story version: {version.decode('ascii')}")
+    log.info(f"Story version: {version.decode('ascii')}")
     copyright_year = str(datetime.datetime.now().year).encode("utf8")
     # Generate the items content
     with open(os.path.join("src", "items.toml"), "r") as fp:
@@ -90,18 +92,15 @@ def build_story_js() -> None:
         for name, data in info["states"].items():
             fp.write(f"VAR {name} = {data['default']}\n")
     # Generate the .json format of the root ink file
-    inklecate_path = "inklecate"
-    if platform.system().lower().startswith("windows"):
-        inklecate_path += ".exe"
-    inklecate_path = os.environ.get("HERESY2_INKLECATE", inklecate_path)
+    inklecate_path = find_inklecate()
     cmd = [inklecate_path, "-o", "tmp.json", "-j", "-v", os.path.join("src", "heresy2.ink")]
-    print(f"Running compiler: {cmd}\n")
+    log.debug(f"Running compiler: {cmd}\n")
     try:
         result = subprocess.run(cmd, stdout=subprocess.PIPE)
     except FileNotFoundError:
-        print(f"Could not run inklecate using path: {inklecate_path}.\nCheck your system PATH or HERESY2_INKLECATE environmental variable.")
+        log.error(f"Could not run inklecate using path: {inklecate_path}.\nCheck your system PATH or HERESY2_INKLECATE environmental variable.")
         exit(-1)
-    print(result.stdout.decode('utf-8'))
+    log.info(result.stdout.decode('utf-8'))
     # Build the Javascript from the JSON content
     with open("tmp.json", "rb") as fp:
         s = fp.read()
@@ -113,6 +112,62 @@ def build_story_js() -> None:
         with open(os.path.join("build", "js", "heresy2.js"), "wb") as output:
             output.write(s)
 
+
+def download_file(url, filename):
+    try:
+        # Send a GET request to the URL, enabling streaming for large files
+        response = requests.get(url, stream=True)
+        response.raise_for_status()  # Raise an HTTPError for bad responses (4xx or 5xx)
+
+        # Open the local file in binary write mode
+        with open(filename, 'wb') as file:
+            # Iterate over content in chunks to handle large files efficiently
+            for chunk in response.iter_content(chunk_size=8192):
+                file.write(chunk)
+        log.info(f"File '{filename}' downloaded successfully from '{url}'")
+        return True
+    except requests.exceptions.RequestException as e:
+        log.warning(f"Error downloading file from '{url}': {e}")
+        return False
+
+
+def download_inklecate(exe_name: str) -> str:
+    # if "ink_tools/exe_name" exists, return that pathname, otherwise, rebuild the directory
+    full_name = os.path.join("ink_tools", exe_name)
+    if os.path.exists(full_name):
+        return full_name
+    try:
+        shutil.rmtree("ink_tools")
+    except OSError:
+        pass
+    os.mkdir("ink_tools")
+    url = "https://github.com/inkle/ink/releases/download/v.1.2.0/inklecate_windows.zip"
+    zip_filename = os.path.join("ink_tools", "inklecate_windows.zip")
+    if not download_file(url, zip_filename):
+        raise RuntimeError("Unable to download the inklecate CLI tools.")
+    try:
+        with zipfile.ZipFile(zip_filename, 'r') as zip_ref:
+            zip_ref.extractall("ink_tools")
+        log.info(f"All files extracted from '{zip_filename}' to 'ink_tools'.")
+    except zipfile.BadZipFile:
+        log.error(f"Error: '{zip_filename}' is not a valid ZIP file.")
+    except FileNotFoundError:
+        log.error(f"Error: ZIP file '{zip_filename}' not found.")
+    except Exception as e:
+        log.error(f"An error occurred: {e}")
+    return full_name
+            
+            
+def find_inklecate() -> str:
+    inklecate_path = "inklecate"
+    if platform.system().lower().startswith("windows"):
+        inklecate_path += ".exe"
+        inklecate_path = download_inklecate(inklecate_path)
+    else:
+        if "HERESY2_INKLECATE" in os.environ:
+            inklecate_path = os.environ.get("HERESY2_INKLECATE", inklecate_path)
+    return inklecate_path  
+    
 
 def clean() -> None:
     """
@@ -227,14 +282,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Set up logging
-    level = logging.WARNING
+    level = logging.INFO
     if args.verbose:
-        level = logging.INFO
+        level = logging.DEBUG
     log = logging.getLogger("heresy2_build")
     logging.basicConfig(filename=args.logfile, level=level)
-    log.info(f"Command line args: {args}")
-    
-    log.info("Operation complete")
+    log.debug(f"Command line args: {args}")
     
     if args.cmd == "fullbuild":
         build()
@@ -246,6 +299,8 @@ if __name__ == "__main__":
         clean()
     elif args.cmd == "serve":
         serve(port=args.port, open=args.browse)
-
+    
+    log.info("Operation complete")
+    
     exit(0)
 
