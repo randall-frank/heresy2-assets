@@ -122,6 +122,16 @@ The license allows people to use and adapt the work for any purpose, even commer
     }
     ~ return 0
 
+=== function seen_all_symbols()
+// garden.dish
+// temple.pronaos
+// anthropoid_gear
+// tip_scales
+    { garden.dish and temple.pronaos and anthropoid_gear and tip_scales:
+        ~ return 1
+    }
+    ~ return 0
+
 // See norm.py for the derivation, but this function returns
 // a floating point number from [0,100] with an approximate
 // normal distribution.

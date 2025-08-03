@@ -55,12 +55,12 @@ Running compiler: ['E:\\hersey-ink\\inklecate_windows\\inklecate.exe', '-o', 'tm
 {"compile-success": true}
 {"issues":[]}{"export-complete": true}
 
-python build.py serve  
+python build.py serve  --browse
 Serving story:  http://127.0.0.1:9000
 ```
 
-At this point, pointing a browser tab at: ``http://127.0.0.1:9000`` will view the
-story.  
+At this point, a browser tab will be opened, pointing to: ``http://127.0.0.1:9000`` in which the
+story may be played.
 
 > Note, if one double-clicks on the `index.html` file in the `build` directory to 
 view the story, the background sound will not work due to CORS issues as the background sound files are accessed
@@ -78,10 +78,12 @@ Build.py has four options:
   - rebuild the entire `build` directory. This does a `clean` followed by copying
     the contents of the `src/html` and `src/media` directories into `build`.  Finally,
     it does a `build` which regenerates the story Javascript file.
-- serve [--port {portnumber}]
+- serve [--port {portnumber}] [--browse]
   - This option starts a web server that serves up the contents of the `build`
     directory on the selected port.  This simulates an actual web deployment. The
-    default port is 9000.
+    default port is 9000.  If `--browse` is specified, a web browser tab will be opened
+    to view the story.
+
 
 ## Versioning:
 

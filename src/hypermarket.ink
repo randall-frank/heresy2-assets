@@ -267,18 +267,27 @@ Behind the counter there is a walk-in refrigerator.  The door is closed and an e
 = fridge
 # CLEAR
     { hypermarket_id:
-        The guard checks your badge and then steps aside.
+        The guard checks your ID badge and then steps aside.
         + {not deli_computer} [Step up to the lock] -> fridge_code
         + {deli_computer} [Enter the refrigerator] -> deli_computer
     -else:
-        The guard steps up and confronts you, “Hold it! What are you doing back here? You need to step back
-        in front of the counter.  Now!”  He guides you back with authority.
+        The guard steps up and confronts you, “Hold it! Who are you and what are you doing back here? You need to step back in front of the counter.  Now!”  He guides you back with authority. “This area is restricted to authorized users.  You do not have the necessary ID badge.”
     }
     + [Return to the deli counter] -> deli
 
 = fridge_code
 # CLEAR
-You can feel an excited hum coming from behind the door, but there is still the lock to contend with:
+You can feel an excited hum coming from behind the door, but there is still the lock to contend with.
+{ seen_all_symbols():
+Laura flutters beside you, “I left clues to help you to determine the combination, remember?  I pointed out symbols to you while I was still encrypted.  Unfortunately, I do not know the correct order.”
+    {sunbeam_plate:
+        “However, the answer is encoded into the Sunbeam plate, if you can piece it together.”
+    -else:
+        “You will need to obtain the Sunbeam plate from the Apollo Temple entrance to resolve the order question.”
+    }
+-else:
+Laura flutters beside you, “I have been trying to leave clues for you to solve this, remember?  I pointed out symbols to you while I was still encrypted.  Unfortunately, you have not found all of the symbols yet.  Perhaps you should revisit some of the locations we visited after we first met?”
+}
 ~ combo_symbols = 1
 ~ combo_value = 0
 # COMBO: code_deli_fridge

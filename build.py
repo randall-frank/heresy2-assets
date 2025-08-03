@@ -1,7 +1,10 @@
 import argparse
 import datetime
+from functools import partial
 import json
+import threading
 import tomllib
+import webbrowser
 import zipfile
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 import logging
@@ -37,7 +40,7 @@ clean
 build
 fullbuild
 release
-serve [--port port]
+serve [--port port] [--browse]
 
 Note:
 
@@ -161,14 +164,32 @@ def release() -> None:
                 arcname = os.path.relpath(src, os.path.join("build"))
                 zpf.write(src, arcname=arcname)
 
+def open_url(url: str) -> None:
+    """open a URL in a new tab using webbrowser
 
-def serve(port=9000) -> None:
+    Args:
+        url (str): the URL to open
+    """
+    webbrowser.open_new_tab(url)
+            
+def serve(port: int = 9000, open: bool = False) -> None:
+    """start an HTML server for the current game build
+
+    Args:
+        port (int, optional): The port to run the HTML server on. Defaults to 9000.
+        open (bool, optional): If true, attempt to open a web browser tab to the session. Defaults to False.
+    """
     orig_cwd = os.getcwd()
     try:
         os.chdir("build")
         server_address = ('127.0.0.1', port)
         httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
-        print(f"Serving story:  http://{server_address[0]}:{server_address[1]}")
+        url = f"http://{server_address[0]}:{server_address[1]}"
+        print(f"Serving story:  {url}")
+        if open:
+            bound_open_url = partial(open_url, url)
+            timer = threading.Timer(5, bound_open_url)
+            timer.start()
         httpd.serve_forever()
     except KeyboardInterrupt:
         pass
@@ -199,6 +220,7 @@ if __name__ == "__main__":
 
     serve_parser = cmd_parsers.add_parser("serve", help="Server the build via http")
     serve_parser.add_argument("--port", type=int, default=9000, help="The port to use. Default: 9000")
+    serve_parser.add_argument("--browse", action="store_true", default=False, help="Open a web browser tab to the server.")
 
     release_parser = cmd_parsers.add_parser("release", help="Rebuild & generate a tarball of 'build' directory")
 
@@ -223,7 +245,7 @@ if __name__ == "__main__":
     elif args.cmd == "clean":
         clean()
     elif args.cmd == "serve":
-        serve(port=args.port)
+        serve(port=args.port, open=args.browse)
 
     exit(0)
 
