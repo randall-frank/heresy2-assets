@@ -44,7 +44,7 @@ pip install -r requirements.txt
 ```
 
 To build the web-based version of the story, the '[Inklecate]' compiler needs to be
-available.  If you are on Windows, the `build.py` script will attempt to download the
+available.  The `build.py` script will attempt to download the
 compiler from github when building the story.   It can also be included in the 
 search path on your system or one can set the environmental variable 
 `HERESY2_INKLECATE` to the complete pathname of the executable.  

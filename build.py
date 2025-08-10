@@ -11,6 +11,7 @@ import logging
 import os
 import platform
 import shutil
+import stat
 import subprocess
 import requests
 
@@ -143,6 +144,9 @@ def download_inklecate(exe_name: str) -> str:
     os.mkdir("ink_tools")
     url = "https://github.com/inkle/ink/releases/download/v.1.2.0/inklecate_windows.zip"
     zip_filename = os.path.join("ink_tools", "inklecate_windows.zip")
+    if platform.system().lower().startswith("linux"):
+        url = "https://github.com/inkle/ink/releases/download/v.1.2.0/inklecate_linux.zip"
+        zip_filename = os.path.join("ink_tools", "inklecate_linux.zip")
     if not download_file(url, zip_filename):
         raise RuntimeError("Unable to download the inklecate CLI tools.")
     try:
@@ -155,6 +159,9 @@ def download_inklecate(exe_name: str) -> str:
         log.error(f"Error: ZIP file '{zip_filename}' not found.")
     except Exception as e:
         log.error(f"An error occurred: {e}")
+    if platform.system().lower().startswith("linux"):
+        st = os.stat(full_name)
+        os.chmod(full_name, st.st_mode | stat.S_IEXEC)
     return full_name
             
             
@@ -162,8 +169,10 @@ def find_inklecate() -> str:
     inklecate_path = "inklecate"
     if platform.system().lower().startswith("windows"):
         inklecate_path += ".exe"
+    try:
         inklecate_path = download_inklecate(inklecate_path)
-    else:
+    except Exception as e:
+        print("Unable to download the CLI tools: {str(e)})\nTrying HERESY2_INKLECATE")
         if "HERESY2_INKLECATE" in os.environ:
             inklecate_path = os.environ.get("HERESY2_INKLECATE", inklecate_path)
     return inklecate_path  
