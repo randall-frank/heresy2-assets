@@ -565,6 +565,7 @@ table.combo>tfoot:not(:last-child) {
     text-align: center;
     display: none; /* Hidden by default */
     z-index: 1000;
+    font-family: 'Open Sans', sans-serif;
 }
 .cookie-consent-button {
     background-color: #4CAF50;

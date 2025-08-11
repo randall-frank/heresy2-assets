@@ -41,9 +41,8 @@ Operations:
 
 clean
 build
-fullbuild
 release
-serve [--port port] [--browse]
+serve [--port port] [--nobrowser]
 
 Note:
 
@@ -114,7 +113,12 @@ def build_story_js() -> None:
             output.write(s)
 
 
-def download_file(url, filename):
+def download_file(url, filename) -> bool:
+    """Download a file from a given URL and save it to a specified filename.
+    :param url: str The URL to download the file from.
+    :param filename: str The local filename to save the downloaded file.
+    :return: bool True if the download was successful, False otherwise.
+    """
     try:
         # Send a GET request to the URL, enabling streaming for large files
         response = requests.get(url, stream=True)
@@ -133,6 +137,11 @@ def download_file(url, filename):
 
 
 def download_inklecate(exe_name: str) -> str:
+    """
+    Download the inklecate CLI tool from the official repository if it is not found in the "ink_tools" directory.
+    :param exe_name: str The name of the executable file to download (e.g., "inklecate.exe" or "inklecate").
+    :return: str The path to the downloaded inklecate executable.
+    """
     # if "ink_tools/exe_name" exists, return that pathname, otherwise, rebuild the directory
     full_name = os.path.join("ink_tools", exe_name)
     if os.path.exists(full_name):
@@ -166,6 +175,13 @@ def download_inklecate(exe_name: str) -> str:
             
             
 def find_inklecate() -> str:
+    """
+    Find the inklecate CLI tool in the system PATH or download it if not found.
+    If the tool is not found in the PATH, it will attempt to download it from the official repository.
+
+    :return:
+        str the path to the inklecate executable.
+    """
     inklecate_path = "inklecate"
     if platform.system().lower().startswith("windows"):
         inklecate_path += ".exe"
@@ -178,14 +194,16 @@ def find_inklecate() -> str:
     return inklecate_path  
     
 
-def clean() -> None:
+def clean(remove_cli_tools: bool = False) -> None:
     """
     Clear out the "build" directory and remove any 'intermediate' build files
-
+    :param remove_cli_tools: bool If True, remove the ink_tools directory as well.
     :return:
     """
     try:
         shutil.rmtree("build")
+        if remove_cli_tools:
+            shutil.rmtree("ink_tools")
         os.mkdir("build")
     except OSError:
         pass
@@ -228,6 +246,7 @@ def release() -> None:
                 arcname = os.path.relpath(src, os.path.join("build"))
                 zpf.write(src, arcname=arcname)
 
+
 def open_url(url: str) -> None:
     """open a URL in a new tab using webbrowser
 
@@ -235,13 +254,17 @@ def open_url(url: str) -> None:
         url (str): the URL to open
     """
     webbrowser.open_new_tab(url)
-            
-def serve(port: int = 9000, open: bool = False) -> None:
+
+
+def serve(port: int = 9000, nobrowser: bool = False) -> None:
     """start an HTML server for the current game build
 
-    Args:
-        port (int, optional): The port to run the HTML server on. Defaults to 9000.
-        open (bool, optional): If true, attempt to open a web browser tab to the session. Defaults to False.
+    This will serve the contents of the "build" directory on the specified port.
+
+    :param port: int  The port to run the HTML server on. Defaults to 9000.
+    :param nobrowser: bool If true, do not attempt to open a web browser tab to the session. Defaults to False.
+
+    :return: None
     """
     orig_cwd = os.getcwd()
     try:
@@ -250,7 +273,8 @@ def serve(port: int = 9000, open: bool = False) -> None:
         httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
         url = f"http://{server_address[0]}:{server_address[1]}"
         print(f"Serving story:  {url}")
-        if open:
+        if not nobrowser:
+            print(f"Opening a browsing tab.")
             bound_open_url = partial(open_url, url)
             timer = threading.Timer(5, bound_open_url)
             timer.start()
@@ -275,16 +299,16 @@ if __name__ == "__main__":
     
     cmd_parsers = parser.add_subparsers(help="Command", dest="cmd")
     cmd_parsers.required = True
-    
-    build_parser = cmd_parsers.add_parser("build", help="Regenerate the story .json file in the build directory")
 
-    fullbuild_parser = cmd_parsers.add_parser("fullbuild", help="Rebuild the entire build directory contents")
+    build_parser = cmd_parsers.add_parser("build", aliases=["fullbuild"],
+                                          help="Rebuild the entire build directory contents")
 
     clean_parser = cmd_parsers.add_parser("clean", help="Remove all build directory contents")
 
     serve_parser = cmd_parsers.add_parser("serve", help="Server the build via http")
     serve_parser.add_argument("--port", type=int, default=9000, help="The port to use. Default: 9000")
-    serve_parser.add_argument("--browse", action="store_true", default=False, help="Open a web browser tab to the server.")
+    serve_parser.add_argument("--nobrowser", action="store_true", default=False,
+                              help="Do not automatically open a web browser tab to the server.")
 
     release_parser = cmd_parsers.add_parser("release", help="Rebuild & generate a tarball of 'build' directory")
 
@@ -298,16 +322,14 @@ if __name__ == "__main__":
     logging.basicConfig(filename=args.logfile, level=level)
     log.debug(f"Command line args: {args}")
     
-    if args.cmd == "fullbuild":
+    if args.cmd.endswith("build"):
         build()
-    elif args.cmd == "build":
-        build_story_js()
     elif args.cmd == "release":
         release()
     elif args.cmd == "clean":
-        clean()
+        clean(remove_cli_tools=True)
     elif args.cmd == "serve":
-        serve(port=args.port, open=args.browse)
+        serve(port=args.port, nobrowser=args.nobrowser)
     
     log.info("Operation complete")
     
