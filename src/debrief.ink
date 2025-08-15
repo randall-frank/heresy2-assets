@@ -30,8 +30,8 @@ Bob nods. “Good. That's what matters.” He hands you a glass of water and a f
 # CLEAR
 # SBIMAGE: locations/bob_ending.png
 “I have a few questions for you.”
-You nod, feeling the fizz of medication. Your head lightens, your stomach relaxes. “Of course,” you reply.  You take a deep breath, recalling and organizing the facts of the mission. The stars outside the window blur for a moment. A blink and they resolve..
-Bob takes a seat across from you, his gaze steady, “You were sent to Spain 1499 A.D. to investigate a temporal anomaly detected in the region. It was your job to find the source and correct it. Tell me about it. What caused it?"
+You nod, feeling the fizz of medication. Your head lightens, your stomach relaxes. “Of course,” you reply.  You take a deep breath, recalling and organizing the facts of the mission. The stars outside the window blur for a moment. A blink and they resolve.
+Bob takes a seat across from you, his gaze steady, “You were sent to Spain 1499 A.D. to investigate a temporal anomaly. It was your job to find the source and correct it. Tell me about it. What caused it?"
     + [Did you find the anomaly?] -> anomaly
 
 = anomaly
@@ -67,8 +67,13 @@ Bob nods, his expression thoughtful, “Let us hope that is the last we hear of 
 # CLEAR
 # SBIMAGE: locations/bob_ending.png
 You look at Bob, your brow furrowed, “Why isn't Laura responding?”
-Bob's expression darkens and he takes a deep breath. “Laura is no longer operational,” His voice steady but tinged with sadness. “She was damaged during your mission, and became unreliable. We think she was being manipulated by another entity. We resorted to using a virus designed to isolate her from the Agency's systems and even though it managed to encrypt her, she escaped before we had a chance to run deep diagnostics on her.” Bob rubs his temple, “First a rogue agent and now a rogue AI...  We have a replacement system, 'Eliza', that is beginning to fill her roles, but it will take time. Laura was unique both in her capacities and her personality.”
-Laura was at the heart of the Agency, how could someone or something compromise her? “I had no idea. Do you think Keith was behind it?”
+Bob's expression darkens and he takes a deep breath. “Laura is no longer operational,” His voice steady but tinged with sadness. “She was damaged during your mission, and became unreliable. We think she was being manipulated by another entity. We resorted to using a virus designed to isolate her from the Agency's systems and even though it managed to encrypt her, she escaped before we had a chance to run deep diagnostics on her.” Bob rubs his temple, “First a rogue agent and now a rogue AI...  We have a replacement system, 'Eliza', that is beginning to fill her roles, but it will take time. Laura was unique both in her capacities and her personality. Laura was at the heart of the Agency.” 
+    + [How could someone compromise her?] -> laura_details
+
+= laura_details
+# CLEAR
+# SBIMAGE: locations/bob_ending.png
+“I had no idea. Do you think Keith was behind it?”
 “We don’t know.” Bob stands up abruptly.  “Excellent work Agent. Still some loose ends to tie up, but you did well.”  He gently grabs ahold of your upper arm and helps you stand “I know this isn’t exactly protocol and that you’re still recovering but the Agency needs you. We want you to take some R&R so you can be ready to ship out as soon as possible.”
 But there’s no time for vacation at the Agency!
     + [Time for a vacation?] -> base

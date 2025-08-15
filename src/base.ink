@@ -18,8 +18,8 @@ The lighting is too bright in here, the air too stale. Only the constellations o
 # ELIZA
 # SBIMAGE: locations/base_tube.png
 Bob steps back, a sad smile on his face but not in his eyes. “We’re sending you back to ancient Greece for a little R&R. You remember the little facility we run there?” 
-“That detention center?”, you counter.
-Bob smiles “Does a prison have good wine and beautiful beaches? Eliza will fill you in.”
+“The detention center?” you counter.
+Bob smiles, “Does a prison have good wine and beautiful beaches? Eliza will fill you in.”
 Bob presses the button to start the time transfer. He looms above, while the doors of the caisson slide shut narrowing your view. The world narrowed by darkness until only Bob’s distant, hollow eyes remain. Then the doors snap shut with a hermetic hiss. Bob is gone and darkness is everywhere.
     * [{continue}] -> card_E
     
@@ -27,7 +27,6 @@ Bob presses the button to start the time transfer. He looms above, while the doo
 # CLEAR
 # AUDIOLOOP: audio/alarm.mp3
 In the black of the chamber, a light appears, rushing towards you. Videos of lush olive groves, bustling city centers, and craftspeople plying their trade fill your view and your senses. Great temples tower above, and by the sea, vacationers lounge with their cups, soothed by the sound of wine-dark waves. Beautiful music fills your ears and wonder fills your mind.
-A symbol flashes before your eyes on a background of static then it is gone.
 Eliza begins to speak, her voice protocols primitive and rough compared to Laura.
 # CLASS: computer
 “Welcome vacationer! You have earned… an unspecified amount of time …in the Greek paradise of Athens, year 450 BCE. Your mission: enjoy yourself!”

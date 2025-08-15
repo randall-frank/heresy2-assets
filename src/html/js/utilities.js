@@ -239,19 +239,16 @@ function split_audio_name(name) {
     if (parts.length > 1 && !isNaN(parts[parts.length - 1])) {
         scale = parseFloat(parts.pop());
     }
-    let use_table = getQueryValue('audio_table'); // Check if there's an audio_table query parameter
-    if (use_table) {
-        if (Number(use_table) === 1) {
-            // Look the mp3 name up in the audio table and use that scaling factor
-            const index = parts[0].lastIndexOf('/');
-            if (index !== -1) { 
-                const filename = parts[0].substring(index + 1); // Get the filename only
-                if (audioTable.hasOwnProperty(filename)) {
-                    scale = audioTable[filename];
-                }
-            }
+
+    // Look the mp3 name up in the audio table and use that scaling factor
+    const index = parts[0].lastIndexOf('/');
+    if (index !== -1) { 
+        const filename = parts[0].substring(index + 1); // Get the filename only
+        if (audioTable.hasOwnProperty(filename)) {
+            scale = audioTable[filename];
         }
     }
+
     return {
         name: parts[0],
         scale: scale

@@ -31,7 +31,7 @@ Along the hallway to your left is a robotic tattoo machine, room 236.  Room 237 
     + [Examine the computer terminal] -> computer_terminal
     + [Investigate the cell] -> padded_cell
     + [Exit the workshop via the iron gate] -> to_garden
-    + [Capitulate... (ends the game)] -> give_up
+
 
 = to_garden
 # CLEAR
@@ -73,7 +73,7 @@ The trip happens in a flash, literally. Some form of spatial displacement field 
 = door_to_oracle
 # CLEAR
 # AUDIO: audio/door_locked.mp3
-A locked and bolted metal door with a digital keypad stands before you, looking like something that would protect the entrance to an underworld hideout. You try the door but it won’t budge, even with your considerable strength, you will need to find the keycode..
+A locked and bolted metal door with a digital keypad stands before you, looking like something that would protect the entrance to an underworld hideout. You try the door but it won’t budge, even with your considerable strength, you will need to find the keycode.
 ~ combo_symbols = 1
 ~ combo_value = 0
 # COMBO: code_apollo_foyer
@@ -119,7 +119,7 @@ A computer terminal is built into what appears to be a marble slab. What a beaut
     + [Return to the hallway] -> panorama
     
 = find_lcd_display
-You apply but a fraction of your freakish receptacle enhanced strength as your finger grazes the bezel of the display.  It pops loose and you are barely able to catch it as the rest of the terminal falls towards the floor. At least you’ve a souvenir of your trip??
+You apply but a fraction of your freakish receptacle enhanced strength as your finger grazes the bezel of the display.  It pops loose and you are barely able to catch it as the rest of the terminal falls towards the floor. At least you have a souvenir of your trip?
 The LCD panel might still be in working order in the right hands.
     ~ lcd_display = 1
     + [{continue}] -> computer_terminal
@@ -155,7 +155,7 @@ A padded cell with a heavy, locked door.  It seems to be controlled by an ancien
 
 = meet_helen
 # CLEAR
-On the floor is a woman with long hair that spills around her feet. The name on her soiled jumpsuit says “Helen”?
+On the floor is a woman with long hair that spills around her feet. The name on her soiled jumpsuit says “Helen”.
 {not owl:
 In an alcove on the wall, a mechanical owl spins its head and spouts gibberish in a sing-song voice. 
 }
