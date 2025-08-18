@@ -7,10 +7,8 @@
 
 = panorama
 # CLEAR
-The center of the city, the agora, is usually well cared for and ornately decorated. But the agora of Athens has seen better days. Long rows of colonnades stretch out before, begrimed with dirt and soot from cooking meat. Multiple shady merchants have setup shop and on the margins, dark alleys loom.
-There is a rather shady looking market place.  Guarded, side glances dominate this market.
-Food options include an inexpensive food counter and higher-end restaurants.
-A dark alley fills the gap between the eating establishments and an ironmongers.
+The center of the city, the agora, is usually well cared for and ornately decorated. But the agora of Athens has seen better days. A long stoa stretches out before you, begrimed with dirt and soot from cooking meat. Multiple shady merchants have setup shop and on the margins, dark alleys loom.
+There is a rather shady looking market place.  Guarded, side glances dominate this market. Food options include an inexpensive food counter and higher-end restaurants. A dark alley fills the gap between the eating establishments and an ironmongers.
     + [Visit the shady market] -> black_market
     + [Walk up to the food counter] -> fast_food
     + [Approach the fancy restaurant] -> restaurant
@@ -94,8 +92,13 @@ You lean across the counter and barely reach a container of brining feta, tippin
 = restaurant
 # CLEAR
 A maître d' stands outside of a lavishly appointed restaurant, the bow tie with a toga is a bold fashion choice.
+{beg > 2:
+“You! again? You are not welcome here. I have told you before, no one wants to see you here.” The maître d' waves a velvet rope in your face and turns away.
+- else:
 As you try to enter, the maître d' clips a velvet rope to a stanchion by the door and stares with disdain at the symbol that marks you. “No entrance for the likes of you. Now leave before I call the guards.”
     + [Debase yourself and beg] -> beg
+}
+
     + [Return to the street] -> panorama
 
 = beg

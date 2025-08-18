@@ -20,7 +20,7 @@ The lighting is too bright in here, the air too stale. Only the constellations o
 Bob steps back, a sad smile on his face but not in his eyes. “We’re sending you back to ancient Greece for a little R&R. You remember the little facility we run there?” 
 “The detention center?” you counter.
 Bob smiles, “Does a prison have good wine and beautiful beaches? Eliza will fill you in.”
-Bob presses the button to start the time transfer. He looms above, while the doors of the caisson slide shut narrowing your view. The world narrowed by darkness until only Bob’s distant, hollow eyes remain. Then the doors snap shut with a hermetic hiss. Bob is gone and darkness is everywhere.
+Bob presses the button to start the time transfer. He looms above, while the doors of the caisson slide shut narrowing your view. The world is consumed by darkness until only Bob’s distant, hollow eyes remain. Then the doors snap shut with a hermetic hiss. Bob is gone and darkness is everywhere.
     * [{continue}] -> card_E
     
 = card_E

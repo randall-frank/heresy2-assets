@@ -27,8 +27,8 @@ description = "A tattoo, laser burnt into your arm."
 url = "items/tattoo.png"
 
 [items.padded_cell_key]
-name = "Magnetic card key"
-description = "A standard magnetic card swipe key."
+name = "Magnetic key card"
+description = "A standard magnetic key card."
 url = "items/keycard.png"
 
 [items.insane_laura]

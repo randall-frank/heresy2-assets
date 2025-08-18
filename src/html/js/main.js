@@ -1020,19 +1020,19 @@ We would like to acknowledge them here and thank them all for their contribution
 <p></p>
 <h2>The Beta Testers</h2>
 <ul>
+<li>Justin Chevrount</li>
 <li>David Bremer</li>
 <li>David Byrd</li>
 <li>Edward Oxford</li>
 </ul>
 <p></p>
-<h2>Imagery and audio used with attribution</h2>
+<h2>Imagery used with attribution</h2>
 <ul>
 <li>Various images generated using DALL·E</li>
 <li>Various images generated using ArtSpace.ai</li>
 <li>Textures: www.myfreetextures.com</li>
 <li>Some images used from wikipedia under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></li>
 <li>Some Icons by Font Awesome fontawesome.com, Copyright Fonticons, Inc, License: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></li>
-<li>Some audio tracks where licensed from Nicolas Jeudy and <a href="https://darkfantasystudio.com/" target="_blank" rel="noopener noreferrer">DARK FANTASY STUDIO</a></li>
 </ul>
 <p></p>
 <h2>Audio used with attribution from freesound.org</h2>
@@ -1061,6 +1061,13 @@ We would like to acknowledge them here and thank them all for their contribution
     <td><a href="https://freesound.org/s/564166/" target="_blank" rel="noopener noreferrer">564166</a></td>
     <td><a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">Creative Commons 0</a></td></tr>
 </table>
+<p></p>
+<h2>Licensed audio files</h2>
+<p>Audio tracks other than those listed above have been commercially licensed from other sources.  These files are not covered under the overall game CC license.</p>
+<ul>
+<li>Some audio tracks are licensed from Nicolas Jeudy and <a href="https://darkfantasystudio.itch.io/" target="_blank" rel="noopener noreferrer">DARK FANTASY STUDIO</a></li>
+<li>Some audio tracks are licensed through <a href="https://www.gamedevmarket.net/" target="_blank" rel="noopener noreferrer">GameDev Markets</a> under this <a href="https://www.gamedevmarket.net/terms-conditions#pro-licence" target="_blank" rel="noopener noreferrer">license</a></li>
+</ul>
 <p></p>
 `
 if (checkDebugMode()) {

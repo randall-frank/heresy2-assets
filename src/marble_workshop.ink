@@ -68,6 +68,7 @@ A power conversion station in the corner of the workshop.  A simple device that 
 
 = lockpick
 # CLEAR
+# AUDIO: audio/lockpick.mp3
 ~ combat_health = 30.
 ~ combat_attack = 10.
 ~ combat_defense = 25.

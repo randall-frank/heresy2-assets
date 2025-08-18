@@ -102,7 +102,8 @@ An early 21st century modular desk sits covered in dust, probably one of the pop
     + [Return to the hallway] -> panorama
     
 = find_padded_cell_key
-You find a digital card key.  To what?  where?
+# AUDIO: audio/drawer.mp3
+You find a magnetic key card.  To what?  where?
     ~ padded_cell_key = 1
     + [{continue}] -> desk
 
@@ -119,6 +120,7 @@ A computer terminal is built into what appears to be a marble slab. What a beaut
     + [Return to the hallway] -> panorama
     
 = find_lcd_display
+# AUDIO: audio/glass_smash.mp3
 You apply but a fraction of your freakish receptacle enhanced strength as your finger grazes the bezel of the display.  It pops loose and you are barely able to catch it as the rest of the terminal falls towards the floor. At least you have a souvenir of your trip?
 The LCD panel might still be in working order in the right hands.
     ~ lcd_display = 1

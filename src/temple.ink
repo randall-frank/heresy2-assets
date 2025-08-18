@@ -1,20 +1,18 @@
 === temple ===
 ~ location_name = "Temple of Hephaestus"
+# CLEAR
 # BACKGROUND: locations/temple.jpg
-# SBIMAGE: items/temple.png
 # AUDIOLOOP: audio/temple.mp3
+# SBIMAGE: items/temple.png
 -> power_change( location_change_cost ) ->
--> panorama
+The Temple of Hephaestus towers before you, a breathing forge of industry that fires the island. Around the edges of the temple artisans and potters ply their trade, throwing clay and molding into beautiful ceramics and artistic works of metal. They honor the god, pouring themselves into their work. Carefully crafted colonnades hold the roof aloft while priests and adherents work their rites within.
+    + [{continue}] -> panorama
 
 = panorama
 # CLEAR
-The Temple of Hephaestus towers before you, a breathing forge of industry that fires the island. Around the edges of the temple artisans and potters ply their trade, throwing clay and molding into beautiful ceramics and artistic works of metal. They honor the god, pouring themselves into their work. Carefully crafted colonnades hold the roof aloft while priests and adherents work their rites within.
+# SBIMAGE: items/temple.png
 The outer temple columns serve as both workplace and home for the lost and discarded. Beggars ply their arts for alms while an individual, not of sound mind or soul, wanders by, endlessly muttering to themselves and anyone willing to lend an ear.
-One can almost make out the large statue gracing the pronaos.
-{not intervene:
-    The Cella is filled with small groups of people having conversions and milling about.
-}
-Deep in the interior of the temple is the opisthodomos flanked by wary acolytes.  Next to the acolytes is a heavy metal door with a digital keypad.
+One can almost make out the large statue gracing the pronaos. {not intervene: The Cella is filled with small groups of people having conversions and milling about. }Deep in the interior of the temple is the opisthodomos flanked by wary acolytes.  Next to the acolytes is a heavy metal door with a digital keypad.
 
     + [Interact with the beggar] -> beggar
     + [Enter the temple pronaos] -> pronaos
