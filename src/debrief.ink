@@ -2,6 +2,7 @@
 ~ location_name = "Time Corrections Agency Debriefing Lounge (2413 A.D.)"
 # BACKGROUND: locations/debrief.png
 # AUDIOLOOP: audio/debrief.mp3
+# GAMELOG: on
 -> lounge
 
 = lounge

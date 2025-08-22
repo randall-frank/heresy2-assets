@@ -30,6 +30,7 @@ A beggar in rags kneels by a rough, unbaked bowl. The craftspeople avoid even lo
     "It is you again...  See, I remember!" followed by a befouled coughing fit.
 - else:
     As you approach, he lifts his head and an all too familiar symbol appears.
+# IMAGE: items/tattoo.png
     “Yeah, I worked for Bob. So what? Came all the way back to serve, to build a portal…”
     The beggar sees the tattoo on your shoulder and barks out a laugh that turns to a phlegmy cough. “So you’re one of them, eh? It was helping your kind that got me ruined. Maybe you could take pity on me and throw some wine or silver my way?”
         + [Give him a coin] -> donate
@@ -74,21 +75,20 @@ You attempt to buy the crutch from the woman...
 ~ combat_health = 20.
 ~ combat_attack = 10.
 ~ combat_defense = 20.
-A crowd of people are milling about the center of the space, their attention on two men sneering and snapping at each other like sharp-toothed dogs. A man with a lame leg and a tattoo matching yours on his shoulder spits and screams and a man with smooth, unburnt skin and cold eyes that do not belong here.
-Jeers of anticipation fill the air like smoke like fire from a forge. Nothing like a good fight to clear the air.
-The lame man screams at his opponent, “You think you can come here like some tourist? To take what you want while we toil day and night?” He shakes his fist. “You tell that bastard Bob to come here himself. You tell him to come and I’ll tell him to…” The crowd howls as the man with cold eyes throws a right hook and the dispute is lost beneath the waves of cheers.
+A crowd of people are milling about the center of the space, their attention on two men sneering and snapping at each other like sharp-toothed dogs. Jeers of anticipation fill the air like smoke like fire from a forge. Nothing like a good fight to clear the air.
+A tattooed man with a lame leg  squares up with a `supervisor`.  The lame man screams at his opponent, “You think you can come here like some tourist? To take what you want while we toil day and night?” He shakes his fist. “You tell that bastard Bob to come here himself. You tell him to come and I’ll tell him to…” The crowd howls as the `supervisor` throws a right hook and the dispute is lost beneath the waves of cheers.
     + [Attempt to intervene] -> intervene
     + [Leave] -> panorama
 
 = intervene
 # CLEAR
-You step between the men and inadvertently get pulled into the fight.  The cold eyed man pulls a short pike from a hidden pocket.  He points it at you and the injured man and "fire" leaps out to hit the two of you.
+You step between the men and get pulled into the fight.  The `supervisor` pulls a short spike from a hidden pocket.  He points it at you and the injured man and "fire" leaps out to hit the two of you.
 You return the gesture with a closed fist.
     ~ temp combat_result = 0
     -> combat("a cold eyed man", combat_result) ->
     { combat_result == 1:
         // you win
-        The cold eyes roll upward and the "man" freezes, stone cold like a rock.  No motion, no response at all.  The tattooed man mouths a silent thank-you and gets lost in the crowd.
+        The `supervisor`s eyes roll upward and the `man` freezes, stone cold like a rock.  No motion, no response at all.  The tattooed man mouths a silent thank-you and gets lost in the crowd.
         ~ won_cella_fight = 1
             + [Leave] -> panorama
     - else:
@@ -123,13 +123,13 @@ The men go quiet and the woman holds it in her hands before giving it back to yo
 
 = keypad
 # CLEAR
-A steel rimmed keypad sits next to a heavy door flanked with flickering torches. On either side of the door, a pair of stone guard dogs keep an eternal watch. You can hardly hear the talk of smiths, and the shouts of the crowd nearby. The ringing of hammers on anvils and the sound of quenched fire nearly deafen you. There’s too much noise from the hammering. Eager to get away from it, you enter the code on the keypad..
+A steel rimmed keypad sits next to a heavy door flanked with flickering torches. On either side of the door, a pair of stone guard dogs keep an eternal watch. You can hardly hear the talk of smiths, and the shouts of the crowd nearby. The ringing of hammers on anvils and the sound of quenched fire nearly deafen you. Eager to get away from it, you enter the code on the keypad..
 ~ combo_symbols = 0
 ~ combo_value = 0
 # COMBO: code_melampus
     + [Try the combination]
         { combo_value == code_melampus:
-            "Access granted." The door swings open noiselessly and as you step through it swings shut. In here there is only the sound of one hammer…
+            "Access granted." The door swings open noiselessly and as you step through it swings shut. In here there is only the sound of a single hammer…
 # AUDIO: audio/positive.mp3
 # COMBO_DONE: pass         
             + [{continue}] -> melampus
@@ -147,7 +147,7 @@ A steel rimmed keypad sits next to a heavy door flanked with flickering torches.
 You round a corner and find a man hunched over a bench, working with a delicate piece of circuitry. A jeweler's loupe is fastened to one eye. In the corner an automated machine hammers a piece of metal, shaping it into things yet to come. High above among the columns, mechanical planets orbit a perfect sun.
 { not antivirus:
     { not melampus_list:
-    The owl flies to the other side of his bench and whistles. The man looks up and smiles. “Laura. You’re right of course..” The owl’s head spins and its wings flap enthusiastically. He laughs. “It worked! The plan worked.”
+    The owl flies to the other side of his bench and whistles. The man looks up and smiles. “Laura. You’re right of course…” The owl’s head spins and its wings flap enthusiastically. He laughs. “It worked! The plan worked.”
     He turns to you but doesn’t rise from his seat. “So you’re the one Laura chose. That’s a heavy burden, but I learned long ago not to doubt her.” He looks at the owl. “Even when I was told to imprison her.” He snorts.
     “But the time has come to set her free from this… this… what other word is there than madness?” He waves his arms around the room. “Bring me these items and we can restore her to where she belongs.” Melampus throws a scroll at you and returns to his work.
         ~ melampus_list = 1

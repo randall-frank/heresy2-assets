@@ -368,3 +368,43 @@ function hexToRgb(hex) {
 function rgbToHex(r, g, b) {
   return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
 }
+
+
+function setupGameLog() {
+    let gamelogEl = document.getElementById("game-log");
+    if (gamelogEl) gamelogEl.addEventListener("click", function(event) {
+        showGameLog();
+    });
+    
+    let span = document.getElementById("gamelog-close");
+    span.onclick = function () {
+        var modal = document.getElementById("gameLogDlg");
+        modal.style.display = "none";
+    }
+    let modal = document.getElementById("gameLogDlg");
+    modal.onclick = function (event) {
+        var modal = document.getElementById("gameLogDlg");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+function enableGameLog(on) {
+    if (on) return;
+    const logElem = document.getElementById('game-log');
+    logElem.hidden = on == false;
+}
+
+function showGameLog() {
+    const modal = document.getElementById('gameLogDlg');
+    updateGameLog();
+    modal.style.display = "block";
+}
+
+function updateGameLog() {
+    let html = "";
+    // Set up the log content from "theStory"
+    let body = document.getElementById('gameLogContent');
+    body.innerHTML = html;
+}

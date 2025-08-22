@@ -31,16 +31,32 @@
 </head>
 
 <body>
+    <div id="gameLogDlg" class="gamelog">
+      <div class="gamelog-content">
+        <div class="gamelog-header">
+          <span id="gamelog-close" class="gamelog-close">&times;</span>
+          <p class="listheader">Game Log</p>
+          <hr>
+        </div>
 
+        <div id="gameLogContent" class="gamelog-body">                                                      
+        </div>
+
+        <div class="gamelog-footer">
+          <hr>
+          <p style="margin-bottom: 0px;font-size:small">Click outside the log (or the 'X') to close.</p>
+        </div>
+      </div>
+    </div>
     <div class="outerContainer">
         <div class="row">
             <div id="sidebar" class="sidebar">
                 <p class="listheader">Game options</p>
                 <div id="controls" class="buttons">
                   <a id="rewind" title="Restart story from beginning">Restart</a>
-                  <a id="save" title="Save progress">Save</a>
-                  <a id="reload" title="Reload from save point">Load</a>
-                  <!-- <a id="theme-switch" title="Switch theme">theme</a> -->
+                  <a id="save" title="Save progress">| Save</a>
+                  <a id="reload" title="Reload from save point">| Load</a>
+                  <a id="game-log" title="Game log">| Log</a>
                 </div>
                 <div id="sound-slider__container" style="display: flex; align-items: center;">  
                     <i id="volume_off" style="width: 10%;" class="fa-solid fa-volume-xmark"></i>

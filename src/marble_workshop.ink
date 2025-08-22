@@ -31,8 +31,8 @@ The salesman excuses himself from the indecisive couple and turns to face you.  
 = workspace
 # CLEAR
 A freestanding, headless anthropoid receptacle is in the center of this half of the workshop. A cable runs from its navel out of sight to the floor.  Hanging on the wall are an odd collection of tools.  Along with a standard collection of hammers you notice a soni-dimensional chisel and a covalent parasander.  It is not surprising that this shop produces some of the finest sculptures in all of Athens.
-On a table in the back lies another damaged receptacle.  This one appears to sort of still be working?  In the far corner is a power conversion station.
-    + {lockpick_table == 0} [Attempt to pick the table lock] -> lockpick
+On a table in the back lies another damaged receptacle.  This one appears to sort of still be working?  In the far corner is a power conversion station.  {lockpick_table == 0:A locked drawer built into the table catches your eye.} 
+    + {lockpick_table == 0} [Attempt to pick the table drawer lock] -> lockpick
     + [Check out the receptacle on the table] -> table
     + [Access the power conversion station] -> power_conversion
     + [Return to entrance] -> panorama
@@ -94,9 +94,9 @@ The workers look to teach you a lesson... with their fists!  You enable the comb
     -> combat("stone workers", combat_result) ->
     { combat_result == 1:
         // you win
-        You drop the workers and they concede, brush themselves off and sheepishly head back to work. You slide the drawer open.  Inside is a weapon of some sort.  This could come in handy.
+        You best the workers and they concede, brush themselves off and sheepishly head back to work. You slide the drawer open.  Inside is a weapon of some sort.  This could come in handy.
         ~ stun_orb = 1
-            + [Leave] -> workspace
+        + [Leave] -> workspace
     - else:
         // you may run away
         + [Continue the fight] -> fight
@@ -107,8 +107,10 @@ The workers look to teach you a lesson... with their fists!  You enable the comb
 = table
 # CLEAR
 On the table lies a heavily damaged android receptacle. It appears its legs have been crushed, beyond repair and deep gouges mar the rest of the body.  You notice the arm tattoo matching yours.  It is likely the receptacle standing nearby was being prepped as a replacement for this one.
-As you look over the shattered form, suddenly eyes flitter open and the occupant turns its head to speak to you. “... do I know you???   Aren’t you part of Gold Squad?  It’s me, Nelda Powell from Squad Porspet”.  She follows your gaze down to her missing legs, “It looks a lot worse than it is. At least Phidias says I will get a new receptacle, this one has had it”.  “Just another example of Inquisition retaliation, I’m afraid. Pretty sure they arranged the quarry 'accident' that brought me here. I almost prefer it to their little power recharging games. Be careful in your interactions with folks here in Athens. Phidias is sympathetic to our plight, but will not do anything that brings suspicion on himself.”
-{not anthropoid_gear:
+{anthropoid_gear:
+Nelda's broken form lies on the table, her eyes closed.  It looks like she's put herself in sleep mode.
+-else:
+As you look over the shattered form, suddenly eyes flutter open and stare at your tattoo. After a moment she looks up into your eyes, “... do I know you?  Aren’t you part of Gold Squad?  It’s me, Nelda Powell from Squad Porspet”.  She follows your gaze down to her missing legs, “It looks a lot worse than it is.”  She sighs, “Just another example of Inquisition retaliation, I’m afraid. Pretty sure they arranged the 'accident' that brought me here. Be careful out there... Phidias is sympathetic to our plight, but will not do anything that brings suspicion on himself.”
 On a high shelf, a mechanical mechanism sits without obvious purpose. Is it a work in progress or was it harvested from an other-worldly device? It’s a question you ponder as the owl lands on the shelf. It stares at you as it takes six careful sideways steps towards the gear GLYPH8. Once there, it gives it a cat-like shove with its foot.  You instinctively react and catch it before it hits the ground while the owl responds with an excited squawk.
     ~ anthropoid_gear = 1
 }
@@ -123,7 +125,7 @@ As you step up to Phidias’ desk you note the piece of glass he has been writin
 
 = help
 # CLEAR
-Pleading with Phidias, “We can't just sit here idly!  How many 'Nelda's do you need to fix?  With Laura we have a chance.  Please help me.”
+Pleading with Phidias, “We can't just sit here idly!  {table:How many 'Nelda's do you need to fix?}  With Laura we have a chance.  Please help me.”
 { RANDOM(0,10) > 3:
     -> phidias_confidence
 - else:
@@ -133,6 +135,8 @@ Pleading with Phidias, “We can't just sit here idly!  How many 'Nelda's do you
 
 = phidias_confidence
 # CLEAR
-“Ok, I’m going to trust you. I can’t afford to be seen actively helping, too many Keith detainees rely on me to avoid permanent damage here, but perhaps I can help. The inquisition has a time portal somewhere in Athens.  I am not entirely sure where it is, but I have seen folks heading into the Temple of Apollo and coming back with some very interesting hardware that definitely comes from another time.  Perhaps that might be one place to look? I did happen to overhear the code for the mausoleum entrance. You did not get it from me.”
+Phidias closes the door behind you, “Ok, I’m going to trust you. I can’t afford to be seen helping. Too many Keith detainees rely on me to avoid permanent damage, but perhaps there's something I can do.”
+He leans in close and whispers, “The inquisition has a time portal somewhere in Athens. I am not entirely sure where it is, but I have seen folks heading into the Temple of Apollo and coming back with some very interesting hardware. Very advanced hardware. Perhaps that might be one place to look?”  
+He hands you a piece of paper with strange symbols on it. “I overheard the code for the mausoleum entrance.” He holds up a finger, “You did not get this from me.” 
     ~ door_to_oracle_code = 1
     + [Return to entrance] -> panorama

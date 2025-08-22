@@ -16,7 +16,7 @@ A lazy river appears in front of you. The sun rays playfully bounce off its wate
 = pathway
 # CLEAR
 A narrow, gravel strewn path wanders along the river.  A variety of trees and lush vegetation line the way. A large boulder to one side protects a small open area with a view of the river.  A most peaceful spot as shafts of light pierce air heavily laden with floral scents.
-{crutch and stole_crutch: Aspasia is hare, resting against the boulder.  Her faces tightens into a mask of disgust as she becomes aware of your approach.}
+{crutch and stole_crutch: Aspasia is here, resting against the boulder.  Her faces tightens into a mask of disgust as she becomes aware of your approach.}
 A small bench can be seen further down the path.
     + {crutch and stole_crutch} [Return the crutch to Aspasia] -> return_crutch
     + [Use the bench to relax] -> bench
@@ -56,7 +56,7 @@ A beautiful girl with long hair and a short dress hides behind a tree. Her eyes 
 ~ combat_health = 90.
 ~ combat_attack = 10.
 ~ combat_defense = 25.
-You find a large bush and tell Daphne to crouch behind it. Then, you please a few leaves and branches in front of her while footsteps are approaching. It’s Apollo coming your direction. You think you did a good job, but it’s hard to fool a paranoid lover
+You find a large bush and tell Daphne to crouch behind it. Then, you please a few leaves and branches in front of her while footsteps are approaching. It’s Apollo coming your direction. You think you did a good job, but it’s hard to fool a paranoid lover.
 “Daphne what is going on? Why are you sitting there? And who is this person? Did they make you hide from me? Are they trying to steal you from me? Or are they trying to kidnap you? How DARE YOU!” With irrational rage, Apollo charges at you. Daphne jumps out of the bushes to try to pull him away from you.
     + [You have no choice but to confront him] -> fight
 
@@ -96,7 +96,7 @@ You’re out of breath, fighting Apollo isn’t a walk in the park. But just whe
 you two start holding hands while whispering in each other’s ears. You can hear Apollo’s footsteps approaching, while your heart beats louder and louder, and the fear of his reaction makes your knees go weak. Why did you agree to this silly plan, will it even work? Finally, Apollo turns a corner and sees the two of you. He immediately freezes on his step.
 “Oh, is that you? Sorry, we didn’t hear you coming” giggles Daphne “See, when I told you we had grown too apart for each other… this is what I meant”
 The look of defeat in Apollo’s eyes almost makes you feel almost sorry for him. You turn away, relieved that he took the news with no further action. Daphne, shocked by his action begins to weep uncontrollably. “No! No! This is not what I wanted! I've made a terrible mistake and must...change...”  And with that exclamation she runs off into the trees to him. 
-Suddenly you hear him scream “Oh cruel destiny!” and nothing more. You run back, and find them embodied in 'stone'.  Daphne, her transformation half complete and Apollo, reaching her from behind as he ripped his battery pack out in angst. Lovers, forever captured in stone.  You sign and pick the battery up from the ground.
+Suddenly you hear him scream “Oh cruel destiny!” and nothing more. You run back, and find them embodied in 'stone'.  Daphne, her transformation half complete and Apollo, reaching her from behind as he ripped his battery pack out in angst. Lovers, forever captured in stone.  You sigh and pick the battery up from the ground.
     ~ simple_battery = 1
     ~ apollo_and_daphne = 1
     + [Walk the stream] -> panorama

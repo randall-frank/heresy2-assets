@@ -556,7 +556,12 @@ function expand_text_to_html(text) {
                 else if (splitTag && splitTag.property == "COMBO_DONE") {
                     end_combo_lock(story, storyContainer, splitTag.val);
                 }
-
+                    
+                // GAMELOG: on|off
+                else if (splitTag && splitTag.property == "GAMELOG") {
+                    enableGameLog(splitTag.val == "on");
+                }
+                    
                 // LINK: url
                 else if( splitTag && splitTag.property == "LINK" ) {
                     window.location.href = splitTag.val;
@@ -956,6 +961,8 @@ function expand_text_to_html(text) {
                     if (temp.saved_background_src) {
                         outerScrollContainer.style.backgroundImage = temp.saved_background_src;
                     }
+                    // Enable gamelog
+                    enableGameLog(true);
                 }
             } catch (e) {
                 alert("The uploaded save file could not be imported.");
@@ -984,11 +991,7 @@ function expand_text_to_html(text) {
             uploadState();
         });
 
-        let themeSwitchEl = document.getElementById("theme-switch");
-        if (themeSwitchEl) themeSwitchEl.addEventListener("click", function(event) {
-            document.body.classList.add("switched");
-            document.body.classList.toggle("dark");
-        });
+        setupGameLog();
     }
 
 })(storyContent);

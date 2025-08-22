@@ -28,6 +28,7 @@ INCLUDE debrief.ink
 # CLEAR
 # BACKGROUND: locations/greece.png
 # AUDIOLOOP:
+# GAMELOG: off
 # CLASS: head1
 αίρεση II: Of what mettle Gods?
 # CLASS: centered

@@ -22,7 +22,7 @@ You leave them to their thoughts and comments.
 
 = wine_barrel
 # CLEAR
-“Ehi young traveler, where are you going in such a rush? The sun and the stars won’t stop dancing their dance in the sky if you stop to take the time to look around you, think about what is really important and soak the beauty and the ugly of every moment you have, before we all go to the Hades Panta rei dear friend, panta rei…. Oh, but I see you do not have the patience for this. Very well then, for only 5 Drachm I can save you some of your precious time and give you directly some powerful insight.”
+“Ehi young traveler, where are you going in such a rush? The sun and the stars won’t stop dancing their dance in the sky if you stop to take the time to look around you, think about what is really important and soak the beauty and the ugly of every moment you have, before we all go to the Hades Panta rei dear friend, panta rei…. Oh, but I see you do not have the patience for this. Very well then, for only 5 Drachm I can save you some of your precious time and give you a powerful insight.”
     + [Give him the money] -> buy_it
     + [Step back] -> panorama
 
@@ -55,6 +55,7 @@ You pick up the necklace, remove the pendant and examine it closely.
 # IMAGE: items/oscillator.png
 It seems to be some kind of electronic oscillator.  
     ~ oscillator = 1
+    ~ philosopher_win = 1
     + [{continue}] -> panorama
 
 = question_one
