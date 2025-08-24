@@ -16,7 +16,7 @@ A small square opens in front of you. A group of people is assembled around an o
 
 = audience
 # CLEAR
-You approach the audience, but everyone is too busy listening to the orator to pay attention to you. You can only hear them murmur “Yes, yes, that makes sense… with all these weird bárbaros that keep coming here, we need to go back to the roots of the Athenians' knowledge. And its key is in the philosophers' secrets.  But I still do not understand those Phytagoreans issues with fava beans!”
+You approach the audience, but everyone is too busy listening to the orator to pay attention to you. You can only hear them murmur “Yes, yes, that makes sense… with all these weird bárbaros that keep coming here, we need to go back to the roots of the Athenians' knowledge. And its key is in the philosophers' secrets.  But I still do not understand those Pythagoreans issues with fava beans!”
 You leave them to their thoughts and comments.
     + [Step back] -> panorama
 
@@ -40,7 +40,7 @@ You leave them to their thoughts and comments.
 = orator
 # CLEAR
 A man with a long, white beard is talking directly to audience, his arm raised pointing to the sky as if to stress a point he’s trying to make. {not oscillator: Around his neck, a necklace with an odd pendant.}
-The philosopher looks furiously at you. “Ah, so you think you can just come here and teach these people a better way of living? Don’t you know our secret knowledge has been developed by the smartest brains of all times, led by the great Phytagoras? Poor, poor fool! I will give you one chance. Answer correctly to all my questions, and prove to me you deserve an orator spot in this square!”
+The philosopher looks furiously at you. “Ah, so you think you can just come here and teach these people a better way of living? Don’t you know our secret knowledge has been developed by the smartest brains of all times, led by the great Pythagoras? Poor, poor fool! I will give you one chance. Answer correctly to all my questions, and prove to me you deserve an orator spot in this square!”
     + {fava_beans} [Show the fava beans] -> fava_skip
     + [Exercise your philosophical mastery] -> question_one
     + [Leave] -> panorama

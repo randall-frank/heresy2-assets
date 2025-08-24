@@ -1,25 +1,5 @@
 // Function called from Javascript to generate the HTML content
 // of the 'Mission Log' panel.
-/*
-
-    Visited the Pnyx
-    Visited the A* river
-    Acquired a battery from Apollo
-    Found code to '...' in river
-    Visited Phydias' workshop
-    Spoke with Nelda
-    Laura points out 'gear'
-    Get room 237 key code from Phydias
-    Obtained the sun plate at Laura's insistance
-    Helped the woman statue at Apollo entrance
-    Spoke with the Oracle...
-    Spoke with the Orcale II...
-    Enter the temple of apollo computer room
-    Decode Laura
-    Visit the Hypermarket
-    Gain access to Keith
-    Use the Hypermarket portal to get back to HQ
- */
 
 === function log_entry(title, detail)
     ~ return "<p style='margin:0px;'><b>&bull; {title}</b> - {detail}</p>"
@@ -34,7 +14,7 @@
         ~ s += log_entry("Finding Laura", "Find Laura trapped in a mechanical owl.")
     }
     {workshop.talk_with_helen: 
-        ~ s += log_entry("Spoke to Helen", "Meet Bob's wife, Helen in a mausoleum cell.")
+        ~ s += log_entry("Enter Helen", "Meet Bob's wife, Helen in a mausoleum cell.")
     }
     // Garden
     {garden.garden_gate:
@@ -44,17 +24,17 @@
         ~ s += log_entry("Garden dish", "You examine the dish and Laura points out: GLYPH6.")
     }
     {garden.servant: 
-        ~ s += log_entry("Talk with Andrew", "Andrew remembers the Spain mission.  He suggests you talk with Phidias.")
+        ~ s += log_entry("Andrew remembers", "Andrew remembers the Spain mission.  He suggests you talk with Phidias.")
     }
     // Template
     {temple.panorama:
         ~ s += log_entry("Temple of Hephaestus", "You visited the Temple of Hephaestus.")
     }
     {helped_beggar:
-        ~ s += log_entry("Help temple beggar", "You help out a beggar in the Temple of Hephaestus.")
+        ~ s += log_entry("Aid the needy", "You help out a beggar in the Temple of Hephaestus.")
     }
     {temple.pronaos: 
-        ~ s += log_entry("Temple pronaos", "Laura seemed excited when she saw a crutch: GLYPH0.")
+        ~ s += log_entry("Crutches", "Laura seemed excited when she saw a crutch: GLYPH0.")
     }
     {stole_crutch:
         {crutch:
@@ -64,7 +44,7 @@
         }
     }
     {won_cella_fight:
-        ~ s += log_entry("Win temple fight", "You intervene in a fight in the Temple of Hephaestus, defending another 'detainee'.")
+        ~ s += log_entry("No fighting", "You intervene in a fight in the Temple of Hephaestus, defending another 'detainee'.")
     }
     {temple.melampus:
         ~ temp text = "You access the workshop of Melampus."
@@ -97,17 +77,17 @@
         ~ s += log_entry("Men in barrels", "You learn, first hand, the origin of the old proverb: 'never trust a man wearing a barrel.")
     }
     {pnyx.fava_skip:
-        ~ s += log_entry("Philosopher's weakness", "You exploit an Achilles' heel of the followers of Phytagoras.")
+        ~ s += log_entry("Philosopher's weakness", "You exploit an Achilles' heel of the followers of Pythagoras.")
     }
     {philosopher_win and not pnyx.fava_skip:
-        ~ s += log_entry("Philosopher in training", "You pass a test of Phytagorean philosophical doctrine.")
+        ~ s += log_entry("Philosopher in training", "You pass a test of Pythagorean philosophical doctrine.")
     }
     // River
     {river.panorama:
         ~ s += log_entry("The Eridanos", "You reach the calming waters of the Eridanos.")
     }
     {river.bench:
-        ~ s += log_entry("Riverbank bench", "You obtained the keycode to the inner sanctum of the Temple of Apollo.")
+        ~ s += log_entry("Hidden notes", "You obtained the keycode to the inner sanctum of the Temple of Apollo under the riverbank bench.")
     }
      {apollo_and_daphne:
         {river.victory:
@@ -121,7 +101,7 @@
         ~ s += log_entry("Phidias' workshop", "You visit the famous marble workshop of Phidias.")
     }
     {marble_workshop.table:
-        ~ s += log_entry("Talk with Nelda", "Phidias is working to repair the receptacle of Nelda Powell, a colleague from the agency, detained and damaged by the Inquisition.")
+        ~ s += log_entry("Introducing Nelda", "Phidias is working to repair the receptacle of Nelda Powell, a colleague from the agency, detained and damaged by the Inquisition.")
     }
     {anthropoid_gear:
         ~ s += log_entry("Gears of change", "While visiting Nelda, Laura seemed preoccupied by the anthropoid gear: GLYPH8.")
@@ -151,7 +131,7 @@
         ~ s += log_entry("Grigori awaits", "You have access to the powerful computer systems in the Temple of Apollo.")
     }
     {computer_room.decode_laura:
-        ~ s += log_entry("Laura is free", "Using the Grigori computer and the antivirus developed by Melampus, you free Laura from her digital chains.")
+        ~ s += log_entry("Freedom for Laura", "Using the Grigori computer and the antivirus developed by Melampus, you free Laura from her digital chains.")
     }
     // Hypermarket
     {hypermarket.panorama:

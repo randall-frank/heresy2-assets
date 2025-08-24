@@ -39,7 +39,7 @@ You sit on the bench to enjoy the view and the fresh breeze on your face. You cl
 
 = lute
 # CLEAR
-A muscular man sitting on a rock, playing the lute. “Oh, my sweet sweet Dafne, why do you like to pull the strings of my poor heart? Come back to me, my sweet muse, and untwine them once again with your gracious sight, and all will be forgiven. Your painful words and actions are just a way to get me to love you even more, I know that. And I will never let them pull us apart. Where are you, my sweet nympha?”
+A muscular man sitting on a rock, playing the lute. “Oh, my sweet sweet Daphne, why do you like to pull the strings of my poor heart? Come back to me, my sweet muse, and untwine them once again with your gracious sight, and all will be forgiven. Your painful words and actions are just a way to get me to love you even more, I know that. And I will never let them pull us apart. Where are you, my sweet nympha?”
 He suddenly sees you, and his demeanor changes completely. “Who are you, a love competitor? What have you done with my Daphne?”
     + [Continue walking the stream] -> panorama
 
