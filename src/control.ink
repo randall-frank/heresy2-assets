@@ -33,7 +33,7 @@ Thank you for all your work and service. The Inquisition is forever grateful to 
 # CLEAR
 # SBIMAGE: items/stake.png
 A set of smoky remainders of fires, each at the feet of a stake. Next to the only one that looks like it’s still burning, the priest, throws something into it.
-“Hello brother. Glad you joined us. We wanted you to witness this moment. Look there, among those flames. What seems to be a woman with her horrid screams, is in reality the original copy of Laura trapped in her android body. We have made sure all her copies have been wiped from any computer or device every-where and every-when
+“Hello brother. Glad you joined us. We wanted you to witness this moment. Look there, among those flames. What seems to be a woman with her horrid screams, is in reality the original copy of Laura trapped in her android body. We have made sure all her copies have been wiped from any computer or device every-where and every-when.
 Once the flames destroy this copy, Laura will be no more. Burned on the same fire that devoured witches… a fitting end for the most diabolical electronic being the Devil ever created. As we speak, a team has been sent to make sure Laura’s grandmothers never see the light of day - what were they called, Alexa? ChatGPT? Who cares, their names will soon be erased by history itself. All thanks to your help. Glory be with you.”
     + [{continue}] -> panorama
  

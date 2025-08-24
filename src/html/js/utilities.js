@@ -391,7 +391,9 @@ function setupGameLog() {
 }
 
 function enableGameLog(on) {
-    if (on) return;
+    if (on) {
+        if (getQueryValue("use_log") == "") return;
+    }
     const logElem = document.getElementById('game-log');
     logElem.hidden = on == false;
 }
@@ -403,8 +405,9 @@ function showGameLog() {
 }
 
 function updateGameLog() {
-    let html = "";
+    const html = theStory.EvaluateFunction("generate_log_html", []);
     // Set up the log content from "theStory"
     let body = document.getElementById('gameLogContent');
-    body.innerHTML = html;
+    // Convert things like GLYPHx to <i...></i>
+    body.innerHTML = expand_text_to_html(html);
 }

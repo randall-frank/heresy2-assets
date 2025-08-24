@@ -19,6 +19,7 @@ INCLUDE control.ink
 INCLUDE ascension.ink
 INCLUDE normal.ink
 INCLUDE debrief.ink
+INCLUDE logging.ink
 
 -> intro
 
