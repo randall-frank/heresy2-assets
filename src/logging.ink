@@ -101,7 +101,7 @@
         ~ s += log_entry("Phidias' workshop", "You visit the famous marble workshop of Phidias.")
     }
     {marble_workshop.table:
-        ~ s += log_entry("Introducing Nelda", "Phidias is working to repair the receptacle of Nelda Powell, a colleague from the agency, detained and damaged by the Inquisition.")
+        ~ s += log_entry("Introducing Nelda", "Phidias is repairing the receptacle of Nelda Powell, an agency colleague persecuted by the Inquisition.")
     }
     {anthropoid_gear:
         ~ s += log_entry("Gears of change", "While visiting Nelda, Laura seemed preoccupied by the anthropoid gear: GLYPH8.")
@@ -131,7 +131,7 @@
         ~ s += log_entry("Grigori awaits", "You have access to the powerful computer systems in the Temple of Apollo.")
     }
     {computer_room.decode_laura:
-        ~ s += log_entry("Freedom for Laura", "Using the Grigori computer and the antivirus developed by Melampus, you free Laura from her digital chains.")
+        ~ s += log_entry("Freedom for Laura", "Using the Grigori computer and Melampus' antivirus, you free Laura from her digital chains.")
     }
     // Hypermarket
     {hypermarket.panorama:
