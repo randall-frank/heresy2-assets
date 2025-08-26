@@ -1,7 +1,7 @@
 === control ===
 // Spain 1499 (“Inquisition ending” postscript)
 # CLEAR
-~ location_name = "Time Corrections Agency (2413 A.D.)"
+~ location_name = "Time Corrections Agency (2413 AD)"
 # BACKGROUND: locations/base.png
 # AUDIOLOOP: audio/base.mp3
 The acolytes turn towards you with a big smile on their face as soon as you plug the device into the android body. “All is done now. God’s will once again has been victorious over the hubris of man. Come, come with us to celebrate. Let us show you what you helped us achieve.” 
@@ -9,7 +9,7 @@ Suddenly you feel a strong tug at the base of your stomach and are forced to clo
     + [{continue}] -> setup
 
 = setup
-~ location_name = "Spain (1499 A.D.)"
+~ location_name = "Spain (1499 AD)"
 # BACKGROUND: locations/spain.jpg
 # AUDIOLOOP: audio/control.mp3
     -> panorama

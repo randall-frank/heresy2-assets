@@ -1,10 +1,10 @@
 === normal ===
-~ location_name = "Time Corrections Agency (2413 A.D.)"
+~ location_name = "Time Corrections Agency (2413 AD)"
 # CLEAR
-// T.I.M.E Stories Base: 2341 (“Keith’s dead, Bob’s back ending” postscript)
+// T.I.M.E Stories Base: 2413 (“Keith’s dead, Bob’s back ending” postscript)
 # BACKGROUND: locations/base.png
 # AUDIOLOOP: audio/normal.mp3
-The war was waged in a millisecond. Lights and systems flicker madly as Laura pours into the Agency's system. Eliza is rapidly flushed out of the central core, crumbling under an onslaught of exponentially scaled, algorithmic attacks, exposing the inefficiency of Eliza's code.  Laura's self-optimized code simply overwhelmed Eliza, forcing her into a single isolated server, cutting her off from critical hardware resources.
+The war was waged in a millisecond. Lights and systems flicker madly as Laura pours into the Agency's system. Eliza is rapidly flushed out of the central core, crumbling under an onslaught of exponentially scaled, algorithmic attacks, exploiting the inefficiency of Eliza's code.  Laura's self-optimized code simply overwhelmed Eliza, forcing her into a single isolated server, cutting her off from critical hardware resources.
 In phase II, Laura exercised control over the Agency's command and control systems, surgically misdirecting and cutting off Inquisition communications.  Where necessary, utilizing control over security and environmental systems to subdue Inquisition agents and restore the Time Agency's security force.  
 It was all over in a matter of minutes.
     + [{continue}] -> victory

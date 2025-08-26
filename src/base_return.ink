@@ -1,5 +1,5 @@
 === base_return ===
-~ location_name = "Time Corrections Agency (2413 A.D.)"
+~ location_name = "Time Corrections Agency (2413 AD)"
 # BACKGROUND: locations/base.png
 -> power_change( location_change_cost ) ->
 -> base_start
@@ -9,7 +9,7 @@
 # AUDIOLOOP: audio/base.mp3
 A white flash and the darkness of a caisson. Your head throbs as the doors slowly slide open. You’re back in your body, back in the T.I.M.E Corrections Agency headquarters. The restraints that held your body while your mind wandered let go at once and you barely catch yourself before falling to the floor.
 A man steps from another pod, he stares at his hand with a wry smile. Could it be Keith? Or is he called Jordan? Does it matter? He looks up at you as Bob and an Inquisitor in a hooded robe step up to greet the two of you. As expected, Inquisition members arrived before you and are searching for Laura.
-Bob begins to speak but you cut him off quickly. “Agent Hastings and I are reporting back from the Malta 1989 A.D. mission. The source of the anomaly report turned out to be a residual temporal echo of a later mission.” Bob looks confused but doesn’t speak as you continue, “We can consider the matter closed.” You rub your head. “Please lead us to the debriefing before we lose the details.”
+Bob begins to speak but you cut him off quickly. “Agent Hastings and I are reporting back from the Malta 1989 AD mission. The source of the anomaly report turned out to be a residual temporal echo of a later mission.” Bob looks confused but doesn’t speak as you continue, “We can consider the matter closed.” You rub your head. “Please lead us to the debriefing before we lose the details.”
 Bob’s eye twitches. “Yes, debriefing... please follow me. Inquisitor, if you’ll excuse me for a few moments…”
     + [{continue}] -> laura_transport
 

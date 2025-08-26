@@ -1,5 +1,5 @@
 === debrief ===
-~ location_name = "Time Corrections Agency Debriefing Lounge (2413 A.D.)"
+~ location_name = "Time Corrections Agency Debriefing Lounge (2413 AD)"
 # BACKGROUND: locations/debrief.png
 # AUDIOLOOP: audio/debrief.mp3
 # GAMELOG: on
@@ -32,7 +32,7 @@ Bob nods. “Good. That's what matters.” He hands you a glass of water and a f
 # SBIMAGE: locations/bob_ending.png
 “I have a few questions for you.”
 You nod, feeling the fizz of medication. Your head lightens, your stomach relaxes. “Of course,” you reply.  You take a deep breath, recalling and organizing the facts of the mission. The stars outside the window blur for a moment. A blink and they resolve.
-Bob takes a seat across from you, his gaze steady, “You were sent to Spain 1499 A.D. to investigate a temporal anomaly. It was your job to find the source and correct it. Tell me about it. What caused it?"
+Bob takes a seat across from you, his gaze steady, “You were sent to Spain 1499 AD to investigate a temporal anomaly. It was your job to find the source and correct it. Tell me about it. What caused it?"
     + [Did you find the anomaly?] -> anomaly
 
 = anomaly
