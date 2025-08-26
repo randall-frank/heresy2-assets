@@ -5,7 +5,7 @@
 -> power_change( location_change_cost ) ->
 # CLEAR
 # AUDIO: audio/transport.mp3
-An odd sense of deja vu washes over you, have we been here before? You stand before a large, box-like structure with an advertisement covered facade announcing incredible deals found inside. As you enter the structure, you notice the symbol 
+An odd sense of déjà vu washes over you. Have we been here before? You stand before a large, box-like structure with an advertisement covered facade announcing incredible deals found inside. As you enter, you notice the symbol 
 # IMAGE: items/tattoo.png
 decorating workers’, oddly hooded uniforms.  15th century Spanish clergy if memory serves.
 “He is so close now,” Laura exclaims, “We must find Keith and get him to the Time Corrections Agency base.  He can help us understand what is going on here and how it can be fixed.  I can feel his presence, but we must proceed with caution.”
@@ -13,8 +13,8 @@ decorating workers’, oddly hooded uniforms.  15th century Spanish clergy if me
 
 = panorama
 # CLEAR
-The interior is a vast, open space with high ceilings and rows of shelves stocked with various goods. The air is filled with the hum of fluorescent lights and the faint sound of music playing in the background.  A large sign hangs from the ceiling, reading "HyperMarket - Everything You Need, All in One Place!", but there are no shoppers, just workers busily collecting items. 
-{ not soulgem_full and not item_poloshirt: “We are going to need to find something to get Keith's attention”, Laura notes. “Your previous encounter with him left him rather paranoid.  Perhaps something that would be familiar to him would help...”}
+The interior is a vast, open space with high ceilings and rows of shelves stocked with various goods. The air is filled with the hum of fluorescent lights and the faint sound of 'Bad Day' playing in the background.  A large sign hangs from the ceiling, reading "HyperMarket - Everything You Need. All in One Place!", but there are no shoppers, just workers busily collecting items. 
+{ not soulgem_full and not item_poloshirt: “We are going to need to find something to get Keith's attention”, Laura notes. “Your previous encounter with him left him rather paranoid.  Perhaps something that would be familiar to him would help…”}
     + [Apparel section] -> apparel
     + [Clothing racks] -> racks
     + [Deli counter] -> deli
@@ -26,21 +26,21 @@ The interior is a vast, open space with high ceilings and rows of shelves stocke
 ~ combat_health = 30.
 ~ combat_attack = 10.
 ~ combat_defense = 25.
-The apparel section walls are adorned with posters advertising the latest fashion trends, and the air is filled with the scent of fresh fabric.  A large sign comments, "Dress to Impress!". In the corner, a garment alteration station is set up with a sewing machine and various fabrics.
+The apparel department walls are adorned with posters advertising the latest fashion trends, and the air is filled with the scent of fresh fabric.  A large sign comments, "Dress to Impress!". In the corner, a garment alteration station is set up with a sewing machine and various fabrics.
 { apparel_workers == 0:
     // Not yet met guys
-    Two hooded figures stand in front of tables of unreasonably comfortable clothing at reasonable prices. You can’t see their faces. One is holding a strange device that looks like a gun but has too many barrels and they point at unusual angles. The other is holding up a pair of sweatpants for inspection. 
-    “I don’t know…” one says while holding up a pair of sweatpants for inspection “We must wear the uniform, sure. But do you think they care what we have on under the robe?” The other shrugs. As you draw near, “I recognize you not, friend. What is your business here?”
+    Two hooded figures stand in front of tables of unreasonably comfortable clothing at reasonable prices. You can’t see their faces. One is holding a strange device that looks like a gun but has too many barrels pointing in unusual angles. The other is holding up a pair of sweatpants for inspection. 
+    “I don’t know…” one says while holding up the sweatpants, “We must wear the uniform, sure. But do you think they care what we have on under the robe?” The other shrugs. As you draw near, “I recognize you not, friend. What is your business here?”
     + {hypermarket_id} [Pretend to be a clerk using your ID] -> fake_clerk
     + [Ask to see their IDs] -> fight_pair
 }
 { apparel_workers == 1:
     // you bribed them, they left
-    The apparel section is empty, the tables of clothing still neatly arranged.  A sign reads, "Uniforms available for purchase. Ask a clerk for assistance."
+    The apparel department is empty, tables of clothing still neatly arranged.  A sign reads, "Uniforms available for purchase. Ask a clerk for assistance."
 }
 { apparel_workers == 2:
     // you won the fight, but did not drain them
-    The two hooded figures lie unconscious on the floor, their strange device and sweatpants scattered around them. They are still breathing, but you can’t tell if they will wake up soon or not.
+    The two hooded figures lie unconscious on the floor, their strange device and sweatpants lie around them. They are still breathing, but you can’t tell if they will wake up soon or not.
     {soulgem_empty:
         Laura gestures at your empty Soul Gem, “Keith used filled soul gems to power time portals in the past.  Given the pair here, we could filled a Soul Gem without causing them permanent harm.”
         + [Fill the Soul Gem from the unconscious workers] -> fill_soul_gem
@@ -59,14 +59,14 @@ You approach the garment alteration station, where a sewing machine sits ready f
     { item_poloshirt_inquisition:
         + [Alter the poloshirt] -> altered_poloshirt
     - else:
-        Laura comments, “We don't have any items that need to be altered right now.
+        Laura comments, “We don't have any items that need to be altered right now.”
     }
     + [Return to the apparel section] -> apparel
 
 = altered_poloshirt
 # CLEAR
 # SBIMAGE: items/poloshirt.png
-Laura flutters up to you, “I can alter the poloshirt for you.  It will take a moment, but I can replace the Inquisition logo with a more fitting symbol for Keith.”  In a few minutes, the unmistakable visage of Laura herself graces the shirt where the Inquisition logo once was. "Perhaps that will appeal more to Keith.  I think he will at least appreciate the gesture.”  She hands you the altered poloshirt.
+Laura flutters up to you, “I can alter the poloshirt for you.  It will take a moment, but I can replace the Inquisition logo with a symbol more fitting Keith.”  In a few minutes, the unmistakable visage of Laura herself graces the shirt where the Inquisition logo once was. "Perhaps that will appeal more to Keith.  I think he will at least appreciate the gesture.”  She hands you the altered poloshirt.
     ~ item_poloshirt = 1
     ~ item_poloshirt_inquisition = 0
     + [Return to the apparel section] -> apparel
@@ -74,7 +74,7 @@ Laura flutters up to you, “I can alter the poloshirt for you.  It will take a 
 = fill_soul_gem
 # CLEAR
 # SBIMAGE items/soul_full.png
-You hold the empty Soul Gem pendant over the two hooded figures.  The pendant glows faintly as you channel your power into it, filling it with energy.  The figures stir slightly, but do not wake up.
+You hold the empty Soul Gem pendant over the two hooded figures.  The pendant glows faintly as you channel their essence into it, filling it with energy.  The figures stir slightly, but do not wake up.  They are uninjured by the experience.
     ~ soulgem_full = 1
     ~ soulgem_empty = 0
     ~ apparel_workers = 3
@@ -97,7 +97,7 @@ The two flash ID badges and call your bluff.  They come at you, pulling their we
 
 = fake_clerk
 # CLEAR
-You clip your "James" ID to your toga, then hand a pair of sweatpants to each of the guards. “On the house.”  It’s not much of a bribe, but it seems to be enough. The guards thank you and turn away.
+You clip your "James" ID to your toga before handing a pair of sweatpants to each of the guards. “On the house.”  It’s not much of a bribe, but it seems to be enough. The guards thank you and turn away.
     ~ apparel_workers = 1
     + [{continue}] -> apparel
 
@@ -105,7 +105,7 @@ You clip your "James" ID to your toga, then hand a pair of sweatpants to each of
 // If you have the shirt, the door is open.  If Laura is decrypted as well, you get to talk to Keith.
 # CLEAR
 # AUDIO: audio/fitting_scanner.mp3
-    A standard garment fitting room, but with an integrated garment scanner lock, currently showing “LOCKED”.  As you enter, the scanner is activated and a laser sweeps over you,passing judgment.  It pauses at the owl on your shoulder.  A voice from the scanner announces, “Please present an item to be scanned.”  
+    A standard garment fitting room, but with an integrated garment scanner lock, currently showing “LOCKED”.  As you enter, the scanner is activated and a laser sweeps over you, passing judgment.  It pauses at the owl on your shoulder.  A voice from the scanner announces, “Please present an item to be scanned.”  
     The scan completes.
         + [{continue}] -> scan_completes
 
@@ -143,26 +143,26 @@ You clip your "James" ID to your toga, then hand a pair of sweatpants to each of
     }
     { soulgem_empty:
 # AUDIO: audio/error.mp3
-        The scanner does not recognize the empty Soul Gem pendant.  “Perhaps if it were full, it would be recognized? I can fill it, but we will need a couple of subjects to fill it.” Laura suggests.
+        The scanner does not recognize the empty Soul Gem pendant.  “Perhaps if it were full, it might be recognized? I can fill it, but we will need a couple of subjects to fill it.” Laura suggests.
             + [{continue}] -> racks
     }
 
 = keith
 # CLEAR
-After a considerable pause, the back wall slides open, revealing the unmistakable visage of Keith. Keith stands slowly, his battered exoskeleton servos complaining in the background. As he turns to face you, the history of Inquisition insults to his person read as excruciating hieroglyphics etched across his physique,
+After a considerable pause, the back wall slides open, revealing the unmistakable visage of Keith. Keith stands slowly, his battered exoskeleton servos complaining in the background. As he turns to face you, the history of Inquisition insults to his person read as excruciating hieroglyphics etched across his physique.
 Telltale signs of distrust frame his eyes as they scrutinize you, “New receptacle I see. As I recall, the last time we met you left my receptacle a bloody mess."  Gesturing to his exoskeleton, "Well I am at least mobile again and once more a thorn in their side, but why should I ever entertain working with you?  Won't I just end up under their thumb again?”
     + [We were just following orders] -> keith_orders
     + [You were working with the Inquisition] -> keith_inquisition
 
 = keith_orders
 # CLEAR
-“Orders?!? Hilarious!  You never even attempted to talk with me, figure out who we were, understand our plans...”,  Keith snorts. “Are you that narrow of focus?  Even able to think for yourself?”, his glare unmistakable.
+“Orders?!? Hilarious!  You never even attempted to talk with me, figure out who we were, understand our plans…”,  Keith snorts. “Are you that narrow of focus?  Even able to think for yourself?”, his glare unmistakable.
     + [Who are you then?] -> keith_explain_A_full_soulgem
     + [Allow Laura to interject] -> keith_laura
 
 = keith_inquisition
 # CLEAR
-“Us? Working for the Inquisition? Never!”, Keith retorts. “We needed resources, and in 15 century Spain, the Inquisition controls the resources, so yes, we used them.  But, we did not or would not willingly work for or with them.”  A long pause as he reflects, “Mistakes were... made.  We were... naïve, to the effectiveness of their goals and methods. Now they've infiltrated the Agency itself!  Wrongs must be corrected.”
+“Us? Working for the Inquisition? Never!”, Keith retorts. “We needed resources and in 15 century Spain the Inquisition controls the resources. So yes, we used them.  But, we did not or would not willingly work for or with them.”  A long pause as he reflects, “Mistakes were… made.  We were… naïve, to the effectiveness of their goals and methods. Now they've infiltrated the Agency itself!  Wrongs must be corrected.”
     + [{continue}] -> keith_explain_A_full_soulgem
 
 = keith_explain_A_full_soulgem
@@ -177,15 +177,15 @@ Keith looks deeply at you and continues in a tone of concern mixed with anger, �
 
 = no_injury
 # CLEAR
-Slowly you begin, “Let me assure you that your workers have suffered no permanent injury.  I used only a fraction of the essence of each of them to fill the gem.  We just needed to catch your attention and...”  
+Slowly you begin, “Let me assure you that your workers have suffered no permanent injury.  I used only a fraction of the essence of each of them to fill the gem.  We just needed to catch your attention and…”  
 Keith interrupts you with a raised hand, “ok, ok, I suppose it is too late now.  I will take the gem however, perhaps I can return some essence back to them.”
     ~ soulgem_full = 0
     + [{continue}] -> keith_explain_A
 
 = only_way
 # CLEAR
-You return his query aggressively, “Laura and I needed to talk to you.  You used soul gems to activate portals in the 'past' which the Inquisition filled the souls of witches they burned at the stake!  Your workers are still living, breathing.  We need to make sure they can never do that again.”
-Keith pauses, recalling past events before replying, “Yes... We need allies and focus...  I will take the gem however, I should be able to return essence back to those guys.”
+You return his query aggressively, “Laura and I needed to talk to you.  You used soul gems to activate portals in the 'past' which the Inquisition filled with the souls of witches they burned at the stake!  Your workers are still living, breathing.  We need to make sure the Inquisition can never do that again.”
+Keith pauses, recalling past events before replying, “Yes… We need allies and focus…  I will take the gem however, I should be able to return some essence back to those guys.”
     ~ soulgem_full = 0
     + [{continue}] -> keith_explain_A
 
@@ -198,7 +198,8 @@ Keith sighs, “We are just scientists looking to shed light on the entire tapes
  = keith_explain_B
 # CLEAR   
 Considering Keith's discourse you counter, “Interesting, but I'm skeptical.  It's a rather convenient theory, no? I mean there is no way to test it, correct?  Specific temporal paradoxes could just be hand-waved away as being part of an infinite multi-verse.” 
-Keith takes an unexpected tack, “Precisely. The approach of the Agency has no appreciable effect. It is therefore pointless.”  He glances back to Laura before continuing, “There is another approach.  Temporal distortions provide the opportunity for a fresh start.  That is precisely what we are trying to achieve.  Consider the power of selective temporal leaps on the timeline one chooses to persist in. You've seen it in ancient Athens, no?  Should such power be left to a single entity?  Consider the trajectory of human evolution itself and what might be achieved with a different approach.”
+Keith takes an unexpected tack, “Precisely. The approach of the Agency has no appreciable effect. It is therefore pointless.”  
+He glances back to Laura before continuing, “There is another approach.  Temporal distortions do provide the opportunity for a fresh start.  That is precisely what we are trying to achieve.  Consider the power of selective temporal leaps on the timeline one chooses to persist in. You've seen it in ancient Athens, no?  Should such power be left to a single entity?  Consider the trajectory of human evolution itself and what might be achieved with a different approach.”
 	+ [I don't know, but we can agree to start with the Inquisition] -> keith_laura
     + [Interesting, maybe even true, but one can never be sure...] -> keith_good
 	+ {not crm114_key} [Laura gestures you aside] -> keith_aside
@@ -206,7 +207,7 @@ Keith takes an unexpected tack, “Precisely. The approach of the Agency has no 
  = keith_good
  # CLEAR
  “That seems like a bit of a gamble, but a as you point out, a gamble that 'doesn’t matter' in the grand scheme of things.  Does that seem about right?” you ask.
- A thin smile graces Keith's face, “I may not use those terms, but that is they way I tend to look at the situation.  So, are you game?”
+ A thin smile graces Keith's face, “I may not use those terms, but that is the way I tend to look at the situation.  So, are you game?”
     ~ keith_trusts = 1
     // If you responded aggressively abut the soul gem, you lost trust
     {only_way:
@@ -223,14 +224,14 @@ Keith takes an unexpected tack, “Precisely. The approach of the Agency has no 
 
 = keith_laura
 # CLEAR
-Laura excitedly flutters over to his outstretched arm as he visibly relaxes with an audible sigh of relief. “You’ve made it!  I should never have doubted Melampus.” Keith turns to you, “I guess I have you to thank for bringing my greatest engineering masterpiece back to me?”  Laura’s “personage” tangibly “blushes” at his kind words.  “Yes,” she blurts out, “They have brought me back to you and now we can strike back at those who even now rush to consolidate their control over Bob and the agency!”
-At the mention of the name “Bob”, Keith’s face is stained with deep sadness. “It is not Bob’s fault, or at least I am as much to blame as him. We thought we could use the Inquisition to bring about real, evolutionary change.  After all, did we not both believe in the betterment, not only of man, but of the entire trajectory of mankind? Sadly, they see technology as merely a tool of control and not the instrument of change…”
+Laura excitedly flutters over to his outstretched arm as he visibly relaxes with an audible sigh of relief. “You’ve made it!  I should never have doubted Melampus.” Keith turns to you, “I guess I have you to thank for bringing my greatest engineering masterpiece back to me?”  Laura’s 'personage' tangibly 'blushes' at his words.  “Yes,” she blurts out, “They have brought me back to you. Now we can strike back at those who, as we speak, rush to consolidate their control over Bob and the Agency!”
+At the mention of the name 'Bob', Keith’s face is stained with deep sadness. “It is not Bob’s fault. I am as much to blame as him. We thought we could use the Inquisition to bring about real, evolutionary change.  After all, did we not both believe in the betterment, not only of man, but of the entire trajectory of mankind? Sadly, they see technology as merely a tool of control and not the instrument of change…”
     + [{continue}] -> keith_done
 
 = keith_done
 # CLEAR 
-“What manners have I?” Keith asks, “We don’t have a lot of resources here, but you can at least refresh yourself. Unfortunately, I must assume you are being followed and we will need to flee soon.”
-“We have an option, there is a jury-rigged Time Portal hidden in the Deli freezer.  It is a bit incomplete, but with it we can at least make it back to the Agency,” Laura interjects. “We… You… have a unique opportunity here to deliver the seeds of new horizons, the aspirations of both man and mankind.  You can use the Agency computers and full Time Portal, with my help, to correct their injurious actions.”
+“What manners have I?” Keith asks, “We do not have a lot of resources here, but you can at least refresh yourself. Unfortunately, I must assume you are being followed and we will need to flee soon.”
+“We have an option. There is a jury-rigged Time Portal hidden in the Deli freezer.  It is a bit incomplete, but with it we can at least make it back to the Agency,” Laura interjects. “We… You… have a unique opportunity here to deliver the seeds of new horizons, the aspirations of both man and mankind.  You can use the Agency computers and full Time Portal, with my help, to correct their actions.”
     ~ laura_state = 2
     + [{continue}] 
         {dummies_book:
@@ -244,7 +245,7 @@ At the mention of the name “Bob”, Keith’s face is stained with deep sadnes
 # SBIMAGE: items/st_dummies.png
 Keith notices your copy of, 'Space-Time Portals for Dummies'.  “Where did you get that?” he asks, a hint of surprise and laughter in his voice.  “Would you like me to autograph it for you?”
 "You? You wrote this book? 'Jordan Hastings'?” you reply, surprised. 
-“Yes, that is my real name.  I only use 'Keith' while in a receptacle. I wrote that book years ago as an primer for new Agency personnel.  Unfortunately, the Inquisition got a copy and it helped them infiltrate the Agency”, Keith explains, “I only ask you prove a better chaperone than I did.”
+“Yes, that is my real name. I only use 'Keith' while in a receptacle. I wrote that book years ago as an primer for new Agency personnel.  Unfortunately, the Inquisition got a copy and it helped them infiltrate the Agency”, Keith explains, “I only ask you prove a better chaperone than I did.”
 {marble_workshop.table: 
 “Were you not part of Squad Porspet?”, you ask, recognizing his name from the Agency rosters.  “You know that Nelda Powell is still alive?  She is in Athens, working with Phidias to covertly help other detainees.”
 "Nelda? Yes, I remember her. She was a good friend and a brilliant engineer. I had no idea her receptacle is still there. I thought she had been lost in an industrial 'accident'.  I will contact Phidias and see if we can smuggle her out.” Keith pauses, “I am glad to hear some of my old squad are still around. It gives me hope that we can make a difference.”
@@ -253,21 +254,21 @@ Keith notices your copy of, 'Space-Time Portals for Dummies'.  “Where did you 
 
 = keith_final_step
 # CLEAR
-    “Enough. We should use what little time we have to rest and recover”, Keith continues. “There will be time to discuss plans, after a meal and drink.  Prepare, then meet me in the deli freezer when you are ready.”  Keith turns and walks away slowly, exoskeleton servos whirring softly as he retreats, humming, “We skipped the light fandango, Turned some cartwheels across the floor, I was feeling kind of seasick...”
+    “Enough. We should use what little time we have to rest and recover”, Keith continues. “There will be time to discuss plans, after a meal and drink.  Prepare, then meet me in the deli freezer when you are ready.”  Keith turns and walks away slowly, exoskeleton servos whirring softly as he retreats, humming, “We skipped the light fandango, Turned some cartwheels across the floor, I was feeling kind of seasick…”
     + [Return to the center aisle] -> panorama
 
 = deli
 # CLEAR
 // access to fridge -> time portal.
-This is a meat counter with a selection of sausages and cheeses available. A deli slicer and cash register rest at the end of the counter.  A solitary employee stands guard over the counter. Blocks of provolone and Swiss nestle between globes of mozzarella alongside a selection of salami, Capocollo and summer sausage. Astronomical placards stand like tombstones between the offerings.
-Behind the counter there is a walk-in refrigerator.  The door is closed and an exotic looking lock is mounted above the handle. Not something one might see on a normal walk-in fridge...
+This is a meat counter with a selection of fresh sausages and cheeses. A deli slicer and cash register rest at the end of the counter.  A solitary employee stands guard over the counter. Blocks of provolone and Swiss nestle between globes of mozzarella alongside a selection of salami, Capocollo and summer sausage. Placards with little plastic numbers stand like tombstones between the offerings.
+Behind the counter there is a walk-in refrigerator.  The door is closed and an exotic looking lock is mounted above the handle. Not something one might see on a normal walk-in fridge…
     + [Walk behind the counter] -> fridge
     + [Return to the center aisle] -> panorama
 
 = fridge
 # CLEAR
     { hypermarket_id:
-        The guard checks your ID badge and then steps aside.
+        The guard checks your ID badge then steps aside.
         + {not deli_computer} [Step up to the lock] -> fridge_code
         + {deli_computer} [Enter the refrigerator] -> deli_computer
     -else:
@@ -283,7 +284,7 @@ Laura flutters beside you, “I left clues to help you to determine the combinat
     {sunbeam_plate:
         “However, the answer is encoded into the Sunbeam plate, if you can piece it together.”
     -else:
-        “You will need to obtain the Sunbeam plate from the Apollo Temple entrance to resolve the order question.”
+        “You will need to obtain the Sunbeam plate from the Apollo Temple entrance to resolve the proper order.”
     }
 -else:
 Laura flutters beside you, “I have been trying to leave clues for you to solve this, remember?  I pointed out symbols to you while I was still encrypted.  Unfortunately, you have not found all of the symbols yet.  Perhaps you should revisit some of the locations we visited after we first met?”
@@ -308,17 +309,17 @@ Laura flutters beside you, “I have been trying to leave clues for you to solve
 = deli_computer
 # CLEAR
 # SBIMAGE: locations/deli_computer.jpg
-Entering the walk-in you notice a steep drop in temperature, but this is no food storage unit. A rack of humming computer hardware hastily wired to a glowing pad dominates the room. The Time Portal is obviously active.  A pad off to the side displays time-space coordinates while a glowing green light signals the device’s readiness.  It appears to be locked into the Time Corrections Agency base.
-{laura_state < 2: Laura is visibly agitated,  “We’re not ready yet. I don’t have the access codes for this device. We must find Keith!”. }
+Entering the walk-in you notice the steep drop in temperature, but this is no food storage unit. A rack of humming computer hardware hastily wired to a glowing pad dominates the room. The Time Portal is obviously active.  A terminal off to the side displays time-space coordinates while a glowing green light signals the device’s readiness.  It appears to be locked into the Time Corrections Agency base.
+{laura_state < 2: Laura is visibly agitated,  “We’re not ready yet. I don’t have the access codes for this device. We must find Keith!” }
 {laura_state == 2: Keith steps into view from behind the computer, “I have the access codes for this device and can initiate the transfer back to the Agency base whenever you are ready.”}
     + {laura_state > 1} [Initiate the transfer] -> travel_back_strategy
     + [Return to the deli counter] -> deli
 
 = travel_back_strategy
 # CLEAR
-You, Keith and Laura step up to the portal.  Keith begins, “The Inquisition leadership will already be at the Agency, looking to trap Laura.  Fortunately, they have only interacted with you and I while in receptacles.  They may not recognize us in our physical bodies at all.  We can use that to our advantage.”  Keith continues, “I propose we return in two groups.  You and I first, followed in a few minutes by Laura.”
+You, Keith and Laura step up to the portal.  Keith begins, “The Inquisition leadership will likely already be at the Agency, looking to trap Laura.  Fortunately, they have only interacted with you and I while in receptacles.  They may not recognize us in our physical bodies.  We can use that to our advantage.”  Keith continues, “I propose we return in two groups.  You and I first, followed in a few minutes by Laura.”
 “What about the Director, Bob?”, you ask, pointing out a rather obvious concern. “He will recognize both of us.  What if he is there?”
-“That is a chance we will have to take.  Bob is not enamored with the Inquisition and they hold Helen, so his loyalties may prove 'flexible'”, Keith retorts. “Unfortunately, We'll just have to chance that one.”  
+“That is a chance we will have to take.  Bob is not enamored with the Inquisition and they hold Helen, so his loyalties may prove 'flexible'”, Keith retorts. “If can talk with him privately, perhaps we can convince him to help us.”  
 Turning to Laura Keith continues, “After we leave, wait 5 minutes and follow us through. Hopefully we can catch them off guard.”
     + [{continue}] -> travel_back_to_base
 
@@ -329,9 +330,9 @@ You and Keith step in and the trip happens in a flash, literally. Some form of s
 
 = gardening
 # CLEAR
-Rows of colorful plants, garden tools, and seasonal décor.  You walk into an open-air or greenhouse structure with wide aisles lined with pallets of flowers—petunias, marigolds, and impatiens. Overhead hanging baskets overflow with blooms and the scent of fresh soil, mulch, and blossoms fills the air. Toward the back are small trees, shrubs, and potted plants, neatly tagged with care instructions. Garden tools such as rakes, shovels, and watering cans are displayed on metal racks, while bags of potting soil, fertilizer, and mulch are stacked nearby.
-{not hypermarket_id: Lying on the top of some sacks of soil, there is a “worker” outfit.  It looks like its owner is taking a break?}
-{not dummies_book: A curious book entitled "Space-Time Portals for Dummies" lies on a table nearby.}
+Rows of colorful plants, garden tools, and seasonal décor.  You walk into an open-air  greenhouse structure with wide aisles lined with pallets of flowers—petunias, marigolds, and impatiens. Overhead hanging baskets overflow with blooms and the scent of fresh soil, mulch and blossoms fills the air. Toward the back are small trees, shrubs and potted plants, neatly tagged with care instructions. Garden tools such as rakes, shovels and watering cans are displayed on metal racks, while bags of potting soil, fertilizer and mulch are stacked nearby.
+{not hypermarket_id: Lying on the top of some sacks of soil, there is a 'worker' outfit.  It looks like its owner is taking a break?}
+{not dummies_book: A curious book entitled 'Space-Time Portals for Dummies' lies on a table nearby.}
     + {not dummies_book} [Pick up the book] -> get_dummies_book
     + {not hypermarket_id} [Rifle through the outfit] -> get_id
     + [Return to the center aisle] -> panorama
@@ -352,9 +353,8 @@ You pick up the book and leaf through it.  The book is well-worn, with notes scr
 
 = racks
 # CLEAR
-Tables/hanging garments, a clerk stands ready to help you. Between a table of shorts, a rack of polo shirts and boxes of sneakers, a clerk “stands guard”, looking you over hawkishly, noting your tattoos, but not recognizing you, “You must be new to our cause. Has Keith given you an ‘errand’? We have options for all time periods, many appropriate for different disguises.” 
-“Make a selection and if needed, you can check the size in the fitting room over there.”  He winks at you, “Today we are offering:
-shorts, a poloshirt and pendants.  Care to make a choice?”
+A section of tables and hanging garments, a clerk stands ready to help you. Between a table of shorts, a rack of polo shirts and a collection of costume jewelry, a clerk 'stands guard'.  Looking you over hawkishly, noting your tattoos, but not recognizing you, “You must be new to our cause. Has Keith given you an 'errand'? We have options for all time periods, many appropriate for different disguises.” 
+“Make a selection and you can check the size in the fitting room over there.”  He winks at you, “Today we are offering: shorts, poloshirts and pendants.  Care to make a choice?”
 # SBIMAGE: items/shorts.png
 # SBIMAGE: items/poloshirt_inquisition.png
 # SBIMAGE: items/soul_empty.png
@@ -370,7 +370,7 @@ shorts, a poloshirt and pendants.  Care to make a choice?”
             + [Return current item] -> drop_items
             + [Keep current item] -> racks
     - else:
-        Laura turns her head and makes a gesture that can best be described as 'judgemental', “Exactly what are you thinking?  This is not 'television' from the 1980's.”  
+        Laura turns her head and makes a gesture that can best be described as 'judgemental', “Exactly what are you thinking?  This is not '1980's television'.”  
             ~ item_shorts = 1
             + [Pick up a pair of shorts] -> racks
     }
