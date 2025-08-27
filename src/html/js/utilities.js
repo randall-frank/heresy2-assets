@@ -391,9 +391,6 @@ function setupGameLog() {
 }
 
 function enableGameLog(on) {
-    if (on) {
-        if (getQueryValue("use_log") == "") return;
-    }
     const logElem = document.getElementById('game-log');
     logElem.hidden = on == false;
 }

@@ -478,6 +478,8 @@ function expand_text_to_html(text) {
         
         // Record location changes (this is actually the previous location and is only working in debug mode)
         post_location_change(story);
+
+        scrollToTop();
         
         // Generate story text - loop through available content
         while(story.canContinue) {
@@ -728,7 +730,7 @@ function expand_text_to_html(text) {
                     // not yet generated/displayed.
                     savePoint = story.state.toJson();
 
-                    // Aaand loop
+                    // And loop
                     continueStory();
                 });
             }
@@ -777,6 +779,12 @@ function expand_text_to_html(text) {
         }
     }
 
+    // scroll to the top of the page
+    function scrollToTop() {
+        let container = document.getElementById('storyContainer');
+        container.scrollTop = 0;
+    }
+
     // Scrolls the page down, but no further than the bottom edge of what you could
     // see previously, so it doesn't go too far.
     function scrollDown(previousBottomEdge) {
@@ -784,6 +792,7 @@ function expand_text_to_html(text) {
         if ( !isAnimationEnabled() ) {
             return;
         }
+        return;
 
         // Line up top of screen with the bottom of where the previous content ended
         var target = previousBottomEdge;
@@ -905,7 +914,7 @@ function expand_text_to_html(text) {
         const text = JSON.stringify(game);
         const a = document.createElement('a');
         a.href = URL.createObjectURL( new Blob([text], { type:`application/json` }) );
-        a.download = "heresy2_saved_game.json";
+        a.download = "heresy2_saved_game.h2s";
         a.click();
     }
     // Load state from an uploaded file
@@ -913,7 +922,7 @@ function expand_text_to_html(text) {
         // Get the file to upload
         const inputFileElement = document.createElement('input');
         inputFileElement.setAttribute('type', 'file');
-        inputFileElement.setAttribute('accept', '.json');
+        inputFileElement.setAttribute('accept', '.json, .h2s');
         inputFileElement.onchange = function() {
             getUploadedJson(this)
         };

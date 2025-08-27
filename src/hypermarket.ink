@@ -97,7 +97,7 @@ The two flash ID badges and call your bluff.  They come at you, pulling their we
 
 = fake_clerk
 # CLEAR
-You clip your "James" ID to your toga before handing a pair of sweatpants to each of the guards. “On the house.”  It’s not much of a bribe, but it seems to be enough. The guards thank you and turn away.
+You clip your 'James' ID to your toga before handing a pair of sweatpants to each of the guards. “On the house.”  It’s not much of a bribe, but it seems to be enough. The guards thank you and turn away.
     ~ apparel_workers = 1
     + [{continue}] -> apparel
 
@@ -105,9 +105,15 @@ You clip your "James" ID to your toga before handing a pair of sweatpants to eac
 // If you have the shirt, the door is open.  If Laura is decrypted as well, you get to talk to Keith.
 # CLEAR
 # AUDIO: audio/fitting_scanner.mp3
-    A standard garment fitting room, but with an integrated garment scanner lock, currently showing “LOCKED”.  As you enter, the scanner is activated and a laser sweeps over you, passing judgment.  It pauses at the owl on your shoulder.  A voice from the scanner announces, “Please present an item to be scanned.”  
-    The scan completes.
-        + [{continue}] -> scan_completes
+    A standard garment fitting room, but with an integrated garment scanner lock, currently showing 'LOCKED'.  As you enter, the scanner is activated and a laser sweeps over you, passing judgment.  It pauses at the owl on your shoulder.  A voice from the scanner announces, “Please present an item to be scanned.”
+    { (not soulgem_empty) and (not soulgem_full) and (not item_shorts) and (not item_poloshirt_inquisition) and (not item_poloshirt):
+# AUDIO: audio/error.mp3
+        The scanner reiterates sarcastically, “You must have an item from the clothing racks in your possession to complete a scan.  A pendant, shorts or poloshirt is required.”
+            + [{continue}] -> racks
+    - else:
+        The scan completes.
+            + [{continue}] -> scan_completes
+    }
 
 = scan_completes
     { item_poloshirt:
@@ -144,6 +150,11 @@ You clip your "James" ID to your toga before handing a pair of sweatpants to eac
     { soulgem_empty:
 # AUDIO: audio/error.mp3
         The scanner does not recognize the empty Soul Gem pendant.  “Perhaps if it were full, it might be recognized? I can fill it, but we will need a couple of subjects to fill it.” Laura suggests.
+            + [{continue}] -> racks
+    }
+    { CHOICE_COUNT() == 0:
+# AUDIO: audio/error.mp3    
+        You must have an item from the clothing racks in your possession to complete a scan.  A pendant, shorts or poloshirt is required.
             + [{continue}] -> racks
     }
 
@@ -361,7 +372,7 @@ A section of tables and hanging garments, a clerk stands ready to help you. Betw
     + [Pick up a pair of shorts] -> pickup_shorts
     + [A poloshirt would be nice] -> pickup_poloshirt
     + [A dark pendant] -> pickup_pendant
-    + [Visit the fitting room] -> fitting_room
+    + {not keith_final_step} [Visit the fitting room] -> fitting_room
     + [Return to the center aisle] -> panorama
 
 = pickup_shorts
@@ -370,7 +381,7 @@ A section of tables and hanging garments, a clerk stands ready to help you. Betw
             + [Return current item] -> drop_items
             + [Keep current item] -> racks
     - else:
-        Laura turns her head and makes a gesture that can best be described as 'judgemental', “Exactly what are you thinking?  This is not '1980's television'.”  
+        Laura turns her head and makes a gesture that can best be described as 'judgemental', “Exactly what are you thinking?  This is not '1980s television'.”  
             ~ item_shorts = 1
             + [Pick up a pair of shorts] -> racks
     }
@@ -385,7 +396,6 @@ A section of tables and hanging garments, a clerk stands ready to help you. Betw
         ~ item_poloshirt_inquisition = 1
         + [Pick up a shirt] -> racks
     }
-
 
 = pickup_pendant
     { already_have_a_garment(): 
