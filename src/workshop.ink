@@ -157,7 +157,8 @@ A padded cell with a heavy, locked door.  It seems to be controlled by an ancien
 
 = meet_helen
 # CLEAR
-On the floor is a woman with long hair that spills around her feet. The name on her soiled jumpsuit says “Helen”.
+# SBIMAGE: items/helen.png
+Sitting in a corner is a woman in a Time Corrections Agency jumpsuit. The name on her disheveled jumpsuit says “Helen”.
 {not owl:
 In an alcove on the wall, a mechanical owl spins its head and spouts gibberish in a sing-song voice. 
 }
@@ -171,7 +172,8 @@ At the mention of Bob the woman gasps like someone woken from a nightmare. She s
 
 = talk_with_helen
 # CLEAR
-You kneel beside Helen and brush back her hair.  She seems so familiar to you, but you fail to place her.  Your kindness does not go unnoticed as a rare stretch of lucidity (or is it desperation?) seems to grip her.  “Bob, you know him right?  He sent you here?” Her gaze drifts... “So many mistakes.  We should have seen the danger.  You are here, so perhaps all is not lost.”  In a last breath of sanity she whispers, “Should you ever see my love again.  Remind him of that night on Europa where he proposed when we were so full of love and hope.  Remind him that as long as we live, there is still hope.”
+# SBIMAGE: items/helen.png
+You kneel beside Helen and brush back her hair.  She seems so familiar to you, but you fail to place her.  Your kindness does not go unnoticed as a rare stretch of lucidity (or is it desperation?) seems to grip her.  “Bob, my husband, you know him right?  He sent you here?” Her gaze drifts... “So many mistakes.  We should have seen the danger.  You are here, so perhaps all is not lost.”  In a last breath of sanity she whispers, “Should you ever see my love again.  Remind him of that night on Europa where he proposed when we were so full of love and hope.  Remind him that as long as we live, there is still hope.”
     + [{continue}] -> meet_helen
 
 = owl
