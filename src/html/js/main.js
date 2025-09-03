@@ -1035,6 +1035,7 @@ We would like to acknowledge them here and thank them all for their contribution
 <li>Justin Chevrount</li>
 <li>David Bremer</li>
 <li>David Byrd</li>
+<li>Jay Lyerly</li>
 <li>Edward Oxford</li>
 </ul>
 <p></p>

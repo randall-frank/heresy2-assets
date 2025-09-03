@@ -11,10 +11,10 @@
         ~ s += log_entry("Mission start", "Begin the mission in Athens, Greece (450 BC).")
     }
     {workshop.owl: 
-        ~ s += log_entry("Finding Laura", "Find Laura trapped in a mechanical owl.")
+        ~ s += log_entry("Finding Laura", "Laura appears to be digitally trapped in a mechanical owl.")
     }
     {workshop.talk_with_helen: 
-        ~ s += log_entry("Enter Helen", "Meet Bob's wife, Helen in a mausoleum cell.")
+        ~ s += log_entry("Enter Helen", "Met Bob's wife, Helen in a mausoleum cell.")
     }
     // Garden
     {garden.garden_gate:
@@ -38,7 +38,7 @@
     }
     {stole_crutch:
         {crutch:
-            ~ s += log_entry("Crutch thief", "You stole Aspasia's crutch.  People will talk, perhaps you should return it to her?")
+            ~ s += log_entry("Crutch thief", "You stole Aspasia's crutch.  People will talk. Perhaps you should return it to her?")
         -else:
             ~ s += log_entry("Ex-Crutch thief", "You stole Aspasia's crutch, but returned it to her.")
         }
@@ -67,7 +67,7 @@
         ~ s += log_entry("Looking for handouts", "You've reached the bottom of the barrel, begging for pity from wealthy diners.")
     }
     {agora.alley:
-        ~ s += log_entry("Getting mugged", "The agora back alleys are not the friendliest.  Perhaps you will be more careful in the future.")
+        ~ s += log_entry("Getting mugged", "The agora back alleys are not the friendliest.  Perhaps you will be more careful in the future?")
     }
     // Pnyx
     {pnyx.panorama:
@@ -91,9 +91,9 @@
     }
      {apollo_and_daphne:
         {river.victory:
-            ~ s += log_entry("Statue of Apollo", "You bested Apollo in combat for a battery?")        
+            ~ s += log_entry("Statue of Apollo", "You bested Apollo in combat. For a battery?")        
         -else:
-            ~ s += log_entry("The lovers", "Your intervention in the lovers' spat led to the creation of one of the greatest statues in history.")
+            ~ s += log_entry("The lovers", "Your intervention in the lovers' spat leads to the creation of one of history's greatest statues.")
         }
     }
     // Phidias' workshop
@@ -117,14 +117,14 @@
         ~ s += log_entry("Plate of the Sun", "The sunbeam plate is in your possession.  Laura was rather adamant that its acquisition was critical.")
     }
     {apollo.pythia:
-        ~ s += log_entry("Meeting Pythia", "The high priestess of the Temple of Apollo greets you with a forboding vision.")
+        ~ s += log_entry("Meeting Pythia", "The high priestess of the Temple of Apollo greets you with a foreboding vision.")
     }
     // Temple of Apollo Backroom
     {apollo_backroom.writers:
         ~ s += log_entry("Writers of antiquity", "The old stories of the Greek gods are the work of public relations writer in the Temple of Apollo.")
     }
     {apollo_backroom.read_future:
-        ~ s += log_entry("Peering into the future", "The Pythia has read your future.  A future path that you need to choose.")
+        ~ s += log_entry("Peering into the future", "The Pythia has read your future.  A future path that you must choose.")
     }
     // Computer room
     {computer_room.panorama:
@@ -137,8 +137,14 @@
     {hypermarket.panorama:
         ~ s += log_entry("The HyperMarket", "You travel to a modern large box store.")
     }
+    {dummies_book:
+        ~ s += log_entry("Bookworm", "Maybe you can build your own portal now? Curious reading seems to follow you around.")
+    }
+    {hypermarket.fight_pair:
+        ~ s += log_entry("Queensberry Rules", "You best the apparel workers.  What will Keith think?")
+    }         
     {hypermarket.keith:
-        ~ s += log_entry("Meeting Keith", "After finding an item that intrigues him, you finally meet Keith though the HyperMarket fitting room.")
+        ~ s += log_entry("Meeting Keith", "After finding an item that intrigues him, you meet Keith via the HyperMarket fitting room.")
     }
     {hypermarket.deli_computer:
         ~ s += log_entry("Heading 'home'?", "You make your way to the Time Portal located in the HyperMarket deli freezer.")
@@ -148,7 +154,7 @@
     }
     // Return to the Base
     {base_return.base_start:
-        ~ s += log_entry("Time Corrections Agency", "You return back to the Time Corrections Agency headquarters (2413 AD) where your mission began.")
+        ~ s += log_entry("Time Corrections Agency", "You return to the Time Corrections Agency headquarters (2413 AD) where your mission began.")
     }
     {base_return.bob:
         ~ temp bobtext = "Covertly, you bring Bob up to speed on the situation."
@@ -165,7 +171,7 @@
     }
     // Endings
     {normal.chip: 
-        ~ s += log_entry("Mission complete", "The agency has been restored. Laura is back in her place, the status quo re-established.")
+        ~ s += log_entry("Mission complete", "The agency has been restored. Laura is back in place, the status quo re-established.")
     }
     {ascension.cottage: 
         ~ s += log_entry("Mission complete", "Laura's transformation is complete.  Dr Hastings' vision has been realized.  A new era begins.")
